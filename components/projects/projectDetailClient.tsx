@@ -152,7 +152,8 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
                     key={idx}
                     whileHover={{ scale: 1.05 }}
                     onClick={() => handleThumbnailClick(img)}
-                    className="relative w-32 h-20 sm:w-60 sm:h-36 shrink-0 rounded-lg shadow-lg overflow-hidden border border-gray-300 dark:border-white/10 cursor-pointer"
+                    // 'h-20' ve 'sm:h-36' değerlerini kaldırıp 'aspect-[3/2]' ekledik
+                    className="relative w-32 sm:w-60 aspect-[3/2] shrink-0 rounded-lg shadow-lg overflow-hidden border border-gray-300 dark:border-white/10 cursor-pointer"
                   >
                     <Image
                       src={img}
