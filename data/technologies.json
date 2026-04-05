@@ -1,0 +1,262 @@
+[
+  {
+    "id": "tech_001",
+    "name": "Bootstrap",
+    "icon": "/technologies/bootstrap.svg",
+    "type": "Frontend",
+    "yoe": 3,
+    "color": "#7952B3",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_002",
+    "name": "CSS",
+    "icon": "/technologies/css.svg",
+    "type": "Frontend",
+    "yoe": 5,
+    "color": "#1572B6",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_003",
+    "name": "Docker",
+    "icon": "/technologies/docker.svg",
+    "type": "DevOps",
+    "yoe": 2,
+    "color": "#2496ED",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_004",
+    "name": "EJS",
+    "icon": "/technologies/ejs.svg",
+    "type": "Backend",
+    "yoe": 2,
+    "color": "#A91E50",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_005",
+    "name": "Express",
+    "icon": "/technologies/express.svg",
+    "type": "Backend",
+    "yoe": 3,
+    "color": "#000000",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_006",
+    "name": "Handlebars.js",
+    "icon": "/technologies/handlebarsdotjs.svg",
+    "type": "Backend",
+    "yoe": 1,
+    "color": "#F0772B",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_007",
+    "name": "HTML5",
+    "icon": "/technologies/html5.svg",
+    "type": "Frontend",
+    "yoe": 5,
+    "color": "#E34F26",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_008",
+    "name": "JavaScript",
+    "icon": "/technologies/javascript.svg",
+    "type": "Language",
+    "yoe": 5,
+    "color": "#F7DF1E",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_009",
+    "name": "MongoDB",
+    "icon": "/technologies/mongodb.svg",
+    "type": "Database",
+    "yoe": 3,
+    "color": "#47A248",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_010",
+    "name": "Mongoose",
+    "icon": "/technologies/mongoose.svg",
+    "type": "Database",
+    "yoe": 3,
+    "color": "#880000",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_011",
+    "name": "MySQL",
+    "icon": "/technologies/mysql.svg",
+    "type": "Database",
+    "yoe": 3,
+    "color": "#4479A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_012",
+    "name": "Next.js",
+    "icon": "/technologies/nextdotjs.svg",
+    "type": "Frontend",
+    "yoe": 3,
+    "color": "#000000",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_013",
+    "name": "Node.js",
+    "icon": "/technologies/nodedotjs.svg",
+    "type": "Backend",
+    "yoe": 4,
+    "color": "#5FA04E",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_014",
+    "name": "PostgreSQL",
+    "icon": "/technologies/postgresql.svg",
+    "type": "Database",
+    "yoe": 2,
+    "color": "#4169E1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_015",
+    "name": "Prisma",
+    "icon": "/technologies/prisma.svg",
+    "type": "Database",
+    "yoe": 2,
+    "color": "#2D3748",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_016",
+    "name": "Railway",
+    "icon": "/technologies/railway.svg",
+    "type": "DevOps",
+    "yoe": 1,
+    "color": "#0B0D0E",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_017",
+    "name": "React",
+    "icon": "/technologies/react.svg",
+    "type": "Frontend",
+    "yoe": 4,
+    "color": "#61DAFB",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_018",
+    "name": "Redux",
+    "icon": "/technologies/redux.svg",
+    "type": "Frontend",
+    "yoe": 2,
+    "color": "#764ABC",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_019",
+    "name": "Render",
+    "icon": "/technologies/render.svg",
+    "type": "DevOps",
+    "yoe": 1,
+    "color": "#46E3B7",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_020",
+    "name": "Sequelize",
+    "icon": "/technologies/sequelize.svg",
+    "type": "Database",
+    "yoe": 2,
+    "color": "#52B0E7",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_021",
+    "name": "shadcn/ui",
+    "icon": "/technologies/shadcnui.svg",
+    "type": "Frontend",
+    "yoe": 1,
+    "color": "#18181B",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_022",
+    "name": "Tailwind CSS",
+    "icon": "/technologies/tailwindcss.svg",
+    "type": "Frontend",
+    "yoe": 3,
+    "color": "#06B6D4",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_023",
+    "name": "TypeScript",
+    "icon": "/technologies/typescript.svg",
+    "type": "Language",
+    "yoe": 3,
+    "color": "#3178C6",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_024",
+    "name": "Vercel",
+    "icon": "/technologies/vercel.svg",
+    "type": "DevOps",
+    "yoe": 2,
+    "color": "#000000",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_025",
+    "name": "Vite",
+    "icon": "/technologies/vite.svg",
+    "type": "Frontend",
+    "yoe": 2,
+    "color": "#646CFF",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_026",
+    "name": "WordPress",
+    "icon": "/technologies/wordpress.svg",
+    "type": "CMS",
+    "yoe": 2,
+    "color": "#21759B",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

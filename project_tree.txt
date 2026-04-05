@@ -1,0 +1,346 @@
+├── .gitignore
+├── README.md
+├── app
+│   ├── [locale]
+│   │   ├── about
+│   │   │   └── page.tsx
+│   │   ├── blog
+│   │   │   ├── [id]
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── contact
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── projects
+│   │       ├── [id]
+│   │       │   └── page.tsx
+│   │       └── page.tsx
+│   ├── admin
+│   │   ├── blogs
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   ├── projects
+│   │   │   └── page.tsx
+│   │   └── technologies
+│   │       └── page.tsx
+│   ├── api
+│   │   ├── auth
+│   │   │   ├── [...nextauth]
+│   │   │   │   └── route.ts
+│   │   │   └── logout
+│   │   │       └── route.ts
+│   │   ├── blog
+│   │   │   ├── [id]
+│   │   │   │   └── route.ts
+│   │   │   └── route.ts
+│   │   ├── chat
+│   │   │   └── route.ts
+│   │   ├── mail
+│   │   │   └── route.ts
+│   │   ├── projects
+│   │   │   ├── [id]
+│   │   │   │   └── route.ts
+│   │   │   └── route.ts
+│   │   ├── technology
+│   │   │   ├── [id]
+│   │   │   │   └── route.ts
+│   │   │   └── route.ts
+│   │   └── upload
+│   │       └── route.ts
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── not-found.tsx
+│   └── page.tsx
+├── components.json
+├── components
+│   ├── admin
+│   │   ├── blog
+│   │   │   ├── addBlogModal.tsx
+│   │   │   ├── blogModal.tsx
+│   │   │   └── blogs.tsx
+│   │   ├── login.tsx
+│   │   ├── project
+│   │   │   ├── addProjectModal.tsx
+│   │   │   ├── projectModal.tsx
+│   │   │   └── projects.tsx
+│   │   ├── sidebar.tsx
+│   │   └── technology
+│   │       ├── technology.tsx
+│   │       └── technologyModal.tsx
+│   ├── blog
+│   │   ├── blogDetail.tsx
+│   │   ├── blogDetailClient.tsx
+│   │   ├── blogs.tsx
+│   │   └── blogsClient.tsx
+│   ├── chatbot
+│   │   ├── chatBot.tsx
+│   │   ├── chatBotClient.tsx
+│   │   ├── chatButton.tsx
+│   │   ├── chatHeader.tsx
+│   │   ├── chatInput.tsx
+│   │   ├── messageBubble.tsx
+│   │   └── statsPanel.tsx
+│   ├── contact
+│   │   ├── about.tsx
+│   │   ├── aboutClient.tsx
+│   │   ├── contact.tsx
+│   │   └── contactClient.tsx
+│   ├── home
+│   │   ├── about.tsx
+│   │   ├── aboutClient.tsx
+│   │   ├── banner.tsx
+│   │   ├── contact.tsx
+│   │   ├── contactClient.tsx
+│   │   ├── gallery.tsx
+│   │   ├── galleryClient.tsx
+│   │   ├── heroes.tsx
+│   │   └── heroesClient.tsx
+│   ├── layout
+│   │   ├── chatBot.tsx
+│   │   ├── clientLayoutWrapper.tsx
+│   │   ├── footer.tsx
+│   │   ├── footerClient.tsx
+│   │   ├── languageSwitcher.tsx
+│   │   ├── localeProvider.tsx
+│   │   ├── navbar.tsx
+│   │   ├── navbarClient.tsx
+│   │   ├── scroll.tsx
+│   │   ├── socialSidebar.tsx
+│   │   ├── themeProvider.tsx
+│   │   └── themeToggle.tsx
+│   ├── projects
+│   │   ├── projectDetail.tsx
+│   │   ├── projectDetailClient.tsx
+│   │   ├── projects.tsx
+│   │   ├── projectsClient.tsx
+│   │   └── technologyItem.tsx
+│   └── ui
+│       ├── accordion.tsx
+│       ├── alert-dialog.tsx
+│       ├── alert.tsx
+│       ├── aspect-ratio.tsx
+│       ├── avatar.tsx
+│       ├── badge.tsx
+│       ├── breadcrumb.tsx
+│       ├── button-group.tsx
+│       ├── button.tsx
+│       ├── calendar.tsx
+│       ├── card.tsx
+│       ├── carousel.tsx
+│       ├── checkbox.tsx
+│       ├── collapsible.tsx
+│       ├── command.tsx
+│       ├── context-menu.tsx
+│       ├── dialog.tsx
+│       ├── drawer.tsx
+│       ├── dropdown-menu.tsx
+│       ├── empty.tsx
+│       ├── field.tsx
+│       ├── form.tsx
+│       ├── hover-card.tsx
+│       ├── input-group.tsx
+│       ├── input-otp.tsx
+│       ├── input.tsx
+│       ├── item.tsx
+│       ├── kbd.tsx
+│       ├── label.tsx
+│       ├── menubar.tsx
+│       ├── navigation-menu.tsx
+│       ├── pagination.tsx
+│       ├── popover.tsx
+│       ├── progress.tsx
+│       ├── radio-group.tsx
+│       ├── resizable.tsx
+│       ├── scroll-area.tsx
+│       ├── select.tsx
+│       ├── separator.tsx
+│       ├── shadcn-io
+│       │   ├── 3d-card
+│       │   │   └── index.tsx
+│       │   ├── 3d-marquee
+│       │   │   └── index.tsx
+│       │   ├── aurora-background
+│       │   │   └── index.tsx
+│       │   ├── background-gradient
+│       │   │   └── index.tsx
+│       │   ├── colourful-text
+│       │   │   └── index.tsx
+│       │   ├── fireworks-background
+│       │   │   └── index.tsx
+│       │   ├── flickering-grid
+│       │   │   └── index.tsx
+│       │   ├── gradient-text
+│       │   │   └── index.tsx
+│       │   ├── grid-pattern
+│       │   │   └── index.tsx
+│       │   ├── highlight-text
+│       │   │   └── index.tsx
+│       │   ├── image-zoom
+│       │   │   └── index.tsx
+│       │   ├── magnetic-button
+│       │   │   └── index.tsx
+│       │   ├── marquee
+│       │   │   └── index.tsx
+│       │   ├── meteors
+│       │   │   └── index.tsx
+│       │   ├── pixel-image
+│       │   │   └── index.tsx
+│       │   ├── rolling-text
+│       │   │   └── index.tsx
+│       │   ├── shape-landing-hero
+│       │   │   └── index.tsx
+│       │   ├── shooting-stars
+│       │   │   └── index.tsx
+│       │   ├── sparkles
+│       │   │   └── index.tsx
+│       │   ├── splitting-text
+│       │   │   └── index.tsx
+│       │   ├── text-hover-effect
+│       │   │   └── index.tsx
+│       │   ├── text-reveal
+│       │   │   └── index.tsx
+│       │   ├── theme-toggle-button
+│       │   │   └── index.tsx
+│       │   ├── typing-text
+│       │   │   └── index.tsx
+│       │   ├── vortex
+│       │   │   └── index.tsx
+│       │   └── wavy-background
+│       │       └── index.tsx
+│       ├── sheet.tsx
+│       ├── sidebar.tsx
+│       ├── skeleton.tsx
+│       ├── slider.tsx
+│       ├── sonner.tsx
+│       ├── spinner.tsx
+│       ├── switch.tsx
+│       ├── table.tsx
+│       ├── tabs.tsx
+│       ├── textarea.tsx
+│       ├── toggle-group.tsx
+│       ├── toggle.tsx
+│       └── tooltip.tsx
+├── "components
+│   └── chatbot
+│       └── typingInd\304\261cator.tsx"
+├── data
+│   ├── keywords.json
+│   ├── responses.json
+│   └── seed.ts
+├── global.d.ts
+├── hooks
+│   └── use-mobile.ts
+├── lib
+│   ├── auth.ts
+│   ├── get-dictionary.tsx
+│   ├── mongoose.ts
+│   ├── session.ts
+│   └── utils.ts
+├── messages
+│   ├── en.json
+│   └── tr.json
+├── models
+│   ├── admin.ts
+│   ├── blog.ts
+│   ├── projects.ts
+│   └── technology.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── proxy.ts
+├── public
+│   ├── avatar
+│   │   ├── avatar.jpg
+│   │   └── avatar2.jpg
+│   ├── banner
+│   │   ├── bootstrap.webp
+│   │   ├── css.webp
+│   │   ├── html.webp
+│   │   ├── js.webp
+│   │   ├── mysql.webp
+│   │   ├── next.webp
+│   │   ├── node.webp
+│   │   ├── prisma.webp
+│   │   ├── react.webp
+│   │   ├── redux.webp
+│   │   ├── sequelize.webp
+│   │   ├── shadcn.webp
+│   │   ├── tailwind.webp
+│   │   └── ts.webp
+│   ├── blog
+│   │   └── banner.avif
+│   ├── chatbot
+│   │   └── assistant.webp
+│   ├── cv
+│   │   ├── cv.en.html
+│   │   └── cv.tr.html
+│   ├── favicon.ico
+│   ├── footer
+│   │   ├── c083c55b-154e-4551-90e9-7ffa66333308.png
+│   │   ├── grass.webp
+│   │   ├── grass10.jpg
+│   │   ├── grass11.png
+│   │   ├── grass12.png
+│   │   ├── grass13.webp
+│   │   ├── grass2.jpg
+│   │   ├── grass3.png
+│   │   ├── grass4.jpg
+│   │   ├── grass5.png
+│   │   ├── grass7.png
+│   │   ├── grass8.jpg
+│   │   └── grass9.jpg
+│   ├── logo
+│   │   └── logo.webp
+│   ├── og-image.webp
+│   ├── robots.txt
+│   ├── socialMedia
+│   │   ├── facebook.png
+│   │   ├── github.png
+│   │   ├── instagram.png
+│   │   ├── linkedin.png
+│   │   ├── phone.png
+│   │   └── whatsapp.png
+│   └── technologies
+│       ├── bootstrap.svg
+│       ├── css.svg
+│       ├── docker.svg
+│       ├── ejs.svg
+│       ├── express.svg
+│       ├── handlebarsdotjs.svg
+│       ├── html5.svg
+│       ├── javascript.svg
+│       ├── mongodb.svg
+│       ├── mongoose.svg
+│       ├── mysql.svg
+│       ├── nextdotjs.svg
+│       ├── nodedotjs.svg
+│       ├── postgresql.svg
+│       ├── prisma.svg
+│       ├── railway.svg
+│       ├── react.svg
+│       ├── redux.svg
+│       ├── render.svg
+│       ├── sequelize.svg
+│       ├── shadcnui.svg
+│       ├── tailwindcss.svg
+│       ├── typescript.svg
+│       ├── vercel.svg
+│       ├── vite.svg
+│       └── wordpress.svg
+├── "public
+│   └── cv
+│       ├── Ceyhun T\303\274rkmen \342\200\223 Full Stack Developer(en).pdf"
+│       └── Ceyhun T\303\274rkmen \342\200\223 Full Stack Developer(tr).pdf"
+├── tsconfig.json
+└── types
+    ├── bcrypt.d.ts
+    ├── formidable.d.ts
+    ├── iyzipay.d.ts
+    ├── next-auth.d.ts
+    ├── next-intl.d.ts
+    ├── nodemailer.d.ts
+    ├── order.ts
+    └── prisma-plugin.d.ts

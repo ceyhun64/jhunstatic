@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ceyhun Türkmen – Full Stack Developer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        font-size: 9pt;
+        line-height: 1.5;
+        color: #0a0a0a;
+        background: #fff;
+        padding: 38px 48px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-bottom: 14px;
+        border-bottom: 2.5px solid #0a0a0a;
+        margin-bottom: 20px;
+        gap: 24px;
+      }
+      .header-left h1 {
+        font-size: 26pt;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        line-height: 1;
+        color: #0a0a0a;
+      }
+      .header-left .tagline {
+        font-size: 10.5pt;
+        font-weight: 600;
+        color: #333;
+        margin-top: 5px;
+        letter-spacing: 0.5px;
+      }
+      .header-right {
+        text-align: right;
+        font-size: 8.5pt;
+        line-height: 1.85;
+        color: #222;
+        white-space: nowrap;
+      }
+      .header-right a {
+        color: #0a0a0a;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .header-right a:hover {
+        text-decoration: underline;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5px;
+        white-space: nowrap;
+      }
+      .contact-icon {
+        font-size: 9pt;
+      }
+      h2 {
+        font-size: 9.5pt;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        color: #0a0a0a;
+        border-bottom: 2px solid #0a0a0a;
+        padding-bottom: 4px;
+        margin-bottom: 10px;
+        margin-top: 17px;
+      }
+      .summary p {
+        font-size: 9pt;
+        color: #111;
+        line-height: 1.65;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px 28px;
+      }
+      .skill-row {
+        display: flex;
+        gap: 5px;
+        font-size: 8pt;
+        align-items: baseline;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 2px 0;
+      }
+      .skill-label {
+        font-weight: 800;
+        white-space: nowrap;
+        min-width: 105px;
+        color: #0a0a0a;
+        flex-shrink: 0;
+      }
+      .skill-value {
+        color: #333;
+      }
+      .exp-item {
+        margin-bottom: 16px;
+      }
+      .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 1px;
+        gap: 12px;
+      }
+      .exp-title {
+        font-weight: 800;
+        font-size: 9.5pt;
+        color: #0a0a0a;
+      }
+      .exp-badge {
+        font-size: 7.5pt;
+        font-weight: 700;
+        color: #333;
+        white-space: nowrap;
+        background: #e8e8e8;
+        padding: 1px 7px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        letter-spacing: 0.3px;
+      }
+      .exp-sub {
+        font-size: 8pt;
+        color: #444;
+        margin-bottom: 5px;
+        font-style: italic;
+        font-weight: 500;
+      }
+      ul.exp-bullets {
+        padding-left: 16px;
+        margin: 5px 0 6px;
+      }
+      ul.exp-bullets li {
+        margin-bottom: 4px;
+        font-size: 8.5pt;
+        line-height: 1.45;
+        color: #111;
+      }
+      ul.exp-bullets li strong {
+        font-weight: 800;
+        color: #0a0a0a;
+      }
+      .tech-stack {
+        margin-top: 5px;
+        font-size: 7.5pt;
+        color: #333;
+      }
+      .tech-stack .label {
+        font-weight: 800;
+        color: #0a0a0a;
+        margin-right: 4px;
+      }
+      .tech-tag {
+        display: inline-block;
+        background: #ebebeb;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 0px 5px;
+        margin: 1px 2px 1px 0;
+        font-size: 7.5pt;
+        color: #111;
+        font-weight: 600;
+      }
+      .project-item {
+        margin-bottom: 9px;
+      }
+      .project-header {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 2px;
+      }
+      .project-name {
+        font-weight: 800;
+        font-size: 9pt;
+        color: #0a0a0a;
+      }
+      .project-name a {
+        color: #0a0a0a;
+        text-decoration: none;
+      }
+      .project-name a:hover {
+        text-decoration: underline;
+      }
+      .project-tech {
+        font-size: 7.5pt;
+        color: #555;
+        font-weight: 600;
+      }
+      .project-desc {
+        font-size: 8.5pt;
+        color: #222;
+        line-height: 1.45;
+      }
+      .edu-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 8.5pt;
+        margin-bottom: 3px;
+        align-items: baseline;
+      }
+      .edu-degree {
+        font-weight: 800;
+        color: #0a0a0a;
+      }
+      .cert-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 20px;
+        font-size: 8.5pt;
+        color: #222;
+      }
+      .cert-item::before {
+        content: "✓ ";
+        color: #333;
+        font-weight: 800;
+      }
+      @media print {
+        body {
+          padding: 0;
+        }
+        @page {
+          margin: 1cm;
+        }
+        .exp-badge,
+        .tech-tag {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <h1>Ceyhun Türkmen</h1>
+        <div class="tagline">
+          Full Stack Developer &nbsp;·&nbsp; Next.js · ASP.NET Core · Node.js ·
+          PostgreSQL · MySQL
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <a href="tel:+905541496377">+90 554 149 6377</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉</span>
+          <a href="mailto:ceyhunturkmen4@gmail.com">ceyhunturkmen4@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🔗</span>
+          <a
+            href="https://www.linkedin.com/in/ceyhun-türkmen-14882a26a"
+            target="_blank"
+            >linkedin.com/in/ceyhun-türkmen</a
+          >
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">⌨</span>
+          <a href="https://github.com/ceyhun64" target="_blank"
+            >github.com/ceyhun64</a
+          >
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🌐</span>
+          <a href="https://jhun.com.tr/tr" target="_blank">jhun.com.tr</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <h2>Profil</h2>
+      <p>
+        <strong>Next.js, ASP.NET Core ve Node.js</strong> ekosistemlerinde eş
+        zamanlı yetkinliğe sahip,
+        <strong>8+ canlı ticari platform</strong> tasarlayıp deploy etmiş Full
+        Stack Developer. E-ticaret, kurumsal SaaS ve eğitim teknolojisi
+        alanlarında; ödeme altyapısı (iyzico), gerçek zamanlı bildirim
+        (SignalR), background job servisleri ve Redis önbellekleme gibi
+        <strong>kritik sistem bileşenlerini production ortamında</strong>
+        bağımsız olarak geliştirmiştir. TAV Güvenlik gibi kurumsal projelerde
+        interaktif sınav motoru, otomatik sertifika üretimi ve güvenlik odaklı
+        kimlik doğrulama (RBAC + TOTP/2FA) sistemleri inşa etmiş; e-ticaret
+        projelerinde Meta CAPI server-side analitik entegrasyonu ve canvas
+        tabanlı ürün kişiselleştirme araçları gibi
+        <strong>yüksek iş değeri taşıyan özellikler</strong> sunmuştur.
+        Gereksinim analizinden CI/CD deployment'a kadar yazılım yaşam döngüsünü
+        baştan sona yönetir; tüm projelerde
+        <strong>Lighthouse 95+, SEO 100/100</strong> performans hedeflerini
+        tutarlı biçimde karşılamıştır.
+      </p>
+    </div>
+
+    <div>
+      <h2>Teknik Yetkinlikler</h2>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-label">Frontend</span>
+          <span class="skill-value"
+            >React, Next.js (SSR/SSG/ISR), TypeScript, Redux Toolkit, Tailwind
+            CSS, Bootstrap, shadcn/ui, Framer Motion, GSAP</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend</span>
+          <span class="skill-value"
+            >ASP.NET Core, Node.js, Express.js, RESTful API, SignalR, JWT, RBAC,
+            TOTP/2FA, IHostedService</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Veritabanı</span>
+          <span class="skill-value"
+            >PostgreSQL, MongoDB, MySQL · EF Core, Prisma, Sequelize, Mongoose ·
+            Repository/UoW Pattern</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">DevOps &amp; Altyapı</span>
+          <span class="skill-value"
+            >Docker, Docker Compose, CI/CD (GitHub Actions), Nginx, Linux, VPS,
+            PM2, Redis</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Diller</span>
+          <span class="skill-value"
+            >TypeScript, JavaScript (ES6+), C#, C, C++</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Entegrasyonlar</span>
+          <span class="skill-value"
+            >iyzico, Twilio SMS, SendGrid, Cloudinary, Horoz Kargo, Meta CAPI,
+            Google Analytics, Nodemailer</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">AI &amp; Test</span>
+          <span class="skill-value"
+            >Anthropic Claude API, Google Gemini, Prompt Engineering · xUnit,
+            Moq, Jest, Supertest</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Mimari &amp; Diğer</span>
+          <span class="skill-value"
+            >Clean Architecture, SOLID, Rate Limiting, Health Checks, i18n
+            (next-intl), Serilog, FluentValidation, PDF/DOCX üretimi</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Performans &amp; SEO</span>
+          <span class="skill-value"
+            >Core Web Vitals, WebP/AVIF, Lazy Loading, Code Splitting, JSON-LD
+            Structured Data, Technical SEO, Sitemap/robots.txt</span
+          >
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Güvenlik</span>
+          <span class="skill-value"
+            >bcrypt, HttpOnly JWT, KVKK/GDPR, Helmet.js, GeoIP Session
+            Doğrulama, Signed Cloudinary Upload, Zod Validasyon</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Deneyim</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Freelance Full Stack Developer</span>
+          <span class="exp-badge">Uzaktan &nbsp;|&nbsp; 2024 – Günümüz</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>
+            E-ticaret, kurumsal eğitim ve pazaryeri kategorilerinde
+            <strong>8+ yayına hazır ticari platform</strong> tasarlayarak
+            geliştirdi ve deploy etti.
+          </li>
+          <li>
+            PostgreSQL/MySQL index stratejileri ve sorgu optimizasyonuyla
+            backend yanıt sürelerini iyileştirdi; Serilog yapılandırılmış
+            loglama altyapısı kurarak hata takibini sistematik hale getirdi.
+          </li>
+          <li>
+            <strong>SignalR</strong> ile gerçek zamanlı bildirim sistemi,
+            <strong>Redis</strong> önbellekleme ve
+            <strong>IHostedService</strong> background job'ları uygulayarak
+            ölçeklenebilir backend mimarileri kurdu.
+          </li>
+          <li>
+            Meta Conversions API (CAPI) ile server-side reklam takibi, Horoz
+            Kargo lojistik entegrasyonu ve iyzico ödeme altyapısını uçtan uca
+            geliştirdi.
+          </li>
+          <li>
+            Bionluk platformunda <strong>Parlayan Yıldızlar</strong> ve
+            <strong>En Sevilen Freelancerlar</strong> listelerine girerek
+            müşteri memnuniyetinde öne çıktı.
+          </li>
+        </ul>
+        <div class="tech-stack">
+          <span class="label">Core Stack:</span>
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">ASP.NET Core</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Prisma</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Nginx</span>
+          <span class="tech-tag">VPS</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title"
+            >TAV Güvenlik – Kurumsal Eğitim ve Sınav Platformu
+            (TavAkademi)</span
+          >
+          <span class="exp-badge">Kurumsal &nbsp;|&nbsp; 2025</span>
+        </div>
+        <div class="exp-sub">
+          TAV Özel Güvenlik Hizmetleri &nbsp;·&nbsp; Havalimanı Güvenlik
+          Personeli Dijital Eğitim Altyapısı
+        </div>
+        <ul class="exp-bullets">
+          <li>
+            Yönetici / Eğitmen / Personel rolleri için JWT tabanlı RBAC ve
+            <strong>Google Authenticator entegrasyonuyla TOTP/2FA</strong>
+            uygulayarak kurumsal güvenlik gereksinimlerini karşıladı;
+            <strong>GeoIP tabanlı session doğrulama</strong> ile güvenliği
+            güçlendirdi.
+          </li>
+          <li>
+            <strong
+              >Poligon editörüyle nesne işaretlemeli bagaj denetim
+              simülasyonu</strong
+            >
+            (X-Ray görüntü araçları: filtre, negatif, katman birleştirme) içeren
+            interaktif sınav modülleri geliştirdi.
+          </li>
+          <li>
+            <strong>Otomatik sertifika üretimi</strong> (DOCX template engine +
+            PDF-lib + QR kod), Puppeteer tabanlı browser automation ve Excel
+            toplu kullanıcı aktarımı ile eğitim operasyonlarını büyük ölçüde
+            otomatize etti.
+          </li>
+          <li>
+            Teorik, görsel ve karma sınav tiplerini destekleyen soru havuzu
+            yönetim motoru, sınav güvenliği (tam ekran zorunluluğu, sekme
+            değiştirme tespiti) ve Recharts ile performans raporlama modülü
+            kurdu.
+          </li>
+        </ul>
+        <div class="tech-stack">
+          <span class="label">Stack:</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Redux Toolkit</span>
+          <span class="tech-tag">Vite</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Express.js</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Sequelize</span>
+          <span class="tech-tag">JWT</span>
+          <span class="tech-tag">Speakeasy (TOTP)</span>
+          <span class="tech-tag">Puppeteer</span>
+          <span class="tech-tag">PDF-lib</span>
+          <span class="tech-tag">Docxtemplater</span>
+          <span class="tech-tag">Redis</span>
+          <span class="tech-tag">GeoIP</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">E-Ticaret Platformları</span>
+          <span class="exp-badge">6+ Aktif Ticari Proje</span>
+        </div>
+        <div class="exp-sub">
+          İşPool &nbsp;·&nbsp; BalkoLüx &nbsp;·&nbsp; Moda Perde &nbsp;·&nbsp;
+          NowArt Plicell &nbsp;·&nbsp; RosallieBaby &nbsp;·&nbsp; BarScarf
+        </div>
+        <ul class="exp-bullets">
+          <li>
+            Ürün &amp; sipariş yönetimi, admin paneli ve
+            <strong>iyzico ödeme entegrasyonu</strong> (taksit desteği,
+            sandbox/production) ile güvenli ödeme altyapısını uçtan uca
+            geliştirdi.
+          </li>
+          <li>
+            <strong>Meta Conversions API (server-side)</strong> ile reklam
+            dönüşüm takibi, Google Analytics 4 ve JSON-LD yapılandırılmış veri
+            ile SEO altyapısını kurdu; dinamik sitemap ve robots.txt üretimi
+            sağladı.
+          </li>
+          <li>
+            <strong>Horoz Kargo</strong> lojistik API entegrasyonu ile gerçek
+            zamanlı kargo takip sistemi;
+            <strong>canvas tabanlı ürün kişiselleştirme aracı</strong>
+            (sürükle-bırak, katman yönetimi, görsel export) geliştirdi.
+          </li>
+          <li>
+            Türkiye'ye özel il/ilçe/mahalle kademeli adres sistemi, TC kimlik
+            doğrulama ve KVKK uyumlu çerez yönetimi ile yerelleştirme
+            gereksinimlerini karşıladı.
+          </li>
+          <li>
+            Next.js SSR ve görsel optimizasyonu (WebP/AVIF, lazy loading, code
+            splitting) ile Core Web Vitals hedeflerinin altına indi;
+            <strong>Lighthouse 95+ skoru</strong> elde etti.
+          </li>
+        </ul>
+        <div class="tech-stack">
+          <span class="label">Stack:</span>
+          <span class="tech-tag">Next.js 15</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Prisma</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">NextAuth.js</span>
+          <span class="tech-tag">Cloudinary</span>
+          <span class="tech-tag">iyzico</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Vercel</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Bulursa – Freelance Pazaryeri Platformu</span>
+          <span class="exp-badge">
+            Ekip Projesi &nbsp;|&nbsp; 2024 – Devam Ediyor</span
+          >
+        </div>
+        <ul class="exp-bullets">
+          <li>
+            Agile (Scrum) metodolojisiyle sprint bazlı geliştirme sürecine
+            katıldı; görev planlama ve iteratif teslim modeliyle ilerledi.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <h2>Öne Çıkan Projeler</h2>
+
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name"
+            ><a href="https://jhun.com.tr/tr" target="_blank"
+              >Jhun.com.tr – AI Asistan Destekli Çok Dilli Portfolyo</a
+            ></span
+          >
+          <span class="project-tech"
+            >Next.js · SSG · Anthropic Claude + Google Gemini · next-intl
+            (TR/EN)</span
+          >
+        </div>
+        <div class="project-desc">
+          Kişisel kurumsal portfolyo ve blog platformu.
+          <strong>next-intl</strong> ile tam TR/EN çift dil desteği, Anthropic
+          Claude API + Google Gemini fallback entegrasyonuyla ziyaretçilerin CV,
+          projeler ve deneyim hakkındaki sorularını gerçek zamanlı yanıtlayan AI
+          asistan; keyword tabanlı hızlı yanıt + LLM fallback mimarisi;
+          Lighthouse 100/100 SEO skoru.
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name"
+            ><a href="https://github.com/ceyhun64/reservation" target="_blank"
+              >Universal Appointment System – Çok Kiracılı Randevu API</a
+            ></span
+          >
+          <span class="project-tech"
+            >ASP.NET Core · C# · PostgreSQL · EF Core · Redis · SignalR · Docker
+            · xUnit</span
+          >
+        </div>
+        <div class="project-desc">
+          Sağlık, güzellik, eğitim ve hukuk sektörlerine yönelik ölçeklenebilir,
+          çok kiracılı randevu yönetim sistemi. Provider / Receiver / Business /
+          Admin rolleriyle JWT/RBAC,
+          <strong>SignalR ile gerçek zamanlı bildirimler</strong>,
+          <strong>Redis önbellekleme ve SignalR backplane</strong>,
+          <strong>IHostedService SMS reminder background job</strong>, Twilio
+          SMS + SendGrid e-posta entegrasyonu, built-in .NET 8 rate limiting,
+          PostgreSQL + Redis health check endpoint'leri. Swagger ile tam
+          dokümante edilmiş RESTful API; xUnit &amp; Moq birim/entegrasyon
+          testleri; GitHub Actions CI/CD pipeline.
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name"
+            >İşPool – İş Güvenliği E-Ticaret Platformu</span
+          >
+          <span class="project-tech"
+            >Next.js · Prisma · PostgreSQL · iyzico · Cloudinary · Canvas Design
+            Tool</span
+          >
+        </div>
+        <div class="project-desc">
+          KKD ve iş güvenliği ekipmanları için B2C + B2B platformu.
+          <strong>Canvas tabanlı ürün kişiselleştirme aracı</strong>
+          (react-rnd sürükle-bırak, katman yönetimi, html-to-image export), AI
+          destekli arka plan kaldırma aracı (remove-bg API), Horoz Kargo
+          lojistik entegrasyonu ve özel üretim sipariş akışı.
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">VANET Siber Saldırı Simülatörü</span>
+          <span class="project-tech">OMNeT++ · SUMO · C++</span>
+        </div>
+        <div class="project-desc">
+          Mezuniyet projesi — araçsal ağlarda (VANET) DoS, mesaj kurcalama ve
+          kimlik sahteciliği gibi siber saldırıları modelleyen akademik
+          simülasyon.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Eğitim</h2>
+      <div class="edu-row">
+        <span
+          ><span class="edu-degree">Bilgisayar Mühendisliği, Lisans</span>
+          &nbsp;—&nbsp; İskenderun Teknik Üniversitesi</span
+        >
+        <span style="color: #444; font-size: 8pt; font-weight: 600"
+          >2020 – 2024</span
+        >
+      </div>
+    </div>
+
+    <div>
+      <h2>Sertifikalar ve Kurslar</h2>
+      <div class="cert-grid">
+        <div class="cert-item">Full Stack Development Bootcamp</div>
+        <div class="cert-item">İleri Seviye React ve Next.js</div>
+        <div class="cert-item">Prisma ve SQL İleri Veritabanı Yönetimi</div>
+      </div>
+    </div>
+
+    <div>
+      <h2>Diller</h2>
+      <div style="font-size: 8.5pt">
+        <strong>Türkçe</strong> — Anadil &nbsp;|&nbsp;
+        <strong>İngilizce</strong> — B2 (Teknik dökümantasyon, profesyonel
+        yazışma ve akıcı mesleki iletişim)
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "blog_001",
+    "title": "Blog Başlığı (TR)",
+    "summary": "Kısa özet Türkçe",
+    "description": "Blog içeriği Türkçe. HTML veya Markdown.",
+    "titleEng": "Blog Title (EN)",
+    "summaryEng": "Short summary English",
+    "descriptionEng": "Blog content English.",
+    "url": "blog-url-slug",
+    "image": "/blog/cover.webp",
+    "createdAt": "2024-07-01T00:00:00.000Z",
+    "updatedAt": "2024-07-01T00:00:00.000Z"
+  }
+]
