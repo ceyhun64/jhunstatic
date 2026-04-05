@@ -120,7 +120,7 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
                   '[&_[data-rmiz-modal-overlay="visible"]]:bg-black/60',
                 )}
               >
-                <div className="relative w-full aspect-video lg:aspect-[16/9] rounded-xl overflow-hidden">
+                <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden">
                   <Image
                     src={mainImage}
                     alt={displayTitle}
@@ -375,8 +375,6 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
                 </span>
               </code>
             </pre>
-
-          
 
             <div className="hidden lg:flex space-x-6 mt-2 md:mt-8 p-4 md:p-0">
               <a
