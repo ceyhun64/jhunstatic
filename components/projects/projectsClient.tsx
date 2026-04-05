@@ -16,7 +16,7 @@ import {
 import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
 import { TextReveal } from "../ui/shadcn-io/text-reveal";
 import { ProjectWithTechnologies } from "@/lib/staticData";
-
+//commit işlemek için yapıldı, silinebilir
 type Props = {
   dict: any;
   locale: "tr" | "en";
