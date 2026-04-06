@@ -29,7 +29,6 @@
     "createdAt": "2025-11-18T00:00:00.000Z",
     "updatedAt": "2026-01-02T00:00:00.000Z"
   },
-
   {
     "id": "proj_003",
     "title": "İşPool",
@@ -146,7 +145,6 @@
     "createdAt": "2025-11-18T00:00:00.000Z",
     "updatedAt": "2025-11-22T00:00:00.000Z"
   },
-
   {
     "id": "proj_007",
     "title": "Rosallie Baby",
@@ -242,5 +240,36 @@
     ],
     "createdAt": "2024-06-01T00:00:00.000Z",
     "updatedAt": "2024-06-01T00:00:00.000Z"
+  },
+  {
+    "id": "proj_009",
+    "title": "Rezervo",
+    "summary": "Her sektöre uygun çok kiracılı randevu yönetim sistemi.",
+    "description": "Rezervo, sağlık, güzellik, eğitim, fitness, hukuk ve daha pek çok sektör için tasarlanmış ölçeklenebilir ve çok kiracılı bir randevu yönetim platformudur. ASP.NET Core Web API backend, JWT tabanlı kimlik doğrulama ve PostgreSQL kalıcı depolama üzerine inşa edilmiştir. Receiver (Müşteri), Provider (Hizmet Sağlayıcı), Business (İşletme) ve Admin olmak üzere dört farklı role özgü arayüz sunulmaktadır. Provider'lar zaman dilimi oluşturabilir, toplu slot ekleyebilir; Receiver'lar ise takvim görünümüyle kolayca randevu alabilmektedir. Redis; 2FA geçici token'ları (TOTP) ve oturum verisi için önbellekleme katmanı olarak kullanılmaktadır. SignalR ile gerçek zamanlı bildirimler (randevu oluşturma, onaylama, iptal) anlık olarak ilgili taraflara iletilmektedir. Yatay ölçekleme senaryolarında SignalR için Redis backplane desteği mevcuttur. ReminderBackgroundService ile yaklaşan randevular için otomatik SMS hatırlatmaları gönderilmektedir. Twilio SMS ve SendGrid e-posta entegrasyonları tüm randevu olaylarını (oluşturma, durum değişikliği, iptal, tamamlama) kapsamaktadır. FluentValidation ile DTO doğrulama, Serilog ile yapılandırılmış istek loglama ve GlobalExceptionMiddleware ile merkezi hata yönetimi uygulanmaktadır. .NET 8 yerleşik rate limiting; genel API için 60 istek/dk, kimlik doğrulama endpoint'leri için 10 istek/dk şeklinde yapılandırılmıştır. /health endpoint'i üzerinden PostgreSQL ve Redis sağlık kontrolü yapılmakta; Kubernetes probe'ları ve load balancer'lar için hazır durumdadır. Repository & Unit-of-Work deseni, xUnit & Moq ile birim ve entegrasyon testleri ve DataSeeder ile otomatik örnek veri yüklemesi desteklenmektedir. Docker Compose ile tüm servisler (PostgreSQL + Redis + API) tek komutla ayağa kaldırılmaktadır. Next.js 14 (App Router) tabanlı web frontend; JWT'yi HttpOnly cookie ile yönetmekte, rol bazlı dashboard'lar, takvim görünümü ve @microsoft/signalr paketi üzerinden gerçek zamanlı bildirimler sunmaktadır. ASP.NET Core Web API (.NET 8), Entity Framework Core, PostgreSQL ve Redis altyapısıyla geliştirilmiştir.",
+    "titleEng": "Rezervo",
+    "summaryEng": "Scalable multi-tenant appointment management system for any industry.",
+    "descriptionEng": "Reservation is a scalable, multi-tenant appointment management platform designed for any industry — healthcare, beauty, education, fitness, legal services, and more. The backend is an ASP.NET Core Web API built on JWT-based authentication and PostgreSQL persistence. Four role-specific interfaces serve Receiver, Provider, Business, and Admin users. Providers can create time slots and bulk-add availability; Receivers book appointments through a calendar view. Redis serves as the caching layer for 2FA temporary tokens (TOTP) and session data. SignalR delivers real-time notifications (appointment created, confirmed, cancelled) instantly to relevant parties, with Redis backplane support for horizontal scaling. ReminderBackgroundService automatically sends SMS reminders for upcoming appointments. Twilio SMS and SendGrid email integrations cover all appointment events: creation, status changes, cancellations, and completions. FluentValidation handles DTO validation, Serilog provides structured request logging, and GlobalExceptionMiddleware manages centralized error handling. .NET 8's built-in rate limiting is configured at 60 requests/min for general API endpoints and 10 requests/min for authentication routes. The /health endpoint monitors PostgreSQL and Redis status, ready for Kubernetes probes and load balancers. Repository & Unit-of-Work pattern, xUnit & Moq unit and integration tests, and DataSeeder for automatic sample data loading are all included. Docker Compose brings up all services (PostgreSQL + Redis + API) with a single command. The Next.js 14 (App Router) web frontend manages JWT via HttpOnly cookies and provides role-based dashboards, a calendar view, and real-time notifications via the @microsoft/signalr package. Built on ASP.NET Core Web API (.NET 8), Entity Framework Core, PostgreSQL, and Redis.",
+    "url": "https://reservation-gray-omega.vercel.app/",
+    "image": "/projects/rezervo/main.png",
+    "demoUrl": null,
+    "githubUrl": "https://github.com/ceyhun64/reservation",
+    "subImage1": "/projects/rezervo/sub1.png",
+    "subImage2": "/projects/rezervo/sub2.png",
+    "subImage3": "/projects/rezervo/sub3.png",
+    "subImage4": "/projects/rezervo/sub4.png",
+    "subImage5": "/projects/rezervo/sub5.png",
+    "technologies": [
+      "tech_026",
+      "tech_027",
+      "tech_014",
+      "tech_020",
+      "tech_012",
+      "tech_017",
+      "tech_028",
+      "tech_029",
+      "tech_019"
+    ],
+    "createdAt": "2025-07-01T00:00:00.000Z",
+    "updatedAt": "2026-04-06T00:00:00.000Z"
   }
 ]
