@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Space_Grotesk } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const mainFont = Orbitron({
@@ -18,19 +19,19 @@ const bodyFont = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jhun.com.tr"),
-  title: "Jhun | Web Gelistirme & Dijital Çözümler",
-  description:
-    "Kurumsal web siteleri, e-ticaret, portföy ve özel dijital çözümler ile markanızı dijitalde büyütün.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const h = await headers();
+  const locale = h.get("x-locale") ?? "tr";
+
   return (
     <html
-      lang="tr"
+      lang={locale}
       suppressHydrationWarning
       className={`${mainFont.variable} ${bodyFont.variable}`}
     >

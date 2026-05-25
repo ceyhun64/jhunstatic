@@ -22,22 +22,24 @@ interface SitemapEntry {
   alternates: { languages: Record<string, string> };
 }
 
+const staticPages: { path: string; priority: number; freq: ChangeFreq }[] = [
+  { path: "", priority: 1.0, freq: "weekly" },
+  { path: "/projects", priority: 0.9, freq: "weekly" },
+  { path: "/blog", priority: 0.8, freq: "weekly" },
+  { path: "/about", priority: 0.7, freq: "monthly" },
+  { path: "/contact", priority: 0.7, freq: "monthly" },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: SitemapEntry[] = [];
   const now = new Date();
 
-  const staticPages: { path: string; priority: number; freq: ChangeFreq }[] = [
-    { path: "", priority: 1.0, freq: "weekly" },
-    { path: "/projects", priority: 0.9, freq: "weekly" },
-    { path: "/blog", priority: 0.8, freq: "weekly" },
-    { path: "/about", priority: 0.7, freq: "monthly" },
-    { path: "/contact", priority: 0.7, freq: "monthly" },
-  ];
-
   for (const { path, priority, freq } of staticPages) {
-    const languages = Object.fromEntries(
-      LOCALES.map((l) => [l, `${BASE_URL}/${l}${path}`]),
-    );
+    const languages: Record<string, string> = {
+      "tr-TR": `${BASE_URL}/tr${path}`,
+      "en-US": `${BASE_URL}/en${path}`,
+      "x-default": `${BASE_URL}/tr${path}`,
+    };
     for (const locale of LOCALES) {
       entries.push({
         url: `${BASE_URL}/${locale}${path}`,
@@ -50,9 +52,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const project of projects) {
-    const languages = Object.fromEntries(
-      LOCALES.map((l) => [l, `${BASE_URL}/${l}/projects/${project.id}`]),
-    );
+    const languages: Record<string, string> = {
+      "tr-TR": `${BASE_URL}/tr/projects/${project.id}`,
+      "en-US": `${BASE_URL}/en/projects/${project.id}`,
+      "x-default": `${BASE_URL}/tr/projects/${project.id}`,
+    };
     for (const locale of LOCALES) {
       entries.push({
         url: `${BASE_URL}/${locale}/projects/${project.id}`,
@@ -65,9 +69,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const blog of blogs) {
-    const languages = Object.fromEntries(
-      LOCALES.map((l) => [l, `${BASE_URL}/${l}/blog/${blog.id}`]),
-    );
+    const languages: Record<string, string> = {
+      "tr-TR": `${BASE_URL}/tr/blog/${blog.id}`,
+      "en-US": `${BASE_URL}/en/blog/${blog.id}`,
+      "x-default": `${BASE_URL}/tr/blog/${blog.id}`,
+    };
     for (const locale of LOCALES) {
       entries.push({
         url: `${BASE_URL}/${locale}/blog/${blog.id}`,
