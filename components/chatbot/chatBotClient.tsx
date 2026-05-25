@@ -8,6 +8,7 @@ import ChatInput from "./chatInput";
 import TypingIndicator from "./typingIndıcator";
 import keywords from "@/data/keywords.json";
 import responses from "@/data/responses.json";
+import { toast } from "sonner";
 
 // types/chatbot.ts
 export interface Message {
@@ -264,7 +265,7 @@ export default function ChatBotClient({
   const generateSmartResponse = async (userInput: string): Promise<string> => {
     const input = userInput.toLowerCase();
 
-    // Önce öğrenilmiş cevaplara bak
+    // Önce ögrenilmis cevaplara bak
     const learned = await findLearnedResponse(input);
     if (learned) return `${t.learnedPrefix} ${learned}`;
 
@@ -283,12 +284,12 @@ export default function ChatBotClient({
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const data = await res.json();
-      if (!data.response) throw new Error("Boş yanıt");
+      if (!data.response) throw new Error("Bos yanıt");
 
       return data.response;
     } catch (error) {
       console.error("Gemini API hatası:", error);
-      // Gemini başarısız olursa keyword sisteme fallback
+      // Gemini basarısız olursa keyword sisteme fallback
       const similar = await findSimilarConversation(input);
       if (similar) return `${t.similarPrefix} ${similar}`;
       return getContextualResponse(input, locale);
@@ -400,17 +401,22 @@ export default function ChatBotClient({
     }
   };
 
-  const resetData = async () => {
-    if (confirm(t.resetConfirm)) {
-      try {
-        await storage.delete(`learned_responses_${locale}`);
-        await storage.delete(`conversations_${locale}`);
-        setStats({ learned: 0, conversations: 0, confidence: 0 });
-        alert(t.resetSuccess);
-      } catch (error) {
-        console.error("Data reset error:", error);
-      }
-    }
+  const resetData = () => {
+    toast.warning(t.resetConfirm, {
+      action: {
+        label: "Onayla",
+        onClick: async () => {
+          try {
+            await storage.delete(`learned_responses_${locale}`);
+            await storage.delete(`conversations_${locale}`);
+            setStats({ learned: 0, conversations: 0, confidence: 0 });
+            toast.success(t.resetSuccess);
+          } catch {
+            toast.error("Veri silme basarısız oldu.");
+          }
+        },
+      },
+    });
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -428,8 +434,8 @@ export default function ChatBotClient({
 
   return (
     <div
-      className={`fixed -right-3 px-4 md:px-0 bottom-6 md:right-6 rounded-2xl shadow-2xl z-1000 transition-all duration-300 ${
-        isMinimized ? "w-80 h-16" : "w-96 h-[600px]"
+      className={`fixed right-4 bottom-6 md:right-6 rounded-2xl shadow-2xl z-1000 transition-all duration-300 ${
+        isMinimized ? "w-80 h-16" : "w-88 md:w-96 h-150"
       }`}
       style={{ maxHeight: "calc(100vh - 100px)" }}
     >
@@ -448,8 +454,8 @@ export default function ChatBotClient({
         <>
           <div
             className={`${
-              showStats ? "h-[340px]" : "h-[440px]"
-            } overflow-y-auto p-4 space-y-4 bg-gray-50`}
+              showStats ? "h-85" : "h-110"
+            } overflow-y-auto p-4 space-y-4 bg-background`}
           >
             {chatMessages.map((msg, idx) => (
               <MessageBubble key={idx} message={msg} />

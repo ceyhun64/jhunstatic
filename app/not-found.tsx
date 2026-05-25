@@ -85,7 +85,7 @@ export default function NotFound() {
             Sayfa Bulunamadı
           </h2>
           <p className="text-lg text-slate-400 max-w-md mx-auto">
-            Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.
+            Aradıgınız sayfa tasınmıs, silinmis veya hiç var olmamıs olabilir.
           </p>
         </motion.div>
 
@@ -154,7 +154,7 @@ export default function NotFound() {
             {[
               { label: "Projeler", href: "/tr/projects" },
               { label: "Hakkımda", href: "/tr/about" },
-              { label: "İletişim", href: "/tr/contact" },
+              { label: "Iletisim", href: "/tr/contact" },
             ].map((link, index) => (
               <Link
                 key={index}

@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 export default function SocialSidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
   const whatsappNumber = "+905541496377";
   const whatsappLink = `https://wa.me/${whatsappNumber.replace(/[^\d]/g, "")}`;
 
@@ -59,10 +61,10 @@ export default function SocialSidebar() {
         {isOpen && (
           <motion.div
             className="absolute bottom-16 flex flex-col items-center gap-3"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            exit={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            transition={{ duration: shouldReduceMotion ? 0.15 : 0.4, ease: "easeOut" }}
           >
             {socialIcons.map((icon, index) => (
               <motion.a
@@ -71,36 +73,28 @@ export default function SocialSidebar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={icon.ariaLabel}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.08, duration: 0.4 }}
-                whileHover={{
-                  scale: 1.08,
-                  y: -2,
-                }}
-                whileTap={{ scale: 0.96 }}
+                transition={{ delay: shouldReduceMotion ? 0 : index * 0.08, duration: shouldReduceMotion ? 0.15 : 0.4 }}
+                whileHover={shouldReduceMotion ? {} : { scale: 1.08, y: -2 }}
+                whileTap={shouldReduceMotion ? {} : { scale: 0.96 }}
                 style={{
+                  willChange: "transform",
                   backgroundColor: icon.color,
                   boxShadow: `0 4px 12px ${icon.color}40`,
                 }}
-                className="relative rounded-full backdrop-blur-sm border border-white/20 dark:border-white/10 p-2 
+                className="relative rounded-full backdrop-blur-sm border border-white/20 dark:border-white/10 p-2
                            hover:shadow-2xl transition-shadow duration-300
                            dark:bg-opacity-90"
               >
-                {/* Parlama efekti */}
+                {!shouldReduceMotion && (
                 <motion.span
                   className="absolute inset-0 rounded-full blur-[2px] opacity-15 dark:opacity-20"
                   style={{ backgroundColor: icon.color }}
-                  animate={{
-                    opacity: [0.15, 0.25, 0.15],
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  animate={{ opacity: [0.15, 0.25, 0.15], scale: [1, 1.05, 1] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 />
+                )}
                 <div className="relative rounded-full flex items-center justify-center">
                   <img
                     src={icon.src}
@@ -129,14 +123,17 @@ export default function SocialSidebar() {
                    shadow-md dark:shadow-none
                    transition-all duration-500"
       >
-        <motion.span
-          className="absolute inset-0 rounded-full 
-                     bg-gradient-to-tr from-zinc-200/10 via-zinc-300/10 to-transparent 
-                     dark:from-cyan-400/5 dark:via-blue-600/5 dark:to-transparent 
-                     blur-[2px]"
-          animate={{ rotate: [0, 360] }}
-          transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
-        />
+        {!shouldReduceMotion && (
+          <motion.span
+            className="absolute inset-0 rounded-full
+                       bg-linear-to-tr from-zinc-200/10 via-zinc-300/10 to-transparent
+                       dark:from-cyan-400/5 dark:via-blue-600/5 dark:to-transparent
+                       blur-[2px]"
+            style={{ willChange: "transform" }}
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
+          />
+        )}
 
         <motion.div
           className="relative flex items-center justify-center z-10"

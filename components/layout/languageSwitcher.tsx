@@ -86,7 +86,7 @@ export default function LanguageSwitcher() {
         />
       </motion.div>
 
-      {/* 📱 Mobil versiyonu (tek tuş, toggle ile değişir) */}
+      {/* 📱 Mobil versiyonu (tek tus, toggle ile degisir) */}
       <motion.div
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 200, damping: 15 }}

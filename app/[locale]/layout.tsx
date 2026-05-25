@@ -1,4 +1,3 @@
-// app/[locale]/layout.tsx
 import "../globals.css";
 import ClientLayoutWrapper from "@/components/layout/clientLayoutWrapper";
 import ScrollToTopButton from "@/components/layout/scroll";
@@ -6,21 +5,9 @@ import { Toaster } from "sonner";
 import SocialSidebar from "@/components/layout/socialSidebar";
 import type { Metadata } from "next";
 import Chatbot from "@/components/chatbot/chatBot";
-
-
-// SEÇENEK 1: Orbitron + Space Grotesk (Şu anki)
-import { Orbitron, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/layout/themeProvider";
-const mainFont = Orbitron({
-  subsets: ["latin"],
-  variable: "--font-main",
-  display: "swap",
-});
-const bodyFont = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
+
+const BASE_URL = "https://jhun.com.tr";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -29,20 +16,30 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
 
-  const htmlLang = locale || "tr";
   const ogLocale = locale === "tr" ? "tr_TR" : "en_US";
-  const baseUrl = "https://jhun.com.tr";
-  const canonicalUrl = `${baseUrl}/${locale}`;
-  const ogImageUrl = `${baseUrl}/og-image.webp`;
+  const canonicalUrl = `${BASE_URL}/${locale}`;
+  const ogImageUrl = `${BASE_URL}/og-image.webp`;
 
   const content = {
     tr: {
-      title: "Jhun | Web Geliştirme & Dijital Çözümler",
+      title: "Jhun | Web Gelistirme & Dijital Çözümler",
       description:
         "Kurumsal web siteleri, e-ticaret, portföy ve özel dijital çözümler ile markanızı dijitalde büyütün.",
-      ogTitle: "Jhun | Web Geliştirme Ajansı",
+      ogTitle: "Jhun | Web Gelistirme Ajansı",
       ogDescription:
         "Modern, hızlı ve etkileyici web siteleriyle markanızı dijital dünyada öne çıkarın.",
+      keywords: [
+        "web tasarım",
+        "web gelistirme",
+        "freelance developer",
+        "kurumsal web sitesi",
+        "react developer",
+        "next.js developer",
+        "dijital çözümler",
+        "Ceyhun Türkmen",
+        "full stack developer",
+        "türkiye web ajansı",
+      ],
     },
     en: {
       title: "Jhun | Web Development & Digital Solutions",
@@ -51,35 +48,42 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ogTitle: "Jhun | Web Development Agency",
       ogDescription:
         "Stand out your brand in the digital world with modern, fast and impressive websites.",
+      keywords: [
+        "web design",
+        "web development",
+        "freelance developer",
+        "corporate website",
+        "react developer",
+        "next.js developer",
+        "digital solutions",
+        "Ceyhun Türkmen",
+        "full stack developer",
+        "software engineer",
+      ],
     },
   };
 
-  const currentContent = content[locale as keyof typeof content] || content.tr;
+  const c = content[locale as keyof typeof content] ?? content.tr;
 
   return {
-    metadataBase: new URL(baseUrl),
-    title: currentContent.title,
-    description: currentContent.description,
-    keywords: [
-      "web tasarım",
-      "web geliştirme",
-      "freelance developer",
-      "kurumsal web sitesi",
-      "react developer",
-      "next.js developer",
-      "dijital çözümler",
-    ],
+    metadataBase: new URL(BASE_URL),
+    title: c.title,
+    description: c.description,
+    keywords: c.keywords,
+    authors: [{ name: "Ceyhun Türkmen", url: BASE_URL }],
+    creator: "Ceyhun Türkmen",
+    publisher: "Jhun",
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        tr: `${baseUrl}/tr`,
-        en: `${baseUrl}/en`,
+        tr: `${BASE_URL}/tr`,
+        en: `${BASE_URL}/en`,
       },
     },
 
     openGraph: {
-      title: currentContent.ogTitle,
-      description: currentContent.ogDescription,
+      title: c.ogTitle,
+      description: c.ogDescription,
       url: canonicalUrl,
       siteName: "Jhun",
       images: [
@@ -87,7 +91,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: currentContent.ogTitle,
+          alt: c.ogTitle,
         },
       ],
       locale: ogLocale,
@@ -96,9 +100,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     twitter: {
       card: "summary_large_image",
-      title: currentContent.ogTitle,
-      description: currentContent.ogDescription,
+      title: c.ogTitle,
+      description: c.ogDescription,
       images: [ogImageUrl],
+      creator: "@jhundev",
     },
 
     robots: {
@@ -107,11 +112,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       googleBot: {
         index: true,
         follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
-    },
-
-    other: {
-      language: htmlLang,
     },
   };
 }
@@ -121,57 +124,58 @@ type LayoutProps = {
   params: Promise<{ locale: string }>;
 };
 
-export default async function LocaleLayout({ children }: LayoutProps) {
+export default async function LocaleLayout({ children, params }: LayoutProps) {
+  const { locale } = await params;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Ceyhun Türkmen",
+    url: BASE_URL,
+    sameAs: [
+      "https://github.com/ceyhun64",
+      "https://linkedin.com/in/ceyhun-türkmen-14882a26a",
+    ],
+    jobTitle: "Full-Stack Web Developer",
+    worksFor: { "@type": "Organization", name: "Jhun" },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Usak",
+      addressCountry: "TR",
+    },
+    knowsLanguage: ["tr", "en"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+90-554-149-6377",
+      contactType: "customer service",
+    },
+  };
+
   return (
     <>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          :root {
-            ${
-              mainFont.style.fontFamily
-                ? `--font-main: ${mainFont.style.fontFamily};`
-                : ""
-            }
-            ${
-              bodyFont.style.fontFamily
-                ? `--font-body: ${bodyFont.style.fontFamily};`
-                : ""
-            }
-          }
-          body {
-            font-family: var(--font-body), system-ui, sans-serif;
-          }
-          h1, h2, h3, h4, h5, h6,p,span,button{
-            font-family: var(--font-main), system-ui, sans-serif;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-          }
-        `,
-        }}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <ClientLayoutWrapper locale={locale}>
+          <main>{children}</main>
+          <Chatbot />
+        </ClientLayoutWrapper>
 
-      <div className={`${mainFont.variable} ${bodyFont.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ClientLayoutWrapper>
-            <main>{children}</main>
-            <Chatbot /> {/* ← HER SAYFADA ÇIKAR */}
-          </ClientLayoutWrapper>
-
-          <SocialSidebar />
-          <ScrollToTopButton />
-          <Toaster
-            richColors
-            position="bottom-right"
-            toastOptions={{ style: { zIndex: 9999 } }}
-          />
-        </ThemeProvider>
-      </div>
+        <SocialSidebar />
+        <ScrollToTopButton />
+        <Toaster
+          richColors
+          position="bottom-right"
+          toastOptions={{ style: { zIndex: 9999 } }}
+        />
+      </ThemeProvider>
     </>
   );
 }

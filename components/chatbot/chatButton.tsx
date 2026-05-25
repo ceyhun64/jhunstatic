@@ -68,7 +68,7 @@ export default function ChatButton({
           <span className="text-green-400">●</span>
         </div>
 
-        {/* Ok işareti - Sağa bakacak şekilde konumlandırıldı */}
+        {/* Ok isareti - Saga bakacak sekilde konumlandırıldı */}
         <div className="absolute top-1/2 -right-1 w-2 h-2 bg-gray-900/95 transform rotate-45 -translate-y-1/2 border-r border-t border-white/10" />
       </div>
     </button>

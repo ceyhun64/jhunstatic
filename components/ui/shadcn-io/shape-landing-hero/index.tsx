@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { MagneticButton } from "../magnetic-button";
 import { useTranslations } from "next-intl";
 
-// --- ElegantShape Bileşeni ---
+// --- ElegantShape Bileseni ---
 type ElegantShapeProps = {
   className?: string;
   delay?: number;
@@ -56,7 +56,7 @@ function ElegantShape({
             gradient,
             "shadow-[0_12px_64px_0_rgba(0,0,0,0.25)]",
             "after:absolute after:inset-0 after:rounded-full",
-            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.08),transparent_80%)]"
+            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.08),transparent_80%)]",
           )}
         />
       </motion.div>
@@ -64,7 +64,7 @@ function ElegantShape({
   );
 }
 
-// --- HeroGeometric Bileşeni ---
+// --- HeroGeometric Bileseni ---
 type HeroGeometricProps = {
   className?: string;
   ctaHref?: string;
@@ -101,7 +101,7 @@ export function HeroGeometric({
     <div
       className={cn(
         "relative w-full flex items-center justify-center overflow-hidden bg-linear-to-br from-[#010101] via-[#0d0d0d] to-[#030303] min-h-[80vh] md:min-h-screen",
-        className
+        className,
       )}
     >
       {/* Soft blur layer */}

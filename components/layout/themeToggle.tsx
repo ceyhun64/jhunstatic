@@ -14,14 +14,14 @@ export default function ThemeToggle() {
   React.useEffect(() => {
     setMounted(true);
 
-    // İlk açılışta dark tema ayarla
+    // Ilk açılısta dark tema ayarla
     if (!localStorage.getItem("theme")) {
       setTheme("dark");
     }
   }, [setTheme]);
 
   if (!mounted) {
-    return <div className="h-9 w-9" />; // Boş yer tutucu
+    return <div className="h-9 w-9" />; // Bos yer tutucu
   }
 
   const toggleTheme = () => {
@@ -50,7 +50,7 @@ export default function ThemeToggle() {
           )}
         </motion.div>
       </AnimatePresence>
-      <span className="sr-only">Temayı Değiştir</span>
+      <span className="sr-only">Temayı Degistir</span>
     </Button>
   );
 }

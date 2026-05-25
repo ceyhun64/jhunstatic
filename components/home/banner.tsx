@@ -64,7 +64,7 @@ const Banner = async ({ locale }: Props) => {
             </p>
           </div>
 
-          {/* BİLGİ / CTA BÖLÜMÜ */}
+          {/* BILGI / CTA BÖLÜMÜ */}
           <div className="text-center mb-16">
             <h2 className="text-xl md:text-4xl font-semibold text-gray-200 dark:text-gray-800 transition-colors duration-300">
               {dict.tech_title}

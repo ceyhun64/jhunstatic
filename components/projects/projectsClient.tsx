@@ -16,7 +16,7 @@ import {
 import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
 import { TextReveal } from "../ui/shadcn-io/text-reveal";
 import { ProjectWithTechnologies } from "@/lib/staticData";
-//commit işlemek için yapıldı, silinebilir
+//commit islemek için yapıldı, silinebilir
 type Props = {
   dict: any;
   locale: "tr" | "en";
@@ -37,7 +37,7 @@ export default function ProjectsClient({ dict, locale, projects }: Props) {
         flickerChance={0.1}
       />
 
-      {/* BAŞLIK */}
+      {/* BASLIK */}
       <div className="relative w-full flex flex-col justify-center items-center text-center z-10 mt-5">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function ProjectsClient({ dict, locale, projects }: Props) {
         </motion.p>
       </div>
 
-      {/* İçerik */}
+      {/* Içerik */}
       <div className="max-w-7xl mx-auto text-center relative z-10 font-mono">
         {projects.length === 0 && (
           <div className="text-gray-500 dark:text-gray-400 mt-10">

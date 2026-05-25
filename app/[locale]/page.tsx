@@ -5,10 +5,9 @@ import About from "@/components/home/about";
 import ContactSection from "@/components/home/contact";
 import Footer from "@/components/layout/footer";
 import Gallery from "@/components/home/gallery";
-import Scroll from "@/components/layout/scroll";
 
 type Props = {
-  params: { locale: "tr" | "en" };
+  params: Promise<{ locale: "tr" | "en" }>;
 };
 
 export default async function Home({ params }: Props) {
@@ -17,13 +16,12 @@ export default async function Home({ params }: Props) {
   return (
     <div>
       <Navbar locale={locale} />
-        <Heroes locale={locale} />
-        <Banner locale={locale} />
-        <Gallery locale={locale} />
-        <About locale={locale} />
-        <ContactSection locale={locale} />
-        <Footer locale={locale} />
-      <Scroll />
+      <Heroes locale={locale} />
+      <Banner locale={locale} />
+      <Gallery locale={locale} />
+      <About locale={locale} />
+      <ContactSection locale={locale} />
+      <Footer locale={locale} />
     </div>
   );
 }

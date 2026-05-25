@@ -20,7 +20,7 @@ const TechnologySchema = new Schema<ITechnology>(
     yoe: { type: Number, required: true },
     color: { type: String, required: true },
 
-    // Çoka Çok İlişki: Bir teknoloji birden fazla projede kullanılabilir
+    // Çoka Çok Iliski: Bir teknoloji birden fazla projede kullanılabilir
     projects: [
       {
         type: Schema.Types.ObjectId,
@@ -32,7 +32,7 @@ const TechnologySchema = new Schema<ITechnology>(
   {
     timestamps: true,
     collection: "Technology",
-  }
+  },
 );
 
 // Indexes for better query performance

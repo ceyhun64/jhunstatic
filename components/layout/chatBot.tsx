@@ -79,7 +79,7 @@ export default function PortfolioChatbot() {
           confidence: Math.round(avgConfidence * 100),
         });
       } catch (error) {
-        console.log("İstatistikler yükleniyor...");
+        console.log("Istatistikler yükleniyor...");
       }
     };
 
@@ -88,7 +88,7 @@ export default function PortfolioChatbot() {
     }
   }, [isOpen, messages]);
 
-  // Karşılama mesajı
+  // Karsılama mesajı
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       setTimeout(() => {
@@ -96,7 +96,7 @@ export default function PortfolioChatbot() {
           {
             role: "assistant",
             content:
-              "Merhaba! Ben Ceyhun'un Akıllı Asistanıyım! 👋\n\nSizinle her konuşmadan öğreniyor ve gelişiyorum. Web geliştirme projeleri, fiyatlandırma, teknolojiler ve daha fazlası hakkında sorularınızı yanıtlayabilirim.\n\nNasıl yardımcı olabilirim?",
+              "Merhaba! Ben Ceyhun'un Akıllı Asistanıyım! 👋\n\nSizinle her konusmadan ögreniyor ve gelisiyorum. Web gelistirme projeleri, fiyatlandırma, teknolojiler ve daha fazlası hakkında sorularınızı yanıtlayabilirim.\n\nNasıl yardımcı olabilirim?",
             timestamp: new Date(),
           },
         ]);
@@ -119,7 +119,7 @@ export default function PortfolioChatbot() {
     setIsLoading(true);
     setIsTyping(true);
 
-    // Konuşma bağlamını güncelle
+    // Konusma baglamını güncelle
     setConversationContext((prev) => [...prev.slice(-5), userInput]);
 
     try {
@@ -136,7 +136,7 @@ export default function PortfolioChatbot() {
 
       setMessages((prev) => [...prev, assistantMessage]);
 
-      // Konuşmayı kaydet ve öğren
+      // Konusmayı kaydet ve ögren
       await saveConversation(userInput, response);
     } catch (error) {
       console.error("Mesaj gönderme hatası:", error);
@@ -144,7 +144,7 @@ export default function PortfolioChatbot() {
         ...prev,
         {
           role: "assistant",
-          content: "Üzgünüm, bir hata oluştu. Lütfen tekrar deneyin.",
+          content: "Üzgünüm, bir hata olustu. Lütfen tekrar deneyin.",
           timestamp: new Date(),
         },
       ]);
@@ -158,7 +158,7 @@ export default function PortfolioChatbot() {
   const generateSmartResponse = async (userInput: string): Promise<string> => {
     const input = userInput.toLowerCase();
 
-    // 1. Öğrenilmiş cevaplara bak
+    // 1. Ögrenilmis cevaplara bak
     const learned = await findLearnedResponse(input);
     if (learned) return `🧠 ${learned}`;
 
@@ -176,12 +176,12 @@ export default function PortfolioChatbot() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
     const data = await res.json();
-    if (!data.response) throw new Error("Boş yanıt");
+    if (!data.response) throw new Error("Bos yanıt");
 
     return data.response;
   };
 
-  // Öğrenilmiş yanıtları ara
+  // Ögrenilmis yanıtları ara
   const findLearnedResponse = async (input: string): Promise<string | null> => {
     try {
       const result = await window.storage.get("learned_responses");
@@ -189,12 +189,12 @@ export default function PortfolioChatbot() {
 
       const learned: LearnedResponse[] = JSON.parse(result.value);
 
-      // En iyi eşleşmeyi bul
+      // En iyi eslesmeyi bul
       let bestMatch = null;
       let bestSimilarity = 0;
 
       for (const item of learned) {
-        // Orijinal soru ve tüm varyasyonlarla karşılaştır
+        // Orijinal soru ve tüm varyasyonlarla karsılastır
         const allQuestions = [item.question, ...item.variations];
 
         for (const q of allQuestions) {
@@ -217,12 +217,12 @@ export default function PortfolioChatbot() {
         return bestMatch.answer;
       }
     } catch (error) {
-      console.log("Öğrenme verisi henüz yok");
+      console.log("Ögrenme verisi henüz yok");
     }
     return null;
   };
 
-  // Benzer konuşmaları bul
+  // Benzer konusmaları bul
   const findSimilarConversation = async (
     input: string,
   ): Promise<string | null> => {
@@ -244,12 +244,12 @@ export default function PortfolioChatbot() {
         return sorted[0].answer;
       }
     } catch (error) {
-      console.log("Henüz konuşma geçmişi yok");
+      console.log("Henüz konusma geçmisi yok");
     }
     return null;
   };
 
-  // Gelişmiş benzerlik hesaplama (Jaccard + Trigram)
+  // Gelismis benzerlik hesaplama (Jaccard + Trigram)
   const calculateSimilarity = (str1: string, str2: string): number => {
     // Jaccard similarity (kelime bazlı)
     const words1 = new Set(str1.split(" ").filter((w) => w.length > 2));
@@ -273,11 +273,11 @@ export default function PortfolioChatbot() {
     const triUnion = tri1.length + tri2.length - triIntersection;
     const trigramScore = triUnion > 0 ? triIntersection / triUnion : 0;
 
-    // İki skorun ortalaması
+    // Iki skorun ortalaması
     return jaccardScore * 0.6 + trigramScore * 0.4;
   };
 
-  // Konuşmayı kaydet
+  // Konusmayı kaydet
   const saveConversation = async (question: string, answer: string) => {
     try {
       const result = await window.storage.get("conversations");
@@ -292,18 +292,18 @@ export default function PortfolioChatbot() {
         context: conversationContext.slice(-3),
       });
 
-      // Son 200 konuşmayı tut
+      // Son 200 konusmayı tut
       const recent = conversations.slice(-200);
       await window.storage.set("conversations", JSON.stringify(recent));
 
-      // Pattern analizi yap ve öğren
+      // Pattern analizi yap ve ögren
       await analyzeAndLearn(question, answer);
     } catch (error) {
-      console.error("Konuşma kaydetme hatası:", error);
+      console.error("Konusma kaydetme hatası:", error);
     }
   };
 
-  // Pattern analizi ve öğrenme
+  // Pattern analizi ve ögrenme
   const analyzeAndLearn = async (question: string, answer: string) => {
     try {
       const result = await window.storage.get("learned_responses");
@@ -325,7 +325,7 @@ export default function PortfolioChatbot() {
       }
 
       if (!existing) {
-        // Yeni öğrenilmiş yanıt ekle
+        // Yeni ögrenilmis yanıt ekle
         learned.push({
           question,
           answer,
@@ -347,18 +347,18 @@ export default function PortfolioChatbot() {
 
       await window.storage.set("learned_responses", JSON.stringify(learned));
     } catch (error) {
-      console.error("Öğrenme hatası:", error);
+      console.error("Ögrenme hatası:", error);
     }
   };
 
-  // Gelişmiş bağlamsal yanıtlar
+  // Gelismis baglamsal yanıtlar
   const getContextualResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
 
     const keywords = {
       price: ["fiyat", "ücret", "maliyet", "kaç para", "ne kadar", "para"],
-      project: ["proje", "portfolio", "çalışma", "örnek", "yaptığın"],
-      contact: ["iletişim", "mail", "ulaş", "e-posta", "telefon", "ara"],
+      project: ["proje", "portfolio", "çalısma", "örnek", "yaptıgın"],
+      contact: ["iletisim", "mail", "ulas", "e-posta", "telefon", "ara"],
       tech: [
         "teknoloji",
         "kullan",
@@ -373,10 +373,10 @@ export default function PortfolioChatbot() {
       design: ["tasarım", "design", "arayüz", "ui", "ux"],
       mobile: ["mobil", "responsive", "telefon", "tablet", "adaptif"],
       maintenance: ["bakım", "güncelleme", "destek", "support", "yardım"],
-      reference: ["referans", "müşteri", "kim", "çalıştın", "firma"],
+      reference: ["referans", "müsteri", "kim", "çalıstın", "firma"],
       payment: ["ödeme", "taksit", "avans", "fatura"],
       greeting: ["merhaba", "selam", "hey", "günaydın", "iyi günler", "naber"],
-      thanks: ["teşekkür", "sağol", "güzel", "harika", "süper"],
+      thanks: ["tesekkür", "sagol", "güzel", "harika", "süper"],
     };
 
     const responses = {
@@ -387,40 +387,40 @@ export default function PortfolioChatbot() {
         "🚀 **Portfolio Projelerim**\n\n✨ E-ticaret platformları (Next.js + Stripe)\n✨ SaaS uygulamaları (React + TypeScript)\n✨ Kurumsal web siteleri\n✨ API entegrasyonları\n✨ Dashboard & Admin panelleri\n\nÖrnek projelerimi görmek ister misiniz?",
 
       contact:
-        "📬 **İletişim Bilgileri**\n\n📧 E-posta: ceyhun@example.com\n📱 Telefon: +90 555 123 4567\n💼 LinkedIn: linkedin.com/in/ceyhun\n\n⏰ Genellikle 24 saat içinde yanıt veriyorum!",
+        "📬 **Iletisim Bilgileri**\n\n📧 E-posta: ceyhun@example.com\n📱 Telefon: +90 555 123 4567\n💼 LinkedIn: linkedin.com/in/ceyhun\n\n⏰ Genellikle 24 saat içinde yanıt veriyorum!",
 
-      tech: "⚡ **Teknoloji Yığınım**\n\n**Frontend:**\n• React, Next.js, TypeScript\n• Tailwind CSS, Framer Motion\n\n**Backend:**\n• Node.js, Express, PostgreSQL\n• REST & GraphQL API\n\n**DevOps:**\n• AWS, Vercel, Docker\n• CI/CD, Git\n\nÖzel bir teknoloji mi arıyorsunuz?",
+      tech: "⚡ **Teknoloji Yıgınım**\n\n**Frontend:**\n• React, Next.js, TypeScript\n• Tailwind CSS, Framer Motion\n\n**Backend:**\n• Node.js, Express, PostgreSQL\n• REST & GraphQL API\n\n**DevOps:**\n• AWS, Vercel, Docker\n• CI/CD, Git\n\nÖzel bir teknoloji mi arıyorsunuz?",
 
-      time: "⏱️ **Teslim Süreleri**\n\n🚀 Landing Page: 1-2 hafta\n🏢 Kurumsal Web: 3-4 hafta\n🛒 E-ticaret: 6-8 hafta\n⚙️ Özel Proje: 8-12 hafta\n\n⚡ Acil projeler için hızlandırılmış teslimat (+%30 ücret) mevcut!",
+      time: "⏱️ **Teslim Süreleri**\n\n🚀 Landing Page: 1-2 hafta\n🏢 Kurumsal Web: 3-4 hafta\n🛒 E-ticaret: 6-8 hafta\n⚙️ Özel Proje: 8-12 hafta\n\n⚡ Acil projeler için hızlandırılmıs teslimat (+%30 ücret) mevcut!",
 
-      seo: "🔍 **SEO Optimizasyonu**\n\n✅ Teknik SEO (meta, schema, sitemap)\n✅ Performans optimizasyonu (90+ Lighthouse)\n✅ Core Web Vitals iyileştirme\n✅ Mobile-first indexing\n✅ Sayfa hızı optimizasyonu\n\nTüm projelerime SEO dahildir!",
+      seo: "🔍 **SEO Optimizasyonu**\n\n✅ Teknik SEO (meta, schema, sitemap)\n✅ Performans optimizasyonu (90+ Lighthouse)\n✅ Core Web Vitals iyilestirme\n✅ Mobile-first indexing\n✅ Sayfa hızı optimizasyonu\n\nTüm projelerime SEO dahildir!",
 
       hosting:
-        "☁️ **Hosting & Domain**\n\n🌐 Domain kaydı desteği\n💻 Hosting önerileri (AWS, Vercel, DigitalOcean)\n🔒 SSL sertifikası kurulumu\n🚀 Deployment & CI/CD\n\nİsterseniz bu işlemleri ben hallederim!",
+        "☁️ **Hosting & Domain**\n\n🌐 Domain kaydı destegi\n💻 Hosting önerileri (AWS, Vercel, DigitalOcean)\n🔒 SSL sertifikası kurulumu\n🚀 Deployment & CI/CD\n\nIsterseniz bu islemleri ben hallederim!",
 
       design:
-        "🎨 **Tasarım Süreci**\n\n1️⃣ İhtiyaç analizi\n2️⃣ Wireframe & Prototip (Figma)\n3️⃣ Kullanıcı testleri\n4️⃣ Final tasarım\n5️⃣ Geliştirme\n\nKendi tasarımınız varsa onunla da çalışabilirim!",
+        "🎨 **Tasarım Süreci**\n\n1️⃣ Ihtiyaç analizi\n2️⃣ Wireframe & Prototip (Figma)\n3️⃣ Kullanıcı testleri\n4️⃣ Final tasarım\n5️⃣ Gelistirme\n\nKendi tasarımınız varsa onunla da çalısabilirim!",
 
       mobile:
-        "📱 **Responsive Tasarım**\n\n✅ %100 mobil uyumlu\n✅ Tüm cihazlarda test edilmiş\n✅ Touch-friendly arayüzler\n✅ Hızlı yükleme süreleri\n\nMobil kullanıcı deneyimi önceliğimdir!",
+        "📱 **Responsive Tasarım**\n\n✅ %100 mobil uyumlu\n✅ Tüm cihazlarda test edilmis\n✅ Touch-friendly arayüzler\n✅ Hızlı yükleme süreleri\n\nMobil kullanıcı deneyimi önceligimdir!",
 
       maintenance:
         "🔧 **Bakım & Destek**\n\n✨ 3 ay ücretsiz bakım\n🔄 Küçük güncellemeler ücretsiz\n📊 Aylık performans raporu\n🆘 7/24 acil destek\n\nUzun süreli bakım paketleri de mevcut!",
 
       reference:
-        "🏆 **Referanslar**\n\n✅ 50+ tamamlanmış proje\n✅ Startuplar & Kurumsal firmalar\n✅ E-ticaret şirketleri\n✅ Ajanslar (white-label)\n\nDetaylı referansları iletişim sonrası paylaşabilirim!",
+        "🏆 **Referanslar**\n\n✅ 50+ tamamlanmıs proje\n✅ Startuplar & Kurumsal firmalar\n✅ E-ticaret sirketleri\n✅ Ajanslar (white-label)\n\nDetaylı referansları iletisim sonrası paylasabilirim!",
 
       payment:
-        "💳 **Ödeme Koşulları**\n\n1️⃣ %40 Avans (proje başlangıcı)\n2️⃣ %30 Ara ödeme (tasarım onayı)\n3️⃣ %30 Teslimat\n\n📝 Fatura & sözleşme ile çalışıyorum\n💰 Taksit imkanı mevcut",
+        "💳 **Ödeme Kosulları**\n\n1️⃣ %40 Avans (proje baslangıcı)\n2️⃣ %30 Ara ödeme (tasarım onayı)\n3️⃣ %30 Teslimat\n\n📝 Fatura & sözlesme ile çalısıyorum\n💰 Taksit imkanı mevcut",
 
       greeting:
         "👋 Merhaba! Size nasıl yardımcı olabilirim?\n\n💡 Popüler konular:\n• Proje fiyatlandırması\n• Teknolojiler\n• Teslim süreleri\n• Referanslar\n\nSorunuzu yazabilirsiniz!",
 
       thanks:
-        "😊 Rica ederim! Başka sorunuz varsa çekinmeden sorun. Size yardımcı olmak için buradayım! 🚀",
+        "😊 Rica ederim! Baska sorunuz varsa çekinmeden sorun. Size yardımcı olmak için buradayım! 🚀",
     };
 
-    // Anahtar kelime eşleştirme
+    // Anahtar kelime eslestirme
     for (const [category, words] of Object.entries(keywords)) {
       if (words.some((word) => input.includes(word))) {
         return responses[category as keyof typeof responses];
@@ -429,15 +429,15 @@ export default function PortfolioChatbot() {
 
     // Varsayılan yanıt
     if (input.length < 15) {
-      return "🤔 Sorunuzu biraz daha açar mısınız?\n\n💬 Şu konularda yardımcı olabilirim:\n• Proje fiyatları\n• Teknolojiler\n• Süreçler\n• İletişim\n\nHangi konuda bilgi almak istersiniz?";
+      return "🤔 Sorunuzu biraz daha açar mısınız?\n\n💬 Su konularda yardımcı olabilirim:\n• Proje fiyatları\n• Teknolojiler\n• Süreçler\n• Iletisim\n\nHangi konuda bilgi almak istersiniz?";
     }
 
-    return "🤖 İlginç bir soru! Bu konuda size daha iyi yardımcı olabilmem için:\n\n1️⃣ Projeniz hakkında daha fazla detay verebilirsiniz\n2️⃣ İletişim formunu kullanarak direkt görüşebiliriz\n\n📧 Genellikle 24 saat içinde detaylı yanıt veriyorum!";
+    return "🤖 Ilginç bir soru! Bu konuda size daha iyi yardımcı olabilmem için:\n\n1️⃣ Projeniz hakkında daha fazla detay verebilirsiniz\n2️⃣ Iletisim formunu kullanarak direkt görüsebiliriz\n\n📧 Genellikle 24 saat içinde detaylı yanıt veriyorum!";
   };
 
   // Verileri sıfırla
   const resetData = async () => {
-    if (confirm("Tüm öğrenilmiş veriler silinecek. Emin misiniz?")) {
+    if (confirm("Tüm ögrenilmis veriler silinecek. Emin misiniz?")) {
       try {
         await window.storage.delete("learned_responses");
         await window.storage.delete("conversations");
@@ -494,8 +494,8 @@ export default function PortfolioChatbot() {
             <h3 className="font-semibold text-sm">AI Asistan 🧠</h3>
             <p className="text-xs text-white/80">
               {stats.learned > 0
-                ? `${stats.learned} yanıt öğrendi`
-                : "Öğreniyor..."}
+                ? `${stats.learned} yanıt ögrendi`
+                : "Ögreniyor..."}
             </p>
           </div>
         </div>
@@ -503,8 +503,8 @@ export default function PortfolioChatbot() {
           <button
             onClick={() => setShowStats(!showStats)}
             className="hover:bg-white/20 p-2 rounded-lg transition-colors"
-            aria-label="İstatistikler"
-            title="İstatistikler"
+            aria-label="Istatistikler"
+            title="Istatistikler"
           >
             <BarChart3 className="w-4 h-4" />
           </button>
@@ -531,18 +531,18 @@ export default function PortfolioChatbot() {
           {showStats && (
             <div className="bg-linear-to-r from-blue-50 to-purple-50 p-4 border-b">
               <h4 className="font-semibold text-sm mb-2">
-                📊 Öğrenme İstatistikleri
+                📊 Ögrenme Istatistikleri
               </h4>
               <div className="grid grid-cols-3 gap-2 text-xs">
                 <div className="bg-white p-2 rounded-lg text-center">
                   <div className="font-bold text-blue-600">{stats.learned}</div>
-                  <div className="text-gray-600">Öğrenildi</div>
+                  <div className="text-gray-600">Ögrenildi</div>
                 </div>
                 <div className="bg-white p-2 rounded-lg text-center">
                   <div className="font-bold text-purple-600">
                     {stats.conversations}
                   </div>
-                  <div className="text-gray-600">Konuşma</div>
+                  <div className="text-gray-600">Konusma</div>
                 </div>
                 <div className="bg-white p-2 rounded-lg text-center">
                   <div className="font-bold text-green-600">

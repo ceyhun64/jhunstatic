@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Orbitron, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const mainFont = Orbitron({
   subsets: ["latin"],
+  variable: "--font-main",
   display: "swap",
+  preload: true,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bodyFont = Space_Grotesk({
   subsets: ["latin"],
+  variable: "--font-body",
   display: "swap",
+  preload: true,
 });
 
-// Temel metadata - locale layout'ta daha detaylı override edilecek
 export const metadata: Metadata = {
   metadataBase: new URL("https://jhun.com.tr"),
-  title: "Jhun | Web Geliştirme & Dijital Çözümler",
+  title: "Jhun | Web Gelistirme & Dijital Çözümler",
   description:
     "Kurumsal web siteleri, e-ticaret, portföy ve özel dijital çözümler ile markanızı dijitalde büyütün.",
 };
@@ -29,12 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-          {children}
-      </body>
+    <html
+      lang="tr"
+      suppressHydrationWarning
+      className={`${mainFont.variable} ${bodyFont.variable}`}
+    >
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -11,8 +11,7 @@ interface Particle {
   y: number;
 }
 
-export interface MagneticButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   particleCount?: number;
   attractRadius?: number;
   children?: React.ReactNode;
@@ -24,7 +23,7 @@ export const MagneticButton = React.forwardRef<
 >(
   (
     { className, particleCount = 12, attractRadius = 50, children, ...props },
-    ref
+    ref,
   ) => {
     const [isAttracting, setIsAttracting] = useState(false);
     const [particles, setParticles] = useState<Particle[]>([]);
@@ -74,7 +73,7 @@ export const MagneticButton = React.forwardRef<
           "hover:bg-amber-500 dark:hover:bg-amber-800",
           "text-white dark:text-white",
           "transition-all duration-300 rounded-md px-4 py-2",
-          className
+          className,
         )}
         onMouseEnter={handleInteractionStart}
         onMouseLeave={handleInteractionEnd}
@@ -95,7 +94,7 @@ export const MagneticButton = React.forwardRef<
               "absolute w-1.5 h-1.5 rounded-full pointer-events-none",
               "bg-amber-600 dark:bg-white",
               "transition-opacity duration-300",
-              isAttracting ? "opacity-50" : "opacity-10"
+              isAttracting ? "opacity-50" : "opacity-10",
             )}
           />
         ))}
@@ -105,16 +104,16 @@ export const MagneticButton = React.forwardRef<
               <Magnet
                 className={cn(
                   "w-4 h-4 transition-transform duration-300",
-                  isAttracting && "scale-110"
+                  isAttracting && "scale-110",
                 )}
               />
-              {isAttracting ? "Attracting" : "Hemen İletişime Geç"}
+              {isAttracting ? "Attracting" : "Hemen Iletisime Geç"}
             </>
           )}
         </span>
       </button>
     );
-  }
+  },
 );
 
 MagneticButton.displayName = "MagneticButton";

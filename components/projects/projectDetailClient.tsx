@@ -152,7 +152,7 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
                     key={idx}
                     whileHover={{ scale: 1.05 }}
                     onClick={() => handleThumbnailClick(img)}
-                    // 'h-20' ve 'sm:h-36' değerlerini kaldırıp 'aspect-[3/2]' ekledik
+                    // 'h-20' ve 'sm:h-36' degerlerini kaldırıp 'aspect-[3/2]' ekledik
                     className="relative w-32 sm:w-60 aspect-[3/2] shrink-0 rounded-lg shadow-lg overflow-hidden border border-gray-300 dark:border-white/10 cursor-pointer"
                   >
                     <Image
@@ -201,7 +201,7 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
           </motion.div>
         </div>
 
-        {/* Sağ: Bilgi Alanı */}
+        {/* Sag: Bilgi Alanı */}
         <div className="relative flex-1 flex flex-col justify-center gap-6 md:gap-3 md:p-0">
           <div className="absolute inset-0 -z-10 overflow-hidden rounded-4xl">
             <motion.div
@@ -281,7 +281,7 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
         </div>
       </motion.div>
 
-      {/* Araçlar ve Teknoloji Yığını */}
+      {/* Araçlar ve Teknoloji Yıgını */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

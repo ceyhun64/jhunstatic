@@ -6,7 +6,7 @@
       "hey",
       "günaydın",
       "iyi günler",
-      "hoş geldin",
+      "hos geldin",
       "selamlar",
       "naber",
       "nasılsın",
@@ -46,37 +46,37 @@
     "portfolio": [
       "portföy",
       "proje",
-      "çalışma",
+      "çalısma",
       "örnek",
       "projeler",
-      "işler",
+      "isler",
       "örnekler",
       "referans",
-      "çalışmalar",
+      "çalısmalar",
       "tamamlanan",
       "yaptıkların",
       "göster"
     ],
 
     "contact": [
-      "iletişim",
-      "ulaş",
+      "iletisim",
+      "ulas",
       "telefon",
       "email",
       "adres",
-      "nasıl ulaşırım",
-      "iletişime geç",
+      "nasıl ulasırım",
+      "iletisime geç",
       "whatsapp",
       "mail",
       "mesaj",
       "ara",
-      "görüş"
+      "görüs"
     ],
 
     "technology": [
       "teknoloji",
       "tech stack",
-      "kullandığın",
+      "kullandıgın",
       "yazılım",
       "dil",
       "framework",
@@ -93,7 +93,7 @@
       "kaç yıl",
       "ne zamandan beri",
       "ne kadar süredir",
-      "başlangıç",
+      "baslangıç",
       "mezun",
       "kariyer"
     ],
@@ -112,10 +112,10 @@
 
     "ecommerce": [
       "e-ticaret",
-      "online satış",
-      "mağaza",
+      "online satıs",
+      "magaza",
       "shop",
-      "ürün satışı",
+      "ürün satısı",
       "sepet",
       "ödeme sistemi",
       "kargo",
@@ -125,7 +125,7 @@
 
     "corporate": [
       "kurumsal",
-      "şirket",
+      "sirket",
       "firma",
       "kurum",
       "kurumsal site",
@@ -182,7 +182,7 @@
     "speed": [
       "hız",
       "performans",
-      "yavaş",
+      "yavas",
       "hızlı",
       "optimize",
       "yükleme",
@@ -198,7 +198,7 @@
       "koruma",
       "siber",
       "hack",
-      "şifre"
+      "sifre"
     ],
 
     "cms": [
@@ -214,7 +214,7 @@
     "api": [
       "api",
       "entegrasyon",
-      "bağlantı",
+      "baglantı",
       "integration",
       "üçüncü parti",
       "harici"
@@ -272,29 +272,29 @@
 
     "revision": [
       "revizyon",
-      "değişiklik",
+      "degisiklik",
       "düzeltme",
       "revision",
-      "değiştir",
+      "degistir",
       "güncelle"
     ],
 
-    "contract": ["sözleşme", "kontrat", "anlaşma", "contract", "agreement"],
+    "contract": ["sözlesme", "kontrat", "anlasma", "contract", "agreement"],
 
     "meeting": [
-      "görüşme",
+      "görüsme",
       "toplantı",
       "meeting",
       "randevu",
-      "görüşelim",
-      "buluşalım"
+      "görüselim",
+      "bulusalım"
     ],
 
-    "process": ["süreç", "process", "aşama", "nasıl çalışır", "adım", "flow"],
+    "process": ["süreç", "process", "asama", "nasıl çalısır", "adım", "flow"],
 
-    "team": ["ekip", "team", "çalışan", "personel", "kim", "kimsin"],
+    "team": ["ekip", "team", "çalısan", "personel", "kim", "kimsin"],
 
-    "location": ["konum", "nerede", "location", "şehir", "adres", "ofis"],
+    "location": ["konum", "nerede", "location", "sehir", "adres", "ofis"],
 
     "social": [
       "sosyal medya",
@@ -316,7 +316,7 @@
       "metrik"
     ],
 
-    "accessibility": ["erişilebilirlik", "accessibility", "engelli", "a11y"],
+    "accessibility": ["erisilebilirlik", "accessibility", "engelli", "a11y"],
 
     "legal": [
       "yasal",
@@ -324,18 +324,18 @@
       "kvkk",
       "gdpr",
       "gizlilik",
-      "kullanım şartları"
+      "kullanım sartları"
     ],
 
     "testimonial": [
       "referans",
-      "müşteri yorumu",
+      "müsteri yorumu",
       "testimonial",
       "yorum",
       "geri bildirim"
     ],
 
-    "consultation": ["danışmanlık", "consultation", "fikir", "öneri", "tavsiye"]
+    "consultation": ["danısmanlık", "consultation", "fikir", "öneri", "tavsiye"]
   },
 
   "en": {

@@ -42,7 +42,7 @@ const ProjectSchema = new Schema<IProject>(
     subImage4: { type: String },
     subImage5: { type: String },
 
-    // Çoka Çok İlişki: Bir proje birden fazla teknolojiye sahip olabilir
+    // Çoka Çok Iliski: Bir proje birden fazla teknolojiye sahip olabilir
     technologies: [
       {
         type: Schema.Types.ObjectId,
@@ -54,7 +54,7 @@ const ProjectSchema = new Schema<IProject>(
   {
     timestamps: true,
     collection: "Project",
-  }
+  },
 );
 
 // Indexes for better query performance

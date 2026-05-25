@@ -208,7 +208,7 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
                       <FileText className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                       <span className="text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
                         {dict.header?.cvButton ??
-                          (locale === "tr" ? "CV İncele" : "View CV")}
+                          (locale === "tr" ? "CV Incele" : "View CV")}
                       </span>
                       <ExternalLink className="w-3 h-3 opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
                     </motion.a>
@@ -452,7 +452,7 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
                 >
                   <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   {dict.header?.cvButton ??
-                    (locale === "tr" ? "CV İncele" : "View CV")}
+                    (locale === "tr" ? "CV Incele" : "View CV")}
                   <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
                 </a>
               </motion.div>

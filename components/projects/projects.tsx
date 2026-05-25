@@ -1,4 +1,4 @@
-// projectsServer.tsx (projectDetail.tsx değil)
+// projectsServer.tsx (projectDetail.tsx degil)
 import ProjectsClient from "./projectsClient";
 import { getDictionary } from "@/lib/get-dictionary";
 import { getAllProjects } from "@/lib/staticData";

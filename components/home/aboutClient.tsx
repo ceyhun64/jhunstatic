@@ -69,7 +69,7 @@ export default function AboutClient({ dict }: Props) {
       variants={containerVariants}
     >
       <div className="mx-auto">
-        {/* Başlık ve açıklama */}
+        {/* Baslık ve açıklama */}
         <div className="mb-2 md:mb-4 grid gap-5 text-center md:grid-cols-2 md:text-left px-2 md:px-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-semibold tracking-tight text-gray-900 dark:text-white">
             <TypingText text={dict.typingTitle} cursorClassName="h-8 sm:h-9" />
@@ -95,7 +95,7 @@ export default function AboutClient({ dict }: Props) {
                 speed={1}
               />
               <div className="relative z-10 flex flex-col justify-between h-full overflow-hidden p-0 md:p-4 space-y-4">
-                {/* 1. ve 2. Paragrafı içeren Ana Kod Bloğu */}
+                {/* 1. ve 2. Paragrafı içeren Ana Kod Blogu */}
                 <pre className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-4 rounded-2xl font-mono overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed">
                   <code>
                     {/* Paragraf 1 */}
@@ -240,7 +240,7 @@ export default function AboutClient({ dict }: Props) {
             </div>
           </div>
 
-          {/* Sağ İçerik */}
+          {/* Sag Içerik */}
           <motion.div variants={itemVariants} className="flex flex-col gap-6">
             <div className="relative rounded-xl overflow-hidden p-0.5 md:p-4">
               <SparklesCore
@@ -283,7 +283,7 @@ export default function AboutClient({ dict }: Props) {
           </motion.div>
         </div>
 
-        {/* Başarılarımız */}
+        {/* Basarılarımız */}
         <div className="mt-16 relative rounded-xl overflow-hidden py-8 px-4 md:p-16 bg-gray-50 dark:bg-black text-gray-900 dark:text-white">
           <FireworksBackground
             className="absolute inset-0 w-full h-full"

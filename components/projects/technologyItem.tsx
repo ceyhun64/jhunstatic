@@ -15,7 +15,7 @@ export type Technology = {
   color?: string;
 };
 
-// 🔹 Bileşen tanımı - Light/Dark Theme Uyumlu
+// 🔹 Bilesen tanımı - Light/Dark Theme Uyumlu
 export const TechnologyItem = ({ tech }: { tech: Technology }) => {
   const TechIcon = tech.icon;
   const isSvgPath = typeof TechIcon === "string" && TechIcon.endsWith(".svg");
@@ -26,7 +26,7 @@ export const TechnologyItem = ({ tech }: { tech: Technology }) => {
       whileHover={{ x: 5, scale: 1.01 }}
     >
       <div className="flex items-center space-x-4">
-        {/* İkon Bölümü */}
+        {/* Ikon Bölümü */}
         <div className="p-2 rounded-full bg-gray-200 dark:bg-white/10 relative w-10 h-10 flex items-center justify-center">
           {isSvgPath ? (
             <Image
@@ -40,13 +40,13 @@ export const TechnologyItem = ({ tech }: { tech: Technology }) => {
                   ? {
                       filter: `drop-shadow(0 0 8px ${
                         ["#000000", "#0b0d0e"].includes(
-                          tech.color.toLowerCase()
+                          tech.color.toLowerCase(),
                         )
                           ? "#FFFFFF"
                           : tech.color
                       }) drop-shadow(0 0 4px ${
                         ["#000000", "#0b0d0e"].includes(
-                          tech.color.toLowerCase()
+                          tech.color.toLowerCase(),
                         )
                           ? "#FFFFFF"
                           : tech.color
@@ -63,7 +63,7 @@ export const TechnologyItem = ({ tech }: { tech: Technology }) => {
           )}
         </div>
 
-        {/* İsim ve Tip Bölümü */}
+        {/* Isim ve Tip Bölümü */}
         <div>
           <p className="text-lg font-semibold text-gray-900 dark:text-white">
             {tech.name}

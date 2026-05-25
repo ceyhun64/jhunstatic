@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,6 +14,7 @@ import { GradientText } from "@/components/ui/shadcn-io/gradient-text";
 import LanguageSwitcher from "./languageSwitcher";
 import { useParams, usePathname } from "next/navigation";
 import ThemeToggle from "./themeToggle";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 type NavbarClientProps = {
   dict: {
@@ -29,6 +30,8 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
   const [scrolled, setScrolled] = useState(false);
   const params = useParams();
   const pathname = usePathname();
+  const rafId = useRef<number>(0);
+  const shouldReduceMotion = useReducedMotion();
 
   const locale = params.locale || "tr";
 
@@ -40,9 +43,17 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
   ];
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      cancelAnimationFrame(rafId.current);
+      rafId.current = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 40);
+      });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(rafId.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -59,7 +70,8 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
 
   return (
     <motion.nav
-      className={`fixed top-0 w-full z-[999] transition-all duration-500
+      style={{ willChange: "transform" }}
+      className={`fixed top-0 w-full z-999 transition-all duration-500
     ${
       scrolled
         ? "py-3 bg-white/80 dark:bg-black/70 backdrop-blur-xl shadow-lg border-b border-gray-200 dark:border-white/10"
@@ -95,8 +107,8 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
                       title={`${link.name}`}
                     >
                       <motion.div
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.97 }}
+                        whileHover={shouldReduceMotion ? {} : { scale: 1.1 }}
+                        whileTap={shouldReduceMotion ? {} : { scale: 0.97 }}
                       >
                         <Button
                           variant="ghost"
@@ -117,7 +129,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
           </NavigationMenu>
         </div>
 
-        {/* Sağ Taraf */}
+        {/* Sag Taraf */}
         <div className="flex items-center gap-0.5 md:gap-4">
           <Link
             href="https://github.com/ceyhun64"
@@ -126,7 +138,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
             aria-label="GitHub profilini aç"
             title="GitHub"
           >
-            <motion.div whileHover={{ scale: 1.2 }}>
+            <motion.div whileHover={shouldReduceMotion ? {} : { scale: 1.2 }}>
               <Button
                 variant="ghost"
                 size="icon-sm"
@@ -145,7 +157,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
             aria-label="LinkedIn profilini aç"
             title="LinkedIn"
           >
-            <motion.div whileHover={{ scale: 1.2 }}>
+            <motion.div whileHover={shouldReduceMotion ? {} : { scale: 1.2 }}>
               <Button
                 variant="ghost"
                 size="icon-sm"
@@ -184,10 +196,10 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -30 }}
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : -30 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.35 }}
+            exit={{ opacity: 0, y: shouldReduceMotion ? 0 : -20 }}
+            transition={{ duration: shouldReduceMotion ? 0.15 : 0.35 }}
             className="fixed inset-0 bg-white/95 dark:bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden h-screen overflow-y-auto"
             aria-label="Mobil menü"
           >

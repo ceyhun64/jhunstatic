@@ -1,9 +1,9 @@
 [
   {
     "id": "blog_001",
-    "title": "Blog Başlığı (TR)",
+    "title": "Blog Baslıgı (TR)",
     "summary": "Kısa özet Türkçe",
-    "description": "Blog içeriği Türkçe. HTML veya Markdown.",
+    "description": "Blog içerigi Türkçe. HTML veya Markdown.",
     "titleEng": "Blog Title (EN)",
     "summaryEng": "Short summary English",
     "descriptionEng": "Blog content English.",
