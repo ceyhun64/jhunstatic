@@ -4,60 +4,80 @@ import { motion } from "framer-motion";
 
 export default function Loading() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-      className="flex min-h-screen items-center justify-center bg-background"
-    >
-      <div className="relative flex h-24 w-24 items-center justify-center sm:h-28 sm:w-28">
-        {/* Outer slow counter-rotating ring */}
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
+      {/* Core */}
+      <div className="relative flex items-center justify-center">
+        {/* Outer Ring (Sabit) */}
+        <div className="absolute h-64 w-64 rounded-full border border-white/10">
+          {/* Dönen Nokta */}
+          <motion.div
+            className="absolute inset-0"
+            animate={{ rotate: 3600 }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <div className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-amber-400 shadow-[0_0_20px_#f59e0b]" />
+          </motion.div>
+        </div>
+
+        {/* Middle Ring */}
         <motion.div
-          className="absolute inset-0 rounded-full"
-          style={{
-            background:
-              "conic-gradient(from 0deg, transparent 0%, rgba(245,158,11,0.35) 50%, transparent 100%)",
-            WebkitMask:
-              "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px))",
-            mask: "radial-gradient(farthest-side, transparent calc(100% - 1.5px), #000 calc(100% - 1.5px))",
-          }}
+          className="absolute h-48 w-48 rounded-full border border-amber-500/30"
           animate={{ rotate: -360 }}
-          transition={{ duration: 3.2, repeat: Infinity, ease: "linear" }}
-        />
-
-        {/* Inner fast rotating ring */}
-        <motion.div
-          className="absolute inset-3 rounded-full"
-          style={{
-            background:
-              "conic-gradient(from 0deg, transparent 0%, #f59e0b 50%, transparent 100%)",
-            WebkitMask:
-              "radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2.5px))",
-            mask: "radial-gradient(farthest-side, transparent calc(100% - 2.5px), #000 calc(100% - 2.5px))",
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear",
           }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1.3, repeat: Infinity, ease: "linear" }}
         />
 
-        {/* Static track */}
-        <div className="absolute inset-3 rounded-full border border-foreground/10" />
-
-        {/* Soft glow */}
+        {/* Glass Core */}
         <motion.div
-          className="absolute inset-3 rounded-full bg-amber-500/20 blur-xl"
-          animate={{ opacity: [0.3, 0.7, 0.3] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-        />
-
-        {/* Brand mark */}
-        <motion.span
-          className="relative font-mono text-2xl sm:text-3xl font-semibold tracking-tight text-foreground"
-          animate={{ scale: [0.92, 1, 0.92] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="
+            relative
+            flex
+            h-32
+            w-32
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-white/10
+            bg-white/5
+            backdrop-blur-xl
+          "
+          animate={{
+            scale: [1, 1.08, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
-          {"{ }"}
-        </motion.span>
+          <motion.span
+            className="
+              font-mono
+              text-4xl
+              font-bold
+              text-amber-400
+              drop-shadow-[0_0_25px_rgba(245,158,11,0.8)]
+            "
+            animate={{
+              opacity: [0.4, 1, 0.4],
+            }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+            }}
+          >
+            {"{ }"}
+          </motion.span>
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
