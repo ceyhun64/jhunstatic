@@ -25,9 +25,13 @@ interface SitemapEntry {
 const staticPages: { path: string; priority: number; freq: ChangeFreq }[] = [
   { path: "", priority: 1.0, freq: "weekly" },
   { path: "/projects", priority: 0.9, freq: "weekly" },
+  { path: "/services", priority: 0.8, freq: "monthly" },
   { path: "/blog", priority: 0.8, freq: "weekly" },
   { path: "/about", priority: 0.7, freq: "monthly" },
+  { path: "/faq", priority: 0.6, freq: "monthly" },
   { path: "/contact", priority: 0.7, freq: "monthly" },
+  { path: "/privacy-policy", priority: 0.3, freq: "yearly" },
+  { path: "/terms", priority: 0.3, freq: "yearly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

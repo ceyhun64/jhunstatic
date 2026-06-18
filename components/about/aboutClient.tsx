@@ -100,7 +100,7 @@ export default function AboutClient({ dict }: Props) {
 
   return (
     <motion.section
-      className="py-8 md:py-16 px-4 md:px-10 bg-gradient-to-b from-gray-200 via-gray-200 to-gray-200 dark:from-black dark:via-black dark:to-slate-950 font-sans"
+      className="py-8 md:py-16 px-4 md:px-10 bg-gradient-to-b from-[#F5F7FA] via-gray-200 to-[#F5F7FA] dark:from-black dark:via-indigo-950 dark:to-black font-sans"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -122,7 +122,7 @@ export default function AboutClient({ dict }: Props) {
           <div className="lg:col-span-2">
             <div className="relative flex-1 rounded-xl overflow-hidden">
               <SparklesCore
-                id="tsparticles-left-section-home"
+                id="tsparticles-left-section"
                 background="transparent"
                 minSize={1}
                 maxSize={2}
@@ -334,7 +334,7 @@ export default function AboutClient({ dict }: Props) {
                 duration: 18,
                 ease: "easeInOut",
               }}
-              className="absolute top-1/4 -left-10 w-72 h-72 bg-gradient-to-tr from-amber-200 via-amber-300 to-amber-200 dark:from-amber-400 dark:via-amber-500 dark:to-amber-300 opacity-20 dark:opacity-20 rounded-full filter blur-3xl"
+              className="absolute top-1/2 left-20 w-72 h-72 bg-gradient-to-tr from-amber-900 via-amber-950 to-amber-900 dark:from-amber-400 dark:via-amber-500 dark:to-amber-300 opacity-20 dark:opacity-20 rounded-full filter blur-3xl"
             />
             <motion.div
               animate={{ x: [40, -40, 40], y: [20, -20, 20] }}
@@ -343,7 +343,7 @@ export default function AboutClient({ dict }: Props) {
                 duration: 14,
                 ease: "easeInOut",
               }}
-              className="absolute bottom-0 right-0 w-56 h-56 bg-gradient-to-br from-indigo-200 via-blue-300 to-indigo-200 dark:from-indigo-400 dark:via-blue-500 dark:to-indigo-300 opacity-15 dark:opacity-15 rounded-full filter blur-2xl"
+              className="absolute bottom-0 right-0 w-56 h-56 bg-gradient-to-br from-indigo-900 via-blue-950 to-indigo-900 dark:from-indigo-400 dark:via-blue-500 dark:to-indigo-300 opacity-15 dark:opacity-15 rounded-full filter blur-2xl"
             />
           </div>
           <FireworksBackground

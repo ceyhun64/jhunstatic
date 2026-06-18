@@ -15,6 +15,14 @@ import { TechnologyItem } from "./technologyItem";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import type { ProjectWithTechnologies } from "@/lib/staticData";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 type Props = {
   locale: "tr" | "en";
@@ -101,12 +109,39 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
         />
       )}
 
+      {/* Breadcrumb */}
+      <div className="relative z-10 max-w-8xl mx-auto mt-24 px-3 md:px-12">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href={`/${locale}`}>
+                  {locale === "en" ? "Home" : "Anasayfa"}
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href={`/${locale}/projects`}>
+                  {locale === "en" ? "Projects" : "Projeler"}
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{displayTitle}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+
       {/* Görseller ve detay */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="max-w-8xl mx-auto mt-20 p-3 md:p-12 rounded-3xl border border-blue-300/20 dark:border-blue-500/20 bg-black/5 dark:bg-white/5 backdrop-blur-sm shadow-2xl flex flex-col lg:flex-row items-start lg:items-center gap-12 relative overflow-hidden"
+        className="max-w-8xl mx-auto mt-4 p-3 md:p-12 rounded-3xl border border-blue-300/20 dark:border-blue-500/20 bg-black/5 dark:bg-white/5 backdrop-blur-sm shadow-2xl flex flex-col lg:flex-row items-start lg:items-center gap-12 relative overflow-hidden"
       >
         {/* Sol: Görseller */}
         <div className="w-full lg:w-1/2 flex flex-col gap-6">

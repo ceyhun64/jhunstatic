@@ -1,6 +1,7 @@
 {
   "navbar": {
     "projects": "Projects",
+    "services": "Services",
     "about": "About",
     "contact": "Contact",
     "blogs": "Blog"
@@ -56,8 +57,148 @@
     "achievement_3_label": "Satisfied Clients",
     "achievement_3_value": "99%",
     "achievement_4_label": "Awards Won",
-    "achievement_4_value": "3+"
+    "achievement_4_value": "3+",
+    "cvButtonLabel": "Download CV"
   },
+
+  "services": {
+    "badge": "Our Services",
+    "title": "Our Services",
+    "subtitle": "End-to-end solutions for your business's digital needs.",
+    "trust": [
+      "10+ Supported companies",
+      "20+ Completed projects",
+      "99% Happy clients"
+    ],
+    "items": [
+      {
+        "title": "Web Design & Development",
+        "description": "I build fast, scalable and SEO-friendly corporate websites and e-commerce platforms with React, Next.js and TypeScript.",
+        "detail": "Responsive design, page speed optimization, accessibility and component-based architecture come first — every project is built from scratch with code quality and maintainability in mind.",
+        "icon": "Code"
+      },
+      {
+        "title": "SEO Optimization",
+        "description": "I improve your site's visibility in search engines through technical SEO, page speed and content structure improvements.",
+        "detail": "Sitemaps, structured data (schema.org), meta tag strategy and Core Web Vitals improvements help grow your organic traffic in a measurable way.",
+        "icon": "Search"
+      },
+      {
+        "title": "E-Commerce Solutions",
+        "description": "I build custom end-to-end e-commerce platforms with payment integration, shipment tracking and admin panels.",
+        "detail": "I seamlessly integrate payment providers like iyzico alongside admin panels covering cart, coupons, variant tracking and order management.",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "API & Backend Development",
+        "description": "I design secure, scalable REST APIs and database architectures with Node.js, .NET and Prisma ORM.",
+        "detail": "I build production-ready backend systems covering authentication, authorization, rate limiting and database performance optimization.",
+        "icon": "Server"
+      },
+      {
+        "title": "Digital Consulting",
+        "description": "I provide consulting on technology choices, architecture decisions and performance optimization.",
+        "detail": "I review your existing system, identify bottlenecks, and together we map out the most suitable technology roadmap for scalability and cost.",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "Maintenance & Support",
+        "description": "I offer ongoing maintenance, updates and technical support for your launched projects.",
+        "detail": "Security patches, dependency updates and performance monitoring keep your project running smoothly long after launch.",
+        "icon": "LifeBuoy"
+      }
+    ],
+    "processEyebrow": "Our Process",
+    "processTitle": "My Workflow",
+    "process": [
+      {
+        "step": "01",
+        "title": "Discovery & Planning",
+        "description": "I analyze your needs and we define project scope and timeline together."
+      },
+      {
+        "step": "02",
+        "title": "Design & Development",
+        "description": "I bring your project to life step by step with modern technologies and regular feedback loops."
+      },
+      {
+        "step": "03",
+        "title": "Testing & Launch",
+        "description": "I run performance, security and usability tests before going live."
+      },
+      {
+        "step": "04",
+        "title": "Support & Growth",
+        "description": "I accompany your project's growth with post-launch maintenance and improvements."
+      }
+    ],
+    "cta": {
+      "title": "Which service does your project need?",
+      "text": "Let's evaluate your needs together and propose a tailored solution.",
+      "button": "Get in Touch"
+    }
+  },
+
+  "faq": {
+    "badge": ".jhun",
+    "title": "Frequently Asked Questions",
+    "subtitle": "The most common questions about process, pricing and collaboration.",
+    "items": [
+      {
+        "question": "How long does a project take?",
+        "answer": "Timeline depends on scope; a simple corporate site can be delivered in 2-3 weeks, while a full e-commerce platform takes 6-10 weeks. I provide a clear timeline during the discovery phase."
+      },
+      {
+        "question": "How is pricing determined?",
+        "answer": "Every project is priced individually based on scope, feature count and integrations. I prepare a detailed quote once you share your requirements."
+      },
+      {
+        "question": "What technologies do you work with?",
+        "answer": "Mainly React, Next.js, TypeScript, Node.js, .NET and PostgreSQL/MySQL; I can also integrate other tools as needed."
+      },
+      {
+        "question": "Do you provide support after launch?",
+        "answer": "Yes, I offer maintenance and technical support packages for all launched projects."
+      },
+      {
+        "question": "Do you redesign existing sites or only build from scratch?",
+        "answer": "I work on both new builds and redesigns/modernizations of existing sites."
+      },
+      {
+        "question": "Is remote work possible?",
+        "answer": "Yes, based in Uşak, I work fully remotely with clients across Turkey and internationally."
+      }
+    ],
+    "cta": {
+      "title": "Didn't find the answer to your question?",
+      "text": "Reach out directly and I'll get back to you as soon as possible.",
+      "button": "Get in Touch"
+    }
+  },
+
+  "testimonials": {
+    "badge": "Sample Content",
+    "title": "What Clients Say",
+    "subtitle": "The quotes below are sample/placeholder content and will be updated with real client feedback.",
+    "items": [
+      {
+        "name": "E-commerce Client",
+        "role": "Project Owner",
+        "quote": "Thanks to transparent communication and fast delivery throughout the process, our site exceeded our expectations."
+      },
+      {
+        "name": "Corporate Client",
+        "role": "Marketing Lead",
+        "quote": "Modern design sense and technical expertise let us manage the project confidently from start to finish."
+      },
+      {
+        "name": "Entrepreneur",
+        "role": "Founder",
+        "quote": "Thanks to the performance and SEO-focused approach, our site's visibility increased quickly."
+      }
+    ]
+  },
+
   "contact": {
     "title": "Get in Touch",
     "description": "We’re here for your questions, feedback, or collaboration opportunities. Let us know how we can help!",
@@ -92,15 +233,24 @@
         "links": [
           { "label": "Projects", "href": "/projects" },
           { "label": "About Us", "href": "/about" },
+          { "label": "Services", "href": "/services" },
+          { "label": "FAQ", "href": "/faq" },
           { "label": "Contact", "href": "/contact" }
         ]
       },
       {
         "title": "Our Services",
         "links": [
-          { "label": "Web Development", "href": "/contact" },
-          { "label": "SEO Optimization", "href": "/contact" },
-          { "label": "Digital Consulting", "href": "/contact" }
+          { "label": "Web Development", "href": "/services" },
+          { "label": "SEO Optimization", "href": "/services" },
+          { "label": "Digital Consulting", "href": "/services" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacy Policy", "href": "/privacy-policy" },
+          { "label": "Terms of Use", "href": "/terms" }
         ]
       }
     ],
@@ -234,5 +384,78 @@
       "text": "Elevate your business with cutting-edge digital solutions tailored to your needs.",
       "button": "Get in Touch"
     }
+  },
+
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "updatedAt": "Last updated: June 18, 2026",
+    "intro": "This Privacy Policy explains how personal data collected through jhun.com.tr ('Site') is processed under Turkey's Law on the Protection of Personal Data (KVKK No. 6698). The data controller is Ceyhun Türkmen.",
+    "sections": [
+      {
+        "heading": "1. Data We Collect",
+        "body": "Through the contact form, we collect your name, email address and message content. Technical data such as browser type, IP address and cookies may be collected automatically while using the site."
+      },
+      {
+        "heading": "2. Purpose of Processing",
+        "body": "Collected data is processed to respond to your request, communicate with you, and ensure the technical performance and security of the site."
+      },
+      {
+        "heading": "3. Retention Period",
+        "body": "Data submitted via the contact form is retained for as long as necessary to resolve your request and is deleted once legal retention periods expire."
+      },
+      {
+        "heading": "4. Cookies",
+        "body": "The site may use essential and preference-based cookies to improve your experience. You can manage cookie preferences through your browser settings."
+      },
+      {
+        "heading": "5. Sharing With Third Parties",
+        "body": "Your personal data is not shared with or sold to third parties except where legally required."
+      },
+      {
+        "heading": "6. Your Rights",
+        "body": "Under Article 11 of KVKK, you have the right to access, correct, delete and object to the processing of your data. You can exercise these rights by contacting us via the email address on the contact page."
+      }
+    ],
+    "contactNote": "For questions about this privacy policy, please reach out via the contact page."
+  },
+
+  "terms": {
+    "title": "Terms of Use",
+    "updatedAt": "Last updated: June 18, 2026",
+    "intro": "These Terms of Use apply to anyone visiting jhun.com.tr ('Site') and/or using the services offered. By using the Site, you agree to these terms.",
+    "sections": [
+      {
+        "heading": "1. Scope of Service",
+        "body": "The Site is provided to showcase Ceyhun Türkmen's portfolio, the web development services offered, and contact channels."
+      },
+      {
+        "heading": "2. Intellectual Property",
+        "body": "All content, images, code samples and brand elements (including the .jhun logo) on the Site belong to Ceyhun Türkmen unless otherwise stated, and may not be used without permission."
+      },
+      {
+        "heading": "3. Project Agreements",
+        "body": "Clients who wish to use the services offered (web development, consulting, etc.) will have project scope, delivery time and payment terms defined in a separate agreement or proposal; this Site content alone does not constitute a service contract."
+      },
+      {
+        "heading": "4. Limitation of Liability",
+        "body": "Site content is provided 'as is'; uninterrupted or error-free access is not guaranteed. No liability is accepted for third-party links (GitHub, project demos, etc.)."
+      },
+      {
+        "heading": "5. Changes",
+        "body": "These Terms of Use may be updated without prior notice; the current version is always published on this page."
+      },
+      {
+        "heading": "6. Governing Law",
+        "body": "These terms are governed by the laws of the Republic of Turkey; Turkish courts have jurisdiction over any disputes."
+      }
+    ],
+    "contactNote": "For questions about these terms, please reach out via the contact page."
+  },
+
+  "cookieConsent": {
+    "message": "This site uses cookies to improve your experience. By continuing to use the site, you agree to the use of cookies.",
+    "acceptLabel": "Accept",
+    "declineLabel": "Decline",
+    "policyLinkLabel": "Privacy Policy"
   }
 }

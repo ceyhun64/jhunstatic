@@ -102,7 +102,7 @@ const ModernFooterClient: React.FC<ModernFooterClientProps> = ({ dict }) => {
           </div>
 
           {/* Right Side */}
-          <div className="md:w-[55%] grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+          <div className="md:w-[65%] grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
             {dict.sections.map((section: any, idx: number) => (
               <div key={idx} className="pb-3 md:border-none md:pb-0">
                 {/* Header */}

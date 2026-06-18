@@ -1,6 +1,7 @@
 {
   "navbar": {
     "projects": "Projelerimiz",
+    "services": "Hizmetler",
     "about": "Biz Kimiz",
     "contact": "Iletisime Geçin",
     "blogs": "Blog"
@@ -53,7 +54,146 @@
     "achievement_3_label": "Mutlu Müsteri",
     "achievement_3_value": "99%",
     "achievement_4_label": "Kazanılan Ödül",
-    "achievement_4_value": "3+"
+    "achievement_4_value": "3+",
+    "cvButtonLabel": "CV Indir"
+  },
+
+  "services": {
+    "badge": "Hizmetlerimiz",
+    "title": "Hizmetlerimiz",
+    "subtitle": "Isletmenizin dijital ihtiyaçlarına uçtan uca çözüm sunan hizmetler.",
+    "trust": [
+      "10+ Desteklenen sirket",
+      "20+ Tamamlanan proje",
+      "%99 Mutlu müsteri"
+    ],
+    "items": [
+      {
+        "title": "Web Tasarım & Gelistirme",
+        "description": "React, Next.js ve TypeScript ile hızlı, ölçeklenebilir ve SEO uyumlu kurumsal web siteleri ve e-ticaret platformları gelistiriyorum.",
+        "detail": "Responsive tasarım, sayfa hızı optimizasyonu, erisilebilirlik ve bilesen tabanlı mimariyle her projeyi sıfırdan kuruyor, kod kalitesini ve sürdürülebilirligi ön planda tutuyorum.",
+        "icon": "Code"
+      },
+      {
+        "title": "SEO Optimizasyonu",
+        "description": "Teknik SEO, sayfa hızı ve içerik yapısı iyilestirmeleriyle sitenizin arama motorlarındaki görünürlügünü artırıyorum.",
+        "detail": "Site haritası, yapısal veri (schema.org), meta etiket stratejisi ve Core Web Vitals iyilestirmeleriyle organik trafiginizi ölçülebilir sekilde büyütüyorum.",
+        "icon": "Search"
+      },
+      {
+        "title": "E-Ticaret Çözümleri",
+        "description": "Ödeme entegrasyonu, kargo takibi ve admin panelleriyle uçtan uca özel e-ticaret platformları kuruyorum.",
+        "detail": "Sepet, kupon, varyant takibi ve sipariş yönetimini kapsayan admin panelleriyle, iyzico gibi yerli ödeme altyapılarını sorunsuz entegre ediyorum.",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "API & Backend Gelistirme",
+        "description": "Node.js, .NET ve Prisma ORM ile güvenli, ölçeklenebilir REST API'ler ve veritabanı mimarileri tasarlıyorum.",
+        "detail": "Kimlik dogrulama, yetkilendirme, rate limiting ve veritabanı performans optimizasyonunu içeren, production'a hazır backend sistemleri kuruyorum.",
+        "icon": "Server"
+      },
+      {
+        "title": "Dijital Danısmanlık",
+        "description": "Teknoloji seçimi, mimari kararlar ve performans optimizasyonu konularında is ortaklarıma danısmanlık saglıyorum.",
+        "detail": "Mevcut sisteminizi inceleyip darbogazları belirliyor, ölçeklenebilirlik ve maliyet açısından en uygun teknoloji yol haritasını birlikte çiziyoruz.",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "Bakım & Destek",
+        "description": "Yayına alınan projeleriniz için sürekli bakım, güncelleme ve teknik destek hizmeti sunuyorum.",
+        "detail": "Güvenlik yamaları, bagımlılık güncellemeleri ve performans izlemeyle projenizin yayından sonra da saglıklı çalısmasını garanti ediyorum.",
+        "icon": "LifeBuoy"
+      }
+    ],
+    "processEyebrow": "Sürecimiz",
+    "processTitle": "Çalısma Sürecim",
+    "process": [
+      {
+        "step": "01",
+        "title": "Kesif & Planlama",
+        "description": "Ihtiyaçlarınızı analiz eder, proje kapsamını ve zaman çizelgesini birlikte belirleriz."
+      },
+      {
+        "step": "02",
+        "title": "Tasarım & Gelistirme",
+        "description": "Modern teknolojilerle, düzenli geri bildirim döngüleriyle projenizi adım adım hayata geçiririm."
+      },
+      {
+        "step": "03",
+        "title": "Test & Yayına Alma",
+        "description": "Performans, güvenlik ve kullanılabilirlik testlerinden geçirip projeyi canlıya alırım."
+      },
+      {
+        "step": "04",
+        "title": "Destek & Büyüme",
+        "description": "Yayın sonrası bakım ve gelistirmeyle projenizin büyümesine eslik ederim."
+      }
+    ],
+    "cta": {
+      "title": "Projeniz için hangi hizmete ihtiyacınız var?",
+      "text": "Ihtiyaçlarınızı birlikte degerlendirelim, size özel bir çözüm önerelim.",
+      "button": "Iletisime Geç"
+    }
+  },
+
+  "faq": {
+    "badge": ".jhun",
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Süreç, fiyatlandırma ve isbirligi hakkında en çok sorulan sorular.",
+    "items": [
+      {
+        "question": "Bir proje ne kadar sürede tamamlanır?",
+        "answer": "Proje süresi kapsama göre degisir; basit bir kurumsal site 2-3 haftada, kapsamlı bir e-ticaret platformu ise 6-10 hafta içinde teslim edilebilir. Kesif asamasında size net bir zaman çizelgesi sunarım."
+      },
+      {
+        "question": "Fiyatlandırma nasıl belirleniyor?",
+        "answer": "Her proje kapsam, özellik sayısı ve entegrasyonlara göre özel olarak fiyatlandırılır. Ihtiyaçlarınızı paylastıktan sonra detaylı bir teklif hazırlarım."
+      },
+      {
+        "question": "Hangi teknolojilerle çalısıyorsunuz?",
+        "answer": "Agırlıklı olarak React, Next.js, TypeScript, Node.js, .NET ve PostgreSQL/MySQL kullanıyorum; ihtiyaca göre farklı araçlar da entegre edebilirim."
+      },
+      {
+        "question": "Proje sonrası destek sagliyor musunuz?",
+        "answer": "Evet, yayına alınan tüm projeler için bakım ve teknik destek paketleri sunuyorum."
+      },
+      {
+        "question": "Mevcut bir siteyi yeniden mi tasarlıyorsunuz, yoksa sadece sıfırdan mı gelistiriyorsunuz?",
+        "answer": "Hem sıfırdan gelistirme hem de mevcut bir sitenin yeniden tasarımı/modernizasyonu üzerinde çalısabilirim."
+      },
+      {
+        "question": "Uzaktan çalısma mümkün mü?",
+        "answer": "Evet, Uşak merkezli olarak Türkiye'nin her yerinden ve uluslararası müsterilerle tamamen uzaktan çalısıyorum."
+      }
+    ],
+    "cta": {
+      "title": "Sorunuzun cevabını bulamadınız mı?",
+      "text": "Bana dogrudan ulasın, en kısa sürede dönüs yapayım.",
+      "button": "Iletisime Geç"
+    }
+  },
+
+  "testimonials": {
+    "badge": "Örnek Içerik",
+    "title": "Müsteriler Ne Diyor?",
+    "subtitle": "Asagıdaki yorumlar örnek/yer tutucu içeriktir; gerçek müsteri geri bildirimleriyle güncellenecektir.",
+    "items": [
+      {
+        "name": "E-ticaret Müsterisi",
+        "role": "Proje Sahibi",
+        "quote": "Sürecin her asamasında seffaf iletisim ve hızlı teslimat sayesinde sitemiz beklentimizin üzerinde tamamlandı."
+      },
+      {
+        "name": "Kurumsal Müsteri",
+        "role": "Pazarlama Sorumlusu",
+        "quote": "Modern tasarım anlayısı ve teknik bilgi birikimi projeyi baştan sona güvenle yönetmemizi sagladı."
+      },
+      {
+        "name": "Girisimci",
+        "role": "Kurucu",
+        "quote": "Performans ve SEO odaklı yaklasım sayesinde sitemizin görünürlügü kısa sürede arttı."
+      }
+    ]
   },
 
   "contact": {
@@ -89,15 +229,24 @@
         "links": [
           { "label": "Projeler", "href": "/projects" },
           { "label": "Hakkımızda", "href": "/about" },
+          { "label": "Hizmetler", "href": "/services" },
+          { "label": "SSS", "href": "/faq" },
           { "label": "Iletisim", "href": "/contact" }
         ]
       },
       {
         "title": "Hizmetlerimiz",
         "links": [
-          { "label": "Web Gelistirme", "href": "/contact" },
-          { "label": "SEO Optimizasyonu", "href": "/contact" },
-          { "label": "Dijital Danısmanlık", "href": "/contact" }
+          { "label": "Web Gelistirme", "href": "/services" },
+          { "label": "SEO Optimizasyonu", "href": "/services" },
+          { "label": "Dijital Danısmanlık", "href": "/services" }
+        ]
+      },
+      {
+        "title": "Yasal",
+        "links": [
+          { "label": "Gizlilik Politikası", "href": "/privacy-policy" },
+          { "label": "Kullanım Sartları", "href": "/terms" }
         ]
       }
     ],
@@ -233,5 +382,78 @@
       "text": "Isletmenizi ihtiyaçlarınıza özel son teknoloji dijital çözümlerle yükseltin.",
       "button": "Iletisime Geç"
     }
+  },
+
+  "privacyPolicy": {
+    "title": "Gizlilik Politikası",
+    "updatedAt": "Son güncelleme: 18 Haziran 2026",
+    "intro": "Bu Gizlilik Politikası, jhun.com.tr ('Site') üzerinden toplanan kisisel verilerin 6698 sayılı Kisisel Verilerin Korunması Kanunu ('KVKK') kapsamında nasıl islendigini açıklar. Veri sorumlusu Ceyhun Türkmen'dir.",
+    "sections": [
+      {
+        "heading": "1. Toplanan Veriler",
+        "body": "Iletisim formu aracılıgıyla ad, soyad, e-posta adresi ve mesaj içeriginiz toplanır. Site kullanımı sırasında tarayıcı türü, IP adresi ve çerezler aracılıgıyla teknik veriler otomatik olarak toplanabilir."
+      },
+      {
+        "heading": "2. Verilerin Islenme Amacı",
+        "body": "Toplanan veriler; talebinizi yanıtlamak, sizinle iletisime geçmek ve sitenin teknik performansını/güvenligini saglamak amacıyla islenir."
+      },
+      {
+        "heading": "3. Verilerin Saklanma Süresi",
+        "body": "Iletisim formu üzerinden alınan veriler, talebinizin sonuçlandırılması için gerekli süre boyunca saklanır ve yasal saklama süreleri sona erdiginde silinir."
+      },
+      {
+        "heading": "4. Çerezler",
+        "body": "Site, deneyiminizi iyilestirmek için zorunlu ve tercih bazlı çerezler kullanabilir. Çerez tercihlerinizi tarayıcı ayarlarınızdan yönetebilirsiniz."
+      },
+      {
+        "heading": "5. Verilerin Üçüncü Kisilerle Paylasımı",
+        "body": "Kisisel verileriniz, yasal zorunluluklar dısında üçüncü kisilerle paylasılmaz veya satılmaz."
+      },
+      {
+        "heading": "6. Haklarınız",
+        "body": "KVKK'nın 11. maddesi kapsamında verilerinize erisim, düzeltme, silme talep etme ve islenmesine itiraz etme hakkına sahipsiniz. Bu haklarınızı kullanmak için iletisim sayfasındaki e-posta adresi üzerinden bize ulasabilirsiniz."
+      }
+    ],
+    "contactNote": "Gizlilik politikasıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz."
+  },
+
+  "terms": {
+    "title": "Kullanım Sartları",
+    "updatedAt": "Son güncelleme: 18 Haziran 2026",
+    "intro": "Bu Kullanım Sartları, jhun.com.tr sitesini ('Site') ziyaret eden ve/veya sundugum hizmetlerden yararlanan kullanıcılar için geçerlidir. Siteyi kullanarak bu sartları kabul etmis sayılırsınız.",
+    "sections": [
+      {
+        "heading": "1. Hizmet Kapsamı",
+        "body": "Site, Ceyhun Türkmen'in portfolyosunu, sundugu web gelistirme hizmetlerini ve iletisim kanallarını tanıtmak amacıyla sunulmaktadır."
+      },
+      {
+        "heading": "2. Fikri Mülkiyet",
+        "body": "Sitedeki tüm içerik, görseller, kod örnekleri ve marka ögeleri (.jhun logosu dahil) aksi belirtilmedikçe Ceyhun Türkmen'e aittir ve izinsiz kullanılamaz."
+      },
+      {
+        "heading": "3. Proje Anlasmaları",
+        "body": "Sundugum hizmetlerden (web gelistirme, danısmanlık vb.) yararlanmak isteyen müsterilerle proje kapsamı, teslim süresi ve ödeme kosulları ayrı bir sözlesme veya teklif ile belirlenir; bu Site içerigi tek basına bir hizmet sözlesmesi olusturmaz."
+      },
+      {
+        "heading": "4. Sorumlulugun Sınırlandırılması",
+        "body": "Site içerigi 'oldugu gibi' sunulmaktadır; kesintisiz veya hatasız erisim garanti edilmez. Üçüncü taraf bağlantılar (GitHub, proje demoları vb.) için sorumluluk kabul edilmez."
+      },
+      {
+        "heading": "5. Degisiklikler",
+        "body": "Bu Kullanım Sartları önceden bildirilmeksizin güncellenebilir; güncel sürüm her zaman bu sayfada yayınlanır."
+      },
+      {
+        "heading": "6. Uygulanacak Hukuk",
+        "body": "Bu sartlar Türkiye Cumhuriyeti yasalarına tabidir; olası ihtilaflarda Türkiye mahkemeleri yetkilidir."
+      }
+    ],
+    "contactNote": "Kullanım sartlarıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz."
+  },
+
+  "cookieConsent": {
+    "message": "Bu site, deneyiminizi iyilestirmek için çerezleri kullanır. Siteyi kullanmaya devam ederek çerez kullanımını kabul etmis olursunuz.",
+    "acceptLabel": "Kabul Et",
+    "declineLabel": "Reddet",
+    "policyLinkLabel": "Gizlilik Politikası"
   }
 }

@@ -5,6 +5,8 @@ import SocialSidebar from "@/components/layout/socialSidebar";
 import type { Metadata } from "next";
 import Chatbot from "@/components/chatbot/chatBot";
 import { ThemeProvider } from "@/components/layout/themeProvider";
+import CookieConsent from "@/components/layout/cookieConsent";
+import { getDictionary } from "@/lib/get-dictionary";
 
 const BASE_URL = "https://jhun.com.tr";
 const LOCALES = ["tr", "en"] as const;
@@ -152,6 +154,7 @@ type LayoutProps = {
 export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
   const l = toLocale(locale);
+  const dict = await getDictionary(l);
 
   const personSchema = {
     "@context": "https://schema.org",
@@ -253,6 +256,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           __html: JSON.stringify([personSchema, websiteSchema]),
         }}
       />
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 focus:rounded-lg focus:bg-amber-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-black"
+      >
+        {l === "tr" ? "İçeriğe geç" : "Skip to content"}
+      </a>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
@@ -260,12 +269,13 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         disableTransitionOnChange
       >
         <ClientLayoutWrapper locale={locale}>
-          <main>{children}</main>
+          <main id="main-content">{children}</main>
           <Chatbot />
         </ClientLayoutWrapper>
 
         <SocialSidebar />
         <ScrollToTopButton />
+        <CookieConsent dict={dict.cookieConsent} locale={l} />
         <Toaster
           richColors
           position="bottom-right"

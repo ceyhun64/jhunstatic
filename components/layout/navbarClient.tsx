@@ -19,6 +19,7 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 type NavbarClientProps = {
   dict: {
     projects: string;
+    services: string;
     about: string;
     contact: string;
     blogs: string;
@@ -37,6 +38,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
 
   const links = [
     { name: dict.projects, href: "projects" },
+    { name: dict.services, href: "services" },
     { name: dict.about, href: "about" },
     { name: dict.contact, href: "contact" },
     { name: dict.blogs, href: "blog" },
@@ -114,7 +116,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
                           variant="ghost"
                           className={`px-4 py-2 font-medium transition-all duration-300 bg-transparent ${
                             isActive
-                              ? "text-orange-500 dark:text-orange-400"
+                              ? "text-orange-500 dark:text-orange-400 hover:text-gray-900 dark:hover:text-white"
                               : "text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-white"
                           } hover:bg-amber-100 dark:hover:bg-amber-600/90`}
                         >

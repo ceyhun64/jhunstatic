@@ -15,6 +15,14 @@ import { GradientText } from "@/components/ui/shadcn-io/gradient-text";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Blog } from "@/lib/staticData";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 type Props = {
   locale: "tr" | "en";
@@ -71,6 +79,31 @@ export default function BlogDetailClient({ dict, locale, blog }: Props) {
 
       <main className="relative z-10 pt-32 pb-24 px-6 md:px-10">
         <div className="max-w-5xl mx-auto">
+          {/* Breadcrumb */}
+          <Breadcrumb className="mb-4">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href={`/${locale}`}>
+                    {locale === "en" ? "Home" : "Anasayfa"}
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href={`/${locale}/blog`}>
+                    {locale === "en" ? "Blog" : "Blog"}
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+
           {/* Back Button & Category */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

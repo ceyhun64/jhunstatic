@@ -58,11 +58,11 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 via-gray-200 to-gray-50 dark:from-black dark:via-zinc-950 dark:to-black text-gray-900 dark:text-zinc-100 selection:bg-blue-500/30 transition-colors duration-500">
-      <GridPattern className={cn("opacity-70 ", "skew-y-12")} />
+      <GridPattern className="opacity-40 skew-y-6" />
 
       <div className="relative z-10">
         {/* HERO SECTION */}
-        <section className="relative py-12 md:py-25 px-4 md:px-6 overflow-hidden">
+        <section className="relative pt-24 md:pt-28 pb-12 md:pb-25 px-4 md:px-6 overflow-hidden">
           <div className="max-w-8xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-10 items-center">
               {/* Profile Side */}

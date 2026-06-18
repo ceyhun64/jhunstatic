@@ -6,6 +6,7 @@ import About from "@/components/home/about";
 import ContactSection from "@/components/home/contact";
 import Footer from "@/components/layout/footer";
 import Gallery from "@/components/home/gallery";
+import Testimonials from "@/components/home/testimonials";
 
 const BASE_URL = "https://jhun.com.tr";
 
@@ -48,6 +49,7 @@ export default async function Home({ params }: Props) {
       <Banner locale={locale} />
       <Gallery locale={locale} />
       <About locale={locale} />
+      <Testimonials locale={locale} />
       <ContactSection locale={locale} />
       <Footer locale={locale} />
     </div>

@@ -41,7 +41,7 @@ function createParticle(
   direction: number,
   gravity: number,
   friction: number,
-  size: number
+  size: number,
 ): ParticleType {
   const vx = Math.cos(direction) * speed;
   const vy = Math.sin(direction) * speed;
@@ -111,7 +111,7 @@ function createFirework(
   size: number,
   particleSpeed: { min: number; max: number } | number,
   particleSize: { min: number; max: number } | number,
-  onExplode: (particles: ParticleType[]) => void
+  onExplode: (particles: ParticleType[]) => void,
 ): FireworkType {
   const angle = -Math.PI / 2 + rand(-0.3, 0.3);
   const vx = Math.cos(angle) * speed;
@@ -160,8 +160,8 @@ function createFirework(
             particleAngle,
             0.05,
             0.98,
-            localParticleSize
-          )
+            localParticleSize,
+          ),
         );
       }
       onExplode(particles);
@@ -253,7 +253,7 @@ function FireworksBackground({
       const y = maxY;
       const targetY = rand(maxY * 0.1, maxY * 0.4);
       const fireworkColor = getColor(
-        color ?? ["#ff0080", "#ff7f50", "#ffff00", "#00ff7f", "#ff00ff"]
+        color ?? ["#ff0080", "#ff7f50", "#ffff00", "#00ff7f", "#ff00ff"],
       );
 
       const speed = getValueByRange(fireworkSpeed);
@@ -268,8 +268,8 @@ function FireworksBackground({
           size,
           particleSpeed,
           particleSize,
-          handleExplosion
-        )
+          handleExplosion,
+        ),
       );
       const timeout = rand(300, 800) / population;
       setTimeout(launchFirework, timeout);
@@ -304,7 +304,7 @@ function FireworksBackground({
       const y = maxY;
       const targetY = event.clientY;
       const fireworkColor = getColor(
-        color ?? ["#ff0080", "#ff7f50", "#ffff00", "#00ff7f", "#ff00ff"]
+        color ?? ["#ff0080", "#ff7f50", "#ffff00", "#00ff7f", "#ff00ff"],
       );
 
       const speed = getValueByRange(fireworkSpeed);
@@ -319,8 +319,8 @@ function FireworksBackground({
           size,
           particleSpeed,
           particleSize,
-          handleExplosion
-        )
+          handleExplosion,
+        ),
       );
     };
 
@@ -347,7 +347,7 @@ function FireworksBackground({
       className={cn(
         "relative w-full h-full overflow-hidden",
         className,
-        "bg-gradient-to-br from-zinc-400 via-zinc-50 to-zinc-400 dark:from-black dark:via-indigo-950 dark:to-black rounded-xl"
+        "bg-white/70 dark:bg-white/5 rounded-xl",
       )}
       {...props}
     >

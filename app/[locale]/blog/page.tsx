@@ -38,9 +38,7 @@ export default async function BlogPage({ params }: Props) {
   return (
     <div>
       <Navbar locale={locale} />
-      <div className="py-15">
-        <Blog locale={locale} />
-      </div>
+      <Blog locale={locale} />
       <Footer locale={locale} />
     </div>
   );
