@@ -13,7 +13,6 @@
     "description": "We craft modern websites tailored to your business with creative design and cutting-edge technology. Stand out in the digital world.",
     "ctaText": "Discover Our Projects"
   },
-
   "banner": {
     "title": "Let's Develop Your Websites Quickly",
     "subtitle": "We develop your websites using cutting-edge tools like React, Next.js, Tailwind CSS, and TypeScript. This ensures your sites are fast, interactive, and mobile-friendly, offering a superior user experience. Engaging animations and modern design examples make your projects stand out.",
@@ -60,7 +59,6 @@
     "achievement_4_value": "3+",
     "cvButtonLabel": "Download CV"
   },
-
   "services": {
     "badge": "Our Services",
     "title": "Our Services",
@@ -138,9 +136,8 @@
       "button": "Get in Touch"
     }
   },
-
   "faq": {
-    "badge": ".jhun",
+    "badge": "FAQ",
     "title": "Frequently Asked Questions",
     "subtitle": "The most common questions about process, pricing and collaboration.",
     "items": [
@@ -175,7 +172,6 @@
       "button": "Get in Touch"
     }
   },
-
   "testimonials": {
     "badge": "Sample Content",
     "title": "What Clients Say",
@@ -198,7 +194,6 @@
       }
     ]
   },
-
   "contact": {
     "title": "Get in Touch",
     "description": "We’re here for your questions, feedback, or collaboration opportunities. Let us know how we can help!",
@@ -224,38 +219,82 @@
     "error": "An error occurred.",
     "emailError": "Failed to send email."
   },
-
   "footer": {
     "slogan": "With the elegance of modern design and a focus on user experience, we deliver a stylish and impactful web experience.",
     "sections": [
       {
         "title": "Explore",
         "links": [
-          { "label": "Projects", "href": "/projects" },
-          { "label": "About Us", "href": "/about" },
-          { "label": "Services", "href": "/services" },
-          { "label": "FAQ", "href": "/faq" },
-          { "label": "Contact", "href": "/contact" }
+          {
+            "label": "Projects",
+            "href": "/projects"
+          },
+          {
+            "label": "About Us",
+            "href": "/about"
+          },
+          {
+            "label": "Services",
+            "href": "/services"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          }
         ]
       },
       {
         "title": "Our Services",
         "links": [
-          { "label": "Web Development", "href": "/services" },
-          { "label": "SEO Optimization", "href": "/services" },
-          { "label": "Digital Consulting", "href": "/services" }
+          {
+            "label": "Web Design & Development",
+            "href": "/services"
+          },
+          {
+            "label": "SEO Optimization",
+            "href": "/services"
+          },
+          {
+            "label": "E-Commerce Solutions",
+            "href": "/services"
+          },
+          {
+            "label": "API & Backend Development",
+            "href": "/services"
+          },
+          {
+            "label": "Digital Consulting",
+            "href": "/services"
+          },
+          {
+            "label": "Maintenance & Support",
+            "href": "/services"
+          }
         ]
       },
       {
         "title": "Legal",
         "links": [
-          { "label": "Privacy Policy", "href": "/privacy-policy" },
-          { "label": "Terms of Use", "href": "/terms" }
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy-policy"
+          },
+          {
+            "label": "Terms of Use",
+            "href": "/terms"
+          }
         ]
       }
     ],
     "social": [
-      { "name": "Github", "url": "https://github.com/ceyhun64" },
+      {
+        "name": "Github",
+        "url": "https://github.com/ceyhun64"
+      },
       {
         "name": "Linkedin",
         "url": "https://www.linkedin.com/in/ceyhun-türkmen-14882a26a"
@@ -281,7 +320,6 @@
     "title_main": "CODING THE FUTURE",
     "title_reveal": "THE ART OF CODE",
     "subtitle": "Our modern, high-performance projects built with the latest technologies.",
-
     "loading": "Loading projects...",
     "error": "An error occurred while loading projects.",
     "empty": "No projects have been added yet.",
@@ -291,7 +329,6 @@
     "cta_text": "In just a few steps, you can start your project that will make your brand stand out digitally with us.",
     "cta_button": "Get a Quote Now"
   },
-
   "projectdetail": {
     "loading": "Loading...",
     "notFound": "Project not found",
@@ -335,7 +372,6 @@
     "learnedPrefix": "🧠",
     "similarPrefix": "💡"
   },
-
   "blogs": {
     "header": {
       "title": "Tech Insights & Stories",
@@ -366,7 +402,6 @@
       "button": "Get in Touch"
     }
   },
-
   "blogDetail": {
     "notFound": "Blog Not Found",
     "backButton": "Go Back",
@@ -385,73 +420,72 @@
       "button": "Get in Touch"
     }
   },
-
   "privacyPolicy": {
     "title": "Privacy Policy",
     "updatedAt": "Last updated: June 18, 2026",
     "intro": "This Privacy Policy explains how personal data collected through jhun.com.tr ('Site') is processed under Turkey's Law on the Protection of Personal Data (KVKK No. 6698). The data controller is Ceyhun Türkmen.",
     "sections": [
       {
-        "heading": "1. Data We Collect",
+        "heading": "Data We Collect",
         "body": "Through the contact form, we collect your name, email address and message content. Technical data such as browser type, IP address and cookies may be collected automatically while using the site."
       },
       {
-        "heading": "2. Purpose of Processing",
+        "heading": "Purpose of Processing",
         "body": "Collected data is processed to respond to your request, communicate with you, and ensure the technical performance and security of the site."
       },
       {
-        "heading": "3. Retention Period",
+        "heading": "Retention Period",
         "body": "Data submitted via the contact form is retained for as long as necessary to resolve your request and is deleted once legal retention periods expire."
       },
       {
-        "heading": "4. Cookies",
+        "heading": "Cookies",
         "body": "The site may use essential and preference-based cookies to improve your experience. You can manage cookie preferences through your browser settings."
       },
       {
-        "heading": "5. Sharing With Third Parties",
+        "heading": "Sharing With Third Parties",
         "body": "Your personal data is not shared with or sold to third parties except where legally required."
       },
       {
-        "heading": "6. Your Rights",
+        "heading": "Your Rights",
         "body": "Under Article 11 of KVKK, you have the right to access, correct, delete and object to the processing of your data. You can exercise these rights by contacting us via the email address on the contact page."
       }
     ],
-    "contactNote": "For questions about this privacy policy, please reach out via the contact page."
+    "contactNote": "For questions about this privacy policy, please reach out via the contact page.",
+    "eyebrow": "Privacy"
   },
-
   "terms": {
     "title": "Terms of Use",
     "updatedAt": "Last updated: June 18, 2026",
     "intro": "These Terms of Use apply to anyone visiting jhun.com.tr ('Site') and/or using the services offered. By using the Site, you agree to these terms.",
     "sections": [
       {
-        "heading": "1. Scope of Service",
+        "heading": "Scope of Service",
         "body": "The Site is provided to showcase Ceyhun Türkmen's portfolio, the web development services offered, and contact channels."
       },
       {
-        "heading": "2. Intellectual Property",
+        "heading": "Intellectual Property",
         "body": "All content, images, code samples and brand elements (including the .jhun logo) on the Site belong to Ceyhun Türkmen unless otherwise stated, and may not be used without permission."
       },
       {
-        "heading": "3. Project Agreements",
+        "heading": "Project Agreements",
         "body": "Clients who wish to use the services offered (web development, consulting, etc.) will have project scope, delivery time and payment terms defined in a separate agreement or proposal; this Site content alone does not constitute a service contract."
       },
       {
-        "heading": "4. Limitation of Liability",
+        "heading": "Limitation of Liability",
         "body": "Site content is provided 'as is'; uninterrupted or error-free access is not guaranteed. No liability is accepted for third-party links (GitHub, project demos, etc.)."
       },
       {
-        "heading": "5. Changes",
+        "heading": "Changes",
         "body": "These Terms of Use may be updated without prior notice; the current version is always published on this page."
       },
       {
-        "heading": "6. Governing Law",
+        "heading": "Governing Law",
         "body": "These terms are governed by the laws of the Republic of Turkey; Turkish courts have jurisdiction over any disputes."
       }
     ],
-    "contactNote": "For questions about these terms, please reach out via the contact page."
+    "contactNote": "For questions about these terms, please reach out via the contact page.",
+    "eyebrow": "Legal"
   },
-
   "cookieConsent": {
     "message": "This site uses cookies to improve your experience. By continuing to use the site, you agree to the use of cookies.",
     "acceptLabel": "Accept",

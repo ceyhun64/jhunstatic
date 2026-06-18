@@ -57,7 +57,6 @@
     "achievement_4_value": "3+",
     "cvButtonLabel": "CV Indir"
   },
-
   "services": {
     "badge": "Hizmetlerimiz",
     "title": "Hizmetlerimiz",
@@ -135,9 +134,8 @@
       "button": "Iletisime Geç"
     }
   },
-
   "faq": {
-    "badge": ".jhun",
+    "badge": "SSS",
     "title": "Sıkça Sorulan Sorular",
     "subtitle": "Süreç, fiyatlandırma ve isbirligi hakkında en çok sorulan sorular.",
     "items": [
@@ -172,7 +170,6 @@
       "button": "Iletisime Geç"
     }
   },
-
   "testimonials": {
     "badge": "Örnek Içerik",
     "title": "Müsteriler Ne Diyor?",
@@ -195,7 +192,6 @@
       }
     ]
   },
-
   "contact": {
     "title": "Iletisime Geçin",
     "description": "Sorularınız, geri bildirimleriniz veya is birligi fırsatlarınız için buradayız. Size nasıl yardımcı olabilecegimizi bize bildirin!",
@@ -227,31 +223,76 @@
       {
         "title": "Kesfet",
         "links": [
-          { "label": "Projeler", "href": "/projects" },
-          { "label": "Hakkımızda", "href": "/about" },
-          { "label": "Hizmetler", "href": "/services" },
-          { "label": "SSS", "href": "/faq" },
-          { "label": "Iletisim", "href": "/contact" }
+          {
+            "label": "Projeler",
+            "href": "/projects"
+          },
+          {
+            "label": "Hakkımızda",
+            "href": "/about"
+          },
+          {
+            "label": "Hizmetler",
+            "href": "/services"
+          },
+          {
+            "label": "SSS",
+            "href": "/faq"
+          },
+          {
+            "label": "Iletisim",
+            "href": "/contact"
+          }
         ]
       },
       {
         "title": "Hizmetlerimiz",
         "links": [
-          { "label": "Web Gelistirme", "href": "/services" },
-          { "label": "SEO Optimizasyonu", "href": "/services" },
-          { "label": "Dijital Danısmanlık", "href": "/services" }
+          {
+            "label": "Web Tasarım & Gelistirme",
+            "href": "/services"
+          },
+          {
+            "label": "SEO Optimizasyonu",
+            "href": "/services"
+          },
+          {
+            "label": "E-Ticaret Çözümleri",
+            "href": "/services"
+          },
+          {
+            "label": "API & Backend Gelistirme",
+            "href": "/services"
+          },
+          {
+            "label": "Dijital Danısmanlık",
+            "href": "/services"
+          },
+          {
+            "label": "Bakım & Destek",
+            "href": "/services"
+          }
         ]
       },
       {
         "title": "Yasal",
         "links": [
-          { "label": "Gizlilik Politikası", "href": "/privacy-policy" },
-          { "label": "Kullanım Sartları", "href": "/terms" }
+          {
+            "label": "Gizlilik Politikası",
+            "href": "/privacy-policy"
+          },
+          {
+            "label": "Kullanım Sartları",
+            "href": "/terms"
+          }
         ]
       }
     ],
     "social": [
-      { "name": "Github", "url": "https://github.com/ceyhun64" },
+      {
+        "name": "Github",
+        "url": "https://github.com/ceyhun64"
+      },
       {
         "name": "Linkedin",
         "url": "https://www.linkedin.com/in/ceyhun-türkmen-14882a26a"
@@ -333,7 +374,6 @@
     "learnedPrefix": "🧠",
     "similarPrefix": "💡"
   },
-
   "blogs": {
     "header": {
       "title": "Teknoloji Yazıları & Hikayeler",
@@ -364,7 +404,6 @@
       "button": "Iletisime Geç"
     }
   },
-
   "blogDetail": {
     "notFound": "Blog Bulunamadı",
     "backButton": "Geri Dön",
@@ -383,73 +422,72 @@
       "button": "Iletisime Geç"
     }
   },
-
   "privacyPolicy": {
     "title": "Gizlilik Politikası",
     "updatedAt": "Son güncelleme: 18 Haziran 2026",
     "intro": "Bu Gizlilik Politikası, jhun.com.tr ('Site') üzerinden toplanan kisisel verilerin 6698 sayılı Kisisel Verilerin Korunması Kanunu ('KVKK') kapsamında nasıl islendigini açıklar. Veri sorumlusu Ceyhun Türkmen'dir.",
     "sections": [
       {
-        "heading": "1. Toplanan Veriler",
+        "heading": "Toplanan Veriler",
         "body": "Iletisim formu aracılıgıyla ad, soyad, e-posta adresi ve mesaj içeriginiz toplanır. Site kullanımı sırasında tarayıcı türü, IP adresi ve çerezler aracılıgıyla teknik veriler otomatik olarak toplanabilir."
       },
       {
-        "heading": "2. Verilerin Islenme Amacı",
+        "heading": "Verilerin Islenme Amacı",
         "body": "Toplanan veriler; talebinizi yanıtlamak, sizinle iletisime geçmek ve sitenin teknik performansını/güvenligini saglamak amacıyla islenir."
       },
       {
-        "heading": "3. Verilerin Saklanma Süresi",
+        "heading": "Verilerin Saklanma Süresi",
         "body": "Iletisim formu üzerinden alınan veriler, talebinizin sonuçlandırılması için gerekli süre boyunca saklanır ve yasal saklama süreleri sona erdiginde silinir."
       },
       {
-        "heading": "4. Çerezler",
+        "heading": "Çerezler",
         "body": "Site, deneyiminizi iyilestirmek için zorunlu ve tercih bazlı çerezler kullanabilir. Çerez tercihlerinizi tarayıcı ayarlarınızdan yönetebilirsiniz."
       },
       {
-        "heading": "5. Verilerin Üçüncü Kisilerle Paylasımı",
+        "heading": "Verilerin Üçüncü Kisilerle Paylasımı",
         "body": "Kisisel verileriniz, yasal zorunluluklar dısında üçüncü kisilerle paylasılmaz veya satılmaz."
       },
       {
-        "heading": "6. Haklarınız",
+        "heading": "Haklarınız",
         "body": "KVKK'nın 11. maddesi kapsamında verilerinize erisim, düzeltme, silme talep etme ve islenmesine itiraz etme hakkına sahipsiniz. Bu haklarınızı kullanmak için iletisim sayfasındaki e-posta adresi üzerinden bize ulasabilirsiniz."
       }
     ],
-    "contactNote": "Gizlilik politikasıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz."
+    "contactNote": "Gizlilik politikasıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz.",
+    "eyebrow": "Gizlilik"
   },
-
   "terms": {
     "title": "Kullanım Sartları",
     "updatedAt": "Son güncelleme: 18 Haziran 2026",
     "intro": "Bu Kullanım Sartları, jhun.com.tr sitesini ('Site') ziyaret eden ve/veya sundugum hizmetlerden yararlanan kullanıcılar için geçerlidir. Siteyi kullanarak bu sartları kabul etmis sayılırsınız.",
     "sections": [
       {
-        "heading": "1. Hizmet Kapsamı",
+        "heading": "Hizmet Kapsamı",
         "body": "Site, Ceyhun Türkmen'in portfolyosunu, sundugu web gelistirme hizmetlerini ve iletisim kanallarını tanıtmak amacıyla sunulmaktadır."
       },
       {
-        "heading": "2. Fikri Mülkiyet",
+        "heading": "Fikri Mülkiyet",
         "body": "Sitedeki tüm içerik, görseller, kod örnekleri ve marka ögeleri (.jhun logosu dahil) aksi belirtilmedikçe Ceyhun Türkmen'e aittir ve izinsiz kullanılamaz."
       },
       {
-        "heading": "3. Proje Anlasmaları",
+        "heading": "Proje Anlasmaları",
         "body": "Sundugum hizmetlerden (web gelistirme, danısmanlık vb.) yararlanmak isteyen müsterilerle proje kapsamı, teslim süresi ve ödeme kosulları ayrı bir sözlesme veya teklif ile belirlenir; bu Site içerigi tek basına bir hizmet sözlesmesi olusturmaz."
       },
       {
-        "heading": "4. Sorumlulugun Sınırlandırılması",
+        "heading": "Sorumlulugun Sınırlandırılması",
         "body": "Site içerigi 'oldugu gibi' sunulmaktadır; kesintisiz veya hatasız erisim garanti edilmez. Üçüncü taraf bağlantılar (GitHub, proje demoları vb.) için sorumluluk kabul edilmez."
       },
       {
-        "heading": "5. Degisiklikler",
+        "heading": "Degisiklikler",
         "body": "Bu Kullanım Sartları önceden bildirilmeksizin güncellenebilir; güncel sürüm her zaman bu sayfada yayınlanır."
       },
       {
-        "heading": "6. Uygulanacak Hukuk",
+        "heading": "Uygulanacak Hukuk",
         "body": "Bu sartlar Türkiye Cumhuriyeti yasalarına tabidir; olası ihtilaflarda Türkiye mahkemeleri yetkilidir."
       }
     ],
-    "contactNote": "Kullanım sartlarıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz."
+    "contactNote": "Kullanım sartlarıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz.",
+    "eyebrow": "Yasal"
   },
-
   "cookieConsent": {
     "message": "Bu site, deneyiminizi iyilestirmek için çerezleri kullanır. Siteyi kullanmaya devam ederek çerez kullanımını kabul etmis olursunuz.",
     "acceptLabel": "Kabul Et",

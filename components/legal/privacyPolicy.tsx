@@ -9,7 +9,7 @@ const PrivacyPolicy = async ({ locale }: Props) => {
   const dictAll = await getDictionary(locale);
   const dict = dictAll.privacyPolicy;
 
-  return <LegalDocumentClient dict={dict} accent="slate" />;
+  return <LegalDocumentClient dict={dict} icon="shield" eyebrow={dict.eyebrow} />;
 };
 
 export default PrivacyPolicy;
