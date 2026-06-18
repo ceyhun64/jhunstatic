@@ -85,7 +85,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const l = toLocale(locale);
   const c = seoContent[l];
   const canonicalUrl = `${BASE_URL}/${l}`;
-  const ogImageUrl = `${BASE_URL}/og-image.webp`;
+  const ogImageUrl = `${BASE_URL}/og-image.png`;
 
   return {
     title: {
@@ -166,7 +166,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     url: BASE_URL,
     image: {
       "@type": "ImageObject",
-      url: `${BASE_URL}/og-image.webp`,
+      url: `${BASE_URL}/og-image.png`,
       width: 1200,
       height: 630,
     },

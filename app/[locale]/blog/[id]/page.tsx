@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : blog.summary;
   const imageUrl = blog.image
     ? `${BASE_URL}${blog.image}`
-    : `${BASE_URL}/og-image.webp`;
+    : `${BASE_URL}/og-image.png`;
 
   return {
     title,
@@ -66,7 +66,7 @@ export default async function BlogDetailPage({ params }: Props) {
   const isEn = locale === "en";
   const title = blog ? (isEn ? blog.titleEng || blog.title : blog.title) : "";
   const imageUrl =
-    blog?.image ? `${BASE_URL}${blog.image}` : `${BASE_URL}/og-image.webp`;
+    blog?.image ? `${BASE_URL}${blog.image}` : `${BASE_URL}/og-image.png`;
 
   const articleSchema = blog
     ? {

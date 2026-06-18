@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : project.summary;
   const imageUrl = project.image
     ? `${BASE_URL}${project.image}`
-    : `${BASE_URL}/og-image.webp`;
+    : `${BASE_URL}/og-image.png`;
 
   return {
     title,
@@ -72,7 +72,7 @@ export default async function Page({ params }: Props) {
       : project.summary
     : "";
   const imageUrl =
-    project?.image ? `${BASE_URL}${project.image}` : `${BASE_URL}/og-image.webp`;
+    project?.image ? `${BASE_URL}${project.image}` : `${BASE_URL}/og-image.png`;
 
   const softwareSchema = project
     ? {

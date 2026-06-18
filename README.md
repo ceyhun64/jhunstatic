@@ -333,7 +333,7 @@ jhun/
     ├── logo/                       # Site logo
     ├── socialMedia/                # Social platform icons
     ├── technologies/               # Technology SVG icons (25+)
-    ├── og-image.webp               # Open Graph image
+    ├── og-image.png               # Open Graph image
     └── robots.txt                  # Search engine crawl rules
 ```
 

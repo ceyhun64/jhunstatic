@@ -294,7 +294,7 @@
 │   │   └── grass9.jpg
 │   ├── logo
 │   │   └── logo.webp
-│   ├── og-image.webp
+│   ├── og-image.png
 │   ├── robots.txt
 │   ├── socialMedia
 │   │   ├── facebook.png
