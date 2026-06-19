@@ -1,7 +1,7 @@
 import projects from "@/data/projects.json";
 import blogs from "@/data/blogs.json";
 
-const BASE_URL = "https://jhun.com.tr";
+const BASE_URL = "https://www.jhun.com.tr";
 
 export const dynamic = "force-static";
 

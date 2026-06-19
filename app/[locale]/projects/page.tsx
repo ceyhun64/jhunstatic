@@ -3,7 +3,7 @@ import Navbar from "@/components/layout/navbar";
 import Projects from "@/components/projects/projects";
 import Footer from "@/components/layout/footer";
 
-const BASE_URL = "https://jhun.com.tr";
+const BASE_URL = "https://www.jhun.com.tr";
 
 type Props = {
   params: Promise<{ locale: "tr" | "en" }>;

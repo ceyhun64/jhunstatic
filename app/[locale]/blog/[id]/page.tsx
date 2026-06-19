@@ -4,7 +4,7 @@ import BlogDetail from "@/components/blog/blogDetail";
 import Footer from "@/components/layout/footer";
 import blogs from "@/data/blogs.json";
 
-const BASE_URL = "https://jhun.com.tr";
+const BASE_URL = "https://www.jhun.com.tr";
 
 type Props = {
   params: Promise<{ locale: "tr" | "en"; id: string }>;

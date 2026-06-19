@@ -8,7 +8,7 @@ import Footer from "@/components/layout/footer";
 import Gallery from "@/components/home/gallery";
 import Testimonials from "@/components/home/testimonials";
 
-const BASE_URL = "https://jhun.com.tr";
+const BASE_URL = "https://www.jhun.com.tr";
 
 type Props = {
   params: Promise<{ locale: "tr" | "en" }>;

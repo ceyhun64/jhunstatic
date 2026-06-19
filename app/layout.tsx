@@ -18,7 +18,7 @@ const bodyFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jhun.com.tr"),
+  metadataBase: new URL("https://www.jhun.com.tr"),
 };
 
 export default async function RootLayout({

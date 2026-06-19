@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import projects from "@/data/projects.json";
 import blogs from "@/data/blogs.json";
 
-const BASE_URL = "https://jhun.com.tr";
+const BASE_URL = "https://www.jhun.com.tr";
 const LOCALES = ["tr", "en"] as const;
 
 type ChangeFreq =
