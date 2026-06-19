@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import TypingText from "@/components/ui/shadcn-io/typing-text";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/shadcn-io/3d-card";
 
 interface Props {
   dict: any;
@@ -137,35 +138,55 @@ export default function ServicesClient({ dict }: Props) {
               const Icon = ICONS[item.icon] || Code;
               const accent = CARD_ACCENTS[i % CARD_ACCENTS.length];
               return (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  whileHover={{ y: -6, scale: 1.03 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className={`group relative z-0 flex flex-col gap-4 rounded-2xl border border-border dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md p-6 shadow-sm hover:z-10 transition-colors duration-300 ${accent.border} ${accent.glow}`}
-                >
-                  <span
-                    className={`absolute top-5 right-5 text-[11px] font-mono font-semibold rounded-full h-7 w-7 flex items-center justify-center ${accent.badge}`}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                <motion.div key={i} variants={itemVariants}>
+                  <CardContainer className="w-full" containerClassName="py-0">
+                    <CardBody
+                      className={`relative h-auto w-full rounded-2xl border border-border dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md p-6 shadow-sm hover:shadow-xl transition-colors duration-300 ${accent.border} ${accent.glow}`}
+                    >
+                      <CardItem
+                        translateZ={50}
+                        className="absolute! top-5 right-5 w-auto!"
+                      >
+                        <span
+                          className={`text-[11px] font-mono font-semibold rounded-full h-7 w-7 flex items-center justify-center ${accent.badge}`}
+                        >
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                      </CardItem>
 
-                  <div
-                    className={`flex h-14 w-14 items-center justify-center rounded-2xl ${accent.icon}`}
-                  >
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white pr-8">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-700 dark:text-white/70 leading-relaxed">
-                    {item.description}
-                  </p>
-                  <div className="max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 overflow-hidden transition-all duration-500 ease-out">
-                    <p className="pt-3 mt-1 border-t border-border dark:border-white/10 text-xs text-gray-600 dark:text-white/60 leading-relaxed">
-                      {item.detail}
-                    </p>
-                  </div>
+                      <CardItem translateZ={60} className="w-auto!">
+                        <div
+                          className={`flex h-14 w-14 items-center justify-center rounded-2xl ${accent.icon}`}
+                        >
+                          <Icon className="h-7 w-7" />
+                        </div>
+                      </CardItem>
+
+                      <CardItem
+                        translateZ={40}
+                        as="h3"
+                        className="mt-4 w-full! text-lg font-semibold text-gray-900 dark:text-white pr-8"
+                      >
+                        {item.title}
+                      </CardItem>
+
+                      <CardItem
+                        translateZ={25}
+                        as="p"
+                        className="mt-2 w-full! text-sm text-gray-700 dark:text-white/70 leading-relaxed"
+                      >
+                        {item.description}
+                      </CardItem>
+
+                      <CardItem
+                        translateZ={15}
+                        as="p"
+                        className="mt-3 pt-3 w-full! border-t border-border dark:border-white/10 text-xs text-gray-600 dark:text-white/60 leading-relaxed"
+                      >
+                        {item.detail}
+                      </CardItem>
+                    </CardBody>
+                  </CardContainer>
                 </motion.div>
               );
             })}
