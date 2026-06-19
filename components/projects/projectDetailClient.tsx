@@ -15,6 +15,7 @@ import { TechnologyItem } from "./technologyItem";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import type { ProjectWithTechnologies } from "@/lib/staticData";
+import type { ReactNode } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -29,6 +30,37 @@ type Props = {
   dict: any;
   project: ProjectWithTechnologies;
 };
+
+function CodeWindow({
+  filename,
+  children,
+  className,
+}: {
+  filename: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "rounded-2xl overflow-hidden border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900 shadow-sm",
+        className,
+      )}
+    >
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-gray-100 dark:border-white/5 bg-gray-50/80 dark:bg-white/3">
+        <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
+        <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+        <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
+        <span className="ml-2 text-[11px] font-mono text-gray-600 dark:text-white/60">
+          {filename}
+        </span>
+      </div>
+      <pre className="p-4 sm:p-5 font-mono overflow-x-auto whitespace-pre-wrap text-[13px] sm:text-sm leading-relaxed text-gray-900 dark:text-white">
+        <code>{children}</code>
+      </pre>
+    </div>
+  );
+}
 
 export default function ProjectDetailClient({ dict, locale, project }: Props) {
   const { theme, resolvedTheme } = useTheme();
@@ -329,88 +361,86 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
               {dict.technologiesTitle}
             </h2>
 
-            <pre className="bg-gray-100 dark:bg-gray-950/60 text-gray-900 dark:text-white p-2 md:p-4 rounded-2xl font-mono overflow-x-auto whitespace-pre-wrap text-sm leading-relaxed mt-4 md:mt-6 border border-gray-300 dark:border-gray-800">
-              <code>
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;div class=
-                </span>
-                <span className="text-yellow-600 dark:text-yellow-400">
-                  "project-info"
-                </span>
-                <span className="text-blue-600 dark:text-blue-400">&gt;</span>
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;p&gt;
-                </span>
-                {"\n    "}
-                {dict.technologiesIntro.p1}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;/p&gt;
-                </span>
-                {"\n"}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;p&gt;
-                </span>
-                {"\n    "}
-                {dict.technologiesIntro.p2}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;/p&gt;
-                </span>
-                {"\n"}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;p&gt;
-                </span>
-                {"\n    "}
-                {dict.technologiesIntro.p3}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;/p&gt;
-                </span>
-                {"\n"}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;p&gt;
-                </span>
-                {"\n    "}
-                {dict.technologiesIntro.p4}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;/p&gt;
-                </span>
-                {"\n"}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;p&gt;
-                </span>
-                {"\n    "}
-                {dict.technologiesIntro.p5}
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;/p&gt;
-                </span>
-                {"\n"} {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;p&gt;
-                </span>
-                {"\n    "}
-                {dict.technologiesIntro.p6}
-                <span className="ml-1 animate-blink text-green-600 dark:text-green-400">
-                  _
-                </span>
-                {"\n  "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;/p&gt;
-                </span>
-                {"\n"}
-                <span className="text-blue-600 dark:text-blue-400">
-                  &lt;/div&gt;
-                </span>
-              </code>
-            </pre>
+            <CodeWindow filename="teknolojiler.tsx" className="mt-4 md:mt-6">
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;div class=
+              </span>
+              <span className="text-yellow-600 dark:text-yellow-400">
+                "project-info"
+              </span>
+              <span className="text-blue-600 dark:text-blue-400">&gt;</span>
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;p&gt;
+              </span>
+              {"\n    "}
+              {dict.technologiesIntro.p1}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;/p&gt;
+              </span>
+              {"\n"}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;p&gt;
+              </span>
+              {"\n    "}
+              {dict.technologiesIntro.p2}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;/p&gt;
+              </span>
+              {"\n"}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;p&gt;
+              </span>
+              {"\n    "}
+              {dict.technologiesIntro.p3}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;/p&gt;
+              </span>
+              {"\n"}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;p&gt;
+              </span>
+              {"\n    "}
+              {dict.technologiesIntro.p4}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;/p&gt;
+              </span>
+              {"\n"}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;p&gt;
+              </span>
+              {"\n    "}
+              {dict.technologiesIntro.p5}
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;/p&gt;
+              </span>
+              {"\n"} {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;p&gt;
+              </span>
+              {"\n    "}
+              {dict.technologiesIntro.p6}
+              <span className="ml-1 animate-blink text-green-600 dark:text-green-400">
+                _
+              </span>
+              {"\n  "}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;/p&gt;
+              </span>
+              {"\n"}
+              <span className="text-blue-600 dark:text-blue-400">
+                &lt;/div&gt;
+              </span>
+            </CodeWindow>
 
             <div className="hidden lg:flex space-x-6 mt-2 md:mt-8 p-4 md:p-0">
               <a
