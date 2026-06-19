@@ -69,7 +69,7 @@ export default function CookieConsent({ dict, locale }: Props) {
             <Button
               size="sm"
               onClick={() => handleChoice("accepted")}
-              className="bg-amber-600 hover:bg-amber-500 text-white"
+              className="bg-amber-700 hover:bg-amber-600 text-white"
             >
               {dict.acceptLabel}
             </Button>

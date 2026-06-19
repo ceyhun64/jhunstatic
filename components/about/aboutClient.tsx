@@ -67,7 +67,7 @@ function CodeWindow({
         <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
         <span className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
-        <span className="ml-2 text-[11px] font-mono text-gray-400 dark:text-white/40">
+        <span className="ml-2 text-[11px] font-mono text-gray-600 dark:text-white/60">
           {filename}
         </span>
       </div>
@@ -137,7 +137,7 @@ export default function AboutClient({ dict }: Props) {
                   <span className="text-blue-600 dark:text-blue-400">
                     &lt;section id=
                   </span>
-                  <span className="text-amber-600 dark:text-amber-400">
+                  <span className="text-amber-700 dark:text-amber-400">
                     "giris"
                   </span>
                   <span className="text-blue-600 dark:text-blue-400">&gt;</span>
@@ -145,7 +145,7 @@ export default function AboutClient({ dict }: Props) {
                   <span className="text-blue-600 dark:text-blue-400">
                     &lt;h2&gt;
                   </span>
-                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
+                  <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
                     {dict.paragraph1_title}
                   </span>
                   <span className="text-blue-600 dark:text-blue-400">
@@ -165,7 +165,7 @@ export default function AboutClient({ dict }: Props) {
                   <span className="text-blue-600 dark:text-blue-400">
                     &lt;h3&gt;
                   </span>
-                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
+                  <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
                     {dict.mission_title}
                   </span>
                   <span className="text-blue-600 dark:text-blue-400">
@@ -196,7 +196,7 @@ export default function AboutClient({ dict }: Props) {
                     <span className="text-blue-600 dark:text-blue-400">
                       &lt;div id=
                     </span>
-                    <span className="text-amber-600 dark:text-amber-400">
+                    <span className="text-amber-700 dark:text-amber-400">
                       "vizyon"
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
@@ -206,7 +206,7 @@ export default function AboutClient({ dict }: Props) {
                     <span className="text-blue-600 dark:text-blue-400">
                       &lt;h4&gt;
                     </span>
-                    <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
+                    <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
                       {dict.vision_title}
                     </span>
                     <span className="text-blue-600 dark:text-blue-400">
@@ -365,7 +365,7 @@ export default function AboutClient({ dict }: Props) {
                     key={i}
                     className="flex flex-col items-center md:items-start gap-3 rounded-xl border border-gray-200 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-sm p-5 text-center md:text-left"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-100 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400">
                       <Icon className="h-5 w-5" />
                     </div>
                     <span className="text-2xl sm:text-3xl md:text-4xl font-semibold">
