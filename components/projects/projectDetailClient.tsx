@@ -282,23 +282,24 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
               className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-gradient-to-br from-amber-200 via-amber-300 to-amber-400 dark:from-amber-300 dark:via-amber-400 dark:to-amber-500 opacity-10 dark:opacity-15 rounded-full filter blur-2xl"
             />
             <div className="absolute inset-0 pointer-events-none">
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  animate={{ y: [-10, 10], x: [-5, 5] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 5 + i,
-                    ease: "easeInOut",
-                    delay: i * 0.3,
-                  }}
-                  className="absolute w-1 h-1 bg-amber-400/20 dark:bg-amber-200/40 rounded-full"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                  }}
-                />
-              ))}
+              {mounted &&
+                [...Array(20)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ y: [-10, 10], x: [-5, 5] }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: 5 + i,
+                      ease: "easeInOut",
+                      delay: i * 0.3,
+                    }}
+                    className="absolute w-1 h-1 bg-amber-400/20 dark:bg-amber-200/40 rounded-full"
+                    style={{
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
+                    }}
+                  />
+                ))}
             </div>
           </div>
 
