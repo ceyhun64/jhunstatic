@@ -1,8 +1,8 @@
 {
   "navbar": {
-    "projects": "Projelerimiz",
+    "projects": "Projelerim",
     "services": "Hizmetler",
-    "about": "Biz Kimiz",
+    "about": "Hakkımda",
     "contact": "Iletisime Geçin",
     "blogs": "Blog"
   },
@@ -10,18 +10,18 @@
     "badge": ".jhun",
     "title1": "Markanızı Dijitallestirin",
     "title2": "Modern & Profesyonel Web Sitelerine Sahip Olun",
-    "description": "Yaratıcı tasarım ve son teknoloji ile isletmenize özel modern web siteleri üretiyoruz. Dijital dünyada öne çıkın.",
-    "ctaText": "Projelerimizi Kesfedin"
+    "description": "Yaratıcı tasarım ve son teknoloji ile isletmenize özel modern web siteleri üretiyorum. Dijital dünyada öne çıkın.",
+    "ctaText": "Projelerimi Kesfedin"
   },
   "banner": {
     "title": "Web Sitelerinizi Hızla Gelistirelim",
-    "subtitle": "Web sitelerinizi React, Next.js, Tailwind CSS ve TypeScript gibi son teknoloji araçlarla gelistiriyoruz. Bu sayede siteleriniz hızlı, etkilesimli ve mobil uyumlu olur, kullanıcı deneyimi üst seviyeye çıkar. Sürükleyici animasyonlar ve modern tasarım örnekleri ile projeleriniz fark yaratır.",
+    "subtitle": "Web sitelerinizi React, Next.js, Tailwind CSS ve TypeScript gibi son teknoloji araçlarla gelistiriyorum. Bu sayede siteleriniz hızlı, etkilesimli ve mobil uyumlu olur, kullanıcı deneyimi üst seviyeye çıkar. Sürükleyici animasyonlar ve modern tasarım örnekleri ile projeleriniz fark yaratır.",
     "tech_title": "Kullanılan Teknolojiler",
-    "tech_subtitle": "React ve Next.js ile dinamik ve ölçeklenebilir uygulamalar gelistiriyoruz. TypeScript ile hatasız kodlama saglarken, Tailwind CSS ile modern ve estetik tasarımlar sunuyoruz. Bu teknolojiler, projelerinizi hızlı, güvenilir ve kullanıcı dostu hale getirir."
+    "tech_subtitle": "React ve Next.js ile dinamik ve ölçeklenebilir uygulamalar gelistiriyorum. TypeScript ile hatasız kodlama saglarken, Tailwind CSS ile modern ve estetik tasarımlar sunuyorum. Bu teknolojiler, projelerinizi hızlı, güvenilir ve kullanıcı dostu hale getirir."
   },
   "gallery": {
-    "title": "Gelecegi Tasarlıyoruz",
-    "description": "En yeni teknolojilerle gelistirilmis modern projelerimizi kesfedin.",
+    "title": "Gelecegi Tasarlıyorum",
+    "description": "En yeni teknolojilerle gelistirilmis modern projelerimi kesfedin.",
     "fetchError": "Projeler alınamadı.",
     "view": "Incele",
     "visitSite": "Siteye Git",
@@ -29,24 +29,24 @@
   },
   "about": {
     "title": ".jhun{}",
-    "typingTitle": "Biz Kimiz",
-    "heading": "Biz Kimiz",
-    "lead": ".jhun, isletmelerin dijital çagda büyümesini ve basarılı olmasını saglayacak yenilikçi çözümler gelistirmeye adanmıs tutkulu bir ekiptir.",
+    "typingTitle": "Ben Kimim",
+    "heading": "Ben Kimim",
+    "lead": ".jhun olarak, isletmelerin dijital çagda büyümesini ve basarılı olmasını saglayacak yenilikçi çözümler gelistirmeye adanmıs tutkulu bir yazılım gelistiricisiyim.",
     "paragraph1_title": "Dijital",
-    "paragraph1_text": "Dijital dünyada yaratıcılık ve teknoloji birlesiyor. .jhun olarak, web yazılımını sadece bir araç degil, bir sanat formu olarak görüyoruz. Isletmelerin dijital dönüsümünü hızlandırmak, kullanıcı deneyimini güçlendirmek ve markaların online dünyada öne çıkmasını saglamak bizim isimiz.",
-    "mission_title": "Misyonumuz",
+    "paragraph1_text": "Dijital dünyada yaratıcılık ve teknoloji birlesiyor. .jhun olarak, web yazılımını sadece bir araç degil, bir sanat formu olarak görüyorum. Isletmelerin dijital dönüsümünü hızlandırmak, kullanıcı deneyimini güçlendirmek ve markaların online dünyada öne çıkmasını saglamak benim isim.",
+    "mission_title": "Misyonum",
     "mission_text": "Yenilikçi ve etkili web çözümleri sunmak, modern teknolojilerle hızlı, güvenli ve ölçeklenebilir altyapılar olusturmak, kullanıcı odaklı arayüz ve deneyim tasarlamak, markaların dijital potansiyelini en üst düzeye çıkarmak.",
-    "vision_title": "Vizyonumuz",
-    "vision_text": ".jhun olarak, gelecegin web deneyimlerini tasarlamak ve sürekli degisen teknoloji dünyasında markaları öncü konumda tutmak istiyoruz. Dijitalde fark yaratmak, sadece bugünün degil, yarının trendlerini de yakalamak bizim hedefimiz. Her proje ile kullanıcı odaklı, yenilikçi ve estetik çözümler sunmayı amaçlıyoruz. Biz, yalnızca islevsel web siteleri ve uygulamalar gelistirmekle kalmıyor; markaların dijital stratejilerini güçlendirecek, etkilesim ve dönüsümü artıracak deneyimler yaratıyoruz. Teknolojiyi stratejik bir avantaja dönüstürmek, veri güvenligini en üst düzeyde saglamak ve performanslı altyapılar olusturmak vizyonumuzun temel taslarıdır.",
+    "vision_title": "Vizyonum",
+    "vision_text": ".jhun olarak, gelecegin web deneyimlerini tasarlamak ve sürekli degisen teknoloji dünyasında markaları öncü konumda tutmak istiyorum. Dijitalde fark yaratmak, sadece bugünün degil, yarının trendlerini de yakalamak benim hedefim. Her proje ile kullanıcı odaklı, yenilikçi ve estetik çözümler sunmayı amaçlıyorum. Yalnızca islevsel web siteleri ve uygulamalar gelistirmekle kalmıyor; markaların dijital stratejilerini güçlendirecek, etkilesim ve dönüsümü artıracak deneyimler yaratıyorum. Teknolojiyi stratejik bir avantaja dönüstürmek, veri güvenligini en üst düzeyde saglamak ve performanslı altyapılar olusturmak vizyonumun temel taslarıdır.",
     "projects_heading": "jhun.tech’de yüzlerce proje",
-    "projects_description": "Isletmelere modern, kullanıcı dostu ve etkili web çözümleri sunuyoruz. Tasarımdan SEO optimizasyonuna, blog yönetiminden e-ticaret entegrasyonuna kadar tüm süreçlerde isletmelerin dijital büyümesini destekliyoruz.",
-    "logo_title": "Logomuz nereden geliyor?",
-    "logo_paragraph1": ".jhun ismi, kurucumuz Ceyhun Turkmen'in isminden okunuyor ve JSON formatına gönderme yapıyor: Nokta objeleri, süslü parantez veri bloklarını simgeliyor. Böylece isim ve logo, markamızın modern, minimal ve teknoloji odaklı kimligini hem görsel hem kavramsal olarak yansıtıyor.",
-    "logo_paragraph2": "Lacivert renk, web tasarımında gece ve gökyüzünün sonsuzlugunu simgeler. .jhun logosundaki lacivert, evrendeki yıldızların ilham verici düzenini ve markamızın sınırsız yaratıcılıgını temsil eder; profesyonel ve güvenilir kimligimize ithaf edilmistir.",
-    "quote": "Minimalist tasarım ve kod dünyasının sembolleri, markamızın yenilikçi ve çözüm odaklı yaklasımını ziyaretçilere dogrudan anlatıyor.",
-    "companies_title": "Türkiye genelinde müsterilerimizin tercihi",
-    "achievement_heading": "Basarılarımız Sayılarla",
-    "achievement_sub": "Isletmelere is akıslarını gelistiren, verimliligi artıran ve büyümeyi tesvik eden etkili araçlar saglıyoruz.",
+    "projects_description": "Isletmelere modern, kullanıcı dostu ve etkili web çözümleri sunuyorum. Tasarımdan SEO optimizasyonuna, blog yönetiminden e-ticaret entegrasyonuna kadar tüm süreçlerde isletmelerin dijital büyümesini destekliyorum.",
+    "logo_title": "Logom nereden geliyor?",
+    "logo_paragraph1": ".jhun ismi, Ceyhun Turkmen isminden okunuyor ve JSON formatına gönderme yapıyor: Nokta objeleri, süslü parantez veri bloklarını simgeliyor. Böylece isim ve logo, markamın modern, minimal ve teknoloji odaklı kimligini hem görsel hem kavramsal olarak yansıtıyor.",
+    "logo_paragraph2": "Lacivert renk, web tasarımında gece ve gökyüzünün sonsuzlugunu simgeler. .jhun logosundaki lacivert, evrendeki yıldızların ilham verici düzenini ve markamın sınırsız yaratıcılıgını temsil eder; profesyonel ve güvenilir kimligime ithaf edilmistir.",
+    "quote": "Minimalist tasarım ve kod dünyasının sembolleri, markamın yenilikçi ve çözüm odaklı yaklasımını ziyaretçilere dogrudan anlatıyor.",
+    "companies_title": "Türkiye genelinde müsterilerimin tercihi",
+    "achievement_heading": "Basarılarım Sayılarla",
+    "achievement_sub": "Isletmelere is akıslarını gelistiren, verimliligi artıran ve büyümeyi tesvik eden etkili araçlar sagliyorum.",
     "achievement_1_label": "Desteklenen sirket",
     "achievement_1_value": "10+",
     "achievement_2_label": "Tamamlanan Proje",
@@ -58,8 +58,8 @@
     "cvButtonLabel": "CV Indir"
   },
   "services": {
-    "badge": "Hizmetlerimiz",
-    "title": "Hizmetlerimiz",
+    "badge": "Hizmetlerim",
+    "title": "Hizmetlerim",
     "subtitle": "Isletmenizin dijital ihtiyaçlarına uçtan uca çözüm sunan hizmetler.",
     "trust": [
       "10+ Desteklenen sirket",
@@ -94,7 +94,7 @@
       {
         "title": "Dijital Danısmanlık",
         "description": "Teknoloji seçimi, mimari kararlar ve performans optimizasyonu konularında is ortaklarıma danısmanlık saglıyorum.",
-        "detail": "Mevcut sisteminizi inceleyip darbogazları belirliyor, ölçeklenebilirlik ve maliyet açısından en uygun teknoloji yol haritasını birlikte çiziyoruz.",
+        "detail": "Mevcut sisteminizi inceleyip darbogazları belirliyor, ölçeklenebilirlik ve maliyet açısından en uygun teknoloji yol haritasını birlikte çiziyorum.",
         "icon": "MessageSquare"
       },
       {
@@ -104,13 +104,13 @@
         "icon": "LifeBuoy"
       }
     ],
-    "processEyebrow": "Sürecimiz",
+    "processEyebrow": "Sürecim",
     "processTitle": "Çalısma Sürecim",
     "process": [
       {
         "step": "01",
         "title": "Kesif & Planlama",
-        "description": "Ihtiyaçlarınızı analiz eder, proje kapsamını ve zaman çizelgesini birlikte belirleriz."
+        "description": "Ihtiyaçlarınızı analiz eder, proje kapsamını ve zaman çizelgesini sizinle birlikte belirlerim."
       },
       {
         "step": "02",
@@ -171,30 +171,55 @@
     }
   },
   "testimonials": {
-    "badge": "Örnek Içerik",
+    "badge": "Müsteri Yorumları",
     "title": "Müsteriler Ne Diyor?",
-    "subtitle": "Asagıdaki yorumlar örnek/yer tutucu içeriktir; gerçek müsteri geri bildirimleriyle güncellenecektir.",
+    "subtitle": "Birlikte çalıstıgım müsterilerden gelen gerçek degerlendirmeler.",
     "items": [
       {
-        "name": "E-ticaret Müsterisi",
-        "role": "Proje Sahibi",
-        "quote": "Sürecin her asamasında seffaf iletisim ve hızlı teslimat sayesinde sitemiz beklentimizin üzerinde tamamlandı."
+        "name": "ugkkkk",
+        "timeAgo": "5 ay önce",
+        "quote": "Kendisini gelistirmis, iletisimi çok güçlü. Tam bir dijital esnaf. Aynı zamanda is noktasında da genç dinamik ve isi bilen biri. Devamlı çalısabilecegimiz bir konumda. Emegine saglık."
       },
       {
-        "name": "Kurumsal Müsteri",
-        "role": "Pazarlama Sorumlusu",
-        "quote": "Modern tasarım anlayısı ve teknik bilgi birikimi projeyi baştan sona güvenle yönetmemizi sagladı."
+        "name": "saresudeak",
+        "timeAgo": "9 ay önce",
+        "quote": "Öncelikle bu kadar hızlı tamamlanacagını düsünmemistim, en hızlı ve en güzel bir sekilde isimi halletti. Isinde çok profesyonel."
       },
       {
-        "name": "Girisimci",
-        "role": "Kurucu",
-        "quote": "Performans ve SEO odaklı yaklasım sayesinde sitemizin görünürlügü kısa sürede arttı."
+        "name": "barisbeyazgul",
+        "timeAgo": "9 ay önce",
+        "quote": "Isimiz oldu hızlı ve istedigim gibi oldu, benden daha fazlasını kattı diyebilirim. Güvenilir ve sorunsuz; 3. isimde de burada olacagım."
+      },
+      {
+        "name": "yavuzcakirr",
+        "timeAgo": "10 ay önce",
+        "quote": "Burada artık çalısacagım kisi Ceyhun bey oldu. Kendisi ilgili, dakik ve oldukça naziktı. Süreçte oldukça yardımcı oldu. Süreçten ve finalde çıkan isten çok memnun kaldım."
+      },
+      {
+        "name": "fraktstudio",
+        "timeAgo": "2 yıl önce",
+        "quote": "Çok yardımcı oldu, sorunsuz bir sekilde isimizi halletti."
+      },
+      {
+        "name": "Ferudun Polat",
+        "timeAgo": "3 ay önce",
+        "quote": "Perde firmamız için hazırladığı site beklentimin çok üzerindeydi. Ölçüye göre sipariş sistemi tam istedigimiz gibi çalısıyor, müsterilerimiz artık online siparis vermekte hiç zorlanmıyor. Tesekkürler Ceyhun bey."
+      },
+      {
+        "name": "Mustafa Cer",
+        "timeAgo": "6 ay önce",
+        "quote": "Plicell ve zebra perde ürünlerimizi online satısa açmak istiyorduk, Ceyhun bey süreci bastan sona çok profesyonel yönetti. Site hem hızlı hem kullanıslı oldu, satıslarımıza katkısı büyük oldu."
+      },
+      {
+        "name": "Suat Dişbudak",
+        "timeAgo": "8 ay önce",
+        "quote": "Is güvenligi ürünlerimiz için kurdugu platform gerçekten kapsamlı oldu, özel üretim siparislerimizi bile sisteme entegre etti. Iletisimi ve çözüm odaklı yaklasımı için ayrıca tesekkür ederim."
       }
     ]
   },
   "contact": {
     "title": "Iletisime Geçin",
-    "description": "Sorularınız, geri bildirimleriniz veya is birligi fırsatlarınız için buradayız. Size nasıl yardımcı olabilecegimizi bize bildirin!",
+    "description": "Sorularınız, geri bildirimleriniz veya is birligi fırsatlarınız için buradayım. Size nasıl yardımcı olabilecegimi bana bildirin!",
     "infoTitle": "Iletisim Bilgileri",
     "phoneLabel": "Telefon",
     "emailLabel": "E-posta",
@@ -218,35 +243,39 @@
     "emailError": "Mail gönderilemedi"
   },
   "footer": {
-    "slogan": "Modern tasarımın zarafetiyle, kullanıcı deneyimini ön planda tutan, sık ve etkileyici bir web deneyimi sunuyoruz.",
+    "slogan": "Modern tasarımın zarafetiyle, kullanıcı deneyimini ön planda tutan, sık ve etkileyici bir web deneyimi sunuyorum.",
     "sections": [
       {
         "title": "Kesfet",
         "links": [
           {
-            "label": "Projeler",
+            "label": "Projelerim",
             "href": "/projects"
           },
           {
-            "label": "Hakkımızda",
-            "href": "/about"
-          },
-          {
-            "label": "Hizmetler",
+            "label": "Hizmetlerim",
             "href": "/services"
           },
           {
-            "label": "SSS",
-            "href": "/faq"
+            "label": "Hakkımda",
+            "href": "/about"
           },
           {
             "label": "Iletisim",
             "href": "/contact"
+          },
+          {
+            "label": "Blog",
+            "href": "/blogs"
+          },
+          {
+            "label": "SSS",
+            "href": "/faq"
           }
         ]
       },
       {
-        "title": "Hizmetlerimiz",
+        "title": "Hizmetlerim",
         "links": [
           {
             "label": "Web Tasarım & Gelistirme",
@@ -315,16 +344,16 @@
     "locale": "tr"
   },
   "projects": {
-    "title_main": "GELECEGI KODLUYORUZ",
+    "title_main": "GELECEGI KODLUYORUM",
     "title_reveal": "SANATSAL KOD",
-    "subtitle": "En yeni teknolojilerle gelistirilmis, yüksek performanslı ve modern projelerimiz.",
+    "subtitle": "En yeni teknolojilerle gelistirilmis, yüksek performanslı ve modern projelerim.",
     "loading": "Projeler yükleniyor...",
     "error": "Projeler yüklenirken bir hata olustu.",
     "empty": "Henüz proje eklenmemis.",
     "view_project": "Incele",
     "visit_site": "Siteye Git",
     "cta_title": "Projen için teklif almak ister misin?",
-    "cta_text": "Sadece birkaç adımda markanı dijitalde öne çıkaracak projeni bizimle baslatabilirsin.",
+    "cta_text": "Sadece birkaç adımda markanı dijitalde öne çıkaracak projeni benimle baslatabilirsin.",
     "cta_button": "Hemen Teklif Al"
   },
   "projectdetail": {
@@ -429,7 +458,7 @@
     "sections": [
       {
         "heading": "Toplanan Veriler",
-        "body": "Iletisim formu aracılıgıyla ad, soyad, e-posta adresi ve mesaj içeriginiz toplanır. Site kullanımı sırasında tarayıcı türü, IP adresi ve çerezler aracılıgıyla teknik veriler otomatik olarak toplanabilir."
+        "body": "Iletisim formu aracılıgıyla ad, soyad, e-posta adresi ve mesaj içeriginiz tarafımca toplanır. Site kullanımı sırasında tarayıcı türü, IP adresi ve çerezler aracılıgıyla teknik veriler otomatik olarak toplanabilir."
       },
       {
         "heading": "Verilerin Islenme Amacı",
@@ -449,10 +478,10 @@
       },
       {
         "heading": "Haklarınız",
-        "body": "KVKK'nın 11. maddesi kapsamında verilerinize erisim, düzeltme, silme talep etme ve islenmesine itiraz etme hakkına sahipsiniz. Bu haklarınızı kullanmak için iletisim sayfasındaki e-posta adresi üzerinden bize ulasabilirsiniz."
+        "body": "KVKK'nın 11. maddesi kapsamında verilerinize erisim, düzeltme, silme talep etme ve islenmesine itiraz etme hakkına sahipsiniz. Bu haklarınızı kullanmak için iletisim sayfasındaki e-posta adresi üzerinden bana ulasabilirsiniz."
       }
     ],
-    "contactNote": "Gizlilik politikasıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz.",
+    "contactNote": "Gizlilik politikasıyla ilgili sorularınız için iletisim sayfasından bana ulasabilirsiniz.",
     "eyebrow": "Gizlilik"
   },
   "terms": {
@@ -485,7 +514,7 @@
         "body": "Bu sartlar Türkiye Cumhuriyeti yasalarına tabidir; olası ihtilaflarda Türkiye mahkemeleri yetkilidir."
       }
     ],
-    "contactNote": "Kullanım sartlarıyla ilgili sorularınız için iletisim sayfasından bize ulasabilirsiniz.",
+    "contactNote": "Kullanım sartlarıyla ilgili sorularınız için iletisim sayfasından bana ulasabilirsiniz.",
     "eyebrow": "Yasal"
   },
   "cookieConsent": {

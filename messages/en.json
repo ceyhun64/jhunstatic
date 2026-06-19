@@ -10,18 +10,18 @@
     "badge": ".jhun",
     "title1": "Digitize Your Brand",
     "title2": "Own Modern & Professional Websites",
-    "description": "We craft modern websites tailored to your business with creative design and cutting-edge technology. Stand out in the digital world.",
-    "ctaText": "Discover Our Projects"
+    "description": "I craft modern websites tailored to your business with creative design and cutting-edge technology. Stand out in the digital world.",
+    "ctaText": "Discover My Projects"
   },
   "banner": {
     "title": "Let's Develop Your Websites Quickly",
-    "subtitle": "We develop your websites using cutting-edge tools like React, Next.js, Tailwind CSS, and TypeScript. This ensures your sites are fast, interactive, and mobile-friendly, offering a superior user experience. Engaging animations and modern design examples make your projects stand out.",
+    "subtitle": "I develop your websites using cutting-edge tools like React, Next.js, Tailwind CSS, and TypeScript. This ensures your sites are fast, interactive, and mobile-friendly, offering a superior user experience. Engaging animations and modern design examples make your projects stand out.",
     "tech_title": "Technologies Used",
-    "tech_subtitle": "We develop dynamic and scalable applications with React and Next.js. TypeScript ensures error-free coding, while Tailwind CSS provides modern and aesthetic designs. These technologies make your projects fast, reliable, and user-friendly."
+    "tech_subtitle": "I develop dynamic and scalable applications with React and Next.js. TypeScript ensures error-free coding, while Tailwind CSS provides modern and aesthetic designs. These technologies make your projects fast, reliable, and user-friendly."
   },
   "gallery": {
     "title": "Designing the Future",
-    "description": "Discover our modern projects built with the latest technologies.",
+    "description": "Discover my modern projects built with the latest technologies.",
     "loading": "Loading projects...",
     "fetchError": "Unable to load projects.",
     "unknownError": "Unknown error",
@@ -31,24 +31,24 @@
   },
   "about": {
     "title": ".jhun{}",
-    "typingTitle": "About Us",
-    "heading": "Who We Are",
-    "lead": ".jhun is a passionate team dedicated to creating innovative solutions that help businesses grow and succeed in the digital age.",
+    "typingTitle": "Who I Am",
+    "heading": "Who I Am",
+    "lead": "As .jhun, I am a passionate developer dedicated to creating innovative solutions that help businesses grow and succeed in the digital age.",
     "paragraph1_title": "Digital",
-    "paragraph1_text": "Creativity and technology meet in the digital world. At .jhun we see web development not just as a tool but as an art form. We accelerate digital transformation, strengthen user experience, and help brands stand out online.",
-    "mission_title": "Our Mission",
+    "paragraph1_text": "Creativity and technology meet in the digital world. At .jhun I see web development not just as a tool but as an art form. I accelerate digital transformation, strengthen user experience, and help brands stand out online.",
+    "mission_title": "My Mission",
     "mission_text": "Deliver innovative and effective web solutions, build fast, secure and scalable infrastructures using modern technologies, design user-centered interfaces and experiences, and maximize brands' digital potential.",
-    "vision_title": "Our Vision",
-    "vision_text": "At .jhun we aim to design the web experiences of the future and keep brands at the forefront in a constantly changing tech world. Creating a difference in digital means catching not only today's but tomorrow's trends. With every project we deliver user-focused, innovative and aesthetic solutions. We don't just build functional websites and apps; we create experiences that strengthen brands' digital strategies, boost engagement and conversion. Turning technology into strategic advantage, ensuring top-level data security and building high-performance infrastructures are the cornerstones of our vision.",
+    "vision_title": "My Vision",
+    "vision_text": "At .jhun I aim to design the web experiences of the future and keep brands at the forefront in a constantly changing tech world. Creating a difference in digital means catching not only today's but tomorrow's trends. With every project I deliver user-focused, innovative and aesthetic solutions. I don't just build functional websites and apps; I create experiences that strengthen brands' digital strategies, boost engagement and conversion. Turning technology into strategic advantage, ensuring top-level data security and building high-performance infrastructures are the cornerstones of my vision.",
     "projects_heading": "Hundreds of projects on jhun.tech",
-    "projects_description": "We provide businesses with modern, user-friendly and effective web solutions. From design to SEO optimization, from blog management to e-commerce integration, we support digital growth in every step.",
-    "logo_title": "Where does our logo come from?",
-    "logo_paragraph1": ".jhun comes from our founder Ceyhun Turkmen's name and makes a playful nod to JSON format: the dot suggests objects and the curly braces represent data blocks. The name and the logo reflect our modern, minimal and tech-focused identity both visually and conceptually.",
-    "logo_paragraph2": "The navy color symbolizes the night sky's infinity in web design. The navy in the .jhun logo represents the inspiring order of stars and our brand's boundless creativity — dedicated to a professional and trustworthy identity.",
-    "quote": "Minimalist design and the symbols of the code world directly communicate our brand's innovative and solution-oriented approach to visitors.",
+    "projects_description": "I provide businesses with modern, user-friendly and effective web solutions. From design to SEO optimization, from blog management to e-commerce integration, I support digital growth in every step.",
+    "logo_title": "Where does my logo come from?",
+    "logo_paragraph1": ".jhun comes from Ceyhun Turkmen's name and makes a playful nod to JSON format: the dot suggests objects and the curly braces represent data blocks. The name and the logo reflect my modern, minimal and tech-focused identity both visually and conceptually.",
+    "logo_paragraph2": "The navy color symbolizes the night sky's infinity in web design. The navy in the .jhun logo represents the inspiring order of stars and my brand's boundless creativity — dedicated to a professional and trustworthy identity.",
+    "quote": "Minimalist design and the symbols of the code world directly communicate my brand's innovative and solution-oriented approach to visitors.",
     "companies_title": "Chosen by clients across Turkey",
-    "achievement_heading": "Our Achievements by Numbers",
-    "achievement_sub": "We provide tools that improve workflows, increase efficiency, and encourage growth for businesses.",
+    "achievement_heading": "My Achievements by Numbers",
+    "achievement_sub": "I provide tools that improve workflows, increase efficiency, and encourage growth for businesses.",
     "achievement_1_label": "Supported Companies",
     "achievement_1_value": "10+",
     "achievement_2_label": "Completed Projects",
@@ -60,8 +60,8 @@
     "cvButtonLabel": "Download CV"
   },
   "services": {
-    "badge": "Our Services",
-    "title": "Our Services",
+    "badge": "My Services",
+    "title": "My Services",
     "subtitle": "End-to-end solutions for your business's digital needs.",
     "trust": [
       "10+ Supported companies",
@@ -96,7 +96,7 @@
       {
         "title": "Digital Consulting",
         "description": "I provide consulting on technology choices, architecture decisions and performance optimization.",
-        "detail": "I review your existing system, identify bottlenecks, and together we map out the most suitable technology roadmap for scalability and cost.",
+        "detail": "I review your existing system, identify bottlenecks, and map out the most suitable technology roadmap for scalability and cost.",
         "icon": "MessageSquare"
       },
       {
@@ -106,13 +106,13 @@
         "icon": "LifeBuoy"
       }
     ],
-    "processEyebrow": "Our Process",
+    "processEyebrow": "My Process",
     "processTitle": "My Workflow",
     "process": [
       {
         "step": "01",
         "title": "Discovery & Planning",
-        "description": "I analyze your needs and we define project scope and timeline together."
+        "description": "I analyze your needs and define the project scope and timeline together with you."
       },
       {
         "step": "02",
@@ -173,30 +173,55 @@
     }
   },
   "testimonials": {
-    "badge": "Sample Content",
+    "badge": "Customer Reviews",
     "title": "What Clients Say",
-    "subtitle": "The quotes below are sample/placeholder content and will be updated with real client feedback.",
+    "subtitle": "Real feedback from clients I have worked with.",
     "items": [
       {
-        "name": "E-commerce Client",
-        "role": "Project Owner",
-        "quote": "Thanks to transparent communication and fast delivery throughout the process, our site exceeded our expectations."
+        "name": "ugkkkk",
+        "timeAgo": "5 months ago",
+        "quote": "He's improved himself, communicates really well. A true digital craftsman. Also young, dynamic and knows his work on the business side. Someone we can keep working with consistently. Well done."
       },
       {
-        "name": "Corporate Client",
-        "role": "Marketing Lead",
-        "quote": "Modern design sense and technical expertise let us manage the project confidently from start to finish."
+        "name": "saresudeak",
+        "timeAgo": "9 months ago",
+        "quote": "I honestly didn't expect it to be finished this fast — he handled it in the fastest and best way possible. Very professional in his work."
       },
       {
-        "name": "Entrepreneur",
-        "role": "Founder",
-        "quote": "Thanks to the performance and SEO-focused approach, our site's visibility increased quickly."
+        "name": "barisbeyazgul",
+        "timeAgo": "9 months ago",
+        "quote": "Got the job done fast and exactly how I wanted, I'd say he added even more than I asked for. Reliable and smooth; I'll be back for a 3rd project too."
+      },
+      {
+        "name": "yavuzcakirr",
+        "timeAgo": "10 months ago",
+        "quote": "Ceyhun is now the person I'll keep working with here. He was attentive, punctual and quite polite. He was a great help throughout the process. I'm very happy with both the process and the final result."
+      },
+      {
+        "name": "fraktstudio",
+        "timeAgo": "2 years ago",
+        "quote": "Very helpful, got our job done without any issues."
+      },
+      {
+        "name": "Ferudun Polat",
+        "timeAgo": "3 months ago",
+        "quote": "The site he built for our curtain business exceeded my expectations. The made-to-measure ordering system works exactly the way we wanted, and our customers no longer have any trouble ordering online. Thank you, Ceyhun."
+      },
+      {
+        "name": "Mustafa Cer",
+        "timeAgo": "6 months ago",
+        "quote": "We wanted to start selling our Plicell and zebra blinds online, and Ceyhun managed the whole process very professionally from start to finish. The site turned out fast and easy to use, and it made a real difference to our sales."
+      },
+      {
+        "name": "Suat Dişbudak",
+        "timeAgo": "8 months ago",
+        "quote": "The platform he built for our occupational safety products turned out genuinely comprehensive — he even integrated our custom production orders into the system. I also want to thank him for his communication and solution-oriented approach."
       }
     ]
   },
   "contact": {
     "title": "Get in Touch",
-    "description": "We’re here for your questions, feedback, or collaboration opportunities. Let us know how we can help!",
+    "description": "I'm here for your questions, feedback, or collaboration opportunities. Let me know how I can help!",
     "infoTitle": "Contact Information",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
@@ -215,12 +240,12 @@
       "submit": "Send Message",
       "sending": "Sending..."
     },
-    "success": "Your message has been sent successfully! We'll get back to you soon.",
+    "success": "Your message has been sent successfully! I'll get back to you soon.",
     "error": "An error occurred.",
     "emailError": "Failed to send email."
   },
   "footer": {
-    "slogan": "With the elegance of modern design and a focus on user experience, we deliver a stylish and impactful web experience.",
+    "slogan": "With the elegance of modern design and a focus on user experience, I deliver a stylish and impactful web experience.",
     "sections": [
       {
         "title": "Explore",
@@ -230,25 +255,29 @@
             "href": "/projects"
           },
           {
-            "label": "About Us",
-            "href": "/about"
-          },
-          {
             "label": "Services",
             "href": "/services"
           },
           {
-            "label": "FAQ",
-            "href": "/faq"
+            "label": "About Me",
+            "href": "/about"
           },
           {
             "label": "Contact",
             "href": "/contact"
+          },
+          {
+            "label": "Blog",
+            "href": "/blogs"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
           }
         ]
       },
       {
-        "title": "Our Services",
+        "title": "My Services",
         "links": [
           {
             "label": "Web Design & Development",
@@ -319,14 +348,14 @@
   "projects": {
     "title_main": "CODING THE FUTURE",
     "title_reveal": "THE ART OF CODE",
-    "subtitle": "Our modern, high-performance projects built with the latest technologies.",
+    "subtitle": "My modern, high-performance projects built with the latest technologies.",
     "loading": "Loading projects...",
     "error": "An error occurred while loading projects.",
     "empty": "No projects have been added yet.",
     "view_project": "View",
     "visit_site": "Visit Site",
     "cta_title": "Want to get a quote for your project?",
-    "cta_text": "In just a few steps, you can start your project that will make your brand stand out digitally with us.",
+    "cta_text": "In just a few steps, you can start your project that will make your brand stand out digitally with me.",
     "cta_button": "Get a Quote Now"
   },
   "projectdetail": {
@@ -335,7 +364,7 @@
     "demoButton": "Visit Site",
     "technologiesTitle": "Technologies Used",
     "technologiesIntro": {
-      "p1": "This project was developed using the best tools modern web technologies offer. Each technology was carefully selected to maximize performance, security, and user experience. During development, we focused on component-based architecture, reusable code, and optimized rendering performance.",
+      "p1": "This project was developed using the best tools modern web technologies offer. Each technology was carefully selected to maximize performance, security, and user experience. During development, the focus was on component-based architecture, reusable code, and optimized rendering performance.",
       "p2": "The user interface was designed to provide a clean yet impactful visual experience. The design system is built on principles of consistency, readability, and accessibility. Modern CSS frameworks and utility tools were used to provide a strong styling foundation.",
       "p3": "On the frontend, powerful technologies like React and Next.js provided great advantages in terms of fast load times and SEO optimization. Additionally, Tailwind CSS accelerated the design process and made development more flexible.",
       "p4": "As a result, this technology stack forms a modern and sustainable infrastructure that supports not only today’s needs but also future scalability goals.",
@@ -426,8 +455,8 @@
     "intro": "This Privacy Policy explains how personal data collected through jhun.com.tr ('Site') is processed under Turkey's Law on the Protection of Personal Data (KVKK No. 6698). The data controller is Ceyhun Türkmen.",
     "sections": [
       {
-        "heading": "Data We Collect",
-        "body": "Through the contact form, we collect your name, email address and message content. Technical data such as browser type, IP address and cookies may be collected automatically while using the site."
+        "heading": "Data I Collect",
+        "body": "Through the contact form, I collect your name, email address and message content. Technical data such as browser type, IP address and cookies may be collected automatically while using the site."
       },
       {
         "heading": "Purpose of Processing",
@@ -447,10 +476,10 @@
       },
       {
         "heading": "Your Rights",
-        "body": "Under Article 11 of KVKK, you have the right to access, correct, delete and object to the processing of your data. You can exercise these rights by contacting us via the email address on the contact page."
+        "body": "Under Article 11 of KVKK, you have the right to access, correct, delete and object to the processing of your data. You can exercise these rights by contacting me via the email address on the contact page."
       }
     ],
-    "contactNote": "For questions about this privacy policy, please reach out via the contact page.",
+    "contactNote": "For questions about this privacy policy, please reach out to me via the contact page.",
     "eyebrow": "Privacy"
   },
   "terms": {
@@ -483,7 +512,7 @@
         "body": "These terms are governed by the laws of the Republic of Turkey; Turkish courts have jurisdiction over any disputes."
       }
     ],
-    "contactNote": "For questions about these terms, please reach out via the contact page.",
+    "contactNote": "For questions about these terms, please reach out to me via the contact page.",
     "eyebrow": "Legal"
   },
   "cookieConsent": {

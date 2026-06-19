@@ -52,8 +52,8 @@ export default function LanguageSwitcher() {
             rounded-full transition-all duration-300
             ${
               currentLocale === "tr"
-                ? "text-black dark:text-black"
-                : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-black"
+                ? "text-black dark:text-black hover:text-black dark:hover:text-black"
+                : "text-gray-600 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-500/10 dark:hover:bg-amber-400/10"
             }`}
         >
           TR
@@ -68,8 +68,8 @@ export default function LanguageSwitcher() {
             rounded-full transition-all duration-300
             ${
               currentLocale === "en"
-                ? "text-black dark:text-black"
-                : "text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-black"
+                ? "text-black dark:text-black hover:text-black dark:hover:text-black"
+                : "text-gray-600 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-500/10 dark:hover:bg-amber-400/10"
             }`}
         >
           EN
