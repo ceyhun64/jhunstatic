@@ -258,5 +258,35 @@
     "color": "#21759B",
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "tech_027",
+    "name": ".NET",
+    "icon": "/technologies/dotnet.svg",
+    "type": "Backend",
+    "yoe": 1,
+    "color": "#512BD4",
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "id": "tech_028",
+    "name": "Redis",
+    "icon": "/technologies/redis.svg",
+    "type": "Database",
+    "yoe": 1,
+    "color": "#FF4438",
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "id": "tech_029",
+    "name": "Stripe",
+    "icon": "/technologies/stripe.svg",
+    "type": "Backend",
+    "yoe": 1,
+    "color": "#635BFF",
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z"
   }
 ]

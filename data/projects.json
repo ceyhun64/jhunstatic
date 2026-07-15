@@ -259,17 +259,47 @@
     "subImage4": "/projects/rezervo/sub4.png",
     "subImage5": "/projects/rezervo/sub5.png",
     "technologies": [
-      "tech_026",
       "tech_027",
       "tech_014",
-      "tech_020",
+      "tech_028",
       "tech_012",
       "tech_017",
-      "tech_028",
-      "tech_029",
+      "tech_023",
       "tech_019"
     ],
     "createdAt": "2025-07-01T00:00:00.000Z",
     "updatedAt": "2026-04-06T00:00:00.000Z"
+  },
+  {
+    "id": "proj_010",
+    "title": "BAZR",
+    "summary": "Admin, satıcı, kurye ve müşteri portallarını barındıran çok kiracılı pazaryeri platformu.",
+    "description": "BAZR, Admin, Satıcı (Merchant), Kurye ve Müşteri olmak üzere dört bağımsız portal sunan kurumsal ölçekli bir çok satıcılı pazaryeri platformudur. Her portal kendi kimlik doğrulama politikası, veri erişim katmanı ve amaca özel arayüzüyle çalışmaktadır. JWT tabanlı rol bazlı erişim kontrolü (AdminOnly, MerchantOnly, CourierOnly, CustomerOnly) API katmanında uygulanmakta, ödeme akışlarında IDOR ve TOCTOU stok yarış koşullarına karşı RepeatableRead izolasyon seviyesinde işlemler kullanılmaktadır. Satıcı portalı ürün kataloğu yönetimi, sipariş karşılama, satış analitiği, kanal karşılaştırması (Pazaryeri vs E-Mağaza), abonelik planları (Basic/Pro/Enterprise) ve alt alan adı/özel alan adı desteği sunmaktadır. Kurye portalında canlı sevkiyat durumu, teslim alma/teslim etme onayı ve kazanç geçmişi yer almaktadır. Müşteri tarafında Stripe PaymentIntent akışıyla ödeme, SignalR üzerinden gerçek zamanlı kargo takibi, sepet, favoriler ve bildirim merkezi bulunmaktadır. Hangfire ile arka plan işleri (sipariş durumu, gecikmiş sevkiyat, bildirim, kargo senkronizasyonu) yürütülmekte, QuestPDF ile fatura üretimi, SendGrid ile e-posta ve Twilio ile SMS bildirimleri gönderilmektedir. Redis, önbellekleme ve SignalR backplane için kullanılmaktadır. Tasarım sistemi CSS custom property tabanlı token'lar üzerine kurulu olup Radix UI tabanlı erişilebilir bileşen kütüphanesi içermektedir. .NET 10 Web API (Clean Architecture + CQRS/MediatR), Next.js 16 (App Router), TypeScript, PostgreSQL ve Redis altyapısıyla geliştirilmiştir.",
+    "titleEng": "BAZR",
+    "summaryEng": "Multi-tenant marketplace platform with admin, merchant, courier, and consumer portals.",
+    "descriptionEng": "BAZR is an enterprise-scale multi-vendor marketplace platform supporting four independently scoped portals: Admin, Merchant, Courier, and Consumer. Each portal runs its own authentication policy, data access layer, and purpose-built UI. Role-based access control (AdminOnly, MerchantOnly, CourierOnly, CustomerOnly) is enforced at the API layer via JWT claims, and payment/stock-allocation flows run inside RepeatableRead-isolated transactions to guard against IDOR and TOCTOU race conditions. The merchant portal covers catalogue management, order fulfillment, sales analytics, channel comparison (Marketplace vs E-Store), subscription plans (Basic/Pro/Enterprise), and subdomain/custom-domain support. The courier portal provides live shipment status, pickup/delivery confirmation, and earnings history. On the consumer side, Stripe PaymentIntent handles checkout, SignalR delivers real-time shipment tracking, and the platform includes cart, wishlist, and a notification centre. Hangfire drives background jobs (order status, delayed shipment, notifications, shipment sync), QuestPDF generates invoices, and SendGrid/Twilio handle email and SMS notifications. Redis backs both caching and the SignalR backplane. The design system is built on CSS custom-property tokens with an accessible Radix UI-based component library. Built on .NET 10 Web API (Clean Architecture + CQRS/MediatR), Next.js 16 (App Router), TypeScript, PostgreSQL, and Redis.",
+    "url": "https://marketplace-henna-eta-22.vercel.app/",
+    "image": "/projects/bazr/main.png",
+    "demoUrl": "https://marketplace-henna-eta-22.vercel.app/",
+    "githubUrl": "https://github.com/ceyhun64/marketplace",
+    "subImage1": "/projects/bazr/sub1.png",
+    "subImage2": "/projects/bazr/sub2.png",
+    "subImage3": "/projects/bazr/sub3.png",
+    "subImage4": "/projects/bazr/sub4.png",
+    "subImage5": "/projects/bazr/sub5.png",
+    "technologies": [
+      "tech_027",
+      "tech_012",
+      "tech_017",
+      "tech_023",
+      "tech_022",
+      "tech_014",
+      "tech_028",
+      "tech_029",
+      "tech_003",
+      "tech_024"
+    ],
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z"
   }
 ]
