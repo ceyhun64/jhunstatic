@@ -1,725 +1,183 @@
-# .jhun{} — Official Company Website
+# jhun (JhunStatic)
 
-<div align="center">
+## Overview
 
-![Next.js](https://img.shields.io/badge/Next.js-16.0.10-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-19.2.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-7.0-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+This is the **static-content** variant of the `jhun` portfolio/agency site (package name `jhun`), built with Next.js 16 (App Router), React 19, and TypeScript. It shares its component library, styling, and general page layout with the sibling "Dynamic" project, but the underlying data and server surface are fundamentally different.
 
-**Professional web development services — portfolio, contact & company presentation platform**
+What makes this variant "Static," verified directly from the code:
 
-**🌐 [jhun.com.tr](https://jhun.com.tr)**
+- **No database connection exists.** There is no `lib/mongoose.ts` or any MongoDB/Mongoose driver call anywhere in the source. Blog posts, projects, and technologies are instead read from bundled JSON files — `data/blogs.json`, `data/projects.json`, `data/technologies.json` — via plain lookup functions in `lib/staticData.ts` (`getAllBlogs`, `getBlogById`, `getAllProjects`, `getProjectById`, `getAllTechnologies`, `getTechnologyById`).
+- **No admin panel or auth exist.** There is no `app/admin/**` route, no `components/admin/**`, and no `app/api/auth/[...nextauth]` route. `models/admin.ts`, `models/blog.ts`, `models/projects.ts`, `models/technology.ts` (Mongoose schema files) are still present in the repo but are **not imported anywhere** in `app/`, `components/`, or `lib/` — they are unused/vestigial leftovers from the Dynamic variant.
+- **No CRUD API and no image upload endpoint exist.** Only two route handlers remain under `app/api/`: `chat` and `mail`. There is no `app/api/blog`, `app/api/projects`, `app/api/technology`, or `app/api/upload`.
+- **This is not a Next.js static export.** `next.config.ts` does not set `output: 'export'`, and it defines `async headers()` (custom security headers) plus two live server API routes (`chat`, `mail`) that call external services with secret credentials — none of that is compatible with `output: 'export'`. "Static" here refers to how page **content** is sourced (bundled JSON instead of a live database), not to the Next.js build/export mode.
+- **Extra SEO/content surface not present in the Dynamic variant**: additional public pages `faq`, `services`, `terms`, `privacy-policy`; a dynamically generated `app/sitemap.ts` and `app/robots.ts`; and an `app/llms.txt/route.ts` endpoint that serves a Markdown summary of the site for LLM crawlers, built from the same static `projects.json`/`blogs.json` data.
 
-[Features](#-features) • [Tech Stack](#️-technology-stack) • [Installation](#-installation) • [API](#-api-endpoints) • [Chatbot](#-ai-chatbot) • [Deployment](#-deployment)
+## Features (verified)
 
-</div>
+- Locale-prefixed public site (`/tr`, `/en`) — Home, About, Services, Projects (list + detail), Blog (list + detail), FAQ, Contact, Privacy Policy, Terms — driven by `next-intl` and a locale-aware request handler in `proxy.ts`.
+- Content (blogs, projects, technologies) served from static JSON via `lib/staticData.ts` — no runtime database dependency for these pages.
+- AI chatbot widget (`components/chatbot/**`) with the same two-tier flow as the Dynamic variant: keyword matching against `data/keywords.json`/`data/responses.json`, falling back to `POST /api/chat`.
+- Contact form sending email via `POST /api/mail`.
+- Rate limiting on both remaining API routes (`lib/rate-limit.ts`, in-memory, per-IP sliding window).
+- Input validation on both API routes via Zod schemas.
+- Cookie consent banner (`components/layout/cookieConsent.tsx`, referenced from `app/[locale]/layout.tsx`) — not present in the Dynamic variant's layout.
+- Structured data (`Person`/`WebSite` JSON-LD) injected in `app/[locale]/layout.tsx`.
+- Dynamically generated `sitemap.xml` and `robots.txt` (`app/sitemap.ts`, `app/robots.ts`) and an `llms.txt` markdown endpoint, all derived from the static JSON data files.
+- Dark/light theme via `next-themes`; downloadable CV files (EN/TR, HTML + PDF) under `public/cv/`.
 
----
+## Technology Stack
 
-## 📋 About the Project
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack), React 19, TypeScript 5 |
+| Styling | Tailwind CSS 4, `tw-animate-css`, Radix UI primitives, shadcn-style components |
+| Content | Static JSON files under `data/`, read via `lib/staticData.ts` |
+| Validation | Zod (used in both remaining API routes) |
+| Email | Nodemailer (SMTP), used in `app/api/mail/route.ts` |
+| AI (server-side) | `@anthropic-ai/sdk` — used in `app/api/chat/route.ts` (Claude, model `claude-haiku-4-5-20251001`) |
+| AI (declared but unused) | `@google/generative-ai`, `@mlc-ai/web-llm` — see note below |
+| i18n | `next-intl` |
+| Animation | Framer Motion, `motion`, GSAP, `@tsparticles/*`, `simplex-noise` |
+| Forms | React Hook Form + Zod (`@hookform/resolvers`) |
 
-**.jhun{}** is the official company website and service showcase for jhun — a professional web development studio. The platform presents the company's portfolio, blog content, technology expertise, and service offerings while enabling direct client contact.
+**Important dependency note:** `package.json` still lists `mongodb`, `mongoose`, `next-auth`, `bcrypt`, `cloudinary`, `@google/generative-ai`, and `@mlc-ai/web-llm` — carried over from the Dynamic variant — but none of them are imported by any file under `app/`, `components/`, `lib/`, or `hooks/` in this project (the only trace of Mongoose is the unused type definitions in `models/`). `@mlc-ai/web-llm` (an in-browser/WebGPU LLM runtime) in particular has zero references anywhere in the source of either project in this workspace. Treat all of the above as unused/vestigial dependencies unless actively wired up.
 
-Built with a modern full-stack architecture, the site supports **bilingual content (English & Turkish)** via `next-intl`, integrates an **AI-powered chatbot** using Anthropic and Google Generative AI, and features a fully functional **admin panel** for content management — all within a single Next.js application.
-
-The website serves as both a live marketing asset and a technical demonstration of the studio's capabilities.
-
----
-
-## ✨ Features
-
-### 🌍 Public-Facing Features
-
-- **Multilingual Support** — Full English and Turkish localization via `next-intl` with locale-prefixed routing (`/en`, `/tr`)
-- **Language Switcher** — Seamless runtime language toggle without page reload
-- **Dark / Light Theme** — User preference-aware theme switching with `next-themes`
-- **Hero Section** — Animated landing with particle effects, aurora background, and typing text
-- **Portfolio / Projects** — Detailed project showcase with technology tags and descriptions
-- **Blog** — SEO-optimized articles with detail pages and dynamic routing
-- **Technology Stack Display** — Visual catalog of technologies used across projects
-- **Contact Form** — Email delivery via Nodemailer with form validation (Zod + React Hook Form)
-- **About Page** — Company story, team, and values
-- **CV Download** — Bilingual CV available in HTML and PDF formats (English & Turkish)
-- **Social Sidebar** — Persistent social media links (GitHub, LinkedIn, Instagram, WhatsApp, Facebook)
-- **Scroll to Top** — Smooth scroll-back control
-- **Cookie Consent** — Privacy-compliant cookie management
-
-### 🤖 AI Chatbot
-
-- **Dual AI Engine** — Anthropic Claude SDK + Google Generative AI working in tandem
-- **Keyword-Based Pre-Responses** — Fast responses via `data/keywords.json` for common questions
-- **Contextual Fallback** — Routes to live AI model when no keyword match is found
-- **Stats Panel** — Real-time chatbot usage statistics
-- **Typing Indicator** — Visual feedback while the AI is generating a response
-- **Persistent Chat UI** — Slide-in chat widget available on all pages
-
-### 🔧 Admin Panel
-
-- **Blog Management** — Create, edit, delete blog posts with image upload
-- **Project Management** — Add and manage portfolio projects with metadata
-- **Technology Management** — Maintain the technology catalog displayed site-wide
-- **Cloudinary Integration** — Image upload and management within admin modals
-- **Protected Routes** — Admin area secured via NextAuth.js session
-
-### ⚙️ Technical Features
-
-- **Next.js App Router (SSR/SSG)** — Optimized rendering strategy per page
-- **MongoDB + Mongoose** — Flexible NoSQL data modeling
-- **NextAuth.js** — Admin authentication with session management
-- **Zod + React Hook Form** — Type-safe, performant form validation
-- **Framer Motion + GSAP** — Rich animations and scroll-triggered effects
-- **25+ Custom UI Effects** — Aurora, vortex, meteors, sparkles, marquee, magnetic buttons, and more (shadcn-io components)
-- **SEO Optimization** — Dynamic `og:image`, meta tags, `robots.txt`, and structured routing
-- **Responsive Design** — Mobile-first layout across all pages
-
----
-
-## 🛠️ Technology Stack
-
-### Frontend
-
-| Technology         | Version  | Description                               |
-| ------------------ | -------- | ----------------------------------------- |
-| Next.js            | 16.0.10  | App Router, SSR/SSG, API Routes           |
-| React              | 19.2.1   | Component-based UI                        |
-| TypeScript         | 5        | Type-safe development                     |
-| Tailwind CSS       | 4        | Utility-first styling                     |
-| Radix UI           | 1.4.x    | Accessible UI primitives (20+ components) |
-| Framer Motion      | 12.23.25 | Page & component animations               |
-| GSAP               | 3.14.1   | Scroll-triggered and timeline animations  |
-| next-intl          | 4.5.8    | i18n / multilingual routing               |
-| next-themes        | 0.4.6    | Dark/light theme management               |
-| Lucide React       | 0.556.0  | Icon library                              |
-| Embla Carousel     | 8.6.0    | Touch-friendly carousels                  |
-| React Hook Form    | 7.68.0   | Form state management                     |
-| Zod                | 4.1.13   | Schema validation                         |
-| Recharts           | 3.5.1    | Analytics charts in admin                 |
-| react-fast-marquee | 1.6.5    | Scrolling technology banner               |
-| tsparticles        | 3.9.1    | Particle background effects               |
-| Sonner             | 2.0.7    | Toast notifications                       |
-
-### Backend & Database
-
-| Technology  | Version | Description             |
-| ----------- | ------- | ----------------------- |
-| MongoDB     | 7.0.0   | NoSQL document database |
-| Mongoose    | 9.0.1   | MongoDB ODM             |
-| NextAuth.js | 4.24.13 | Admin authentication    |
-| bcrypt      | 6.0.0   | Password hashing        |
-| Nodemailer  | 7.0.11  | Transactional email     |
-| Cloudinary  | 2.8.0   | Image upload & CDN      |
-
-### AI & Integrations
-
-| Technology           | Version | Description                    |
-| -------------------- | ------- | ------------------------------ |
-| Anthropic AI SDK     | 0.78.0  | Claude-powered chatbot         |
-| Google Generative AI | 0.24.1  | Gemini AI fallback             |
-| @mlc-ai/web-llm      | 0.2.80  | Client-side LLM (experimental) |
-
-### UI Effect Components (shadcn-io)
-
-The project includes 25+ premium animated UI components:
-
-| Component            | Description                         |
-| -------------------- | ----------------------------------- |
-| Aurora Background    | Animated gradient aurora effect     |
-| Vortex               | Swirling particle vortex background |
-| Meteors              | Falling meteor animation            |
-| Sparkles             | Interactive sparkle overlays        |
-| Flickering Grid      | Animated grid background            |
-| Shooting Stars       | Night-sky shooting star effect      |
-| 3D Card              | Mouse-tracking 3D card tilt         |
-| 3D Marquee           | Depth-perspective scrolling marquee |
-| Magnetic Button      | Mouse-attracted CTA button          |
-| Typing Text          | Typewriter text animation           |
-| Rolling Text         | Vertical rolling text reveal        |
-| Splitting Text       | Character-split reveal animation    |
-| Text Hover Effect    | SVG stroke hover animation          |
-| Text Reveal          | Scroll-triggered text reveal        |
-| Gradient Text        | Animated gradient text fill         |
-| Colourful Text       | Rainbow-cycle text                  |
-| Highlight Text       | Animated text highlight             |
-| Wavy Background      | SVG wave background                 |
-| Grid Pattern         | Decorative grid overlay             |
-| Background Gradient  | Animated gradient card borders      |
-| Marquee              | Horizontal scrolling content strip  |
-| Pixel Image          | Pixel-dissolve image effect         |
-| Image Zoom           | Click-to-zoom image viewer          |
-| Shape Landing Hero   | Geometric animated hero             |
-| Fireworks Background | Particle fireworks effect           |
-
----
-
-## 🏗️ Architecture Overview
+## Architecture
 
 ```
-Browser / Client
-       │
-       ├── /en  or  /tr   (next-intl locale routing)
-       │
-       ▼
-  Next.js App Router
-  ┌─────────────────────────────────────────┐
-  │  [locale]/             (Public pages)   │
-  │  ├── /                 (Homepage)       │
-  │  ├── /about            (About)          │
-  │  ├── /blog & /blog/[id](Blog)           │
-  │  ├── /projects/[id]    (Portfolio)      │
-  │  └── /contact          (Contact)        │
-  │                                         │
-  │  /admin/               (Admin Panel)    │
-  │  ├── /blogs                             │
-  │  ├── /projects                          │
-  │  └── /technologies                      │
-  │                                         │
-  │  /api/                 (API Routes)     │
-  │  ├── auth, blog, projects               │
-  │  ├── technology, mail                   │
-  │  ├── chat, upload                       │
-  └─────────────────────────────────────────┘
-         │                    │
-         ▼                    ▼
-      MongoDB             Cloudinary
-    (Mongoose)           (Images/CDN)
-         │
-    Anthropic AI  +  Google Generative AI
-    (Chatbot backend)
-         │
-    Nodemailer
-    (Contact emails)
+Browser
+  │
+  ├─ /tr or /en  (locale redirect/header injection via proxy.ts)
+  ▼
+Next.js App Router
+  ├─ app/[locale]/...   Public pages: home, about, services, projects, projects/[id],
+  │                      blog, blog/[id], faq, contact, privacy-policy, terms
+  ├─ app/api/
+  │     ├─ chat/route.ts   → Anthropic Claude chatbot (rate-limited, Zod-validated)
+  │     └─ mail/route.ts   → Nodemailer contact-form email (rate-limited, Zod-validated)
+  ├─ app/sitemap.ts, app/robots.ts, app/llms.txt/route.ts   SEO/crawler endpoints
+  │
+  ▼
+data/*.json  ──►  lib/staticData.ts  ──►  page components (no database)
 ```
 
----
+`proxy.ts` is a Next.js 16 root convention file (successor to `middleware.ts`). Compared to the Dynamic variant's version, this one also sets an `x-locale` response header for the root layout and declares an explicit `matcher` config excluding `_next/static`, `_next/image`, `favicon.ico`, `api/`, `admin/` (an `/admin` bypass remains in the matcher even though no `/admin` route exists in this project — vestigial).
 
-## 📁 Project Structure
+`next.config.ts` also sets `serverExternalPackages: ['@prisma/client', 'prisma']`, but Prisma is **not** a declared dependency and no Prisma import exists anywhere in the codebase — vestigial, currently has no effect. It additionally defines a `Content-Security-Policy` and other security headers via `headers()`, applied to all routes; the CSP's `connect-src` explicitly allow-lists `api.anthropic.com`.
+
+## Folder Structure
 
 ```
-jhun/
+JhunStatic/
 ├── app/
-│   ├── [locale]/                   # Locale-prefixed public pages
-│   │   ├── page.tsx                # Homepage
-│   │   ├── layout.tsx              # Locale layout (navbar, footer, chatbot)
-│   │   ├── about/page.tsx          # About page
-│   │   ├── contact/page.tsx        # Contact page
-│   │   ├── blog/
-│   │   │   ├── page.tsx            # Blog listing
-│   │   │   └── [id]/page.tsx       # Blog detail
-│   │   └── projects/
-│   │       ├── page.tsx            # Portfolio listing
-│   │       └── [id]/page.tsx       # Project detail
-│   ├── admin/                      # Admin panel (no locale prefix)
-│   │   ├── page.tsx                # Admin login
-│   │   ├── blogs/page.tsx          # Blog management
-│   │   ├── projects/page.tsx       # Project management
-│   │   └── technologies/page.tsx   # Technology management
-│   ├── api/                        # Next.js API route handlers
-│   │   ├── auth/[...nextauth]/     # NextAuth handler
-│   │   ├── auth/logout/            # Session destroy
-│   │   ├── blog/                   # Blog CRUD
-│   │   ├── blog/[id]/              # Single blog operations
-│   │   ├── projects/               # Project CRUD
-│   │   ├── projects/[id]/          # Single project operations
-│   │   ├── technology/             # Technology CRUD
-│   │   ├── technology/[id]/        # Single technology operations
-│   │   ├── chat/                   # AI chatbot endpoint
-│   │   ├── mail/                   # Contact form email sender
-│   │   └── upload/                 # Cloudinary upload handler
-│   ├── globals.css                 # Global styles
-│   ├── layout.tsx                  # Root layout
-│   └── not-found.tsx               # 404 page
-│
+│   ├── [locale]/         Public pages: page, layout, about, contact, faq, privacy-policy,
+│   │                      projects, projects/[id], services, terms, blog, blog/[id],
+│   │                      loading.tsx, error.tsx
+│   ├── api/
+│   │   ├── chat/route.ts   Anthropic Claude chatbot (rate-limited)
+│   │   └── mail/route.ts   Nodemailer contact form (rate-limited)
+│   ├── llms.txt/route.ts   Markdown site summary for LLM crawlers (force-static)
+│   ├── robots.ts           Dynamic robots.txt generator
+│   ├── sitemap.ts          Dynamic sitemap.xml generator (from data/*.json)
+│   ├── globals.css, layout.tsx, not-found.tsx, page.tsx
 ├── components/
-│   ├── admin/
-│   │   ├── login.tsx               # Admin login form
-│   │   ├── sidebar.tsx             # Admin sidebar navigation
-│   │   ├── blog/                   # Blog list, add/edit modals
-│   │   ├── project/                # Project list, add/edit modals
-│   │   └── technology/             # Technology list and modal
-│   ├── blog/
-│   │   ├── blogs.tsx               # Blog listing (server)
-│   │   ├── blogsClient.tsx         # Blog listing (client interactions)
-│   │   ├── blogDetail.tsx          # Blog detail (server)
-│   │   └── blogDetailClient.tsx    # Blog detail (client interactions)
-│   ├── chatbot/
-│   │   ├── chatBot.tsx             # Main chatbot container
-│   │   ├── chatBotClient.tsx       # Client-side chat logic
-│   │   ├── chatButton.tsx          # Floating chat trigger button
-│   │   ├── chatHeader.tsx          # Chat window header
-│   │   ├── chatInput.tsx           # Message input field
-│   │   ├── messageBubble.tsx       # Individual message component
-│   │   ├── statsPanel.tsx          # Usage stats display
-│   │   └── typingIndicator.tsx     # AI typing animation
-│   ├── contact/
-│   │   ├── contact.tsx             # Contact form (server)
-│   │   ├── contactClient.tsx       # Contact form (client)
-│   │   ├── about.tsx               # About section (server)
-│   │   └── aboutClient.tsx         # About section (client)
-│   ├── home/
-│   │   ├── heroes.tsx              # Hero section (server)
-│   │   ├── heroesClient.tsx        # Hero section animations
-│   │   ├── banner.tsx              # Technology banner strip
-│   │   ├── about.tsx               # Home about section
-│   │   ├── aboutClient.tsx         # Home about animations
-│   │   ├── gallery.tsx             # Project gallery preview
-│   │   ├── galleryClient.tsx       # Gallery interactions
-│   │   ├── contact.tsx             # Home contact CTA
-│   │   └── contactClient.tsx       # Home contact animations
-│   ├── layout/
-│   │   ├── navbar.tsx              # Navigation bar (server)
-│   │   ├── navbarClient.tsx        # Navbar interactions & mobile menu
-│   │   ├── footer.tsx              # Footer (server)
-│   │   ├── footerClient.tsx        # Footer animations
-│   │   ├── clientLayoutWrapper.tsx # Client boundary for layouts
-│   │   ├── languageSwitcher.tsx    # EN/TR toggle button
-│   │   ├── localeProvider.tsx      # next-intl provider wrapper
-│   │   ├── themeProvider.tsx       # next-themes provider
-│   │   ├── themeToggle.tsx         # Dark/light mode toggle button
-│   │   ├── socialSidebar.tsx       # Fixed social media links
-│   │   ├── chatBot.tsx             # Chatbot layout injection
-│   │   └── scroll.tsx              # Scroll to top button
-│   ├── projects/
-│   │   ├── projects.tsx            # Portfolio listing (server)
-│   │   ├── projectsClient.tsx      # Portfolio interactions
-│   │   ├── projectDetail.tsx       # Project detail (server)
-│   │   ├── projectDetailClient.tsx # Project detail (client)
-│   │   └── technologyItem.tsx      # Technology badge component
-│   └── ui/
-│       ├── *.tsx                   # 40+ Radix-based UI primitives
-│       └── shadcn-io/              # 25+ premium animated effect components
-│
+│   ├── about/, blog/, contact/, faq/, home/, layout/, legal/, projects/, services/
+│   ├── chatbot/           Chat widget UI + client logic
+│   └── ui/                 Radix-based primitives + shadcn-io effect components
 ├── data/
-│   ├── keywords.json               # Chatbot keyword-response map
-│   ├── responses.json              # Chatbot pre-written responses
-│   └── seed.ts                     # Database seed script
-│
+│   ├── blogs.json, projects.json, technologies.json   Static content source
+│   └── keywords.json, responses.json                   Chatbot keyword→response map
 ├── lib/
-│   ├── auth.ts                     # NextAuth configuration
-│   ├── mongoose.ts                 # MongoDB connection singleton
-│   ├── session.ts                  # Session helper utilities
-│   ├── get-dictionary.tsx          # i18n message loader
-│   └── utils.ts                    # General utility functions
-│
-├── messages/
-│   ├── en.json                     # English translations
-│   └── tr.json                     # Turkish translations
-│
-├── models/
-│   ├── admin.ts                    # Admin user schema (Mongoose)
-│   ├── blog.ts                     # Blog post schema
-│   ├── projects.ts                 # Project schema
-│   └── technology.ts               # Technology schema
-│
-├── types/                          # TypeScript type definitions & module augments
-│   ├── next-auth.d.ts
-│   ├── next-intl.d.ts
-│   ├── nodemailer.d.ts
-│   ├── bcrypt.d.ts
-│   └── ...
-│
-├── hooks/
-│   └── use-mobile.ts               # Mobile breakpoint detection hook
-│
-└── public/
-    ├── avatar/                     # Profile photos
-    ├── banner/                     # Technology logo images (WebP)
-    ├── blog/                       # Blog banner images
-    ├── chatbot/                    # Chatbot assistant avatar
-    ├── cv/                         # CV in HTML & PDF (EN + TR)
-    ├── footer/                     # Decorative footer images
-    ├── logo/                       # Site logo
-    ├── socialMedia/                # Social platform icons
-    ├── technologies/               # Technology SVG icons (25+)
-    ├── og-image.png               # Open Graph image
-    └── robots.txt                  # Search engine crawl rules
+│   ├── staticData.ts       Typed accessors over the static JSON data
+│   ├── rate-limit.ts       In-memory per-IP rate limiter used by chat/mail routes
+│   ├── get-dictionary.tsx  i18n message loader
+│   └── utils.ts
+├── messages/               en.json, tr.json (next-intl)
+├── models/                 Mongoose schema files (admin, blog, projects, technology) — unused, not imported anywhere
+├── types/                  Ambient/module type declarations
+├── hooks/                  use-mobile.ts, use-reduced-motion.ts
+├── public/                 avatar, banner, blog, chatbot, cv, footer, logo, socialMedia,
+│                            technologies, projects, og-image.png, robots.txt
+├── proxy.ts                Locale-redirect + x-locale header request handler
+├── next.config.ts          Security headers (CSP, HSTS, etc.), image config, Turbopack
+├── components.json         shadcn config (style: new-york, base color: zinc)
+└── tsconfig.json
 ```
 
----
-
-## 🗄️ Database Schema
-
-All models are defined with Mongoose and stored in MongoDB.
-
-### `Admin`
-
-```
-_id         ObjectId
-username    String (unique)
-password    String (bcrypt hashed)
-createdAt   Date
-```
-
-### `Blog`
-
-```
-_id         ObjectId
-title       String
-content     String (rich text / HTML)
-image       String (Cloudinary URL)
-tags        [String]
-createdAt   Date
-updatedAt   Date
-```
-
-### `Project`
-
-```
-_id           ObjectId
-title         String
-description   String
-image         String (Cloudinary URL)
-liveUrl       String
-githubUrl     String
-technologies  [String]
-featured      Boolean
-createdAt     Date
-```
-
-### `Technology`
-
-```
-_id     ObjectId
-name    String
-icon    String (Cloudinary URL or public path)
-color   String (hex)
-```
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-
-- Node.js **18+**
-- MongoDB (local or [MongoDB Atlas](https://www.mongodb.com/atlas))
-- Cloudinary account
-- Anthropic API key
-- Google AI API key
-- npm, yarn, pnpm, or bun
-
----
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/jhun.git
-cd jhun
-```
-
----
-
-### 2. Install Dependencies
+## Installation
 
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
----
+Requires Node.js. Because this variant serves content from bundled JSON, no database is required to run it. `app/api/chat` and `app/api/mail` still need real credentials to function. There is no `.env.example` file in this repo — set variables directly in `.env` / `.env.local`. **Never commit real key values.**
 
-### 3. Configure Environment Variables
+## Environment Variables
 
-Create a `.env.local` file in the project root:
+Names and purpose only, based on actual `process.env.*` references found in this project's source (a local `.env` file exists but its values are not reproduced here):
 
-```env
-# MongoDB
-MONGODB_URI="mongodb://localhost:27017/jhun"
-# For Atlas: mongodb+srv://username:password@cluster.mongodb.net/jhun
+| Variable | Purpose |
+|---|---|
+| `ANTHROPIC_API_KEY` | Claude API key, read in `app/api/chat/route.ts`. The route throws at module load if this is missing. |
+| `EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_USER`, `EMAIL_PASS` | SMTP credentials for Nodemailer, used in `app/api/mail/route.ts`. `EMAIL_USER` also doubles as the fixed recipient address. |
 
-# NextAuth
-NEXTAUTH_SECRET="your-nextauth-secret-min-32-chars"
-NEXTAUTH_URL="http://localhost:3000"
+Not verified as active in this project's code: `DATABASE_URL`, `NEXTAUTH_SECRET`, `NEXTAUTH_URL`, `ADMIN_NAME`, `ADMIN_SURNAME`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `CLOUD_NAME`, `API_KEY`, `API_SECRET`, `PRISMA_QUERY_ENGINE_TYPE`, `PRISMA_CLIENT_ENGINE_TYPE`, `NEXT_PUBLIC_BASE_URL` are present in the local `.env` file (apparently carried over from the Dynamic variant's template) but no `process.env` reference to them was found anywhere in this project's `app/`, `components/`, or `lib/` source.
 
-# Cloudinary
-CLOUDINARY_CLOUD_NAME="your-cloud-name"
-CLOUDINARY_API_KEY="your-api-key"
-CLOUDINARY_API_SECRET="your-api-secret"
+## Available Scripts
 
-# AI — Chatbot
-ANTHROPIC_API_KEY="your-anthropic-api-key"
-GOOGLE_AI_API_KEY="your-google-ai-api-key"
+From `package.json` (exactly as declared — no others exist):
 
-# Email (Gmail SMTP)
-EMAIL_USER="your-email@gmail.com"
-EMAIL_PASS="your-gmail-app-password"
+| Script | Command | Behavior |
+|---|---|---|
+| `npm run dev` | `next dev` | Starts the Next.js development server (Turbopack, per `next.config.ts`) |
+| `npm run build` | `next build` | Production build |
+| `npm start` | `next start` | Runs the production build |
 
-# iyzico (optional — payment features)
-IYZICO_API_KEY="your-iyzico-api-key"
-IYZICO_SECRET_KEY="your-iyzico-secret-key"
+There is no `lint` script and no ESLint config file in this repository.
 
-# App
-NEXT_PUBLIC_BASE_URL="http://localhost:3000"
-```
-
-> **Gmail App Password:** In your Google account, go to Security → 2-Step Verification → App Passwords to generate a dedicated app password for Nodemailer.
-
----
-
-### 4. Seed the Database
-
-```bash
-npx tsx data/seed.ts
-```
-
-This creates the default admin account and populates initial technology entries.
-
----
-
-### 5. Start the Development Server
+## Development
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open `http://localhost:3000`. Public content pages work without any external service; the chatbot and contact form require `ANTHROPIC_API_KEY` and the `EMAIL_*` variables respectively.
 
----
-
-### Production Build
+## Build
 
 ```bash
 npm run build
 npm start
 ```
 
----
+## Deployment
 
-## 🌍 Internationalization (i18n)
+Not verifiable from the code. Although the site's page content is static (JSON-driven), `next.config.ts` does not set `output: 'export'`, and the app ships two live server-side API routes (`/api/chat`, `/api/mail`) that call external services using server-only secrets. This means it cannot be deployed as a pure static export/CDN-only site as-is — it requires a Node.js server runtime (or an equivalent serverless/edge platform that can run Next.js API routes). No `Dockerfile`, `vercel.json`, or CI configuration exists in this repo to confirm a specific deployment target.
 
-The public site is fully bilingual using `next-intl` with the App Router.
+## API
 
-### How It Works
+All routes are under `/api`. Verified by reading each `route.ts` file directly.
 
-- All public pages live under `app/[locale]/` — e.g. `/en/blog` or `/tr/blog`
-- Translation strings are stored in `messages/en.json` and `messages/tr.json`
-- The `LanguageSwitcher` component updates the locale prefix in the URL at runtime
-- The `LocaleProvider` wraps the app and injects the correct message bundle
+| Method | Endpoint | What it actually does |
+|---|---|---|
+| POST | `/api/chat` | Rate-limits by IP (20 req/min), validates body with Zod (`message`, `locale`, `context`), sends the message + last 6 history turns to Anthropic Claude (`claude-haiku-4-5-20251001`) with a hardcoded system prompt about Ceyhun Türkmen, returns `{ response: string }` |
+| POST | `/api/mail` | Rate-limits by IP (3 req/min), validates body with Zod (`subject`, `message`), sends an email via Nodemailer from and to `EMAIL_USER` using `EMAIL_HOST`/`EMAIL_PORT`/`EMAIL_PASS` |
 
-### Adding Translations
+## Configuration
 
-1. Add new keys to both `messages/en.json` and `messages/tr.json`
-2. Access them in components via `useTranslations('namespace')` from `next-intl`
+- Path alias `@/*` maps to the project root (`tsconfig.json`).
+- shadcn/ui config (`components.json`): style `new-york`, base color `zinc`, CSS variables enabled, icon library `lucide`.
+- `next.config.ts`: Cloudinary remote image pattern (`res.cloudinary.com`) even though no upload endpoint exists in this project (images are presumably pre-uploaded/static), AVIF/WebP image formats, Turbopack enabled, a full custom security-headers set (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy) applied via `headers()`, and a vestigial `serverExternalPackages` entry for Prisma (unused, see Architecture note).
 
-### Supported Locales
+## Troubleshooting
 
-| Code | Language |
-| ---- | -------- |
-| `en` | English  |
-| `tr` | Turkish  |
+- **Chatbot fails at startup / build**: `app/api/chat/route.ts` throws immediately if `ANTHROPIC_API_KEY` is not set — this will surface as a server error rather than a silent failure.
+- **Chatbot returns 429**: the in-memory rate limiter (`lib/rate-limit.ts`) allows 20 chat requests per IP per minute; this resets per server process (not persisted across restarts or multiple instances).
+- **Contact form returns 429**: the mail route allows only 3 requests per IP per minute.
+- **Contact form returns 500 "Sunucu yapılandırma hatası"**: `EMAIL_USER` is not set.
+- **Content changes not appearing**: since blog/project/technology content is bundled from `data/*.json` at build time, changes to those files require a rebuild/redeploy — there is no admin panel or live database to edit content at runtime.
+- **`@mlc-ai/web-llm` (client-side/WebGPU LLM)**: this dependency is declared in `package.json` but has no import anywhere in the source, so there is no WebGPU browser-support consideration to document for this project as it stands — it is not currently wired into the chatbot or any other feature.
 
----
+## License
 
-## 🤖 AI Chatbot
-
-The chatbot uses a two-tier response system to balance speed and quality.
-
-### Architecture
-
-```
-User Message
-     │
-     ▼
-Keyword Matching (data/keywords.json)
-     │
-     ├── Match found ──► Return pre-written response (fast)
-     │
-     └── No match ──► POST /api/chat
-                           │
-                           ├── Anthropic Claude (primary)
-                           └── Google Gemini (fallback)
-```
-
-### API Route
-
-```
-POST /api/chat
-Body: { message: string, history: ChatMessage[] }
-Response: { reply: string }
-```
-
-### Customizing Responses
-
-Edit `data/keywords.json` to add new keyword triggers and `data/responses.json` to define the corresponding pre-written answers for common questions about the company, services, or technologies.
-
----
-
-## 🔌 API Endpoints
-
-### Base URL
-
-```
-http://localhost:3000/api
-```
-
-### 🔐 Authentication
-
-| Method | Endpoint                  | Description                  |
-| ------ | ------------------------- | ---------------------------- |
-| POST   | `/api/auth/[...nextauth]` | NextAuth sign-in handler     |
-| POST   | `/api/auth/logout`        | Destroy session and sign out |
-
-### 📝 Blog
-
-| Method | Endpoint         | Description              |
-| ------ | ---------------- | ------------------------ |
-| GET    | `/api/blog`      | List all blog posts      |
-| POST   | `/api/blog`      | Create blog post (Admin) |
-| GET    | `/api/blog/[id]` | Get blog post by ID      |
-| PUT    | `/api/blog/[id]` | Update blog post (Admin) |
-| DELETE | `/api/blog/[id]` | Delete blog post (Admin) |
-
-### 🖥️ Projects
-
-| Method | Endpoint             | Description            |
-| ------ | -------------------- | ---------------------- |
-| GET    | `/api/projects`      | List all projects      |
-| POST   | `/api/projects`      | Create project (Admin) |
-| GET    | `/api/projects/[id]` | Get project by ID      |
-| PUT    | `/api/projects/[id]` | Update project (Admin) |
-| DELETE | `/api/projects/[id]` | Delete project (Admin) |
-
-### ⚙️ Technologies
-
-| Method | Endpoint               | Description               |
-| ------ | ---------------------- | ------------------------- |
-| GET    | `/api/technology`      | List all technologies     |
-| POST   | `/api/technology`      | Add technology (Admin)    |
-| GET    | `/api/technology/[id]` | Get technology by ID      |
-| PUT    | `/api/technology/[id]` | Update technology (Admin) |
-| DELETE | `/api/technology/[id]` | Delete technology (Admin) |
-
-### 🤖 Chatbot & Utilities
-
-| Method | Endpoint      | Description                       |
-| ------ | ------------- | --------------------------------- |
-| POST   | `/api/chat`   | Send message to AI chatbot        |
-| POST   | `/api/mail`   | Submit contact form (sends email) |
-| POST   | `/api/upload` | Upload image to Cloudinary        |
-
----
-
-## 🔐 Security
-
-- **NextAuth.js** — Admin sessions with encrypted JWT stored in HttpOnly cookies
-- **bcrypt** — Admin password hashing (salt rounds: 12)
-- **Zod** — Schema validation on all API route inputs
-- **Protected admin routes** — Middleware checks for valid session before rendering `/admin/*`
-- **Cloudinary signed uploads** — All upload requests use server-generated signatures
-- **Environment variable isolation** — API keys and secrets never exposed to the client bundle
-- **robots.txt** — Configured to manage search engine crawl scope
-
----
-
-## 🎨 CV & Resume
-
-The project includes a downloadable CV for the lead developer in two languages and two formats:
-
-| Format | English                                                   | Turkish                                                   |
-| ------ | --------------------------------------------------------- | --------------------------------------------------------- |
-| HTML   | `public/cv/cv.en.html`                                    | `public/cv/cv.tr.html`                                    |
-| PDF    | `public/cv/Ceyhun Türkmen – Full Stack Developer(en).pdf` | `public/cv/Ceyhun Türkmen – Full Stack Developer(tr).pdf` |
-
-Both are available for direct download from the site.
-
----
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push your repository to GitHub
-2. Import the project at [vercel.com](https://vercel.com)
-3. Add all environment variables from `.env.local` in the Vercel dashboard
-4. Deploy — Vercel automatically detects Next.js and configures the build
-
-```bash
-# Or deploy via CLI
-npx vercel --prod
-```
-
-### Railway
-
-1. Connect your GitHub repository in the Railway dashboard
-2. Add environment variables
-3. Railway auto-detects Node.js and runs `npm run build && npm start`
-
-### Docker
-
-```bash
-# Build the image
-docker build -t jhun .
-
-# Run the container
-docker run -p 3000:3000 --env-file .env jhun
-```
-
-### Production Checklist
-
-- Set `NODE_ENV=production`
-- Update `NEXTAUTH_URL` to your production domain
-- Use a MongoDB Atlas cluster (not local MongoDB)
-- Configure Cloudinary for the production environment
-- Set `NEXT_PUBLIC_BASE_URL` to your live domain
-- Verify `robots.txt` allows the correct crawl paths
-- Enable HTTPS (automatic on Vercel, use Let's Encrypt for VPS)
-
----
-
-## 🤝 Contributing
-
-1. **Fork** this repository
-2. Create a feature branch:
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m 'feat: add AmazingFeature'
-   ```
-4. Push your branch:
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-5. Open a **Pull Request**
-
-### Development Standards
-
-- Use **TypeScript** — avoid `any`, type all props and API responses
-- Follow **component isolation** — server vs. client components clearly separated
-- Use **Conventional Commits** — `feat:`, `fix:`, `docs:`, `refactor:`
-- Run `next build` before submitting PRs to catch type errors
-
----
-
-## 👥 Developer
-
-| Name           | Role                 | Contact                                                         |
-| -------------- | -------------------- | --------------------------------------------------------------- |
-| Ceyhun Türkmen | Full Stack Developer | [jhuntechofficial@gmail.com](mailto:jhuntechofficial@gmail.com) |
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 📞 Contact
-
-- 🌐 Website: [jhun.com.tr](https://jhun.com.tr)
-- 📧 Email: [jhuntechofficial@gmail.com](mailto:jhuntechofficial@gmail.com)
-
----
-
-<div align="center">
-
-_.jhun{} — crafting the web, one project at a time._ 💻
-
-</div>
+No `LICENSE` file exists in this repository. The previous README claimed an MIT license; that claim could not be verified and has been removed. Confirm licensing intent with the project owner before publishing this claim again.
