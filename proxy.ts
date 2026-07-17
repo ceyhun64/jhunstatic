@@ -54,7 +54,8 @@ export default function proxy(request: NextRequest) {
   // 2. Locale missing in URL → detect from Accept-Language, redirect once
   if (!currentLocale) {
     const locale = detectLocale(request);
-    const redirectUrl = new URL(`/${locale}${pathname}`, request.url);
+    const suffix = pathname === "/" ? "" : pathname;
+    const redirectUrl = new URL(`/${locale}${suffix}`, request.url);
     return NextResponse.redirect(redirectUrl);
   }
 
