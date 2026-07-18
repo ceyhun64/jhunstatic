@@ -58,6 +58,36 @@
     "updatedAt": "2025-07-01T00:00:00.000Z"
   },
   {
+    "id": "proj_001",
+    "title": "BalkoLüx",
+    "summary": "Bahçe ve balkon mobilyaları için full-stack e-ticaret platformu.",
+    "description": "BalkoLüx, bahçe, teras ve balkon mobilyalarına özel gelistirilmis kapsamlı bir e-ticaret platformudur. Oturma grupları, masa takımları, sezlong, salıncak, barbekü ve semsiye olmak üzere 6 ana ürün kategorisi sunmaktadır. Ürün detay sayfalarında çoklu görsel galeri, yakınlastırma destegi, malzeme özellikleri ve ürün sekmeleri (açıklama + yorumlar) yer almaktadır. Kullanıcılar gelismis arama, kategori filtresi ve fiyat aralıgı gibi filtreleme seçenekleriyle istedikleri ürüne hızla ulasabilir. Alısveris sepeti gerçek zamanlı toplam hesaplama ve varyant takibi ile çalısmakta, kupon kodu sistemi sayesinde indirim uygulanabilmektedir. Çok adımlı ödeme akısı; adres seçimi ve iyzico ödeme entegrasyonunu kapsamaktadır. Horoz Kargo entegrasyonu ile gerçek zamanlı kargo takibi profil sayfasından yapılabilmektedir. Admin panelinde satıs analitigi (Recharts), ürün, siparis, kullanıcı, blog, banner, kupon ve abone yönetimi bulunmaktadır. Nodemailer ile iletisim formu ve sifre sıfırlama e-postaları gönderilmektedir. Sehir, ilçe ve mahalle verileri city.json üzerinden dinamik olarak yüklenmekte, adres formları otomatik tamamlama ile desteklenmektedir. Cloudinary ile görsel yükleme ve CDN dagıtımı saglanmaktadır. Next.js App Router, TypeScript, Prisma ORM ve MySQL altyapısıyla insa edilmistir.",
+    "titleEng": "BalkoLüx",
+    "summaryEng": "Full-stack e-commerce platform for garden & balcony furniture.",
+    "descriptionEng": "BalkoLüx is a comprehensive e-commerce platform for premium outdoor furniture covering gardens, terraces, and balconies. It offers 6 product categories: seating sets, table sets, sunbeds, swings, barbecue units, and umbrellas. Product detail pages feature multi-image galleries with zoom, material specs, and tabbed content covering description and reviews. Users can filter products by category and price range using a mobile-friendly filter drawer. The cart supports real-time totals, variant tracking, and coupon code discounts validated via a dedicated API endpoint. The multi-step checkout covers address selection and iyzico payment with Turkish bank card installment options. Horoz Kargo integration provides real-time shipment tracking directly from the user profile page. The admin panel includes Recharts-powered sales analytics and full management of products, orders, users, blogs, banners, coupons, and subscribers. Nodemailer handles contact form and password reset emails. City, district, and neighborhood data is dynamically loaded from city.json with auto-fill support on address forms. Cloudinary handles image upload and CDN delivery. Built on Next.js App Router, TypeScript, Prisma ORM, and MySQL.",
+    "url": "https://balkolux.com.tr/",
+    "image": "/projects/balkolux/main.png",
+    "demoUrl": "https://balkolux.com.tr/",
+    "githubUrl": "https://github.com/ceyhun64/balkolux",
+    "subImage1": "/projects/balkolux/sub1.png",
+    "subImage2": "/projects/balkolux/sub2.png",
+    "subImage3": "/projects/balkolux/sub3.png",
+    "subImage4": "/projects/balkolux/sub4.png",
+    "subImage5": "/projects/balkolux/sub5.png",
+    "technologies": [
+      "tech_012",
+      "tech_017",
+      "tech_023",
+      "tech_015",
+      "tech_011",
+      "tech_022",
+      "tech_024",
+      "tech_003"
+    ],
+    "createdAt": "2025-11-18T00:00:00.000Z",
+    "updatedAt": "2026-01-02T00:00:00.000Z"
+  },
+  {
     "id": "proj_006",
     "title": "NowArt Plicell",
     "summary": "Plicell, Zebra ve Stor perdeler için online satıs platformu.",
@@ -174,36 +204,6 @@
     ],
     "createdAt": "2025-01-01T00:00:00.000Z",
     "updatedAt": "2025-07-01T00:00:00.000Z"
-  },
-  {
-    "id": "proj_001",
-    "title": "BalkoLüx",
-    "summary": "Bahçe ve balkon mobilyaları için full-stack e-ticaret platformu.",
-    "description": "BalkoLüx, bahçe, teras ve balkon mobilyalarına özel gelistirilmis kapsamlı bir e-ticaret platformudur. Oturma grupları, masa takımları, sezlong, salıncak, barbekü ve semsiye olmak üzere 6 ana ürün kategorisi sunmaktadır. Ürün detay sayfalarında çoklu görsel galeri, yakınlastırma destegi, malzeme özellikleri ve ürün sekmeleri (açıklama + yorumlar) yer almaktadır. Kullanıcılar gelismis arama, kategori filtresi ve fiyat aralıgı gibi filtreleme seçenekleriyle istedikleri ürüne hızla ulasabilir. Alısveris sepeti gerçek zamanlı toplam hesaplama ve varyant takibi ile çalısmakta, kupon kodu sistemi sayesinde indirim uygulanabilmektedir. Çok adımlı ödeme akısı; adres seçimi ve iyzico ödeme entegrasyonunu kapsamaktadır. Horoz Kargo entegrasyonu ile gerçek zamanlı kargo takibi profil sayfasından yapılabilmektedir. Admin panelinde satıs analitigi (Recharts), ürün, siparis, kullanıcı, blog, banner, kupon ve abone yönetimi bulunmaktadır. Nodemailer ile iletisim formu ve sifre sıfırlama e-postaları gönderilmektedir. Sehir, ilçe ve mahalle verileri city.json üzerinden dinamik olarak yüklenmekte, adres formları otomatik tamamlama ile desteklenmektedir. Cloudinary ile görsel yükleme ve CDN dagıtımı saglanmaktadır. Next.js App Router, TypeScript, Prisma ORM ve MySQL altyapısıyla insa edilmistir.",
-    "titleEng": "BalkoLüx",
-    "summaryEng": "Full-stack e-commerce platform for garden & balcony furniture.",
-    "descriptionEng": "BalkoLüx is a comprehensive e-commerce platform for premium outdoor furniture covering gardens, terraces, and balconies. It offers 6 product categories: seating sets, table sets, sunbeds, swings, barbecue units, and umbrellas. Product detail pages feature multi-image galleries with zoom, material specs, and tabbed content covering description and reviews. Users can filter products by category and price range using a mobile-friendly filter drawer. The cart supports real-time totals, variant tracking, and coupon code discounts validated via a dedicated API endpoint. The multi-step checkout covers address selection and iyzico payment with Turkish bank card installment options. Horoz Kargo integration provides real-time shipment tracking directly from the user profile page. The admin panel includes Recharts-powered sales analytics and full management of products, orders, users, blogs, banners, coupons, and subscribers. Nodemailer handles contact form and password reset emails. City, district, and neighborhood data is dynamically loaded from city.json with auto-fill support on address forms. Cloudinary handles image upload and CDN delivery. Built on Next.js App Router, TypeScript, Prisma ORM, and MySQL.",
-    "url": "https://balkolux.com.tr/",
-    "image": "/projects/balkolux/main.png",
-    "demoUrl": "https://balkolux.com.tr/",
-    "githubUrl": "https://github.com/ceyhun64/balkolux",
-    "subImage1": "/projects/balkolux/sub1.png",
-    "subImage2": "/projects/balkolux/sub2.png",
-    "subImage3": "/projects/balkolux/sub3.png",
-    "subImage4": "/projects/balkolux/sub4.png",
-    "subImage5": "/projects/balkolux/sub5.png",
-    "technologies": [
-      "tech_012",
-      "tech_017",
-      "tech_023",
-      "tech_015",
-      "tech_011",
-      "tech_022",
-      "tech_024",
-      "tech_003"
-    ],
-    "createdAt": "2025-11-18T00:00:00.000Z",
-    "updatedAt": "2026-01-02T00:00:00.000Z"
   },
   {
     "id": "proj_008",
