@@ -15,6 +15,7 @@ import {
   Calendar,
   BadgeCheck,
   FileText,
+  Download,
 } from "lucide-react";
 import { GridPattern } from "../ui/shadcn-io/grid-pattern";
 import { cn } from "@/lib/utils";
@@ -54,7 +55,10 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
       .includes(searchTerm.toLowerCase()),
   );
 
-  const cvPath = locale === "tr" ? "/cv/cv.tr.html" : "/cv/cv.en.html";
+  const cvDownloadPath =
+    locale === "tr"
+      ? encodeURI("/cv/Ceyhun Türkmen - CV(Tr).pdf")
+      : encodeURI("/cv/Ceyhun Türkmen - CV.pdf");
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-gray-50 via-gray-200 to-gray-50 dark:from-black dark:via-zinc-950 dark:to-black text-gray-900 dark:text-zinc-100 selection:bg-blue-500/30 transition-colors duration-500">
@@ -195,9 +199,8 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
                     </a>
 
                     <motion.a
-                      href={cvPath}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={cvDownloadPath}
+                      download
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.6, duration: 0.4 }}
@@ -208,9 +211,9 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
                       <FileText className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                       <span className="text-[10px] font-bold uppercase tracking-wider whitespace-nowrap">
                         {dict.header?.cvButton ??
-                          (locale === "tr" ? "CV Incele" : "View CV")}
+                          (locale === "tr" ? "CV Indir" : "Download CV")}
                       </span>
-                      <ExternalLink className="w-3 h-3 opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                      <Download className="w-3 h-3 opacity-70 group-hover:opacity-100 group-hover:translate-y-0.5 transition-all duration-300" />
                     </motion.a>
                   </div>
                 </motion.div>
@@ -445,15 +448,14 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
                 </a>
 
                 <a
-                  href={cvPath}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={cvDownloadPath}
+                  download
                   className="inline-flex items-center gap-3 px-10 md:px-12 py-5 md:py-6 bg-gradient-to-r from-blue-600/20 to-blue-500/10 dark:from-blue-500/20 dark:to-blue-600/10 text-gray-900 dark:text-white border border-blue-500/40 dark:border-blue-400/30 rounded-full font-bold text-[11px] uppercase tracking-wider hover:bg-blue-500/30 dark:hover:bg-blue-500/20 hover:border-blue-500/60 dark:hover:border-blue-400/50 hover:scale-105 transition-all duration-300 group shadow-xl"
                 >
                   <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
                   {dict.header?.cvButton ??
-                    (locale === "tr" ? "CV Incele" : "View CV")}
-                  <ExternalLink className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300" />
+                    (locale === "tr" ? "CV Indir" : "Download CV")}
+                  <Download className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100 group-hover:translate-y-0.5 transition-all duration-300" />
                 </a>
               </motion.div>
             </div>

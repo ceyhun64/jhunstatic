@@ -16,6 +16,7 @@ import type { ReactNode } from "react";
 
 interface Props {
   dict: any;
+  locale: "tr" | "en";
 }
 
 interface Company {
@@ -78,7 +79,7 @@ function CodeWindow({
   );
 }
 
-export default function AboutClient({ dict }: Props) {
+export default function AboutClient({ dict, locale }: Props) {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -311,7 +312,11 @@ export default function AboutClient({ dict }: Props) {
 
                 <motion.div whileHover={{ scale: 1.03 }} className="mt-2">
                   <a
-                    href="/cv/Ceyhun_Turkmen_CV.pdf"
+                    href={
+                      locale === "tr"
+                        ? encodeURI("/cv/Ceyhun Türkmen - CV(Tr).pdf")
+                        : encodeURI("/cv/Ceyhun Türkmen - CV.pdf")
+                    }
                     download
                     className="inline-flex items-center gap-2 rounded-lg bg-gray-900 dark:bg-white px-5 py-2.5 text-sm font-semibold text-white dark:text-gray-900 shadow-md hover:shadow-lg transition-all"
                   >
