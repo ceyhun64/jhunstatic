@@ -97,7 +97,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
         </Link>
 
         {/* Desktop Menü */}
-        <div className="hidden md:flex absolute left-1/2 top-0 transform -translate-x-1/2 h-full items-center">
+        <div className="hidden xl:flex absolute left-1/2 top-0 transform -translate-x-1/2 h-full items-center">
           <NavigationMenu>
             <NavigationMenuList className="flex gap-8">
               {links.map((link, i) => {
@@ -133,7 +133,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
         </div>
 
         {/* Sag Taraf */}
-        <div className="flex items-center gap-0.5 md:gap-4">
+        <div className="flex items-center gap-0.5 xl:gap-4">
           <Link
             href="https://github.com/ceyhun64"
             target="_blank"
@@ -176,7 +176,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
           <LanguageSwitcher />
 
           {/* Mobil Menü Butonu */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <Button
               variant="ghost"
               size="icon"
@@ -203,7 +203,7 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: shouldReduceMotion ? 0 : -20 }}
             transition={{ duration: shouldReduceMotion ? 0.15 : 0.35 }}
-            className="fixed inset-0 bg-white/95 dark:bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden h-screen overflow-y-auto"
+            className="fixed inset-0 bg-white/95 dark:bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center gap-8 xl:hidden h-screen overflow-y-auto"
             aria-label="Mobil menü"
           >
             {/* Kapat Butonu */}

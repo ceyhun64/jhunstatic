@@ -43,12 +43,12 @@ export default function ProjectsClient({ dict, locale, projects }: Props) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-6xl md:text-9xl font-extrabold mb-0 md:mb-2 z-10 font-mono"
+          className="font-extrabold mb-0 md:mb-2 z-10 font-mono"
         >
           <TextReveal
             text={dict.title_main}
             revealText={dict.title_reveal}
-            className="h-20"
+            className="h-10 sm:h-14 md:h-16 lg:h-20 xl:h-28"
           />
         </motion.h1>
 

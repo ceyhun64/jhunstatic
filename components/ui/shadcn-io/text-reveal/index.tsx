@@ -87,14 +87,14 @@ export const TextReveal = ({
         transition={isMouseOver ? { duration: 0 } : { duration: 0.4 }}
         className="absolute z-20 will-change-transform bg-white dark:bg-black"
       >
-        <p className="text-2xl md:text-7xl text-gray-950 dark:text-gray-50">
+        <p className="whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-gray-950 dark:text-gray-50">
           {revealText}
         </p>
       </motion.div>
 
       {/* Base text layer */}
       <div className="overflow-hidden">
-        <p className="text-2xl md:text-7xl text-gray-950 dark:text-gray-50">
+        <p className="whitespace-nowrap text-xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-gray-950 dark:text-gray-50">
           {text}
         </p>
       </div>

@@ -279,26 +279,22 @@ export default function HeroesClient({
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
         {/* Badge - Iyilestirilmis tema uyumu */}
+          {/* Meta satırı - konum & odak */}
         <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : -20 }}
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: shouldReduceMotion ? 0.2 : 0.6,
-            delay: shouldReduceMotion ? 0 : 0.2,
+            delay: shouldReduceMotion ? 0 : 0.55,
           }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 
-            bg-black/5 dark:bg-white/5 
-            backdrop-blur-md 
-            shadow-lg shadow-blue-500/20 dark:shadow-cyan-500/10
-            border border-black/10 dark:border-white/10
-            transition-all duration-300"
+          className="flex flex-wrap items-center justify-center gap-3 mb-6"
         >
-          <Circle className="h-2 w-2 fill-blue-500 dark:fill-sky-400/80 text-blue-500 dark:text-sky-400 animate-pulse" />
-          <span className="text-xs text-gray-800 dark:text-white/80 tracking-wide font-medium">
-            {dict.badge}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-gray-700 dark:text-white/70">
+            <MapPin className="h-3.5 w-3.5" />
+            {dict.location}
           </span>
+         
         </motion.div>
-
         {/* Title - Gelistirilmis gradyan ve animasyon */}
         <motion.h1
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
@@ -343,25 +339,7 @@ export default function HeroesClient({
           {dict.description}
         </motion.p>
 
-        {/* Meta satırı - konum & odak */}
-        <motion.div
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: shouldReduceMotion ? 0.2 : 0.6,
-            delay: shouldReduceMotion ? 0 : 0.55,
-          }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-6"
-        >
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-gray-700 dark:text-white/70">
-            <MapPin className="h-3.5 w-3.5" />
-            {dict.location}
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-gray-700 dark:text-white/70">
-            <Compass className="h-3.5 w-3.5" />
-            {dict.focus}
-          </span>
-        </motion.div>
+     
 
         {/* Ana teknolojiler */}
         <motion.div

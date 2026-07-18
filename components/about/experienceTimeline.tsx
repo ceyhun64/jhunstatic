@@ -121,7 +121,7 @@ export default function ExperienceTimeline({ dict }: Props) {
             <div className="absolute bottom-0 right-[5%] h-60 w-60 rounded-full bg-blue-400/25 dark:bg-blue-500/15 blur-3xl" />
           </div>
 
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {dict.engagements.map((eng, i) => (
               <motion.div
                 key={eng.title}
