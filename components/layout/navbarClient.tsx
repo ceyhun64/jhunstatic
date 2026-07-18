@@ -38,8 +38,9 @@ export default function NavbarClient({ dict }: NavbarClientProps) {
 
   const links = [
     { name: dict.projects, href: "projects" },
-    { name: dict.services, href: "services" },
     { name: dict.about, href: "about" },
+
+    { name: dict.services, href: "services" },
     { name: dict.contact, href: "contact" },
     { name: dict.blogs, href: "blog" },
   ];

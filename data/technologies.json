@@ -171,7 +171,7 @@
   },
   {
     "id": "tech_018",
-    "name": "Redux",
+    "name": "Redux Toolkit",
     "icon": "/technologies/redux.svg",
     "type": "Frontend",
     "yoe": 2,
@@ -261,7 +261,7 @@
   },
   {
     "id": "tech_027",
-    "name": ".NET",
+    "name": "ASP.NET Core",
     "icon": "/technologies/dotnet.svg",
     "type": "Backend",
     "yoe": 1,

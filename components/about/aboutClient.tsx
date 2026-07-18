@@ -7,21 +7,22 @@ import TypingText from "@/components/ui/shadcn-io/typing-text";
 import { PixelImage } from "@/components/ui/shadcn-io/pixel-image";
 import { SparklesCore } from "@/components/ui/shadcn-io/sparkles";
 import Link from "next/link";
-import { Download, Users, FolderCheck, Smile, Award } from "lucide-react";
+import { Download, Boxes, FolderCheck, Gauge, Layers } from "lucide-react";
 import { easeOut, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
+import type { Technology } from "@/lib/staticData";
+import Philosophy from "./philosophy";
+import ExperienceTimeline from "./experienceTimeline";
+import SkillsSection from "./skillsSection";
+import ResumeSection from "./resumeSection";
 
 interface Props {
   dict: any;
   locale: "tr" | "en";
-}
-
-interface Company {
-  src: string;
-  alt: string;
+  technologies: Technology[];
 }
 
 interface Achievement {
@@ -29,7 +30,7 @@ interface Achievement {
   value: string;
 }
 
-const ACHIEVEMENT_ICONS = [Users, FolderCheck, Smile, Award];
+const ACHIEVEMENT_ICONS = [Boxes, FolderCheck, Gauge, Layers];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -79,7 +80,7 @@ function CodeWindow({
   );
 }
 
-export default function AboutClient({ dict, locale }: Props) {
+export default function AboutClient({ dict, locale, technologies }: Props) {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -101,11 +102,21 @@ export default function AboutClient({ dict, locale }: Props) {
 
   return (
     <motion.section
-      className="py-8 md:py-16 px-4 md:px-10 bg-gradient-to-b from-[#F5F7FA] via-gray-200 to-[#F5F7FA] dark:from-black dark:via-indigo-950 dark:to-black font-sans"
+      className="relative overflow-hidden py-8 md:py-16 px-4 md:px-10 bg-gradient-to-b from-[#F5F7FA] via-gray-200 to-[#F5F7FA] dark:from-black dark:via-zinc-950 dark:to-black font-sans"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
+      <SparklesCore
+        id="tsparticles-left-section"
+        background="transparent"
+        minSize={1}
+        maxSize={2}
+        particleDensity={50}
+        className="absolute inset-0 w-full h-full"
+        particleColor={particleColor}
+        speed={1}
+      />
       <div className="mx-auto">
         {/* Baslık ve açıklama */}
         <div className="mb-2 md:mb-4 grid gap-5 text-center md:grid-cols-2 md:text-left px-2 md:px-12">
@@ -122,16 +133,6 @@ export default function AboutClient({ dict, locale }: Props) {
           {/* Sol Görsel Alanı */}
           <div className="lg:col-span-2">
             <div className="relative flex-1 rounded-xl overflow-hidden">
-              <SparklesCore
-                id="tsparticles-left-section"
-                background="transparent"
-                minSize={1}
-                maxSize={2}
-                particleDensity={50}
-                className="absolute inset-0 w-full h-full"
-                particleColor={particleColor}
-                speed={1}
-              />
               <div className="relative z-10 flex flex-col justify-between h-full overflow-hidden p-0 md:p-4 space-y-4">
                 {/* 1. ve 2. Paragrafı içeren Ana Kod Blogu */}
                 <CodeWindow filename="giris.tsx">
@@ -291,6 +292,7 @@ export default function AboutClient({ dict, locale }: Props) {
                     text={dict.title}
                   />
                 </Link>
+
                 <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
                   {dict.projects_heading}
                 </h2>
@@ -364,7 +366,7 @@ export default function AboutClient({ dict, locale }: Props) {
             </p>
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
               {defaultAchievements.map((a, i) => {
-                const Icon = ACHIEVEMENT_ICONS[i] ?? Users;
+                const Icon = ACHIEVEMENT_ICONS[i] ?? Boxes;
                 return (
                   <div
                     key={i}
@@ -385,6 +387,11 @@ export default function AboutClient({ dict, locale }: Props) {
             </div>
           </div>
         </div>
+
+        <Philosophy dict={dict.philosophy} />
+        <ExperienceTimeline dict={dict.experience} />
+        <SkillsSection dict={dict.skills} technologies={technologies} />
+        <ResumeSection dict={dict.resume} locale={locale} />
       </div>
     </motion.section>
   );

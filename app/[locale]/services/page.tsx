@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isEn = locale === "en";
 
   return {
-    title: isEn ? "Services" : "Hizmetlerimiz",
+    title: isEn ? "Capabilities" : "Yetkinliklerim",
     description: isEn
-      ? "Web design & development, SEO, e-commerce, API/backend development and digital consulting services by Ceyhun Türkmen."
-      : "Ceyhun Türkmen tarafından sunulan web tasarım & geliştirme, SEO, e-ticaret, API/backend geliştirme ve dijital danışmanlık hizmetleri.",
+      ? "What Ceyhun Türkmen builds: web application engineering, SEO & performance engineering, e-commerce systems, API/backend architecture, and technical consulting."
+      : "Ceyhun Türkmen'in insa ettigi sistem türleri: web uygulama mühendisligi, SEO & performans mühendisligi, e-ticaret sistemleri, API/backend mimarisi ve teknik danısmanlık.",
     alternates: {
       canonical: `${BASE_URL}/${locale}/services`,
       languages: {

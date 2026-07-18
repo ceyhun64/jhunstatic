@@ -7,7 +7,7 @@ import TypingText from "@/components/ui/shadcn-io/typing-text";
 import { PixelImage } from "@/components/ui/shadcn-io/pixel-image";
 import { SparklesCore } from "@/components/ui/shadcn-io/sparkles";
 import Link from "next/link";
-import { Download, Users, FolderCheck, Smile, Award } from "lucide-react";
+import { Download, ArrowRight, Boxes, FolderCheck, Gauge, Layers } from "lucide-react";
 import { easeOut, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
@@ -29,7 +29,7 @@ interface Achievement {
   value: string;
 }
 
-const ACHIEVEMENT_ICONS = [Users, FolderCheck, Smile, Award];
+const ACHIEVEMENT_ICONS = [Boxes, FolderCheck, Gauge, Layers];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -310,20 +310,30 @@ export default function AboutClient({ dict, locale }: Props) {
                   "{dict.quote}"
                 </blockquote>
 
-                <motion.div whileHover={{ scale: 1.03 }} className="mt-2">
-                  <a
-                    href={
-                      locale === "tr"
-                        ? encodeURI("/cv/Ceyhun Türkmen - CV(Tr).pdf")
-                        : encodeURI("/cv/Ceyhun Türkmen - CV.pdf")
-                    }
-                    download
-                    className="inline-flex items-center gap-2 rounded-lg bg-gray-900 dark:bg-white px-5 py-2.5 text-sm font-semibold text-white dark:text-gray-900 shadow-md hover:shadow-lg transition-all"
+                <div className="mt-2 flex flex-wrap items-center gap-4">
+                  <motion.div whileHover={{ scale: 1.03 }}>
+                    <a
+                      href={
+                        locale === "tr"
+                          ? encodeURI("/cv/Ceyhun Türkmen - CV(Tr).pdf")
+                          : encodeURI("/cv/Ceyhun Türkmen - CV.pdf")
+                      }
+                      download
+                      className="inline-flex items-center gap-2 rounded-lg bg-gray-900 dark:bg-white px-5 py-2.5 text-sm font-semibold text-white dark:text-gray-900 shadow-md hover:shadow-lg transition-all"
+                    >
+                      <Download className="h-4 w-4" />
+                      {dict.cvButtonLabel}
+                    </a>
+                  </motion.div>
+
+                  <Link
+                    href={`/${locale}/about`}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-gray-800 dark:text-white/80 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
                   >
-                    <Download className="h-4 w-4" />
-                    {dict.cvButtonLabel}
-                  </a>
-                </motion.div>
+                    {dict.moreLabel}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -364,7 +374,7 @@ export default function AboutClient({ dict, locale }: Props) {
             </p>
             <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
               {defaultAchievements.map((a, i) => {
-                const Icon = ACHIEVEMENT_ICONS[i] ?? Users;
+                const Icon = ACHIEVEMENT_ICONS[i] ?? Boxes;
                 return (
                   <div
                     key={i}

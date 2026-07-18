@@ -27,51 +27,44 @@ const seoContent: Record<
   }
 > = {
   tr: {
-    title: "Jhun | Ceyhun Türkmen — Full Stack Web Geliştirici",
+    title: "Jhun | Ceyhun Türkmen — Full Stack Developer",
     description:
-      "Ceyhun Türkmen — React, Next.js, TypeScript ve Node.js ile kurumsal web siteleri, e-ticaret ve özel dijital çözümler üretir. Uşak merkezli, uzaktan çalışan senior developer.",
-    ogTitle: "Jhun | Full Stack Web Geliştirici",
+      "Ceyhun Türkmen — Next.js, ASP.NET Core ve Node.js ile production-grade sistemler kuran full stack yazılım mühendisi. Bağımsız olarak 8'den fazla ticari platform mimarisini kurdu. Türkiye merkezli, uzaktan çalışmaya açık.",
+    ogTitle: "Jhun | Full Stack Developer",
     ogDescription:
-      "React, Next.js ve TypeScript ile modern, hızlı ve ölçeklenebilir web uygulamaları. Uşak merkezli, uzaktan çalışan senior developer.",
+      "Next.js, ASP.NET Core ve Node.js ile production-grade, ölçeklenebilir sistemler. Türkiye merkezli full stack developer — uzaktan çalışmaya açık.",
     keywords: [
-      "web tasarım",
-      "web geliştirme",
-      "freelance developer",
-      "kurumsal web sitesi",
+      "full stack developer",
+      "full stack yazılım mühendisi",
       "react developer",
       "next.js developer",
       "typescript developer",
       "node.js developer",
-      "dijital çözümler",
-      "Ceyhun Türkmen",
-      "full stack developer",
-      "senior developer",
-      "türkiye web ajansı",
+      "asp.net core developer",
       "yazılım mühendisi",
+      "Ceyhun Türkmen",
+      "software engineer türkiye",
+      "uzaktan yazılım geliştirici",
     ],
   },
   en: {
-    title: "Jhun | Ceyhun Türkmen — Full Stack Web Developer",
+    title: "Jhun | Ceyhun Türkmen — Full Stack Developer",
     description:
-      "Ceyhun Türkmen — builds corporate websites, e-commerce and custom digital solutions with React, Next.js, TypeScript and Node.js. Senior developer based in Uşak, Turkey.",
-    ogTitle: "Jhun | Full Stack Web Developer",
+      "Ceyhun Türkmen — full stack software engineer building production-grade systems with Next.js, ASP.NET Core, and Node.js. Independently architected and shipped 8+ commercial platforms. Based in Turkey, open to remote.",
+    ogTitle: "Jhun | Full Stack Developer",
     ogDescription:
-      "Modern, fast and scalable web applications with React, Next.js and TypeScript. Senior developer based in Uşak, Turkey — available remotely.",
+      "Production-grade, scalable systems built with Next.js, ASP.NET Core, and Node.js. Full stack developer based in Turkey — open to remote roles.",
     keywords: [
-      "web design",
-      "web development",
-      "freelance developer",
-      "corporate website",
+      "full stack developer",
+      "software engineer",
       "react developer",
       "next.js developer",
       "typescript developer",
       "node.js developer",
-      "digital solutions",
+      "asp.net core developer",
       "Ceyhun Türkmen",
-      "full stack developer",
-      "senior developer",
-      "software engineer",
-      "web agency turkey",
+      "software engineer turkey",
+      "remote software engineer",
     ],
   },
 };
@@ -170,11 +163,11 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       width: 1200,
       height: 630,
     },
-    jobTitle: "Senior Full Stack Developer",
+    jobTitle: "Full Stack Developer",
     description:
       l === "tr"
-        ? "React, Next.js, TypeScript, Node.js ve .NET ile 5+ yıl deneyimli Full Stack Web Geliştirici."
-        : "Full Stack Web Developer with 5+ years of experience in React, Next.js, TypeScript, Node.js and .NET.",
+        ? "Next.js, ASP.NET Core ve Node.js ile production-grade sistemler kuran Full Stack Software Engineer. Bağımsız olarak 8'den fazla ticari platform mimarisini kurdu."
+        : "Full Stack Software Engineer building production-grade systems with Next.js, ASP.NET Core, and Node.js. Independently architected and shipped 8+ commercial platforms.",
     sameAs: [
       "https://github.com/ceyhun64",
       "https://www.linkedin.com/in/ceyhun-t%C3%BCrkmen-14882a26a/",
@@ -185,10 +178,14 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       "TypeScript",
       "JavaScript",
       "Node.js",
+      "ASP.NET Core",
       "PostgreSQL",
-      ".NET",
+      "MySQL",
       "C#",
       "Redis",
+      "SignalR",
+      "Clean Architecture",
+      "CQRS",
       "Tailwind CSS",
       "Prisma ORM",
       "REST API",
@@ -260,7 +257,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 focus:rounded-lg focus:bg-amber-500 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-black"
       >
-        {l === "tr" ? "İçeriğe geç" : "Skip to content"}
+        {l === "tr" ? "Içeriğe geç" : "Skip to content"}
       </a>
       <ThemeProvider
         attribute="class"

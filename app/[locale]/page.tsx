@@ -7,6 +7,7 @@ import ContactSection from "@/components/home/contact";
 import Footer from "@/components/layout/footer";
 import Gallery from "@/components/home/gallery";
 import Testimonials from "@/components/home/testimonials";
+import Github from "@/components/home/github";
 
 const BASE_URL = "https://www.jhun.com.tr";
 
@@ -20,11 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: isEn
-      ? "Jhun | Ceyhun Türkmen — Full Stack Web Developer"
-      : "Jhun | Ceyhun Türkmen — Full Stack Web Geliştirici",
+      ? "Jhun | Ceyhun Türkmen — Full Stack Developer"
+      : "Jhun | Ceyhun Türkmen — Full Stack Developer",
     description: isEn
-      ? "Personal portfolio of Ceyhun Türkmen. Modern, fast and scalable web solutions built with React, Next.js and TypeScript."
-      : "Ceyhun Türkmen'in kişisel portfolyo sitesi. React, Next.js ve TypeScript ile modern, hızlı ve ölçeklenebilir web çözümleri.",
+      ? "Personal portfolio of Ceyhun Türkmen, a Full Stack Developer who has independently architected and shipped 8+ commercial platforms with Next.js, ASP.NET Core, and Node.js."
+      : "Ceyhun Türkmen'in kişisel portfolyo sitesi — bağımsız olarak 8'den fazla ticari platform mimarisini kurup yayına almış Full Stack Developer. Next.js, ASP.NET Core ve Node.js.",
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
       languages: {
@@ -47,8 +48,12 @@ export default async function Home({ params }: Props) {
       <Navbar locale={locale} />
       <Heroes locale={locale} />
       <Banner locale={locale} />
+
       <Gallery locale={locale} />
+      <Github locale={locale} />
+
       <About locale={locale} />
+
       <Testimonials locale={locale} />
       <ContactSection locale={locale} />
       <Footer locale={locale} />

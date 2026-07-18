@@ -6,7 +6,16 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, ArrowLeft } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  ArrowLeft,
+  Target,
+  Lightbulb,
+  AlertTriangle,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
 import { GradientText } from "@/components/ui/shadcn-io/gradient-text";
 import { ImageZoom } from "../ui/shadcn-io/image-zoom";
 import { cn } from "@/lib/utils";
@@ -100,6 +109,16 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
     summaryEng,
     description,
     descriptionEng,
+    problem,
+    problemEng,
+    solution,
+    solutionEng,
+    challenges,
+    challengesEng,
+    results,
+    resultsEng,
+    lessonsLearned,
+    lessonsLearnedEng,
     technologies,
     demoUrl,
     githubUrl,
@@ -109,6 +128,14 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
   const displaySummary = locale === "en" && summaryEng ? summaryEng : summary;
   const displayDescription =
     locale === "en" && descriptionEng ? descriptionEng : description;
+  const displayProblem = locale === "en" && problemEng ? problemEng : problem;
+  const displaySolution =
+    locale === "en" && solutionEng ? solutionEng : solution;
+  const displayChallenges =
+    locale === "en" && challengesEng ? challengesEng : challenges;
+  const displayResults = locale === "en" && resultsEng ? resultsEng : results;
+  const displayLessons =
+    locale === "en" && lessonsLearnedEng ? lessonsLearnedEng : lessonsLearned;
 
   const scroll = (direction: "left" | "right") => {
     if (!carouselRef.current) return;
@@ -492,6 +519,126 @@ export default function ProjectDetailClient({ dict, locale, project }: Props) {
           </div>
         </div>
       </motion.div>
+
+      {/* Problem & Çözüm */}
+      {(displayProblem || displaySolution) && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="max-w-8xl mx-auto mt-12 p-4 md:p-12 rounded-3xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-xs shadow-lg grid gap-8 md:grid-cols-2"
+        >
+          {displayProblem && (
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-100 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400">
+                  <Target className="w-4 h-4" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white font-mono">
+                  {dict.problemLabel}
+                </h3>
+              </div>
+              <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                {displayProblem}
+              </p>
+            </div>
+          )}
+          {displaySolution && (
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                  <Lightbulb className="w-4 h-4" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white font-mono">
+                  {dict.solutionLabel}
+                </h3>
+              </div>
+              <p className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                {displaySolution}
+              </p>
+            </div>
+          )}
+        </motion.div>
+      )}
+
+      {/* Zorluklar & Sonuçlar */}
+      {((displayChallenges && displayChallenges.length > 0) ||
+        (displayResults && displayResults.length > 0)) && (
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="max-w-8xl mx-auto mt-8 p-4 md:p-12 rounded-3xl border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 backdrop-blur-xs shadow-lg grid gap-8 md:grid-cols-2"
+        >
+          {displayChallenges && displayChallenges.length > 0 && (
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-100 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                  <AlertTriangle className="w-4 h-4" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white font-mono">
+                  {dict.challengesLabel}
+                </h3>
+              </div>
+              <ul className="space-y-2.5">
+                {displayChallenges.map((item: string, i: number) => (
+                  <li
+                    key={i}
+                    className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed pl-4 border-l-2 border-amber-400/40 dark:border-amber-500/30"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {displayResults && displayResults.length > 0 && (
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white font-mono">
+                  {dict.resultsLabel}
+                </h3>
+              </div>
+              <ul className="space-y-2.5">
+                {displayResults.map((item: string, i: number) => (
+                  <li
+                    key={i}
+                    className="text-sm md:text-base text-gray-700 dark:text-gray-300 leading-relaxed pl-4 border-l-2 border-blue-400/40 dark:border-blue-500/30"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </motion.div>
+      )}
+
+      {/* Çıkarımlar */}
+      {displayLessons && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-6xl mx-auto mt-8 p-6 md:p-10 rounded-3xl border border-violet-300/20 dark:border-violet-500/20 bg-violet-500/5 dark:bg-violet-500/5 backdrop-blur-xs"
+        >
+          <div className="flex items-center gap-2.5 mb-3">
+            <Sparkles className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+            <h3 className="text-sm font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">
+              {dict.lessonsLabel}
+            </h3>
+          </div>
+          <p className="text-sm md:text-lg text-gray-800 dark:text-gray-200 leading-relaxed italic">
+            {displayLessons}
+          </p>
+        </motion.div>
+      )}
 
       {/* CTA */}
       <motion.div

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle } from "lucide-react";
+import { Circle, MapPin, Compass, Github, Linkedin, Download, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MagneticButton } from "@/components/ui/shadcn-io/magnetic-button";
 import Link from "next/link";
@@ -173,7 +173,14 @@ type HeroesClientProps = {
     title1: string;
     title2: string;
     description: string;
-    ctaText: string;
+    location: string;
+    focus: string;
+    primaryTech: string[];
+    ctaProjects: string;
+    ctaResume: string;
+    ctaContact: string;
+    githubLabel: string;
+    linkedinLabel: string;
   };
   className?: string;
   locale: "tr" | "en";
@@ -336,7 +343,47 @@ export default function HeroesClient({
           {dict.description}
         </motion.p>
 
-        {/* CTA Button - Gelistirilmis hover efektleri */}
+        {/* Meta satırı - konum & odak */}
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: shouldReduceMotion ? 0.2 : 0.6,
+            delay: shouldReduceMotion ? 0 : 0.55,
+          }}
+          className="flex flex-wrap items-center justify-center gap-3 mb-6"
+        >
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-gray-700 dark:text-white/70">
+            <MapPin className="h-3.5 w-3.5" />
+            {dict.location}
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-xs text-gray-700 dark:text-white/70">
+            <Compass className="h-3.5 w-3.5" />
+            {dict.focus}
+          </span>
+        </motion.div>
+
+        {/* Ana teknolojiler */}
+        <motion.div
+          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: shouldReduceMotion ? 0.2 : 0.6,
+            delay: shouldReduceMotion ? 0 : 0.6,
+          }}
+          className="flex flex-wrap items-center justify-center gap-2 mb-10"
+        >
+          {dict.primaryTech.map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 rounded-full text-[11px] font-mono font-medium tracking-wide text-blue-700 dark:text-sky-300 bg-blue-500/10 dark:bg-sky-400/10 border border-blue-500/20 dark:border-sky-400/20"
+            >
+              {tech}
+            </span>
+          ))}
+        </motion.div>
+
+        {/* CTA Butonları */}
         <motion.div
           initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -344,7 +391,7 @@ export default function HeroesClient({
             duration: shouldReduceMotion ? 0.2 : 0.6,
             delay: shouldReduceMotion ? 0 : 0.7,
           }}
-          className="inline-block relative overflow-visible"
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4"
         >
           <motion.div
             animate={shouldReduceMotion ? {} : { y: [0, -4, 0] }}
@@ -364,18 +411,61 @@ export default function HeroesClient({
                     dark:shadow-[0_4px_20px_rgba(255,180,0,0.6)]
                     hover:shadow-[0_8px_30px_rgba(251,146,60,0.7)]
                     dark:hover:shadow-[0_8px_30px_rgba(255,200,50,0.8)]
-                    after:absolute after:inset-0 after:rounded-full after:blur-2xl 
-                    after:bg-linear-to-r 
+                    after:absolute after:inset-0 after:rounded-full after:blur-2xl
+                    after:bg-linear-to-r
                     after:from-yellow-400/20 after:via-orange-400/15 after:to-amber-300/15
                     dark:after:from-yellow-400/15 dark:after:via-orange-400/10 dark:after:to-amber-300/10
                     after:pointer-events-none
                     transition-all duration-300 transform hover:scale-105
                     border border-orange-400/20 dark:border-yellow-400/20"
               >
-                {dict.ctaText}
+                {dict.ctaProjects}
               </MagneticButton>
             </Link>
           </motion.div>
+
+          <a
+            href={
+              locale === "tr"
+                ? encodeURI("/cv/Ceyhun Türkmen - CV(Tr).pdf")
+                : encodeURI("/cv/Ceyhun Türkmen - CV.pdf")
+            }
+            download
+            className="inline-flex items-center gap-2 px-6 py-4 rounded-full font-semibold text-sm sm:text-base text-gray-900 dark:text-white bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 backdrop-blur-md hover:bg-black/10 dark:hover:bg-white/15 transition-all duration-300 hover:scale-105"
+          >
+            <Download className="h-4 w-4" />
+            {dict.ctaResume}
+          </a>
+
+          <Link
+            href={`/${locale}/contact`}
+            className="inline-flex items-center gap-2 px-6 py-4 rounded-full font-semibold text-sm sm:text-base text-gray-900 dark:text-white bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 backdrop-blur-md hover:bg-black/10 dark:hover:bg-white/15 transition-all duration-300 hover:scale-105"
+          >
+            <Mail className="h-4 w-4" />
+            {dict.ctaContact}
+          </Link>
+
+          <a
+            href="https://github.com/ceyhun64"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={dict.githubLabel}
+            title={dict.githubLabel}
+            className="inline-flex items-center justify-center h-13 w-13 rounded-full text-gray-900 dark:text-white bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 backdrop-blur-md hover:bg-black/10 dark:hover:bg-white/15 hover:scale-110 transition-all duration-300"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+
+          <a
+            href="https://linkedin.com/in/ceyhun-türkmen-14882a26a"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={dict.linkedinLabel}
+            title={dict.linkedinLabel}
+            className="inline-flex items-center justify-center h-13 w-13 rounded-full text-gray-900 dark:text-white bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 backdrop-blur-md hover:bg-black/10 dark:hover:bg-white/15 hover:scale-110 transition-all duration-300"
+          >
+            <Linkedin className="h-5 w-5" />
+          </a>
         </motion.div>
       </div>
 

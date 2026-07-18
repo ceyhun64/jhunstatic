@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: isEn ? "FAQ" : "Sıkça Sorulan Sorular",
     description: isEn
-      ? "Answers to frequently asked questions about timelines, pricing, technologies and remote collaboration."
-      : "Proje süreleri, fiyatlandırma, teknolojiler ve uzaktan çalışma hakkında sıkça sorulan soruların cevapları.",
+      ? "Answers to frequently asked questions about availability, remote work, tech stack, and how I work."
+      : "Müsaitlik, uzaktan çalışma, teknoloji tercihi ve çalışma tarzım hakkında sıkça sorulan soruların cevapları.",
     alternates: {
       canonical: `${BASE_URL}/${locale}/faq`,
       languages: {

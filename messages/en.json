@@ -1,27 +1,48 @@
 {
   "navbar": {
     "projects": "Projects",
-    "services": "Services",
+    "services": "Capabilities",
     "about": "About",
     "contact": "Contact",
     "blogs": "Blog"
   },
   "heroes": {
-    "badge": ".jhun",
-    "title1": "Digitize Your Brand",
-    "title2": "Own Modern & Professional Websites",
-    "description": "I craft modern websites tailored to your business with creative design and cutting-edge technology. Stand out in the digital world.",
-    "ctaText": "Discover My Projects"
+    "badge": "Open to full-time opportunities",
+    "title1": "Ceyhun Türkmen",
+    "title2": "Full Stack Developer",
+    "description": "I build production-grade, scalable systems with Next.js, ASP.NET Core, and Node.js. I've independently architected and shipped 8+ commercial platforms, consistently delivering Lighthouse 95+ and SEO 100/100.",
+    "location": "Turkey · Open to Remote",
+    "focus": "Currently focused on: Clean Architecture, CQRS, and real-time systems",
+    "primaryTech": [
+      "Next.js",
+      "ASP.NET Core",
+      "Node.js",
+      "PostgreSQL",
+      "MySQL"
+    ],
+    "ctaProjects": "View Projects",
+    "ctaResume": "Download Resume",
+    "ctaContact": "Contact Me",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn"
   },
   "banner": {
-    "title": "Let's Develop Your Websites Quickly",
-    "subtitle": "I develop your websites using cutting-edge tools like React, Next.js, Tailwind CSS, and TypeScript. This ensures your sites are fast, interactive, and mobile-friendly, offering a superior user experience. Engaging animations and modern design examples make your projects stand out.",
-    "tech_title": "Technologies Used",
-    "tech_subtitle": "I develop dynamic and scalable applications with React and Next.js. TypeScript ensures error-free coding, while Tailwind CSS provides modern and aesthetic designs. These technologies make your projects fast, reliable, and user-friendly."
+    "title": "I Build Production Systems",
+    "subtitle": "I develop scalable, fast, and reliable systems with React, Next.js, ASP.NET Core, Node.js, and TypeScript. Every line of code runs in a live system real users depend on.",
+    "tech_title": "Technologies I Use",
+    "tech_subtitle": "A full-stack technology set spanning frontend, backend, databases, and deployment. Every technology here has been tested in production, on real projects."
+  },
+  "github": {
+    "badge": "GitHub",
+    "title": "See How I Built These",
+    "subtitle": "Pinned repositories and my contribution graph - the code I write, straight from the source.",
+    "contributionsLabel": "{count} contributions in the last year",
+    "noDescription": "No description provided.",
+    "viewProfile": "View full GitHub profile"
   },
   "gallery": {
-    "title": "Designing the Future",
-    "description": "Discover my modern projects built with the latest technologies.",
+    "title": "Projects Running in Production",
+    "description": "Live commercial platforms with real users - not mockups, working systems.",
     "loading": "Loading projects...",
     "fetchError": "Unable to load projects.",
     "unknownError": "Unknown error",
@@ -29,141 +50,328 @@
     "visitSite": "Visit Site",
     "exploreProjects": "Explore Projects"
   },
+  "aboutHome": {
+    "title": ".jhun{}",
+    "typingTitle": "Who I Am",
+    "heading": "Who I Am",
+    "lead": "I'm a full stack software engineer who builds systems that run in production with real users. I've independently architected and shipped 8+ commercial platforms with Next.js, ASP.NET Core, and Node.js.",
+    "paragraph1_title": "My Approach",
+    "paragraph1_text": "Before I solve a problem, I try to genuinely understand it: the data model, the concurrency scenarios, where the system will break as it grows. Writing code is the last step for me — the architectural decision is the critical one.",
+    "mission_title": "My Engineering Approach",
+    "mission_text": "I design systems built on Clean Architecture, SOLID principles, and testability. Given a choice between shipping a feature fast and being able to extend it three months later without breaking it, I always choose the latter.",
+    "vision_title": "How I Solve Problems",
+    "vision_text": "I approach hard technical problems — IDOR, TOCTOU stock race conditions, real-time synchronization — with concrete engineering solutions: isolation levels, backplanes, rate limiting. Not assumptions, measurable decisions.",
+    "projects_heading": "What I've Built",
+    "projects_description": "8+ commercial platforms: multi-tenant marketplaces, real-time appointment systems, compliance-grade enterprise exam platforms, and e-commerce systems with production payment infrastructure. All shipped at Lighthouse 95+.",
+    "logo_title": "Where does my logo come from?",
+    "logo_paragraph1": ".jhun comes from Ceyhun Turkmen's name and makes a playful nod to JSON format: the dot suggests objects and the curly braces represent data blocks. The name and the logo reflect my modern, minimal and tech-focused identity both visually and conceptually.",
+    "logo_paragraph2": "The navy color symbolizes the night sky's infinity in web design. The navy in the .jhun logo represents the inspiring order of stars and my boundless curiosity.",
+    "quote": "Code is the last step of solving a problem — I understand the problem first.",
+    "achievement_heading": "By the Numbers",
+    "achievement_sub": "A summary of the systems I've independently architected and shipped.",
+    "achievement_1_label": "Production Platforms",
+    "achievement_1_value": "8+",
+    "achievement_2_label": "Projects Shipped",
+    "achievement_2_value": "20+",
+    "achievement_3_label": "Lighthouse Score",
+    "achievement_3_value": "95+",
+    "achievement_4_label": "Full Stack",
+    "achievement_4_value": "3",
+    "cvButtonLabel": "Download CV",
+    "moreLabel": "More About Me"
+  },
   "about": {
     "title": ".jhun{}",
     "typingTitle": "Who I Am",
     "heading": "Who I Am",
-    "lead": "As .jhun, I am a passionate developer dedicated to creating innovative solutions that help businesses grow and succeed in the digital age.",
-    "paragraph1_title": "Digital",
-    "paragraph1_text": "Creativity and technology meet in the digital world. At .jhun I see web development not just as a tool but as an art form. I accelerate digital transformation, strengthen user experience, and help brands stand out online.",
-    "mission_title": "My Mission",
-    "mission_text": "Deliver innovative and effective web solutions, build fast, secure and scalable infrastructures using modern technologies, design user-centered interfaces and experiences, and maximize brands' digital potential.",
-    "vision_title": "My Vision",
-    "vision_text": "At .jhun I aim to design the web experiences of the future and keep brands at the forefront in a constantly changing tech world. Creating a difference in digital means catching not only today's but tomorrow's trends. With every project I deliver user-focused, innovative and aesthetic solutions. I don't just build functional websites and apps; I create experiences that strengthen brands' digital strategies, boost engagement and conversion. Turning technology into strategic advantage, ensuring top-level data security and building high-performance infrastructures are the cornerstones of my vision.",
-    "projects_heading": "Hundreds of projects on jhun.tech",
-    "projects_description": "I provide businesses with modern, user-friendly and effective web solutions. From design to SEO optimization, from blog management to e-commerce integration, I support digital growth in every step.",
+    "lead": "I'm a full stack software engineer who builds systems that run in production with real users. I've independently architected and shipped 8+ commercial platforms with Next.js, ASP.NET Core, and Node.js.",
+    "paragraph1_title": "My Approach",
+    "paragraph1_text": "Before I solve a problem, I try to genuinely understand it: the data model, the concurrency scenarios, where the system will break as it grows. Writing code is the last step for me — the architectural decision is the critical one.",
+    "mission_title": "My Engineering Approach",
+    "mission_text": "I design systems built on Clean Architecture, SOLID principles, and testability. Given a choice between shipping a feature fast and being able to extend it three months later without breaking it, I always choose the latter.",
+    "vision_title": "How I Solve Problems",
+    "vision_text": "I approach hard technical problems — IDOR, TOCTOU stock race conditions, real-time synchronization — with concrete engineering solutions: isolation levels, backplanes, rate limiting. Not assumptions, measurable decisions.",
+    "projects_heading": "What I've Built",
+    "projects_description": "8+ commercial platforms: multi-tenant marketplaces, real-time appointment systems, compliance-grade enterprise exam platforms, and e-commerce systems with production payment infrastructure. All shipped at Lighthouse 95+.",
     "logo_title": "Where does my logo come from?",
     "logo_paragraph1": ".jhun comes from Ceyhun Turkmen's name and makes a playful nod to JSON format: the dot suggests objects and the curly braces represent data blocks. The name and the logo reflect my modern, minimal and tech-focused identity both visually and conceptually.",
-    "logo_paragraph2": "The navy color symbolizes the night sky's infinity in web design. The navy in the .jhun logo represents the inspiring order of stars and my brand's boundless creativity — dedicated to a professional and trustworthy identity.",
-    "quote": "Minimalist design and the symbols of the code world directly communicate my brand's innovative and solution-oriented approach to visitors.",
-    "companies_title": "Chosen by clients across Turkey",
-    "achievement_heading": "My Achievements by Numbers",
-    "achievement_sub": "I provide tools that improve workflows, increase efficiency, and encourage growth for businesses.",
-    "achievement_1_label": "Supported Companies",
-    "achievement_1_value": "10+",
-    "achievement_2_label": "Completed Projects",
+    "logo_paragraph2": "The navy color symbolizes the night sky's infinity in web design. The navy in the .jhun logo represents the inspiring order of stars and my boundless curiosity.",
+    "quote": "Code is the last step of solving a problem — I understand the problem first.",
+    "achievement_heading": "By the Numbers",
+    "achievement_sub": "A summary of the systems I've independently architected and shipped.",
+    "achievement_1_label": "Production Platforms",
+    "achievement_1_value": "8+",
+    "achievement_2_label": "Projects Shipped",
     "achievement_2_value": "20+",
-    "achievement_3_label": "Satisfied Clients",
-    "achievement_3_value": "99%",
-    "achievement_4_label": "Awards Won",
-    "achievement_4_value": "3+",
-    "cvButtonLabel": "Download CV"
+    "achievement_3_label": "Lighthouse Score",
+    "achievement_3_value": "95+",
+    "achievement_4_label": "Full Stack",
+    "achievement_4_value": "3",
+    "cvButtonLabel": "Download CV",
+    "moreLabel": "More About Me",
+    "philosophy": {
+      "heading": "Engineering Philosophy",
+      "subtitle": "The principles that guide how I write code.",
+      "items": [
+        {
+          "title": "Clean Architecture & SOLID",
+          "text": "I separate layers with clear boundaries; on BAZR I kept a 33-entity domain model manageable this way with CQRS/MediatR.",
+          "icon": "Layers"
+        },
+        {
+          "title": "Scalability",
+          "text": "I don't build real-time systems bound to a single instance; on Rezervo and BAZR I designed for horizontal scaling from day one with a Redis-backed SignalR backplane.",
+          "icon": "TrendingUp"
+        },
+        {
+          "title": "Performance",
+          "text": "Core Web Vitals and Lighthouse scores aren't a bonus, they're part of the deliverable — I've kept 95+ consistently across the projects I've shipped.",
+          "icon": "Gauge"
+        },
+        {
+          "title": "Accessibility",
+          "text": "I test interfaces with keyboard navigation; aria labels and semantic HTML are a default starting point, not a layer added afterward.",
+          "icon": "Accessibility"
+        },
+        {
+          "title": "Developer Experience",
+          "text": "Type safety, a consistent folder structure, a readable commit history — that's the standard I hold myself to for code I'll reopen a year later.",
+          "icon": "Code2"
+        },
+        {
+          "title": "Testability",
+          "text": "xUnit/Moq on the .NET side, Jest/Supertest on Node — I don't ship critical business logic (payments, stock, authorization) to production untested.",
+          "icon": "FlaskConical"
+        },
+        {
+          "title": "Code Quality",
+          "text": "FluentValidation, Zod, and Serilog structured logging — I want to catch failures in the logs before a user has to report them.",
+          "icon": "ShieldCheck"
+        },
+        {
+          "title": "Problem Solving",
+          "text": "I work out the data model and concurrency scenarios first; that's how TavAkademi's exam-integrity system and BAZR's stock race condition got solved.",
+          "icon": "Puzzle"
+        }
+      ]
+    },
+    "experience": {
+      "heading": "Experience",
+      "subtitle": "Systems I've independently architected and shipped since 2024.",
+      "role": "Software Engineer — Independent & Contract",
+      "period": "Remote · 2024 – Present",
+      "summary": [
+        "Architected, built, and independently shipped 8+ production-grade commercial platforms, owning the full lifecycle from requirements to CI/CD deployment.",
+        "Optimized PostgreSQL/MySQL query performance through targeted indexing strategy and query tuning; introduced Serilog structured logging for systematic error tracking.",
+        "Delivered 20+ production software projects for international clients with a 99% client satisfaction rate; recognized on Bionluk's Rising Stars and Most Loved Freelancers lists."
+      ],
+      "stack": [
+        "Next.js",
+        "ASP.NET Core",
+        "Node.js",
+        "PostgreSQL",
+        "MySQL",
+        "Prisma",
+        "Redis",
+        "Docker",
+        "Nginx",
+        "VPS"
+      ],
+      "engagementsHeading": "Featured Engagements",
+      "engagements": [
+        {
+          "title": "TAV Security — TavAkademi",
+          "subtitle": "Corporate Training & Exam Platform",
+          "period": "2025",
+          "description": "JWT-RBAC with TOTP/2FA and GeoIP session validation for airport security personnel, a polygon-editor X-Ray exam simulation, and automated certificate generation.",
+          "stack": [
+            "React",
+            "Redux Toolkit",
+            "Node.js",
+            "Express.js",
+            "MySQL",
+            "Speakeasy (TOTP)"
+          ]
+        },
+        {
+          "title": "E-Commerce Platforms",
+          "subtitle": "6 Active Commercial Projects",
+          "period": "2025 – 2026",
+          "description": "IşPool, Balkolüx, Ferudun Polat Home, NowArt Plicell, RosallieBaby, BarScarf — 6 live platforms with iyzico payments, KVKK-compliant auth, and Meta CAPI/GA4 conversion tracking.",
+          "stack": [
+            "Next.js",
+            "Prisma",
+            "PostgreSQL",
+            "MySQL",
+            "NextAuth.js",
+            "Cloudinary"
+          ]
+        },
+        {
+          "title": "BAZR",
+          "subtitle": "Multi-Tenant Marketplace",
+          "period": "2026 · Contract (Upwork)",
+          "description": "Clean Architecture/CQRS 33-entity domain model, Stripe payments + escrow wallet, real-time order tracking via SignalR + Hangfire.",
+          "stack": [
+            "ASP.NET Core",
+            "PostgreSQL",
+            "Redis",
+            "CQRS/MediatR",
+            "Stripe",
+            "SignalR"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "heading": "Technical Skills",
+      "subtitle": "Grouped by category — technologies I use in production.",
+      "toolsHeading": "Integrations & Tools",
+      "tools": [
+        "C#",
+        "EF Core",
+        "Framer Motion",
+        "GSAP",
+        "iyzico",
+        "SignalR",
+        "Hangfire",
+        "Docker Compose",
+        "GitHub Actions",
+        "Swagger/OpenAPI",
+        "Cloudinary",
+        "Twilio SMS",
+        "SendGrid",
+        "Anthropic Claude API",
+        "Google Gemini",
+        "xUnit",
+        "Jest"
+      ]
+    },
+    "resume": {
+      "heading": "Resume",
+      "subtitle": "Education, certifications, and languages.",
+      "educationTitle": "Education",
+      "educationDegree": "B.Sc. Computer Engineering",
+      "educationSchool": "Iskenderun Technical University",
+      "educationPeriod": "2020 – 2024",
+      "certificatesTitle": "Certifications",
+      "certificates": [
+        "Full Stack Development Bootcamp",
+        "Advanced React and Next.js",
+        "Prisma and SQL Advanced Database Management"
+      ],
+      "languagesTitle": "Languages",
+      "languages": [
+        { "name": "Turkish", "level": "Native" },
+        {
+          "name": "English",
+          "level": "B2 - Upper-Intermediate & Technical Fluency"
+        }
+      ],
+      "downloadLabel": "Download CV (PDF)"
+    }
   },
   "services": {
-    "badge": "My Services",
-    "title": "My Services",
-    "subtitle": "End-to-end solutions for your business's digital needs.",
-    "trust": [
-      "10+ Supported companies",
-      "20+ Completed projects",
-      "99% Happy clients"
-    ],
+    "badge": "Capabilities",
+    "title": "What I Can Build",
+    "subtitle": "The kinds of systems I've independently architected and delivered end-to-end.",
+    "trust": ["8+ Production Platforms", "Lighthouse 95+", "SEO 100/100"],
     "items": [
       {
-        "title": "Web Design & Development",
-        "description": "I build fast, scalable and SEO-friendly corporate websites and e-commerce platforms with React, Next.js and TypeScript.",
-        "detail": "Responsive design, page speed optimization, accessibility and component-based architecture come first — every project is built from scratch with code quality and maintainability in mind.",
+        "title": "Web Application Engineering",
+        "description": "I build fast, scalable, SEO-friendly production applications with React, Next.js, and TypeScript.",
+        "detail": "Component-based architecture, responsive design, and accessibility standards — every project is built from scratch with code quality and maintainability as the priority.",
         "icon": "Code"
       },
       {
-        "title": "SEO Optimization",
-        "description": "I improve your site's visibility in search engines through technical SEO, page speed and content structure improvements.",
-        "detail": "Sitemaps, structured data (schema.org), meta tag strategy and Core Web Vitals improvements help grow your organic traffic in a measurable way.",
+        "title": "SEO & Performance Engineering",
+        "description": "I improve search visibility through technical SEO, Core Web Vitals, and content structure, in measurable terms.",
+        "detail": "Sitemaps, structured data (schema.org), and meta tag strategy — I consistently deliver Lighthouse 95+ and SEO 100/100 across the projects I ship.",
         "icon": "Search"
       },
       {
-        "title": "E-Commerce Solutions",
-        "description": "I build custom end-to-end e-commerce platforms with payment integration, shipment tracking and admin panels.",
-        "detail": "I seamlessly integrate payment providers like iyzico alongside admin panels covering cart, coupons, variant tracking and order management.",
+        "title": "E-Commerce Systems",
+        "description": "I build custom end-to-end e-commerce platforms with payment integration, shipment tracking, and admin panels.",
+        "detail": "Cart, coupons, variant tracking, and order management, integrated with production payment providers like iyzico/Stripe.",
         "icon": "ShoppingCart"
       },
       {
-        "title": "API & Backend Development",
-        "description": "I design secure, scalable REST APIs and database architectures with Node.js, .NET and Prisma ORM.",
-        "detail": "I build production-ready backend systems covering authentication, authorization, rate limiting and database performance optimization.",
+        "title": "API & Backend Architecture",
+        "description": "I design secure, scalable REST APIs and database architectures with Node.js, ASP.NET Core, and Prisma/EF Core.",
+        "detail": "Production-ready backend systems covering authentication, role-based authorization, rate limiting, and database performance optimization.",
         "icon": "Server"
       },
       {
-        "title": "Digital Consulting",
-        "description": "I provide consulting on technology choices, architecture decisions and performance optimization.",
-        "detail": "I review your existing system, identify bottlenecks, and map out the most suitable technology roadmap for scalability and cost.",
+        "title": "Technical Consulting & Architecture Reviews",
+        "description": "I advise engineering teams on technology choices, architecture decisions, and performance bottlenecks.",
+        "detail": "I review an existing system, identify bottlenecks, and map out a concrete technical roadmap for scalability and maintainability.",
         "icon": "MessageSquare"
       },
       {
-        "title": "Maintenance & Support",
-        "description": "I offer ongoing maintenance, updates and technical support for your launched projects.",
-        "detail": "Security patches, dependency updates and performance monitoring keep your project running smoothly long after launch.",
+        "title": "System Reliability & Maintenance",
+        "description": "I provide ongoing monitoring, security patching, and performance tracking for systems in production.",
+        "detail": "Structured logging (Serilog), health check endpoints, and dependency updates keep systems healthy long after launch.",
         "icon": "LifeBuoy"
       }
     ],
-    "processEyebrow": "My Process",
-    "processTitle": "My Workflow",
+    "processEyebrow": "My Workflow",
+    "processTitle": "How I Work",
     "process": [
       {
         "step": "01",
-        "title": "Discovery & Planning",
-        "description": "I analyze your needs and define the project scope and timeline together with you."
+        "title": "Discovery & Architecture Planning",
+        "description": "I analyze requirements, the data model, and concurrency scenarios, and lock in the architectural decisions."
       },
       {
         "step": "02",
-        "title": "Design & Development",
-        "description": "I bring your project to life step by step with modern technologies and regular feedback loops."
+        "title": "Build & Test",
+        "description": "I develop step by step with modern technologies, backed by tests (xUnit/Jest) that verify critical business logic."
       },
       {
         "step": "03",
-        "title": "Testing & Launch",
-        "description": "I run performance, security and usability tests before going live."
+        "title": "CI/CD & Launch",
+        "description": "I run performance, security, and accessibility checks, then deploy automatically via GitHub Actions."
       },
       {
         "step": "04",
-        "title": "Support & Growth",
-        "description": "I accompany your project's growth with post-launch maintenance and improvements."
+        "title": "Monitor & Improve",
+        "description": "Post-launch, I track the system with structured logging and health checks and make measurable improvements."
       }
     ],
     "cta": {
-      "title": "Which service does your project need?",
-      "text": "Let's evaluate your needs together and propose a tailored solution.",
+      "title": "Interested in working with your engineering team?",
+      "text": "Reach out about open roles, technical collaboration, or an architecture question.",
       "button": "Get in Touch"
     }
   },
   "faq": {
     "badge": "FAQ",
     "title": "Frequently Asked Questions",
-    "subtitle": "The most common questions about process, pricing and collaboration.",
+    "subtitle": "The most common questions about availability, working style, and technical approach.",
     "items": [
       {
-        "question": "How long does a project take?",
-        "answer": "Timeline depends on scope; a simple corporate site can be delivered in 2-3 weeks, while a full e-commerce platform takes 6-10 weeks. I provide a clear timeline during the discovery phase."
+        "question": "Are you open to a full-time role?",
+        "answer": "Yes, I'm currently open to full-time opportunities. I've been working independently/on contract since 2024 and I'm ready to move into a full-time role for the right team."
       },
       {
-        "question": "How is pricing determined?",
-        "answer": "Every project is priced individually based on scope, feature count and integrations. I prepare a detailed quote once you share your requirements."
+        "question": "Are you flexible on remote work or relocation?",
+        "answer": "I'm based in Turkey and fully open to remote work — I already have experience working remotely with international teams. I'm also open to discussing relocation for the right opportunity."
       },
       {
-        "question": "What technologies do you work with?",
-        "answer": "Mainly React, Next.js, TypeScript, Node.js, .NET and PostgreSQL/MySQL; I can also integrate other tools as needed."
+        "question": "What's your preferred tech stack?",
+        "answer": "I'm most comfortable with Next.js + ASP.NET Core/Node.js + PostgreSQL/MySQL, but I pick technology based on the problem — tools like CQRS/MediatR, Redis, and SignalR go in when they're needed, not because they're familiar."
       },
       {
-        "question": "Do you provide support after launch?",
-        "answer": "Yes, I offer maintenance and technical support packages for all launched projects."
+        "question": "How do you work within a team?",
+        "answer": "Most of my work so far has been independent/contract, so I'm used to owning the full lifecycle from requirements to CI/CD. Clear communication, small PRs, and being open to code review matter to me."
       },
       {
-        "question": "Do you redesign existing sites or only build from scratch?",
-        "answer": "I work on both new builds and redesigns/modernizations of existing sites."
+        "question": "What's your approach to testing and code quality?",
+        "answer": "I don't ship critical business logic (payments, stock, authorization) to production untested — xUnit/Moq on the .NET side, Jest/Supertest on Node. FluentValidation/Zod for input validation and Serilog for structured logging are standard practice for me."
       },
       {
-        "question": "Is remote work possible?",
-        "answer": "Yes, based in Uşak, I work fully remotely with clients across Turkey and internationally."
+        "question": "What's the toughest technical problem you've solved?",
+        "answer": "On BAZR, I solved IDOR and a TOCTOU stock race condition in a payment/stock system shared across four different portals (admin/merchant/courier/customer) using RepeatableRead-isolated transactions — without a global lock."
       }
     ],
     "cta": {
@@ -173,9 +381,9 @@
     }
   },
   "testimonials": {
-    "badge": "Customer Reviews",
-    "title": "What Clients Say",
-    "subtitle": "Real feedback from clients I have worked with.",
+    "badge": "Client Feedback",
+    "title": "What People I've Worked With Say",
+    "subtitle": "Feedback from clients on the systems I've shipped for them.",
     "items": [
       {
         "name": "ugkkkk",
@@ -221,7 +429,7 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "description": "I'm here for your questions, feedback, or collaboration opportunities. Let me know how I can help!",
+    "description": "I'm here for open roles, technical collaboration, architecture questions, or just talking engineering.",
     "infoTitle": "Contact Information",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
@@ -245,7 +453,7 @@
     "emailError": "Failed to send email."
   },
   "footer": {
-    "slogan": "With the elegance of modern design and a focus on user experience, I deliver a stylish and impactful web experience.",
+    "slogan": "I'm a full stack software engineer who builds systems that run in production with real users.",
     "sections": [
       {
         "title": "Explore",
@@ -255,53 +463,29 @@
             "href": "/projects"
           },
           {
-            "label": "Services",
-            "href": "/services"
-          },
-          {
             "label": "About Me",
             "href": "/about"
           },
+          {
+            "label": "Capabilities",
+            "href": "/services"
+          }
+        ]
+      },
+      {
+        "title": "Links",
+        "links": [
           {
             "label": "Contact",
             "href": "/contact"
           },
           {
             "label": "Blog",
-            "href": "/blogs"
+            "href": "/blog"
           },
           {
             "label": "FAQ",
             "href": "/faq"
-          }
-        ]
-      },
-      {
-        "title": "My Services",
-        "links": [
-          {
-            "label": "Web Design & Development",
-            "href": "/services"
-          },
-          {
-            "label": "SEO Optimization",
-            "href": "/services"
-          },
-          {
-            "label": "E-Commerce Solutions",
-            "href": "/services"
-          },
-          {
-            "label": "API & Backend Development",
-            "href": "/services"
-          },
-          {
-            "label": "Digital Consulting",
-            "href": "/services"
-          },
-          {
-            "label": "Maintenance & Support",
-            "href": "/services"
           }
         ]
       },
@@ -375,16 +559,21 @@
       "openGithub": "Open on GitHub",
       "getInTouch": "Get in touch"
     },
+    "problemLabel": "Problem",
+    "solutionLabel": "Solution",
+    "challengesLabel": "Challenges",
+    "resultsLabel": "Results",
+    "lessonsLabel": "Lessons Learned",
     "cta": {
-      "title": "Want a site like this?",
-      "subtitle": "You can highlight your brand online in just a few steps.",
-      "button": "Yes, let’s get in touch"
+      "title": "Let's talk about the engineering behind this",
+      "subtitle": "If you'd like to discuss the architecture decisions, the tech stack, or a similar technical problem, I'm happy to talk.",
+      "button": "Get in Touch"
     }
   },
   "chatbot": {
     "title": "Smart Assistant",
     "subtitle": "AI Powered",
-    "welcomeMessage": "Hello! I'm Ceyhun's Smart Assistant! 😁\n\nI learn and improve from every conversation with you. I can answer your questions about web development projects, pricing, technologies and more.\n\nHow can I help you?",
+    "welcomeMessage": "Hello! I'm Ceyhun's Smart Assistant! 😁\n\nI can answer your questions about his projects, technical experience, tech stack, and resume.\n\nHow can I help you?",
     "placeholder": "Type your message...",
     "send": "Send",
     "typing": "Typing...",

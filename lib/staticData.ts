@@ -36,6 +36,16 @@ export type Project = {
   titleEng?: string;
   summaryEng?: string;
   descriptionEng?: string;
+  problem?: string;
+  problemEng?: string;
+  solution?: string;
+  solutionEng?: string;
+  challenges?: string[];
+  challengesEng?: string[];
+  results?: string[];
+  resultsEng?: string[];
+  lessonsLearned?: string;
+  lessonsLearnedEng?: string;
   url: string;
   image: string;
   demoUrl?: string | null;

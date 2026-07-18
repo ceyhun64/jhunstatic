@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isEn = locale === "en";
 
   return {
-    title: isEn ? "Contact" : "İletişim",
+    title: isEn ? "Contact" : "Iletişim",
     description: isEn
       ? "Get in touch with Ceyhun Türkmen for web development projects, collaborations or any inquiries. Available remotely worldwide."
       : "Ceyhun Türkmen ile web geliştirme projeleri, işbirlikleri veya sorularınız için iletişime geçin. Uzaktan çalışmaya açık.",

@@ -84,7 +84,7 @@ export function StarfieldBackground({
       tick++
 
       // Fade effect for trails
-      ctx.fillStyle = "rgba(10, 10, 15, 0.2)"
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)"
       ctx.fillRect(0, 0, width, height)
 
       const cx = width / 2
@@ -146,7 +146,7 @@ export function StarfieldBackground({
     }
 
     // Initial clear
-    ctx.fillStyle = "#0a0a0f"
+    ctx.fillStyle = "#000000"
     ctx.fillRect(0, 0, width, height)
 
     animationId = requestAnimationFrame(animate)
@@ -158,12 +158,12 @@ export function StarfieldBackground({
   }, [count, speed, starColor, twinkle])
 
   return (
-    <div ref={containerRef} className={cn("fixed inset-0 overflow-hidden bg-[#0a0a0f]", className)}>
+    <div ref={containerRef} className={cn("fixed inset-0 overflow-hidden bg-black", className)}>
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
       {/* Subtle blue nebula glow */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-30"
+        className="pointer-events-none absolute inset-0 "
         style={{
           background:
             "radial-gradient(ellipse at 30% 40%, rgba(56, 100, 180, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 70% 60%, rgba(100, 60, 150, 0.1) 0%, transparent 50%)",
@@ -173,10 +173,7 @@ export function StarfieldBackground({
       {/* Vignette */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(5,5,10,0.9) 100%)",
-        }}
+      
       />
 
       {/* Content layer */}

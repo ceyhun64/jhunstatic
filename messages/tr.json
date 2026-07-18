@@ -1,167 +1,372 @@
 {
   "navbar": {
     "projects": "Projelerim",
-    "services": "Hizmetler",
+    "services": "Yetkinlikler",
     "about": "Hakkımda",
     "contact": "Iletisime Geçin",
     "blogs": "Blog"
   },
   "heroes": {
-    "badge": ".jhun",
-    "title1": "Markanızı Dijitallestirin",
-    "title2": "Modern & Profesyonel Web Sitelerine Sahip Olun",
-    "description": "Yaratıcı tasarım ve son teknoloji ile isletmenize özel modern web siteleri üretiyorum. Dijital dünyada öne çıkın.",
-    "ctaText": "Projelerimi Kesfedin"
+    "badge": "Tam zamanlı fırsatlara açıgım",
+    "title1": "Ceyhun Türkmen",
+    "title2": "Full Stack Developer",
+    "description": "Next.js, ASP.NET Core ve Node.js ile production-grade, ölçeklenebilir sistemler kuruyorum. Bagımsız olarak 8'den fazla ticari platform mimarlıgını yaptım ve yayına aldım; tutarlı sekilde Lighthouse 95+ ve SEO 100/100 performansı sagliyorum.",
+    "location": "Türkiye · Uzaktan Çalısmaya Açık",
+    "focus": "Su an: Clean Architecture, CQRS ve gerçek zamanlı sistemler",
+    "primaryTech": [
+      "Next.js",
+      "ASP.NET Core",
+      "Node.js",
+      "PostgreSQL",
+      "MySQL"
+    ],
+    "ctaProjects": "Projelerimi Gör",
+    "ctaResume": "Özgeçmisi Indir",
+    "ctaContact": "Iletisime Geç",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn"
   },
   "banner": {
-    "title": "Web Sitelerinizi Hızla Gelistirelim",
-    "subtitle": "Web sitelerinizi React, Next.js, Tailwind CSS ve TypeScript gibi son teknoloji araçlarla gelistiriyorum. Bu sayede siteleriniz hızlı, etkilesimli ve mobil uyumlu olur, kullanıcı deneyimi üst seviyeye çıkar. Sürükleyici animasyonlar ve modern tasarım örnekleri ile projeleriniz fark yaratır.",
-    "tech_title": "Kullanılan Teknolojiler",
-    "tech_subtitle": "React ve Next.js ile dinamik ve ölçeklenebilir uygulamalar gelistiriyorum. TypeScript ile hatasız kodlama saglarken, Tailwind CSS ile modern ve estetik tasarımlar sunuyorum. Bu teknolojiler, projelerinizi hızlı, güvenilir ve kullanıcı dostu hale getirir."
+    "title": "Production Sistemler Insa Ediyorum",
+    "subtitle": "React, Next.js, ASP.NET Core, Node.js ve TypeScript ile ölçeklenebilir, hızlı ve güvenilir sistemler gelistiriyorum. Her satır kod, gerçek kullanıcıların kullandıgı canlı sistemlerde çalısıyor.",
+    "tech_title": "Kullandıgım Teknolojiler",
+    "tech_subtitle": "Frontend'den backend'e, veritabanından deploy'a kadar tüm katmanları kapsayan tam yıgın bir teknoloji seti kullanıyorum. Her teknolojiyi production ortamında, gerçek projelerde test ettim."
+  },
+  "github": {
+    "badge": "GitHub",
+    "title": "Bunları Nasıl Insa Ettigimi Görün",
+    "subtitle": "Pinlenmis repolarım ve katkı grafigim - yazdıgım kod dogrudan buradan izlenebilir.",
+    "contributionsLabel": "Son bir yılda {count} katkı",
+    "noDescription": "Açıklama eklenmemis.",
+    "viewProfile": "Tüm GitHub profilini görüntüle"
   },
   "gallery": {
-    "title": "Gelecegi Tasarlıyorum",
-    "description": "En yeni teknolojilerle gelistirilmis modern projelerimi kesfedin.",
+    "title": "Production'da Çalısan Projeler",
+    "description": "Yayında olan, gerçek kullanıcıları olan ticari platformlar - vitrin degil, çalısan sistemler.",
     "fetchError": "Projeler alınamadı.",
     "view": "Incele",
     "visitSite": "Siteye Git",
     "exploreProjects": "Projeleri Incele"
   },
+  "aboutHome": {
+    "title": ".jhun{}",
+    "typingTitle": "Ben Kimim",
+    "heading": "Ben Kimim",
+    "lead": "Üretimde çalısan, gerçek kullanıcıları olan sistemler kuran bir full stack yazılım mühendisiyim. Next.js, ASP.NET Core ve Node.js ile bagımsız olarak 8'den fazla ticari platformun mimarisini kurdum ve yayına aldım.",
+    "paragraph1_title": "Yaklasımım",
+    "paragraph1_text": "Bir problemi çözmeden önce onu gerçekten anlamaya çalısırım: veri modelini, es zamanlılık senaryolarını ve sistem büyüdügünde nerede kırılacagını düsünürüm. Kod yazmak benim için son adımdır; mimari karar en kritik adımdır.",
+    "mission_title": "Mühendislik Yaklasımım",
+    "mission_text": "Clean Architecture, SOLID prensipleri ve test edilebilirlik üzerine kurulu sistemler tasarlarım. Bir özelligi hızlı teslim etmekle, onu üç ay sonra bozmadan genisletebilmek arasında her zaman ikincisini seçerim.",
+    "vision_title": "Nasıl Çözerim",
+    "vision_text": "Zor teknik problemlere (IDOR, TOCTOU stok yarıs kosulları, gerçek zamanlı senkronizasyon) somut mühendislik çözümleriyle yaklasırım: izolasyon seviyeleri, backplane'ler, rate limiting - varsayımlarla degil, ölçülebilir kararlarla.",
+    "projects_heading": "Neler Insa Ettim",
+    "projects_description": "8'den fazla ticari platform: çok kiracılı pazaryerleri, gerçek zamanlı randevu sistemleri, uyumluluk gerektiren kurumsal sınav platformları ve production ödeme altyapılı e-ticaret sistemleri. Hepsi Lighthouse 95+ performansla yayında.",
+    "logo_title": "Logom nereden geliyor?",
+    "logo_paragraph1": ".jhun ismi, Ceyhun Turkmen isminden okunuyor ve JSON formatına gönderme yapıyor: Nokta objeleri, süslü parantez veri bloklarını simgeliyor. Böylece isim ve logo, kimligimin modern, minimal ve teknoloji odaklı yanını hem görsel hem kavramsal olarak yansıtıyor.",
+    "logo_paragraph2": "Lacivert renk, web tasarımında gece ve gökyüzünün sonsuzlugunu simgeler. .jhun logosundaki lacivert, evrendeki yıldızların ilham verici düzenini ve sınırsız merakımı temsil eder.",
+    "quote": "Kod, bir problemi çözmenin son adımıdır - önce problemi anlarım.",
+    "achievement_heading": "Sayılarla",
+    "achievement_sub": "Bagımsız olarak mimarisini kurup yayına aldıgım sistemlerin özeti.",
+    "achievement_1_label": "Production Platform",
+    "achievement_1_value": "8+",
+    "achievement_2_label": "Teslim Edilen Proje",
+    "achievement_2_value": "20+",
+    "achievement_3_label": "Lighthouse Skoru",
+    "achievement_3_value": "95+",
+    "achievement_4_label": "Tam Yıgın",
+    "achievement_4_value": "3",
+    "cvButtonLabel": "CV Indir",
+    "moreLabel": "Hakkımda Daha Fazla"
+  },
   "about": {
     "title": ".jhun{}",
     "typingTitle": "Ben Kimim",
     "heading": "Ben Kimim",
-    "lead": ".jhun olarak, isletmelerin dijital çagda büyümesini ve basarılı olmasını saglayacak yenilikçi çözümler gelistirmeye adanmıs tutkulu bir yazılım gelistiricisiyim.",
-    "paragraph1_title": "Dijital",
-    "paragraph1_text": "Dijital dünyada yaratıcılık ve teknoloji birlesiyor. .jhun olarak, web yazılımını sadece bir araç degil, bir sanat formu olarak görüyorum. Isletmelerin dijital dönüsümünü hızlandırmak, kullanıcı deneyimini güçlendirmek ve markaların online dünyada öne çıkmasını saglamak benim isim.",
-    "mission_title": "Misyonum",
-    "mission_text": "Yenilikçi ve etkili web çözümleri sunmak, modern teknolojilerle hızlı, güvenli ve ölçeklenebilir altyapılar olusturmak, kullanıcı odaklı arayüz ve deneyim tasarlamak, markaların dijital potansiyelini en üst düzeye çıkarmak.",
-    "vision_title": "Vizyonum",
-    "vision_text": ".jhun olarak, gelecegin web deneyimlerini tasarlamak ve sürekli degisen teknoloji dünyasında markaları öncü konumda tutmak istiyorum. Dijitalde fark yaratmak, sadece bugünün degil, yarının trendlerini de yakalamak benim hedefim. Her proje ile kullanıcı odaklı, yenilikçi ve estetik çözümler sunmayı amaçlıyorum. Yalnızca islevsel web siteleri ve uygulamalar gelistirmekle kalmıyor; markaların dijital stratejilerini güçlendirecek, etkilesim ve dönüsümü artıracak deneyimler yaratıyorum. Teknolojiyi stratejik bir avantaja dönüstürmek, veri güvenligini en üst düzeyde saglamak ve performanslı altyapılar olusturmak vizyonumun temel taslarıdır.",
-    "projects_heading": "jhun.tech’de yüzlerce proje",
-    "projects_description": "Isletmelere modern, kullanıcı dostu ve etkili web çözümleri sunuyorum. Tasarımdan SEO optimizasyonuna, blog yönetiminden e-ticaret entegrasyonuna kadar tüm süreçlerde isletmelerin dijital büyümesini destekliyorum.",
+    "lead": "Üretimde çalısan, gerçek kullanıcıları olan sistemler kuran bir full stack yazılım mühendisiyim. Next.js, ASP.NET Core ve Node.js ile bagımsız olarak 8'den fazla ticari platformun mimarisini kurdum ve yayına aldım.",
+    "paragraph1_title": "Yaklasımım",
+    "paragraph1_text": "Bir problemi çözmeden önce onu gerçekten anlamaya çalısırım: veri modelini, es zamanlılık senaryolarını ve sistem büyüdügünde nerede kırılacagını düsünürüm. Kod yazmak benim için son adımdır; mimari karar en kritik adımdır.",
+    "mission_title": "Mühendislik Yaklasımım",
+    "mission_text": "Clean Architecture, SOLID prensipleri ve test edilebilirlik üzerine kurulu sistemler tasarlarım. Bir özelligi hızlı teslim etmekle, onu üç ay sonra bozmadan genisletebilmek arasında her zaman ikincisini seçerim.",
+    "vision_title": "Nasıl Çözerim",
+    "vision_text": "Zor teknik problemlere (IDOR, TOCTOU stok yarıs kosulları, gerçek zamanlı senkronizasyon) somut mühendislik çözümleriyle yaklasırım: izolasyon seviyeleri, backplane'ler, rate limiting - varsayımlarla degil, ölçülebilir kararlarla.",
+    "projects_heading": "Neler Insa Ettim",
+    "projects_description": "8'den fazla ticari platform: çok kiracılı pazaryerleri, gerçek zamanlı randevu sistemleri, uyumluluk gerektiren kurumsal sınav platformları ve production ödeme altyapılı e-ticaret sistemleri. Hepsi Lighthouse 95+ performansla yayında.",
     "logo_title": "Logom nereden geliyor?",
-    "logo_paragraph1": ".jhun ismi, Ceyhun Turkmen isminden okunuyor ve JSON formatına gönderme yapıyor: Nokta objeleri, süslü parantez veri bloklarını simgeliyor. Böylece isim ve logo, markamın modern, minimal ve teknoloji odaklı kimligini hem görsel hem kavramsal olarak yansıtıyor.",
-    "logo_paragraph2": "Lacivert renk, web tasarımında gece ve gökyüzünün sonsuzlugunu simgeler. .jhun logosundaki lacivert, evrendeki yıldızların ilham verici düzenini ve markamın sınırsız yaratıcılıgını temsil eder; profesyonel ve güvenilir kimligime ithaf edilmistir.",
-    "quote": "Minimalist tasarım ve kod dünyasının sembolleri, markamın yenilikçi ve çözüm odaklı yaklasımını ziyaretçilere dogrudan anlatıyor.",
-    "companies_title": "Türkiye genelinde müsterilerimin tercihi",
-    "achievement_heading": "Basarılarım Sayılarla",
-    "achievement_sub": "Isletmelere is akıslarını gelistiren, verimliligi artıran ve büyümeyi tesvik eden etkili araçlar sagliyorum.",
-    "achievement_1_label": "Desteklenen sirket",
-    "achievement_1_value": "10+",
-    "achievement_2_label": "Tamamlanan Proje",
+    "logo_paragraph1": ".jhun ismi, Ceyhun Turkmen isminden okunuyor ve JSON formatına gönderme yapıyor: Nokta objeleri, süslü parantez veri bloklarını simgeliyor. Böylece isim ve logo, kimligimin modern, minimal ve teknoloji odaklı yanını hem görsel hem kavramsal olarak yansıtıyor.",
+    "logo_paragraph2": "Lacivert renk, web tasarımında gece ve gökyüzünün sonsuzlugunu simgeler. .jhun logosundaki lacivert, evrendeki yıldızların ilham verici düzenini ve sınırsız merakımı temsil eder.",
+    "quote": "Kod, bir problemi çözmenin son adımıdır - önce problemi anlarım.",
+    "achievement_heading": "Sayılarla",
+    "achievement_sub": "Bagımsız olarak mimarisini kurup yayına aldıgım sistemlerin özeti.",
+    "achievement_1_label": "Production Platform",
+    "achievement_1_value": "8+",
+    "achievement_2_label": "Teslim Edilen Proje",
     "achievement_2_value": "20+",
-    "achievement_3_label": "Mutlu Müsteri",
-    "achievement_3_value": "99%",
-    "achievement_4_label": "Kazanılan Ödül",
-    "achievement_4_value": "3+",
-    "cvButtonLabel": "CV Indir"
+    "achievement_3_label": "Lighthouse Skoru",
+    "achievement_3_value": "95+",
+    "achievement_4_label": "Tam Yıgın",
+    "achievement_4_value": "3",
+    "cvButtonLabel": "CV Indir",
+    "moreLabel": "Hakkımda Daha Fazla",
+    "philosophy": {
+      "heading": "Mühendislik Felsefem",
+      "subtitle": "Kod yazarken beni yönlendiren prensipler.",
+      "items": [
+        {
+          "title": "Clean Architecture & SOLID",
+          "text": "Katmanları net sınırlarla ayırırım; BAZR'da CQRS/MediatR ile 33 varlıklı bir domain modelini bu sekilde yönetilebilir tuttum.",
+          "icon": "Layers"
+        },
+        {
+          "title": "Ölçeklenebilirlik",
+          "text": "Gerçek zamanlı sistemleri tek instance'a bagımlı kurmam; Rezervo ve BAZR'da Redis backplane'li SignalR ile yatay ölçeklenmeyi en bastan tasarladım.",
+          "icon": "TrendingUp"
+        },
+        {
+          "title": "Performans",
+          "text": "Core Web Vitals ve Lighthouse skorları bir bonus degil, teslimatın parçasıdır; sevk ettigim projelerde tutarlı sekilde 95+ sagladım.",
+          "icon": "Gauge"
+        },
+        {
+          "title": "Erisilebilirlik",
+          "text": "Arayüzleri klavye navigasyonu ile test ederim; aria etiketleri ve semantik HTML varsayılan bir baslangıçtır, sonradan eklenen bir katman degil.",
+          "icon": "Accessibility"
+        },
+        {
+          "title": "Developer Experience",
+          "text": "Tip güvenligi, tutarlı klasör yapısı ve okunabilir commit geçmisi; bir yıl sonra kodu tekrar açtıgımda anlayabilmem gereken standart budur.",
+          "icon": "Code2"
+        },
+        {
+          "title": "Test Edilebilirlik",
+          "text": "xUnit/Moq ile .NET tarafında, Jest/Supertest ile Node tarafında; kritik is mantıgını (ödeme, stok, yetkilendirme) test etmeden production'a almam.",
+          "icon": "FlaskConical"
+        },
+        {
+          "title": "Kod Kalitesi",
+          "text": "FluentValidation, Zod ve Serilog structured logging kullanırım; hataları kullanıcı bildirmeden önce loglardan yakalayabilmek isterim.",
+          "icon": "ShieldCheck"
+        },
+        {
+          "title": "Problem Çözme",
+          "text": "Önce veri modelini ve es zamanlılık senaryolarını çıkarırım; TavAkademi'deki sınav bütünlügü ve BAZR'daki stok yarıs kosulu bu sekilde çözüldü.",
+          "icon": "Puzzle"
+        }
+      ]
+    },
+    "experience": {
+      "heading": "Deneyim",
+      "subtitle": "2024'ten bu yana bagımsız olarak mimarisini kurdugum ve yayına aldıgım sistemler.",
+      "role": "Yazılım Mühendisi — Bagımsız & Sözlesmeli",
+      "period": "Uzaktan · 2024 – Günümüz",
+      "summary": [
+        "8'den fazla production-grade ticari platformun mimarisini kurdum, gerçeklestirdim ve gereksinimden CI/CD'ye kadar tüm yasam döngüsünü yönettim.",
+        "Hedefli indeksleme stratejisi ve sorgu optimizasyonuyla PostgreSQL/MySQL performansını iyilestirdim; sistematik hata takibi için Serilog structured logging'i devreye aldım.",
+        "Uluslararası müsteriler için %99 müsteri memnuniyetiyle 20'den fazla production proje teslim ettim; Bionluk Rising Stars ve Most Loved Freelancers listelerinde yer aldım."
+      ],
+      "stack": [
+        "Next.js",
+        "ASP.NET Core",
+        "Node.js",
+        "PostgreSQL",
+        "MySQL",
+        "Prisma",
+        "Redis",
+        "Docker",
+        "Nginx",
+        "VPS"
+      ],
+      "engagementsHeading": "Öne Çıkan Projeler",
+      "engagements": [
+        {
+          "title": "TAV Security — TavAkademi",
+          "subtitle": "Kurumsal Egitim & Sınav Platformu",
+          "period": "2025",
+          "description": "Havalimanı güvenlik personeli için TOTP/2FA ve GeoIP oturum dogrulamalı JWT-RBAC, poligon editörlü X-Ray sınav simülasyonu ve otomatik sertifika üretimi.",
+          "stack": [
+            "React",
+            "Redux Toolkit",
+            "Node.js",
+            "Express.js",
+            "MySQL",
+            "Speakeasy (TOTP)"
+          ]
+        },
+        {
+          "title": "E-Ticaret Platformları",
+          "subtitle": "6 Canlı Ticari Proje",
+          "period": "2025 – 2026",
+          "description": "IsPool, Balkolüx, Ferudun Polat Home, NowArt Plicell, RosallieBaby, BarScarf — iyzico ödeme, KVKK uyumlu kimlik dogrulama ve Meta CAPI/GA4 dönüsüm takibiyle 6 canlı platform.",
+          "stack": [
+            "Next.js",
+            "Prisma",
+            "PostgreSQL",
+            "MySQL",
+            "NextAuth.js",
+            "Cloudinary"
+          ]
+        },
+        {
+          "title": "BAZR",
+          "subtitle": "Çok Kiracılı Pazaryeri",
+          "period": "2026 · Sözlesmeli (Upwork)",
+          "description": "Clean Architecture/CQRS tabanlı 33 varlıklı domain modeli, Stripe ödeme + escrow cüzdan, SignalR + Hangfire ile gerçek zamanlı siparis takibi.",
+          "stack": [
+            "ASP.NET Core",
+            "PostgreSQL",
+            "Redis",
+            "CQRS/MediatR",
+            "Stripe",
+            "SignalR"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "heading": "Teknik Yetkinlikler",
+      "subtitle": "Kategoriye göre gruplanmıs, production'da kullandıgım teknolojiler.",
+      "toolsHeading": "Entegrasyonlar & Araçlar",
+      "tools": [
+        "C#",
+        "EF Core",
+        "Framer Motion",
+        "GSAP",
+        "iyzico",
+        "SignalR",
+        "Hangfire",
+        "Docker Compose",
+        "GitHub Actions",
+        "Swagger/OpenAPI",
+        "Cloudinary",
+        "Twilio SMS",
+        "SendGrid",
+        "Anthropic Claude API",
+        "Google Gemini",
+        "xUnit",
+        "Jest"
+      ]
+    },
+    "resume": {
+      "heading": "Özgeçmis",
+      "subtitle": "Egitim, sertifikalar ve diller.",
+      "educationTitle": "Egitim",
+      "educationDegree": "Bilgisayar Mühendisligi (Lisans)",
+      "educationSchool": "Iskenderun Teknik Üniversitesi",
+      "educationPeriod": "2020 – 2024",
+      "certificatesTitle": "Sertifikalar",
+      "certificates": [
+        "Full Stack Development Bootcamp",
+        "Advanced React and Next.js",
+        "Prisma and SQL Advanced Database Management"
+      ],
+      "languagesTitle": "Diller",
+      "languages": [
+        { "name": "Türkçe", "level": "Anadil" },
+        { "name": "Ingilizce", "level": "B2 - Üst-Orta & Teknik Akıcılık" }
+      ],
+      "downloadLabel": "CV Indir (PDF)"
+    }
   },
   "services": {
-    "badge": "Hizmetlerim",
-    "title": "Hizmetlerim",
-    "subtitle": "Isletmenizin dijital ihtiyaçlarına uçtan uca çözüm sunan hizmetler.",
-    "trust": [
-      "10+ Desteklenen sirket",
-      "20+ Tamamlanan proje",
-      "%99 Mutlu müsteri"
-    ],
+    "badge": "Yetkinliklerim",
+    "title": "Neler Insa Edebilirim",
+    "subtitle": "Bagımsız olarak mimarisini kurup uçtan uca teslim ettigim sistem türleri.",
+    "trust": ["8+ Production Platform", "Lighthouse 95+", "SEO 100/100"],
     "items": [
       {
-        "title": "Web Tasarım & Gelistirme",
-        "description": "React, Next.js ve TypeScript ile hızlı, ölçeklenebilir ve SEO uyumlu kurumsal web siteleri ve e-ticaret platformları gelistiriyorum.",
-        "detail": "Responsive tasarım, sayfa hızı optimizasyonu, erisilebilirlik ve bilesen tabanlı mimariyle her projeyi sıfırdan kuruyor, kod kalitesini ve sürdürülebilirligi ön planda tutuyorum.",
+        "title": "Web Uygulama Mühendisligi",
+        "description": "React, Next.js ve TypeScript ile hızlı, ölçeklenebilir ve SEO uyumlu production uygulamaları insa ediyorum.",
+        "detail": "Bilesen tabanlı mimari, responsive tasarım ve erisilebilirlik standartlarıyla her projeyi sıfırdan kuruyorum; kod kalitesi ve sürdürülebilirlik önceligim.",
         "icon": "Code"
       },
       {
-        "title": "SEO Optimizasyonu",
-        "description": "Teknik SEO, sayfa hızı ve içerik yapısı iyilestirmeleriyle sitenizin arama motorlarındaki görünürlügünü artırıyorum.",
-        "detail": "Site haritası, yapısal veri (schema.org), meta etiket stratejisi ve Core Web Vitals iyilestirmeleriyle organik trafiginizi ölçülebilir sekilde büyütüyorum.",
+        "title": "SEO & Performans Mühendisligi",
+        "description": "Teknik SEO, Core Web Vitals ve içerik yapısı optimizasyonuyla arama motoru görünürlügünü ölçülebilir sekilde artırıyorum.",
+        "detail": "Site haritası, yapısal veri (schema.org) ve meta etiket stratejisiyle sevk ettigim projelerde tutarlı sekilde Lighthouse 95+ ve SEO 100/100 sagliyorum.",
         "icon": "Search"
       },
       {
-        "title": "E-Ticaret Çözümleri",
+        "title": "E-Ticaret Sistemleri",
         "description": "Ödeme entegrasyonu, kargo takibi ve admin panelleriyle uçtan uca özel e-ticaret platformları kuruyorum.",
-        "detail": "Sepet, kupon, varyant takibi ve sipariş yönetimini kapsayan admin panelleriyle, iyzico gibi yerli ödeme altyapılarını sorunsuz entegre ediyorum.",
+        "detail": "Sepet, kupon, varyant takibi ve siparis yönetimini kapsayan admin panelleriyle iyzico/Stripe gibi ödeme altyapılarını üretim seviyesinde entegre ediyorum.",
         "icon": "ShoppingCart"
       },
       {
-        "title": "API & Backend Gelistirme",
-        "description": "Node.js, .NET ve Prisma ORM ile güvenli, ölçeklenebilir REST API'ler ve veritabanı mimarileri tasarlıyorum.",
-        "detail": "Kimlik dogrulama, yetkilendirme, rate limiting ve veritabanı performans optimizasyonunu içeren, production'a hazır backend sistemleri kuruyorum.",
+        "title": "API & Backend Mimarisi",
+        "description": "Node.js, ASP.NET Core ve Prisma/EF Core ile güvenli, ölçeklenebilir REST API'ler ve veritabanı mimarileri tasarlıyorum.",
+        "detail": "Kimlik dogrulama, rol bazlı yetkilendirme, rate limiting ve veritabanı performans optimizasyonu içeren production'a hazır backend sistemleri kuruyorum.",
         "icon": "Server"
       },
       {
-        "title": "Dijital Danısmanlık",
-        "description": "Teknoloji seçimi, mimari kararlar ve performans optimizasyonu konularında is ortaklarıma danısmanlık saglıyorum.",
-        "detail": "Mevcut sisteminizi inceleyip darbogazları belirliyor, ölçeklenebilirlik ve maliyet açısından en uygun teknoloji yol haritasını birlikte çiziyorum.",
+        "title": "Teknik Danısmanlık & Mimari Inceleme",
+        "description": "Teknoloji seçimi, mimari kararlar ve performans darbogazları konusunda teknik ekiplere danısmanlık sagliyorum.",
+        "detail": "Mevcut bir sistemi inceleyip darbogazları belirliyor, ölçeklenebilirlik ve sürdürülebilirlik açısından somut bir teknik yol haritası çıkarıyorum.",
         "icon": "MessageSquare"
       },
       {
-        "title": "Bakım & Destek",
-        "description": "Yayına alınan projeleriniz için sürekli bakım, güncelleme ve teknik destek hizmeti sunuyorum.",
-        "detail": "Güvenlik yamaları, bagımlılık güncellemeleri ve performans izlemeyle projenizin yayından sonra da saglıklı çalısmasını garanti ediyorum.",
+        "title": "Sistem Güvenilirligi & Bakım",
+        "description": "Yayındaki sistemler için sürekli izleme, güvenlik yamaları ve performans takibi sagliyorum.",
+        "detail": "Structured logging (Serilog), health check endpoint'leri ve bagımlılık güncellemeleriyle sistemlerin yayından sonra da saglıklı çalısmasını güvence altına alıyorum.",
         "icon": "LifeBuoy"
       }
     ],
-    "processEyebrow": "Sürecim",
-    "processTitle": "Çalısma Sürecim",
+    "processEyebrow": "Is Akısım",
+    "processTitle": "Nasıl Çalısırım",
     "process": [
       {
         "step": "01",
-        "title": "Kesif & Planlama",
-        "description": "Ihtiyaçlarınızı analiz eder, proje kapsamını ve zaman çizelgesini sizinle birlikte belirlerim."
+        "title": "Kesif & Mimari Planlama",
+        "description": "Gereksinimleri, veri modelini ve es zamanlılık senaryolarını analiz eder, mimari kararları netlestiririm."
       },
       {
         "step": "02",
-        "title": "Tasarım & Gelistirme",
-        "description": "Modern teknolojilerle, düzenli geri bildirim döngüleriyle projenizi adım adım hayata geçiririm."
+        "title": "Insa & Test",
+        "description": "Modern teknolojilerle, testlerle desteklenerek (xUnit/Jest) adım adım gelistirir, kritik is mantıgını dogrularım."
       },
       {
         "step": "03",
-        "title": "Test & Yayına Alma",
-        "description": "Performans, güvenlik ve kullanılabilirlik testlerinden geçirip projeyi canlıya alırım."
+        "title": "CI/CD & Yayına Alma",
+        "description": "Performans, güvenlik ve erisilebilirlik kontrollerinden geçirip GitHub Actions ile otomatik dagıtım yaparım."
       },
       {
         "step": "04",
-        "title": "Destek & Büyüme",
-        "description": "Yayın sonrası bakım ve gelistirmeyle projenizin büyümesine eslik ederim."
+        "title": "Izleme & Iyilestirme",
+        "description": "Yayın sonrası structured logging ve health check'lerle sistemi izler, ölçülebilir iyilestirmeler yaparım."
       }
     ],
     "cta": {
-      "title": "Projeniz için hangi hizmete ihtiyacınız var?",
-      "text": "Ihtiyaçlarınızı birlikte degerlendirelim, size özel bir çözüm önerelim.",
+      "title": "Mühendislik ekibinizle çalısmak ister misiniz?",
+      "text": "Açık pozisyonlar, teknik is birligi veya bir mimari sorunuz için benimle iletisime geçin.",
       "button": "Iletisime Geç"
     }
   },
   "faq": {
     "badge": "SSS",
     "title": "Sıkça Sorulan Sorular",
-    "subtitle": "Süreç, fiyatlandırma ve isbirligi hakkında en çok sorulan sorular.",
+    "subtitle": "Müsaitlik, çalısma tarzı ve teknik yaklasımım hakkında en çok sorulan sorular.",
     "items": [
       {
-        "question": "Bir proje ne kadar sürede tamamlanır?",
-        "answer": "Proje süresi kapsama göre degisir; basit bir kurumsal site 2-3 haftada, kapsamlı bir e-ticaret platformu ise 6-10 hafta içinde teslim edilebilir. Kesif asamasında size net bir zaman çizelgesi sunarım."
+        "question": "Tam zamanlı bir pozisyona uygun musunuz?",
+        "answer": "Evet, su anda tam zamanlı fırsatlara açıgım. 2024'ten bu yana bagımsız/sözlesmeli olarak çalısıyorum ve dogru ekip için tam zamanlı bir role geçmeye hazırım."
       },
       {
-        "question": "Fiyatlandırma nasıl belirleniyor?",
-        "answer": "Her proje kapsam, özellik sayısı ve entegrasyonlara göre özel olarak fiyatlandırılır. Ihtiyaçlarınızı paylastıktan sonra detaylı bir teklif hazırlarım."
+        "question": "Uzaktan çalısma veya tasınma konusunda esnek misiniz?",
+        "answer": "Türkiye merkezliyim ve tamamen uzaktan çalısmaya açıgım; uluslararası ekiplerle zaten uzaktan çalısma deneyimim var. Dogru fırsat için tasınma konusunda da görüsmeye açıgım."
       },
       {
-        "question": "Hangi teknolojilerle çalısıyorsunuz?",
-        "answer": "Agırlıklı olarak React, Next.js, TypeScript, Node.js, .NET ve PostgreSQL/MySQL kullanıyorum; ihtiyaca göre farklı araçlar da entegre edebilirim."
+        "question": "Hangi teknoloji yıgınını tercih edersiniz?",
+        "answer": "En rahat çalıstıgım yıgın Next.js + ASP.NET Core/Node.js + PostgreSQL/MySQL, ama teknoloji seçimini probleme göre yaparım - CQRS/MediatR, Redis, SignalR gibi araçları ihtiyaç oldugunda kullanırım, sırf bildigim için degil."
       },
       {
-        "question": "Proje sonrası destek sagliyor musunuz?",
-        "answer": "Evet, yayına alınan tüm projeler için bakım ve teknik destek paketleri sunuyorum."
+        "question": "Bir ekip içinde nasıl çalısırsınız?",
+        "answer": "Su ana kadar çogunlukla bagımsız/sözlesmeli çalıstım, bu yüzden gereksinimden CI/CD'ye kadar tüm yasam döngüsünü sahiplenme alıskanlıgım var. Net iletisim, küçük PR'lar ve code review'a açık olmak benim için önemli."
       },
       {
-        "question": "Mevcut bir siteyi yeniden mi tasarlıyorsunuz, yoksa sadece sıfırdan mı gelistiriyorsunuz?",
-        "answer": "Hem sıfırdan gelistirme hem de mevcut bir sitenin yeniden tasarımı/modernizasyonu üzerinde çalısabilirim."
+        "question": "Test ve kod kalitesi konusunda yaklasımınız nedir?",
+        "answer": "Kritik is mantıgını (ödeme, stok, yetkilendirme) test etmeden production'a almam; .NET tarafında xUnit/Moq, Node tarafında Jest/Supertest kullanıyorum. FluentValidation/Zod ile girdi dogrulama ve Serilog ile structured logging standart pratigim."
       },
       {
-        "question": "Uzaktan çalısma mümkün mü?",
-        "answer": "Evet, Uşak merkezli olarak Türkiye'nin her yerinden ve uluslararası müsterilerle tamamen uzaktan çalısıyorum."
+        "question": "Çözdügünüz en zor teknik problem neydi?",
+        "answer": "BAZR'da dört farklı portalın (admin/satıcı/kurye/müsteri) aynı veri modelini paylastıgı bir ödeme/stok sisteminde IDOR ve TOCTOU stok yarıs kosulunu, RepeatableRead izolasyon seviyeli islemlerle çözdüm - global bir kilit kullanmadan."
       }
     ],
     "cta": {
@@ -171,9 +376,9 @@
     }
   },
   "testimonials": {
-    "badge": "Müsteri Yorumları",
-    "title": "Müsteriler Ne Diyor?",
-    "subtitle": "Birlikte çalıstıgım müsterilerden gelen gerçek degerlendirmeler.",
+    "badge": "Müsteri Geri Bildirimleri",
+    "title": "Birlikte Çalıstıgım Kisiler Ne Diyor?",
+    "subtitle": "Onlar için teslim ettigim sistemler hakkında geri bildirimler.",
     "items": [
       {
         "name": "ugkkkk",
@@ -219,7 +424,7 @@
   },
   "contact": {
     "title": "Iletisime Geçin",
-    "description": "Sorularınız, geri bildirimleriniz veya is birligi fırsatlarınız için buradayım. Size nasıl yardımcı olabilecegimi bana bildirin!",
+    "description": "Açık pozisyonlar, teknik is birligi, mimari sorular veya sadece mühendislik üzerine sohbet etmek için buradayım.",
     "infoTitle": "Iletisim Bilgileri",
     "phoneLabel": "Telefon",
     "emailLabel": "E-posta",
@@ -243,7 +448,7 @@
     "emailError": "Mail gönderilemedi"
   },
   "footer": {
-    "slogan": "Modern tasarımın zarafetiyle, kullanıcı deneyimini ön planda tutan, sık ve etkileyici bir web deneyimi sunuyorum.",
+    "slogan": "Üretimde çalısan, gerçek kullanıcıları olan sistemler kuran bir full stack yazılım mühendisiyim.",
     "sections": [
       {
         "title": "Kesfet",
@@ -253,53 +458,29 @@
             "href": "/projects"
           },
           {
-            "label": "Hizmetlerim",
-            "href": "/services"
-          },
-          {
             "label": "Hakkımda",
             "href": "/about"
           },
+          {
+            "label": "Yetkinlikler",
+            "href": "/services"
+          }
+        ]
+      },
+      {
+        "title": "Baglantılar",
+        "links": [
           {
             "label": "Iletisim",
             "href": "/contact"
           },
           {
             "label": "Blog",
-            "href": "/blogs"
+            "href": "/blog"
           },
           {
             "label": "SSS",
             "href": "/faq"
-          }
-        ]
-      },
-      {
-        "title": "Hizmetlerim",
-        "links": [
-          {
-            "label": "Web Tasarım & Gelistirme",
-            "href": "/services"
-          },
-          {
-            "label": "SEO Optimizasyonu",
-            "href": "/services"
-          },
-          {
-            "label": "E-Ticaret Çözümleri",
-            "href": "/services"
-          },
-          {
-            "label": "API & Backend Gelistirme",
-            "href": "/services"
-          },
-          {
-            "label": "Dijital Danısmanlık",
-            "href": "/services"
-          },
-          {
-            "label": "Bakım & Destek",
-            "href": "/services"
           }
         ]
       },
@@ -373,17 +554,22 @@
       "openGithub": "GitHub'da Aç",
       "getInTouch": "Iletisime Geç"
     },
+    "problemLabel": "Problem",
+    "solutionLabel": "Çözüm",
+    "challengesLabel": "Zorluklar",
+    "resultsLabel": "Sonuçlar",
+    "lessonsLabel": "Çıkarımlar",
     "cta": {
-      "title": "Bu tarz bir site istiyor musun?",
-      "subtitle": "Sadece birkaç adımda kendi markanı dijitalde öne çıkarabilirsin.",
-      "button": "Evet, iletisime geçelim"
+      "title": "Bu projenin mühendisligi hakkında konusalım",
+      "subtitle": "Mimari kararlar, kullanılan teknolojiler veya benzer bir teknik problem hakkında sohbet etmek isterseniz buradayım.",
+      "button": "Iletisime Geç"
     }
   },
   "chatbot": {
     "title": "Akıllı Asistan",
     "subtitle": "AI Destekli",
     "online": "Çevrimiçi",
-    "welcomeMessage": "Merhaba! Ben Ceyhun'un Akıllı Asistanıyım! 😁\n\nSizinle her konusmadan ögreniyor ve gelisiyorum. Web gelistirme projeleri, fiyatlandırma, teknolojiler ve daha fazlası hakkında sorularınızı yanıtlayabilirim.\n\nNasıl yardımcı olabilirim?",
+    "welcomeMessage": "Merhaba! Ben Ceyhun'un Akıllı Asistanıyım! 😁\n\nProjeleri, teknik deneyimi, kullandıgı teknolojiler ve özgeçmisi hakkında sorularınızı yanıtlayabilirim.\n\nNasıl yardımcı olabilirim?",
     "placeholder": "Mesajınızı yazın...",
     "send": "Gönder",
     "typing": "Yazıyor...",

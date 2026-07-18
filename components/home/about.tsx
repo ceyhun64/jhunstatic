@@ -7,7 +7,7 @@ type Props = {
 
 const About = async ({ locale }: Props) => {
   const dictAll = await getDictionary(locale);
-  const dict = dictAll.about;
+  const dict = dictAll.aboutHome;
 
   return <AboutClient dict={dict} locale={locale} />;
 };

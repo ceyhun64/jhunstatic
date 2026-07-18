@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: isEn ? "About" : "Hakkımda",
     description: isEn
-      ? "About Ceyhun Türkmen — Senior Full Stack Developer with 5+ years of experience. Specialises in React, Next.js, TypeScript, Node.js and .NET."
-      : "Ceyhun Türkmen hakkında — 5+ yıl deneyimli Senior Full Stack Developer. React, Next.js, TypeScript, Node.js ve .NET konularında uzmanlaşmış.",
+      ? "About Ceyhun Türkmen — Full Stack Developer who has independently architected and shipped 8+ commercial platforms. Specializes in Next.js, ASP.NET Core, Node.js and PostgreSQL/MySQL."
+      : "Ceyhun Türkmen hakkında — bağımsız olarak 8'den fazla ticari platform mimarisini kurup yayına almış Full Stack Developer. Next.js, ASP.NET Core, Node.js ve PostgreSQL/MySQL konularında uzmanlaşmış.",
     alternates: {
       canonical: `${BASE_URL}/${locale}/about`,
       languages: {

@@ -7,6 +7,28 @@
     "titleEng": "Ferudun Polat Home",
     "summaryEng": "Made-to-measure e-commerce platform for curtains & window coverings.",
     "descriptionEng": "Ferudun Polat Home is a comprehensive e-commerce platform for curtains and window coverings. It offers 10+ categories including Plicell, Zebra, Roller (with a Laser Cut sub-category), Wooden Blinds, Metal Blinds, Sheer Curtains, Vertical Blinds, Rustic Curtains, Drapes, and Accessories. The platform's defining feature is made-to-measure order support: users enter width and height for each product, and the system automatically calculates square meters while adjusting the price accordingly. Measurement guide images and a dedicated modal help customers take accurate measurements. A profile/color selector modal lets customers choose frame colors including Anthracite, White, Grey, Brown, Cream, and Black. Selected dimensions and profile data are stored on both the cart item and the order item records. The multi-step checkout covers address selection and iyzico payment integration. City, district, and neighborhood data is dynamically loaded from city.json with auto-fill support on address forms. Institutional pages include bank account details, downloadable documents, a measurement guide, and a why-us section. The admin panel covers product, order, user, blog, and banner management with Recharts-powered sales analytics. Nodemailer handles contact form and password reset emails. Built on Next.js App Router, TypeScript, Prisma ORM, and MySQL.",
+    "problem": "Perde ve stor ürünlerini satan bir işletme, ölçüye göre siparişleri manuel/telefon üzerinden alıyordu; müşterilerin dogru ölçü girip anında fiyat görebilecegi, hatasız bir online akısa ihtiyaç vardı.",
+    "problemEng": "A curtain and blinds retailer took made-to-measure orders manually over the phone; customers needed a way to enter accurate measurements and see instant pricing in an error-free online flow.",
+    "solution": "Her ürün için genislik/yükseklik girisiyle m² ve fiyatı anlık hesaplayan, profil/renk seçimini sepetten siparise kadar koruyan bir ölçüye-göre e-ticaret akısı kurdum; iyzico ile çok adımlı ödeme ve city.json tabanlı adres otomatik tamamlama entegre ettim.",
+    "solutionEng": "I built a made-to-measure checkout flow that calculates m² and price live from width/height input, persists profile/color selection from cart through to the order record, and integrated iyzico multi-step payment with city.json-based address autofill.",
+    "challenges": [
+      "Ürün satır bazında girilen ölçülerden hesaplanan fiyatın sepet, siparis ve admin panelinde tutarlı kalmasını saglamak.",
+      "Profil/renk seçimini bir varyant boyutu olarak sepetten siparise, veri kaybı olmadan tasımak."
+    ],
+    "challengesEng": [
+      "Keeping price calculation consistent between cart, order, and admin views when measurements are entered per line item, not per SKU.",
+      "Modeling profile/color as a variant dimension that had to survive from cart through order without data loss."
+    ],
+    "results": [
+      "10'dan fazla kategoride tamamen manuel ölçüm sürecini self-servis bir akısa tasıdım.",
+      "Ürün, siparis, kullanıcı, blog, banner yönetimi ve satıs analitigini tek bir Next.js/Prisma/MySQL sistemine entegre ettim."
+    ],
+    "resultsEng": [
+      "Replaced a fully manual, back-and-forth measurement process with a self-service flow across 10+ categories.",
+      "Shipped an integrated Next.js/Prisma/MySQL system covering product, order, user, blog, banner management and sales analytics."
+    ],
+    "lessonsLearned": "Varyant benzeri özel alanların (ölçü, profil) siparis yasam döngüsünün tamamı düsünülerek en bastan modellenmesi gerektigini; bunu sonradan sepet/siparis semasına eklemenin çok daha maliyetli oldugunu gördüm.",
+    "lessonsLearnedEng": "Reinforced that custom order attributes like measurements and variants need to be designed for the full order lifecycle up front — retrofitting them into cart/order schemas afterward is expensive.",
     "url": "https://ferudunpolathome.com",
     "image": "/projects/modaperde/main.png",
     "demoUrl": "https://ferudunpolathome.com",
@@ -36,6 +58,28 @@
     "titleEng": "IsPool",
     "summaryEng": "Full-stack e-commerce platform for occupational safety equipment.",
     "descriptionEng": "IsPool is a comprehensive digital commerce platform built for the occupational health and safety industry. Its wide product catalog — covering high-visibility vests, flame-resistant coveralls, respiratory protection, and ergonomic footwear — is presented with industry-standard filters for category, color, size, and brand. The platform serves three user groups: customers, administrators, and enterprise clients seeking wholesale or custom workwear. A three-level category hierarchy (Category → Middle → Sub) structures the entire catalog. Per-variant inventory is managed through a ProductStock model linking each product to a specific color and size combination. A canvas-based product design tool supports custom production orders: users can add and position text layers, upload image overlays, manage layer order, and export the final design via html-to-image. AI-powered background removal, a wholesale catalog page, and a special production request page support B2B workflows. Cloudinary signed uploads ensure secure image management. Payments are handled via iyzico and shipments via Horoz Kargo. The admin panel also includes coupon, hero slider, and banner management. Built on Next.js App Router, TypeScript, Prisma ORM, and PostgreSQL.",
+    "problem": "Bir is güvenligi ekipmanları satıcısının; standart katalog satısının yanında toptan/B2B müsteriler için özel üretim taleplerini de karsılayacak bir platforma ihtiyacı vardı.",
+    "problemEng": "An occupational safety equipment retailer needed to serve standard retail customers and B2B/wholesale clients with custom production requests, on top of catalog browsing with color/size/brand variants.",
+    "solution": "3 kademeli kategori hiyerarsisi ve ProductStock modeliyle renk×beden bazlı stok takibi kurdum; özel üretim siparisleri için katman yönetimi, metin/görsel ekleme ve html-to-image disa aktarma destekleyen canvas tabanlı bir tasarım aracı ve AI destekli arka plan kaldırma özelligi gelistirdim.",
+    "solutionEng": "I built a 3-level category hierarchy with color×size stock tracking via a dedicated ProductStock model, plus a canvas-based design tool (text/image layers, layer management, html-to-image export) for custom production orders, with AI-assisted background removal.",
+    "challenges": [
+      "Ürün kayıtlarını çogaltmadan renk×beden granülaritesinde envanteri temsil edip admin stok güncellemelerini atomik tutmak.",
+      "Rastgele katmanlı kullanıcı girdisinden piksel dogrulugunda, üretime hazır görsel dısa aktarabilen bir canvas aracı kurmak."
+    ],
+    "challengesEng": [
+      "Representing inventory at color×size granularity without duplicating product records, while keeping admin stock updates atomic.",
+      "Building a canvas design tool that exports pixel-accurate, production-ready images from arbitrary layered user input."
+    ],
+    "results": [
+      "Standart perakende vitrininin yanında çalısan bir B2B özel üretim hattı (tasarım → dısa aktarma → siparis) teslim ettim.",
+      "iyzico ödeme ve Horoz Kargo entegrasyonunu hem perakende hem toptan akısını kapsayan tek bir siparis hattında birlestirdim."
+    ],
+    "resultsEng": [
+      "Delivered a working B2B custom-production pipeline (design → export → order) alongside the standard retail storefront.",
+      "Integrated iyzico payments and Horoz Kargo shipping into one order pipeline serving both retail and wholesale flows."
+    ],
+    "lessonsLearned": "Canvas tasarım aracı, istemci tarafı render mantıgının (katmanlar, konumlar) dısa aktarma/serilestirme adımından bastan itibaren ayrılmasının, editörde görülenle üretime giden dosyanın birebir eslesmesini garanti altına aldıgını gösterdi.",
+    "lessonsLearnedEng": "The canvas tool underscored the value of isolating client-side rendering (layers, positions) from the export/serialization step early, so what customers see in the editor always matches the exported production file.",
     "url": "https://ispool.com.tr",
     "image": "/projects/ispool/main.png",
     "demoUrl": "https://ispool.com.tr",
@@ -65,6 +109,28 @@
     "titleEng": "BalkoLüx",
     "summaryEng": "Full-stack e-commerce platform for garden & balcony furniture.",
     "descriptionEng": "BalkoLüx is a comprehensive e-commerce platform for premium outdoor furniture covering gardens, terraces, and balconies. It offers 6 product categories: seating sets, table sets, sunbeds, swings, barbecue units, and umbrellas. Product detail pages feature multi-image galleries with zoom, material specs, and tabbed content covering description and reviews. Users can filter products by category and price range using a mobile-friendly filter drawer. The cart supports real-time totals, variant tracking, and coupon code discounts validated via a dedicated API endpoint. The multi-step checkout covers address selection and iyzico payment with Turkish bank card installment options. Horoz Kargo integration provides real-time shipment tracking directly from the user profile page. The admin panel includes Recharts-powered sales analytics and full management of products, orders, users, blogs, banners, coupons, and subscribers. Nodemailer handles contact form and password reset emails. City, district, and neighborhood data is dynamically loaded from city.json with auto-fill support on address forms. Cloudinary handles image upload and CDN delivery. Built on Next.js App Router, TypeScript, Prisma ORM, and MySQL.",
+    "problem": "Bahçe ve balkon mobilyaları satan bir isletmenin; gerçek zamanlı sepet toplamı, kupon indirimi ve hacimli ürünler için güvenilir kargo takibi sunan tam kapsamlı bir vitrine ihtiyacı vardı.",
+    "problemEng": "A garden and balcony furniture retailer needed a full storefront with real-time cart totals, coupon discounts, and reliable shipment tracking for often-bulky physical goods.",
+    "solution": "Kategori/fiyat aralıgı filtreleme, sunucu tarafında dogrulanan kupon kodu sistemi, iyzico taksit destekli çok adımlı ödeme ve Horoz Kargo takibini dogrudan müsteri profil sayfasına tasıyan bir Next.js/Prisma/MySQL vitrini kurdum.",
+    "solutionEng": "I built a Next.js/Prisma/MySQL storefront with category/price-range filtering, server-side coupon validation, multi-step checkout with iyzico installments, and Horoz Kargo tracking surfaced directly on the customer's profile page.",
+    "challenges": [
+      "Kupon kodlarını ve indirimli toplamları istemci sepet durumu ile sunucu siparis toplamı arasında tutarlı dogrulayarak fiyat uyusmazlıgını önlemek.",
+      "city.json tabanlı il/ilçe/mahalle otomatik tamamlamayı büyük adres veri setinde hızlı ve dogru tutmak."
+    ],
+    "challengesEng": [
+      "Validating coupon codes and discounted totals consistently between client cart state and server order totals to prevent price mismatches at checkout.",
+      "Keeping city/district/neighborhood address autofill fast and accurate across a large address dataset."
+    ],
+    "results": [
+      "Vitrinin yanında tam bir admin paketi (Recharts satıs analitigi, ürün/siparis/kullanıcı/blog/banner/kupon/abone yönetimi) teslim ettim.",
+      "Gerçek zamanlı kargo takibi, 'siparisim nerede' destek yükünü müsteri hesabından dogrudan görünür kılarak azalttı."
+    ],
+    "resultsEng": [
+      "Shipped a full admin suite (Recharts sales analytics, product/order/user/blog/banner/coupon/subscriber management) alongside the storefront.",
+      "Real-time shipment tracking reduced 'where is my order' support overhead by surfacing status directly in the customer account."
+    ],
+    "lessonsLearned": "Fiyatı etkileyen her seyin (kupon, toplam) sunucu tarafında yeniden dogrulanmasının pazarlık götürmez oldugunu; istemci tarafında hesaplanan toplamlara kısa süreligine bile güvenmenin, ancak gerçek kupon kombinasyonlarıyla ortaya çıkan indirim yıgma açıklarına yol açtıgını gördüm.",
+    "lessonsLearnedEng": "Server-side re-validation of anything price-affecting (coupons, totals) turned out to be non-negotiable — trusting client-computed totals, even briefly, created discount-stacking edge cases that only surfaced under real coupon combinations.",
     "url": "https://balkolux.com.tr/",
     "image": "/projects/balkolux/main.png",
     "demoUrl": "https://balkolux.com.tr/",
@@ -95,6 +161,28 @@
     "titleEng": "NowArt Plicell",
     "summaryEng": "Online sales platform for Plicell, Zebra, and Stor curtains.",
     "descriptionEng": "NowArt Plicell is a modern e-commerce platform built for one of Turkey's leading curtain retailers, offering Plicell, Zebra, Stor, and Wood Venetian Blind (Ahsap Jaluzi) product categories. Product detail pages feature multi-image galleries with zoom, color profile previews in seven swatches (Anthracite Grey, White, Grey, Brown, Cream, Shiny Bronze, Black), and size/variant selection. A measurement guide page and modal component help customers take accurate measurements before ordering. The multi-step checkout flows through address selection, cargo information, and an iyzico payment step. Due to iyzico SDK compatibility, the payment endpoint runs on the Pages Router. The email-based password reset flow stores a resetToken and resetTokenExpiry on the user model and delivers the reset link via Nodemailer. Institutional pages include bank account details, a downloadable PDF document, and a why-us section. Legal pages cover the distance sale agreement, KVKK, payment options, and personal data policy. The admin panel covers product, order, user, and blog management supported by Recharts analytics. A JSON-based seed system manages product, blog, and order data. Sharp handles server-side image processing. Built on Next.js 15 (Turbopack), TypeScript, Prisma ORM, and MySQL.",
+    "problem": "Türkiye'nin köklü perde perakendecilerinden biri, katalogunu online'a tasırken hem dogru ölçüm rehberligine hem de App Router ile tam uyumlu olmayan bir iyzico SDK kısıtına çözüm bulmak zorundaydı.",
+    "problemEng": "One of Turkey's established curtain retailers needed to move its catalog online with accurate measurement guidance while working around an iyzico SDK that didn't cleanly fit the App Router.",
+    "solution": "Ölçüm rehberi modalı ve 7 profil rengi önizlemesi içeren bir Next.js 15 vitrini kurdum; SDK uyumlulugu için iyzico ödeme endpoint'ini özel olarak Pages Router üzerinde çalıstırırken uygulamanın geri kalanını App Router'da tuttum.",
+    "solutionEng": "I built a Next.js 15 storefront with a measurement-guide modal and 7-swatch color profile previews, running the iyzico payment endpoint on the Pages Router specifically for SDK compatibility while the rest of the app stayed on the App Router.",
+    "challenges": [
+      "Aynı Next.js uygulamasında Pages Router ve App Router'ı, routing veya paylasılan layout/auth mantıgını bozmadan bir arada çalıstırmak.",
+      "Süresi dogru dolan ve tekrar oynatılamayan bir sifre sıfırlama akısı (resetToken/resetTokenExpiry) kurmak."
+    ],
+    "challengesEng": [
+      "Running a mixed Pages Router/App Router setup in the same Next.js app without breaking routing or shared layout/auth logic.",
+      "Building a password-reset flow (resetToken/resetTokenExpiry) that expires correctly and can't be replayed."
+    ],
+    "results": [
+      "Sunucu taraflı görüntü isleme (Sharp) ve JSON tabanlı seed sistemiyle production'a hazır bir vitrin teslim ettim.",
+      "Admin analitigi (Recharts), perakendeciye daha önce yalnızca manuel muhasebeyle gördügü satıs verisini gerçek zamanlı sundu."
+    ],
+    "resultsEng": [
+      "Shipped a production storefront with server-side image processing (Sharp) and a JSON-based seed system for product/blog/order data.",
+      "Admin analytics (Recharts) gave the retailer real-time visibility into sales they previously only tracked via manual bookkeeping."
+    ],
+    "lessonsLearned": "Üçüncü parti bir SDK'nın sert framework kısıtları oldugunda, onu dar bir route sınırının arkasına izole etmenin -tüm uygulamayı ona uydurmak yerine- kod tabanının geri kalanını tercih edilen mimaride tutmayı sagladıgını ögrendim.",
+    "lessonsLearnedEng": "When a third-party SDK has hard framework constraints, isolating it behind a narrow route boundary — rather than forcing the whole app to accommodate it — keeps the rest of the codebase on the preferred architecture.",
     "url": "https://www.nowartplicell.com",
     "image": "/projects/nowart/main.png",
     "demoUrl": "https://www.nowartplicell.com",
@@ -124,6 +212,28 @@
     "titleEng": "Rosallie Baby",
     "summaryEng": "Premium e-commerce platform for newborn & baby products.",
     "descriptionEng": "Rosallie Baby is a premium e-commerce platform for newborn products including hospital discharge outfits, organic muslin sets, plush toys, and matching baby accessories. The platform offers 4 product categories: Hospital Outfit Set, Hospital Outfit Special Set, Blanket, and Toy. Product detail pages include image galleries with zoom, variant selection, stock status, and customer reviews. The multi-step checkout flows through address selection, cargo information, and an iyzico payment step. User sessions are managed via NextAuth.js while admin sessions use Iron Session independently. Meta Pixel (client-side) and Meta Conversions API (server-side CAPI) integration makes ad tracking reliable even with ad blockers active. Google Analytics 4 handles page view and conversion tracking. Dynamic sitemap.js and robots.js generation, combined with ProductSchema and BlogSchema JSON-LD markup on every product and blog page, provides a robust SEO foundation. A customName field on the OrderItem model supports personalized product labeling at purchase time. The admin panel includes a Setting model for site-wide configuration. Newsletter subscription and subscriber management, Nodemailer-powered contact form and order notification emails, and Cloudinary image upload with CDN delivery are all included. Built on Next.js 15 (Turbopack), Prisma ORM, and MySQL.",
+    "problem": "Yenidogan ürünleri satan bir marka; reklam engelleyicilere dayanıklı reklam takibi, güçlü SEO ve siparis üzerinden dogru sekilde yakalanan kisisellestirme (ör. isim baskısı) istiyordu.",
+    "problemEng": "A newborn-products brand needed ad tracking resilient to ad blockers, strong SEO for organic discovery, and personalized product labeling captured accurately through checkout.",
+    "solution": "Meta Pixel (istemci) ve Meta Conversions API (sunucu) ile çift yönlü dönüsüm takibini GA4 ile birlikte kurdum; JSON-LD (Ürün/Blog seması) ve dinamik sitemap/robots ile SEO'yu güçlendirdim; OrderItem üzerinde customName alanıyla kisisellestirmeyi, müsteriler için NextAuth.js, admin için ayrı bir Iron Session ile oturum yönetimini destekledim.",
+    "solutionEng": "I implemented dual-path conversion tracking (client-side Meta Pixel + server-side Meta Conversions API) alongside GA4, JSON-LD structured data and dynamic sitemap/robots for SEO, a customName field on OrderItem for personalization, with NextAuth.js for customers and a separate Iron Session for admins.",
+    "challenges": [
+      "Istemci Pixel ve sunucu CAPI arasında olayları tekilleştirerek reklam platformu raporlamasında çift sayımı önlemek.",
+      "Birbirinden bagımsız iki oturum sisteminin (müsteri NextAuth, admin Iron Session) durumlarının birbirine sızmasını engellemek."
+    ],
+    "challengesEng": [
+      "Deduplicating events between client-side Pixel and server-side CAPI so conversions weren't double-counted in ad platform reporting.",
+      "Keeping two independent session systems (customer NextAuth, admin Iron Session) from leaking state into each other."
+    ],
+    "results": [
+      "Tarayıcı reklam engelleyicileri aktifken bile reklam dönüsüm takibi dogru kaldı, ödemeli edinim ROI verisini korudu.",
+      "JSON-LD ve dinamik sitemap/robots çalısması, her ürün ve blog sayfasına kutudan çıktıgı gibi yapısal veri kazandırdı."
+    ],
+    "resultsEng": [
+      "Ad conversion tracking stayed accurate even with browser ad blockers active, directly protecting paid-acquisition ROI data.",
+      "JSON-LD and dynamic sitemap/robots work gave every product and blog page structured data out of the box."
+    ],
+    "lessonsLearned": "Küçük bir vitrin için bile sunucu taraflı dönüsüm API'lerinin ekstra entegrasyon çabasına degdigini; herhangi bir reklam engelleyici kullanımı devreye girdiginde yalnızca istemci tabanlı takibe kıyasla dogruluk farkının hızla büyüdügünü gördüm.",
+    "lessonsLearnedEng": "Server-side conversion APIs are worth the extra integration effort even for a small storefront — the accuracy gap versus client-only tracking compounds quickly once ad blocker adoption is in the mix.",
     "url": "https://rosallie-baby-ceyhun-turkmens-projects.vercel.app/",
     "image": "/projects/rosallie/main.png",
     "demoUrl": "https://rosallie-baby-ceyhun-turkmens-projects.vercel.app/",
@@ -152,6 +262,28 @@
     "titleEng": "BAZR",
     "summaryEng": "Multi-tenant marketplace platform with admin, merchant, courier, and consumer portals.",
     "descriptionEng": "BAZR is an enterprise-scale multi-vendor marketplace platform supporting four independently scoped portals: Admin, Merchant, Courier, and Consumer. Each portal runs its own authentication policy, data access layer, and purpose-built UI. Role-based access control (AdminOnly, MerchantOnly, CourierOnly, CustomerOnly) is enforced at the API layer via JWT claims, and payment/stock-allocation flows run inside RepeatableRead-isolated transactions to guard against IDOR and TOCTOU race conditions. The merchant portal covers catalogue management, order fulfillment, sales analytics, channel comparison (Marketplace vs E-Store), subscription plans (Basic/Pro/Enterprise), and subdomain/custom-domain support. The courier portal provides live shipment status, pickup/delivery confirmation, and earnings history. On the consumer side, Stripe PaymentIntent handles checkout, SignalR delivers real-time shipment tracking, and the platform includes cart, wishlist, and a notification centre. Hangfire drives background jobs (order status, delayed shipment, notifications, shipment sync), QuestPDF generates invoices, and SendGrid/Twilio handle email and SMS notifications. Redis backs both caching and the SignalR backplane. The design system is built on CSS custom-property tokens with an accessible Radix UI-based component library. Built on .NET 10 Web API (Clean Architecture + CQRS/MediatR), Next.js 16 (App Router), TypeScript, PostgreSQL, and Redis.",
+    "problem": "Bir Upwork müsterisinin; admin, satıcı, kurye ve müsteriyi farklı veri erisim ihtiyaçlarıyla birbirine baglayan, ödeme akıslarının IDOR ve stok yarıs kosulu saldırılarına dogal olarak açık oldugu bir çok kiracılı pazaryerine ihtiyacı vardı.",
+    "problemEng": "An Upwork client needed a multi-tenant marketplace connecting admins, merchants, couriers, and customers with different data-access needs, on top of payment flows that are natural targets for IDOR and stock-race exploits.",
+    "solution": "API katmanında uygulanan JWT tabanlı rol izolasyonuyla (AdminOnly/MerchantOnly/CourierOnly/CustomerOnly) Clean Architecture/CQRS (MediatR) tabanlı bir .NET API kurdum; ödeme/stok tahsisi etrafında RepeatableRead izolasyonlu islemler, Stripe PaymentIntent ödemesi, Redis backplane'li SignalR ile gerçek zamanlı kargo takibi ve Hangfire ile arka plan isleri (siparis durumu, gecikmis sevkiyat, bildirim) kurdum.",
+    "solutionEng": "I architected a Clean Architecture/CQRS (MediatR) .NET API with JWT-based role scoping (AdminOnly/MerchantOnly/CourierOnly/CustomerOnly) enforced at the API layer, RepeatableRead-isolated transactions around payment/stock allocation, Stripe PaymentIntent checkout, SignalR with a Redis backplane for real-time tracking, and Hangfire for background jobs.",
+    "challenges": [
+      "Aynı veri modelini paylasan dört farklı portalda, her birinin farklı yetkilendirme sınırına sahip olmasına ragmen IDOR'u önlemek.",
+      "Tüm yazmaları serilestirip verimliligi öldürmeden, es zamanlı siparislerde stok asırı tahsisini (TOCTOU) önlemek."
+    ],
+    "challengesEng": [
+      "Preventing IDOR across four different portals sharing the same underlying data model, each with a different authorization boundary.",
+      "Preventing stock over-allocation under concurrent orders (TOCTOU) without serializing all writes and killing throughput."
+    ],
+    "results": [
+      "Tek bir Clean Architecture backend'den dört bagımsız kapsamlı portal (Admin/Satıcı/Kurye/Müsteri) teslim ettim.",
+      "RepeatableRead izolasyonu, global bir kilit kullanmadan stok yarıs kosulu penceresini kapattı ve es zamanlı yükte kabul edilebilir checkout verimliligini korudu."
+    ],
+    "resultsEng": [
+      "Shipped four independently-scoped portals (Admin/Merchant/Courier/Customer) from one Clean Architecture backend.",
+      "RepeatableRead isolation closed the stock race-condition window without a global lock, keeping checkout throughput acceptable under concurrent load."
+    ],
+    "lessonsLearned": "Izolasyon seviyesi seçiminin körü körüne kabul edilecek bir veritabanı varsayılanı degil, gerçek bir mimari karar oldugunu; RepeatableRead'in burada dogru tercih olmasının sebebinin stok tahsisinin aynı satırları tek islem içinde önce okuyup sonra yazması oldugunu ögrendim.",
+    "lessonsLearnedEng": "Isolation-level choice is a real architectural decision, not a database default to accept blindly — RepeatableRead was the right trade-off here because stock allocation reads then writes the same rows within one transaction.",
     "url": "https://marketplace-henna-eta-22.vercel.app/",
     "image": "/projects/bazr/main.png",
     "demoUrl": "https://marketplace-henna-eta-22.vercel.app/",
@@ -184,6 +316,28 @@
     "titleEng": ".jhun{}",
     "summaryEng": "Official website of a professional web development studio.",
     "descriptionEng": ".jhun{} is the official corporate website of jhun, a professional web development studio. It showcases the company's portfolio, blog content, technology expertise, and services while enabling direct client contact. Full English and Turkish localization is provided via next-intl with seamless runtime language switching. A dual-engine AI chatbot powered by Anthropic Claude SDK and Google Generative AI uses a two-tier response system: pre-written keyword matches for instant responses, falling back to a live AI model when no match is found. The site features dark/light theme support, a hero section with particle effects, an aurora background, and a typing animation. The portfolio page presents detailed project showcases with technology tags and descriptions. SEO is handled with dynamic Open Graph meta tags and a configured robots.txt. The admin panel supports blog, project, and technology management backed by Cloudinary image uploads. Rich animations are powered by GSAP and Framer Motion, complemented by 25+ custom UI effects including Aurora, Vortex, Sparkles, Meteors, Magnetic Button, and 3D Card. A CV is available in both HTML and PDF formats in English and Turkish. A chatbot stats panel and typing indicator further enrich the user experience. Built with Next.js App Router, TypeScript, MongoDB, and Mongoose.",
+    "problem": "Ziyaretçilerin, manuel e-posta yanıtı beklemeden özgeçmisim, projelerim ve deneyimim hakkında anında ve dogru cevap alabilecegi iki dilli bir portfolyo/blog platformuna ihtiyaç vardı.",
+    "problemEng": "Needed a bilingual portfolio/blog platform where visitors could get instant, accurate answers about background, projects, and experience without waiting on manual email replies.",
+    "solution": "Anahtar kelime eslesmesiyle anında yanıt veren, eslesme bulunamadıgında Anthropic Claude/Google Gemini'ye düsen iki katmanlı bir AI sohbet botu; runtime dil geçisli tam next-intl TR/EN lokalizasyonu; Cloudinary destekli admin panel (blog/proje/teknoloji yönetimi) Next.js App Router + MongoDB/Mongoose üzerinde kurdum.",
+    "solutionEng": "I built a two-tier AI chatbot (keyword-matched instant replies falling back to Anthropic Claude/Google Gemini for open-ended questions), full next-intl TR/EN localization with runtime switching, and an admin panel (blog/project/technology management via Cloudinary) on Next.js App Router + MongoDB/Mongoose.",
+    "challenges": [
+      "Yaygın soruları anında anahtar kelime yanıtına yönlendirip, LLM çagrısını gerçekten açık uçlu sorular için saklayarak sohbet botu gecikme/maliyetini kalite karsısında dengelemek.",
+      "Animasyon yogun arayüzü (GSAP/Framer Motion, 25'ten fazla özel efekt) her iki temada ve dilde layout kaymasına yol açmadan performanslı tutmak."
+    ],
+    "challengesEng": [
+      "Balancing chatbot latency/cost against answer quality — routing common questions to instant keyword replies while reserving the LLM call for genuinely open-ended ones.",
+      "Keeping animation-heavy UI (GSAP/Framer Motion, 25+ custom effects) performant across both themes and locales without layout shift."
+    ],
+    "results": [
+      "AI asistanı, form doldurup yanıt bekleme akısı yerine CV/proje/deneyim sorularını gerçek zamanlı yanıtlıyor.",
+      "Runtime TR/EN geçisi ve indirilebilir CV (HTML + PDF, iki dilde) hem Türk hem uluslararası ziyaretçiler için sürtünmeyi kaldırdı."
+    ],
+    "resultsEng": [
+      "The AI assistant answers CV/project/experience questions in real time instead of requiring a form-and-wait contact flow.",
+      "Runtime TR/EN switching and a downloadable CV (HTML + PDF, both languages) removed friction for both Turkish and international visitors."
+    ],
+    "lessonsLearned": "Çogunlukla öngörülebilir soru kümesine sahip herhangi bir sohbet botu için anahtar-kelime-önce, LLM-yedek tasarımın dogru varsayılan oldugunu; her seyi LLM üzerinden yönlendirmekten daha ucuz, hızlı ve öngörülebilir oldugunu gördüm.",
+    "lessonsLearnedEng": "A hybrid keyword-first, LLM-fallback design turned out to be the right default for any chatbot with a mostly-predictable question set — cheaper, faster, and more predictable than routing everything through an LLM.",
     "url": "/",
     "image": "/projects/jhun/main.png",
     "demoUrl": "https://jhun.com.tr",
@@ -213,6 +367,28 @@
     "titleEng": "TavAkademi",
     "summaryEng": "Digital exam & education management platform for institutions.",
     "descriptionEng": "TavAkademi is a comprehensive digital exam and education management platform designed for educational institutions. It provides role-tailored interfaces for Admin, Instructor, and Student users, consolidating education set management, multiple exam types, a visual gallery, automatic certificate generation, and detailed reporting under a single platform. Three exam types are supported: Theoretical (multiple-choice text questions), Visual (annotatable image questions), and Combined, with additional support for custom-format practice exams. Exam security is enforced through fullscreen mode and illegal move detection. The question pool system maintains separate Teo and Img pools with bulk upload support. X-Ray image tools include a polygon editor, Black & White / Negative / Transparency / HI / O2 / OS / SEN filters, an Image Merger & Blender, and draggable overlay support. Template-based automatic certificate generation outputs DOCX and PDF files with QR code integration for verification. Two-factor authentication via Speakeasy TOTP and GeoIP-based session location validation are included. Bulk user registration via Excel import and Excel-based reporting are supported. Recharts powers chart-based performance visualization, Redis handles session caching, Puppeteer enables browser automation, and Docxtemplater manages template processing. Built with React (Vite), Node.js (Express), MySQL, and Sequelize ORM.",
+    "problem": "TAV Özel Güvenlik Hizmetleri'nin, havalimanı güvenlik personeli için sıkı erisim kontrolü ve kurcalamaya dayanıklı sınavlar gerektiren, kagıt tabanlı manuel egitim yönetimini degistirecek bir sertifikasyon platformuna ihtiyacı vardı.",
+    "problemEng": "TAV Private Security Services needed an internal certification platform for airport security personnel meeting strict access-control and tamper-resistant exam requirements, replacing manual, paper-based training administration.",
+    "solution": "Admin/Egitmen/Personel rollerinde Google Authenticator TOTP/2FA ve GeoIP oturum dogrulamasıyla desteklenen JWT tabanlı RBAC kurdum; yapılandırılabilir soru havuzu motoru (Teorik/Görsel/Karma), bagaj tarama simülasyonu için X-Ray görüntü araçlı özel bir poligon editörü, sınav bütünlügü kontrolleri (tam ekran zorunlulugu, sekme degistirme algılama) ve DOCX + PDF-lib + QR dogrulamalı otomatik sertifika üretimi ile Puppeteer taraylı otomasyon ve Excel toplu kullanıcı içe aktarma gelistirdim.",
+    "solutionEng": "I built JWT-based RBAC with Google Authenticator TOTP/2FA and GeoIP session validation across Admin/Trainer/Personnel roles, a configurable question-pool engine (Theoretical/Visual/Mixed), a custom polygon-editor with X-Ray image tooling for baggage-inspection simulation, exam-integrity controls (fullscreen enforcement, tab-switch detection), and automated certificate generation (DOCX + PDF-lib + QR) with Puppeteer automation and Excel bulk import.",
+    "challenges": [
+      "Havalimanı güvenligi düzeyinde uyumlulugu (2FA + geo-dogrulanmıs oturumlar) günlük admin/egitmen is akıslarını yormadan saglamak.",
+      "Tek bir kırılgan API'ye baglı kalmadan, tarayıcılar arasında güvenilir sınav bütünlügü algılaması (tam ekran/sekme degisimi) kurmak."
+    ],
+    "challengesEng": [
+      "Meeting airport-security-grade compliance (2FA + geo-validated sessions) without making day-to-day admin/trainer workflows painful.",
+      "Building exam-integrity detection (fullscreen/tab-switch) that's reliable across browsers without relying on a single fragile API."
+    ],
+    "results": [
+      "Sertifika üretimi ve toplu kullanıcı saglamada manuel, hataya açık adımları ortadan kaldırdım.",
+      "Bu kullanım durumu için hazır bir üründe bulunmayan, nesne isaretlemeli simülasyon araçlarına sahip uyumluluk düzeyinde bir sınav platformu teslim ettim."
+    ],
+    "resultsEng": [
+      "Eliminated manual, error-prone administrative steps in certificate generation and bulk user provisioning.",
+      "Delivered a compliance-grade exam platform with object-marking simulation tooling that didn't exist as an off-the-shelf product for this use case."
+    ],
+    "lessonsLearned": "Uyumluluk gereksinimlerinin (2FA, oturum geo-dogrulaması), temel RBAC sistemi kurulduktan sonra eklenmek yerine auth katmanına en bastan tasarlandıgında çok daha dogru sekilde retrofit edilebildigini ögrendim.",
+    "lessonsLearnedEng": "Compliance requirements (2FA, session geo-validation) are much easier to retrofit correctly when designed into the auth layer from the start rather than bolted on after the core RBAC system is built.",
     "url": "https://tav-akademi-egitim-ve-sinav-platfor-rho.vercel.app/",
     "image": "/projects/tavakademi/main.png",
     "demoUrl": "https://tav-akademi-egitim-ve-sinav-platfor-rho.vercel.app/",
@@ -246,6 +422,28 @@
     "titleEng": "BarScarf",
     "summaryEng": "Elegant and reliable e-commerce platform for scarf collections.",
     "descriptionEng": "BarScarf is a full-featured e-commerce platform dedicated to modern and premium scarf collections. Visitors can discover patterned, plain, silk, cotton, and everyday scarves using pattern, color, and fabric filters. High-resolution product images and color options make the shopping experience both enjoyable and practical. The platform uses a React + Redux Toolkit frontend and a Node.js + Express.js backend with MySQL managed through Sequelize ORM. It includes user registration, login, profile management, and a complete password reset flow. Full shopping features cover cart, favorites, and order management. Product reviews and ratings, iyzico payment integration, and Nodemailer-powered email notifications are all supported. Cloudinary handles image storage and CDN delivery, while Redis provides caching. API security is enforced through Helmet.js security headers, CORS configuration, and request rate limiting. The admin panel covers product, category, user, and order management along with sales statistics. The project is containerized with Docker and deployed on Railway and Render.",
+    "problem": "Bir esarp perakendecisinin; arama/filtreleme, sepet, favoriler ve yorumların yanı sıra production-grade güvenlik (rate limiting, CORS, güvenlik basliklari) sunan, bütçe dostu ve konteynerlestirilebilir bir vitrine ihtiyacı vardı.",
+    "problemEng": "A scarf retailer needed a complete storefront (search/filter, cart, favorites, reviews) with production-grade security (rate limiting, CORS, security headers) on a budget-friendly, container-deployable stack.",
+    "solution": "React + Redux Toolkit önyüzünü Node.js/Express + MySQL/Sequelize backend'ine bagladım; Helmet.js güvenlik baslıkları, CORS yapılandırması ve rate limiting ile API'yi korudum, Redis önbellekleme ve Cloudinary görsel/CDN kullandım; Docker ile konteynerlestirip Railway/Render üzerinde yayına aldım.",
+    "solutionEng": "I built a React + Redux Toolkit frontend against a Node.js/Express + MySQL/Sequelize backend, with Helmet.js security headers, CORS configuration, and rate limiting protecting the API, Redis caching, and Cloudinary for image/CDN — containerized with Docker and deployed to Railway/Render.",
+    "challenges": [
+      "Redux Toolkit sepet/favori durumunu, asırı istek atmadan sunucu taraflı siparis/yorum verisiyle senkron tutmak.",
+      "Kısıtlı bütçeli bir yıgını, public deploy için uygun bir seviyeye (rate limiting, CORS, güvenlik baslıkları) sertlestirmek."
+    ],
+    "challengesEng": [
+      "Keeping Redux Toolkit cart/favorites state in sync with server-side order/review data without over-fetching.",
+      "Hardening a Node/Express API (rate limiting, CORS, security headers) to a standard suitable for public deployment on a constrained budget stack."
+    ],
+    "results": [
+      "Güvenlik baslıkları veya rate limiting'den ödün vermeden, tamamen konteynerlestirilmis, ucuza barındırılabilir bir e-ticaret yıgını (Railway/Render) teslim ettim.",
+      "Ürün yorum/puanlama ve Nodemailer bildirimleri, satıs sonrası etkilesim döngüsünü tamamladı."
+    ],
+    "resultsEng": [
+      "Shipped a fully containerized, cheaply-hostable e-commerce stack (Railway/Render) without sacrificing security headers or rate limiting.",
+      "Product reviews/ratings and Nodemailer notifications closed the loop on post-purchase engagement."
+    ],
+    "lessonsLearned": "Güvenlik ara katmanının (Helmet, CORS, rate limiting) eklemesi ucuz ama unutulması kolay oldugunu; bunu en bastan Express iskeletine gömmenin, yayın öncesi telasa dönüsmesini engelledigini gördüm.",
+    "lessonsLearnedEng": "Security middleware (Helmet, CORS, rate limiting) is cheap to add and easy to forget — baking it into the initial Express scaffold, rather than adding it right before launch, turned it into a non-event.",
     "url": "https://barscarf.com/",
     "image": "/projects/barscarf/main.png",
     "demoUrl": "https://barscarf.com/",
@@ -281,6 +479,28 @@
     "titleEng": "Rezervo",
     "summaryEng": "Scalable multi-tenant appointment management system for any industry.",
     "descriptionEng": "Reservation is a scalable, multi-tenant appointment management platform designed for any industry — healthcare, beauty, education, fitness, legal services, and more. The backend is an ASP.NET Core Web API built on JWT-based authentication and PostgreSQL persistence. Four role-specific interfaces serve Receiver, Provider, Business, and Admin users. Providers can create time slots and bulk-add availability; Receivers book appointments through a calendar view. Redis serves as the caching layer for 2FA temporary tokens (TOTP) and session data. SignalR delivers real-time notifications (appointment created, confirmed, cancelled) instantly to relevant parties, with Redis backplane support for horizontal scaling. ReminderBackgroundService automatically sends SMS reminders for upcoming appointments. Twilio SMS and SendGrid email integrations cover all appointment events: creation, status changes, cancellations, and completions. FluentValidation handles DTO validation, Serilog provides structured request logging, and GlobalExceptionMiddleware manages centralized error handling. .NET 8's built-in rate limiting is configured at 60 requests/min for general API endpoints and 10 requests/min for authentication routes. The /health endpoint monitors PostgreSQL and Redis status, ready for Kubernetes probes and load balancers. Repository & Unit-of-Work pattern, xUnit & Moq unit and integration tests, and DataSeeder for automatic sample data loading are all included. Docker Compose brings up all services (PostgreSQL + Redis + API) with a single command. The Next.js 14 (App Router) web frontend manages JWT via HttpOnly cookies and provides role-based dashboards, a calendar view, and real-time notifications via the @microsoft/signalr package. Built on ASP.NET Core Web API (.NET 8), Entity Framework Core, PostgreSQL, and Redis.",
+    "problem": "Saglık, güzellik, egitim ve hukuk gibi sektörlerdeki isletmelerin; es zamanlı erisim altında çifte rezervasyon olmadan, dört farklı rol (Saglayıcı, Alıcı, Isletme, Admin) arasında tutarlı kalan gerçek zamanlı müsaitlik ile randevu almaya ihtiyacı vardı.",
+    "problemEng": "Businesses across healthcare, beauty, education, and legal sectors needed appointment booking with real-time availability that stays consistent across four roles (Provider, Receiver, Business, Admin) without double-booking under concurrent access.",
+    "solution": "Yatay ölçeklenme için Redis backplane'li SignalR ile gerçek zamanlı müsaitlik senkronizasyonu, IHostedService tabanlı SMS/e-posta hatırlatma isi, yerlesik rate limiting (genel 60 istek/dk, auth 10 istek/dk), PostgreSQL + Redis saglık kontrolleri ve xUnit & Moq ile test edilen repository/unit-of-work deseni içeren bir ASP.NET Core Web API kurdum; GitHub Actions ile CI/CD dagıtımı yaptım.",
+    "solutionEng": "I built an ASP.NET Core Web API with SignalR (Redis backplane for horizontal scaling) for real-time availability sync, an IHostedService-driven SMS/email reminder job, built-in rate limiting (60 req/min general, 10 req/min auth), PostgreSQL + Redis health checks, and a repository/unit-of-work pattern tested with xUnit & Moq, deployed via GitHub Actions CI/CD.",
+    "challenges": [
+      "Birden fazla Alıcı aynı slotu es zamanlı almaya çalıstıgında, müsaitlik durumunu roller arasında gerçek zamanlı tutarlı tutmak.",
+      "SignalR'ı tek instance'a bagımlı kalmadan, gerçek zamanlı teslim garantisini kaybetmeden ölçeklendirmek."
+    ],
+    "challengesEng": [
+      "Keeping availability state consistent in real time across roles when multiple Receivers could attempt to book the same slot simultaneously.",
+      "Scaling SignalR beyond a single instance without losing real-time delivery guarantees."
+    ],
+    "results": [
+      "Redis destekli SignalR backplane, gerçek zamanlı katmanı tek instance'a bagımlı olmaktan çıkarıp yatay ölçeklenebilir hale getirdi.",
+      "Otomatik SMS/e-posta hatırlatmaları, hiçbir manuel operatör müdahalesi olmadan randevuya gelmeme riskini azalttı."
+    ],
+    "resultsEng": [
+      "The Redis-backed SignalR backplane made the real-time layer horizontally scalable rather than single-instance-bound.",
+      "Automated SMS/email reminders reduced no-show risk without any manual dispatcher involvement."
+    ],
+    "lessonsLearned": "Yatay ölçeklenebilirlik için en bastan tasarlamanın (Redis backplane), henüz kesin ihtiyaç olmasa bile çok daha invaziv bir yeniden yazımdan kaçındırdıgını; SignalR'ın backplane ihtiyacını gün birde karsılamanın sonradan retrofit etmekten çok daha ucuz oldugunu ögrendim.",
+    "lessonsLearnedEng": "Designing for horizontal scalability (Redis backplane) from the start, even before strictly needed, avoided a much more invasive rewrite later — SignalR's backplane requirement is much cheaper to satisfy on day one than to retrofit.",
     "url": "https://reservation-gray-omega.vercel.app/",
     "image": "/projects/rezervo/main.png",
     "demoUrl": "https://reservation-gray-omega.vercel.app/",
