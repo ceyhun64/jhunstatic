@@ -72,7 +72,7 @@ const GalleryClient: React.FC<GalleryClientProps> = ({
       {/* Title */}
       <div className="container mx-auto mb-1 md:mb-10 text-center md:text-left md:px-16">
         <RollingText
-          className="inline-block relative w-full text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-extrabold tracking-tight text-gray-900 dark:text-white mb-1 transition-colors duration-300"
+          className="inline-block relative w-full text-lg sm:text-2xl md:text-5xl lg:text-6xl font-sans font-extrabold tracking-tight text-gray-900 dark:text-white mb-1 transition-colors duration-300"
           text={dict.title}
         />
         <p className="text-gray-600 dark:text-gray-400 max-w-2xl text-sm md:text-md lg:text-lg mt-2 transition-colors duration-300">
