@@ -264,7 +264,7 @@ export default function AboutClient({ dict, locale, technologies }: Props) {
           {/* Sag Içerik */}
           <motion.div variants={itemVariants} className="flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md shadow-sm p-6 md:p-8">
-              <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl">
+              <div className="hidden md:block absolute inset-0 -z-10 overflow-hidden rounded-2xl">
                 <motion.div
                   animate={{ x: [-60, 60, -60], y: [-30, 30, -30] }}
                   transition={{
@@ -333,7 +333,7 @@ export default function AboutClient({ dict, locale, technologies }: Props) {
 
         {/* Basarılarımız */}
         <div className="mt-16 relative overflow-hidden rounded-2xl  border border-gray-200 dark:border-white/10 backdrop-blur-md py-8 px-4 md:p-16  text-gray-900 dark:text-white shadow-sm">
-          <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl">
+          <div className="hidden md:block absolute inset-0 -z-10 overflow-hidden rounded-2xl">
             <motion.div
               animate={{ x: [-60, 60, -60], y: [-30, 30, -30] }}
               transition={{

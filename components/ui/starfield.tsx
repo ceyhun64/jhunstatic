@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
+import { useLowPowerMode } from "@/hooks/use-low-power-mode"
 
 export interface StarfieldBackgroundProps {
   className?: string
@@ -34,6 +35,7 @@ export function StarfieldBackground({
 }: StarfieldBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const isLowPower = useLowPowerMode()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -56,6 +58,10 @@ export function StarfieldBackground({
     const _centerY = height / 2
     const maxDepth = 1500
 
+    // Fewer stars on mobile/reduced-motion — this canvas fades+redraws every
+    // pixel each frame, so star count is the main cost knob.
+    const effectiveCount = isLowPower ? Math.round(count * 0.35) : count
+
     // Create stars
     const createStar = (initialZ?: number): Star => ({
       x: (Math.random() - 0.5) * width * 2,
@@ -65,7 +71,23 @@ export function StarfieldBackground({
       twinkleOffset: Math.random() * Math.PI * 2,
     })
 
-    const stars: Star[] = Array.from({ length: count }, () => createStar())
+    const stars: Star[] = Array.from({ length: effectiveCount }, () => createStar())
+
+    // Pause the rAF loop while the canvas is scrolled off-screen or the tab
+    // is backgrounded — it otherwise runs forever regardless of visibility.
+    const state = { inView: false, tabVisible: !document.hidden }
+    const isActive = () => state.inView && state.tabVisible
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        state.inView = !!entry?.isIntersecting
+      },
+      { threshold: 0 },
+    )
+    intersectionObserver.observe(container)
+    const handleVisibilityChange = () => {
+      state.tabVisible = !document.hidden
+    }
+    document.addEventListener("visibilitychange", handleVisibilityChange)
 
     // Resize handler
     const handleResize = () => {
@@ -81,6 +103,11 @@ export function StarfieldBackground({
 
     // Animation
     const animate = () => {
+      if (!isActive()) {
+        animationId = requestAnimationFrame(animate)
+        return
+      }
+
       tick++
 
       // Fade effect for trails
@@ -154,8 +181,10 @@ export function StarfieldBackground({
     return () => {
       cancelAnimationFrame(animationId)
       ro.disconnect()
+      intersectionObserver.disconnect()
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
     }
-  }, [count, speed, starColor, twinkle])
+  }, [count, speed, starColor, twinkle, isLowPower])
 
   return (
     <div ref={containerRef} className={cn("fixed inset-0 overflow-hidden bg-black", className)}>

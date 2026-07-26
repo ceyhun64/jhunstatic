@@ -14,6 +14,7 @@ import { GradientText } from "../ui/shadcn-io/gradient-text";
 import { toast } from "sonner";
 import { useTheme } from "next-themes";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ContactForm {
   firstName: string;
@@ -75,6 +76,7 @@ export default function ContactClient({
   const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme } = useTheme();
   const shouldReduceMotion = useReducedMotion();
+  const isMobile = useIsMobile();
 
   const {
     register,
@@ -156,22 +158,27 @@ export default function ContactClient({
             minDelay={1200}
             maxDelay={4200}
           />
-          <ShootingStars
-            starColor={starColors.star2}
-            trailColor={starColors.trail2}
-            minSpeed={10}
-            maxSpeed={25}
-            minDelay={2000}
-            maxDelay={4000}
-          />
-          <ShootingStars
-            starColor={starColors.star3}
-            trailColor={starColors.trail3}
-            minSpeed={20}
-            maxSpeed={40}
-            minDelay={1500}
-            maxDelay={3500}
-          />
+          {/* Extra layers add depth on desktop; skip on mobile to keep only one concurrent animation loop */}
+          {!isMobile && (
+            <>
+              <ShootingStars
+                starColor={starColors.star2}
+                trailColor={starColors.trail2}
+                minSpeed={10}
+                maxSpeed={25}
+                minDelay={2000}
+                maxDelay={4000}
+              />
+              <ShootingStars
+                starColor={starColors.star3}
+                trailColor={starColors.trail3}
+                minSpeed={20}
+                maxSpeed={40}
+                minDelay={1500}
+                maxDelay={3500}
+              />
+            </>
+          )}
         </div>
       )}
 

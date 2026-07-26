@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
@@ -34,11 +34,20 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
     "all",
   );
   const [isScrolled, setIsScrolled] = useState(false);
+  const rafId = useRef<number>(0);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 100);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      cancelAnimationFrame(rafId.current);
+      rafId.current = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 100);
+      });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(rafId.current);
+    };
   }, []);
 
   const getLocalizedText = (blog: Blog, field: "title" | "summary") => {
@@ -83,6 +92,8 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
                     <img
                       src="/avatar/avatar2.jpg"
                       alt="Founder"
+                      loading="eager"
+                      decoding="async"
                       className="w-full h-full object-cover transition-all duration-1000 scale-105 group-hover:scale-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent dark:from-black/80 dark:via-black/20 dark:to-transparent" />
@@ -333,6 +344,8 @@ export default function BlogsClient({ dict, locale, blogs }: Props) {
                         <img
                           src={blog.image}
                           alt={blog.title}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover transition-all duration-1000 group-hover/card:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent dark:from-black dark:via-black/40 dark:to-transparent" />

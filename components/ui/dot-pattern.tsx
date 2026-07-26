@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { cn } from "@/lib/utils";
+import { useLowPowerMode } from "@/hooks/use-low-power-mode";
 
 export interface DotPatternProps {
   className?: string;
@@ -63,6 +64,12 @@ export function DotPattern({
   const startTimeRef = useRef(Date.now());
   const baseRgbRef = useRef(hexToRgb(baseColor ?? "#94a3b8"));
   const glowRgbRef = useRef(hexToRgb(glowColor ?? "#f59e0b"));
+  const activeRef = useRef(true);
+  const isLowPower = useLowPowerMode();
+  // Sparser grid + no wave animation on mobile/reduced-motion: this canvas
+  // redraws every dot every frame, so dot count is the main cost knob.
+  const effectiveGap = isLowPower ? gap * 2 : gap;
+  const effectiveWaveSpeed = isLowPower ? 0 : waveSpeed;
 
   const resolveColors = useCallback(() => {
     const container = containerRef.current;
@@ -102,7 +109,7 @@ export function DotPattern({
     const ctx = canvas.getContext("2d");
     if (ctx) ctx.scale(dpr, dpr);
 
-    const cellSize = dotSize + gap;
+    const cellSize = dotSize + effectiveGap;
     const cols = Math.ceil(rect.width / cellSize) + 1;
     const rows = Math.ceil(rect.height / cellSize) + 1;
 
@@ -120,11 +127,16 @@ export function DotPattern({
       }
     }
     dotsRef.current = dots;
-  }, [dotSize, gap]);
+  }, [dotSize, effectiveGap]);
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    if (!activeRef.current) {
+      animationRef.current = requestAnimationFrame(draw);
+      return;
+    }
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -134,7 +146,7 @@ export function DotPattern({
 
     const { x: mx, y: my } = mouseRef.current;
     const proxSq = proximity * proximity;
-    const time = (Date.now() - startTimeRef.current) * 0.001 * waveSpeed;
+    const time = (Date.now() - startTimeRef.current) * 0.001 * effectiveWaveSpeed;
     const baseRgb = baseRgbRef.current;
     const glowRgb = glowRgbRef.current;
 
@@ -209,7 +221,7 @@ export function DotPattern({
     }
 
     animationRef.current = requestAnimationFrame(draw);
-  }, [proximity, dotSize, glowIntensity, waveSpeed]);
+  }, [proximity, dotSize, glowIntensity, effectiveWaveSpeed]);
 
   useEffect(() => {
     buildGrid();
@@ -235,6 +247,38 @@ export function DotPattern({
     });
     return () => observer.disconnect();
   }, [resolveColors, baseColor, glowColor]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    // This canvas covers the full viewport (fixed inset-0) and animates
+    // forever by default — only run the wave/glow math while actually
+    // visible and the tab is focused.
+    let inView = false;
+    let tabVisible = !document.hidden;
+    const updateActive = () => {
+      activeRef.current = inView && tabVisible;
+    };
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        inView = !!entry?.isIntersecting;
+        updateActive();
+      },
+      { threshold: 0 },
+    );
+    intersectionObserver.observe(container);
+    const handleVisibilityChange = () => {
+      tabVisible = !document.hidden;
+      updateActive();
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      intersectionObserver.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
 
   useEffect(() => {
     animationRef.current = requestAnimationFrame(draw);

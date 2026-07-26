@@ -6,6 +6,7 @@ import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "framer-motion";
+import { useLowPowerMode } from "@/hooks/use-low-power-mode";
 
 type ParticlesProps = {
   id?: string;
@@ -31,13 +32,18 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
+  const isLowPower = useLowPowerMode();
+
   useEffect(() => {
+    // Skip loading/booting the tsparticles engine altogether on mobile or
+    // when reduced motion is requested — it's a decorative-only background.
+    if (isLowPower) return;
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
-  }, []);
+  }, [isLowPower]);
   const controls = useAnimation();
 
   const [containerLoaded, setContainerLoaded] = useState(false);

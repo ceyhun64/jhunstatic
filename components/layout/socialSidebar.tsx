@@ -99,6 +99,8 @@ export default function SocialSidebar() {
                   <img
                     src={icon.src}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
                     className="w-7 h-7 object-contain brightness-0 invert"
                   />
                   <span className="sr-only">{icon.ariaLabel}</span>

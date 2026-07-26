@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { useLowPowerMode } from "@/hooks/use-low-power-mode";
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 const randInt = (min: number, max: number) =>
@@ -112,6 +113,7 @@ function createFirework(
   particleSpeed: { min: number; max: number } | number,
   particleSize: { min: number; max: number } | number,
   onExplode: (particles: ParticleType[]) => void,
+  particleCountRange: { min: number; max: number } = { min: 50, max: 150 },
 ): FireworkType {
   const angle = -Math.PI / 2 + rand(-0.3, 0.3);
   const vx = Math.cos(angle) * speed;
@@ -145,7 +147,7 @@ function createFirework(
       return true;
     },
     explode() {
-      const numParticles = randInt(50, 150);
+      const numParticles = randInt(particleCountRange.min, particleCountRange.max);
       const particles: ParticleType[] = [];
       for (let i = 0; i < numParticles; i++) {
         const particleAngle = rand(0, Math.PI * 2);
@@ -218,6 +220,7 @@ function FireworksBackground({
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
   React.useImperativeHandle(ref, () => containerRef.current as HTMLDivElement);
+  const isLowPower = useLowPowerMode();
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
@@ -225,6 +228,27 @@ function FireworksBackground({
     if (!canvas || !container) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    // Pause all work while off-screen or while the tab is hidden — this loop
+    // otherwise runs forever regardless of scroll position or tab focus.
+    const state = { inView: false, tabVisible: !document.hidden };
+    const isActive = () => state.inView && state.tabVisible;
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        state.inView = !!entry?.isIntersecting;
+      },
+      { threshold: 0 },
+    );
+    intersectionObserver.observe(container);
+    const handleVisibilityChange = () => {
+      state.tabVisible = !document.hidden;
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    const effectivePopulation = isLowPower ? population * 0.4 : population;
+    const particleCountRange = isLowPower
+      ? { min: 15, max: 40 }
+      : { min: 50, max: 150 };
 
     let maxX = window.innerWidth;
     let ratio = container.offsetHeight / container.offsetWidth;
@@ -249,29 +273,32 @@ function FireworksBackground({
     };
 
     const launchFirework = () => {
-      const x = rand(maxX * 0.1, maxX * 0.9);
-      const y = maxY;
-      const targetY = rand(maxY * 0.1, maxY * 0.4);
-      const fireworkColor = getColor(
-        color ?? ["#ff0080", "#ff7f50", "#ffff00", "#00ff7f", "#ff00ff"],
-      );
+      if (isActive()) {
+        const x = rand(maxX * 0.1, maxX * 0.9);
+        const y = maxY;
+        const targetY = rand(maxY * 0.1, maxY * 0.4);
+        const fireworkColor = getColor(
+          color ?? ["#ff0080", "#ff7f50", "#ffff00", "#00ff7f", "#ff00ff"],
+        );
 
-      const speed = getValueByRange(fireworkSpeed);
-      const size = getValueByRange(fireworkSize);
-      fireworks.push(
-        createFirework(
-          x,
-          y,
-          targetY,
-          fireworkColor,
-          speed,
-          size,
-          particleSpeed,
-          particleSize,
-          handleExplosion,
-        ),
-      );
-      const timeout = rand(300, 800) / population;
+        const speed = getValueByRange(fireworkSpeed);
+        const size = getValueByRange(fireworkSize);
+        fireworks.push(
+          createFirework(
+            x,
+            y,
+            targetY,
+            fireworkColor,
+            speed,
+            size,
+            particleSpeed,
+            particleSize,
+            handleExplosion,
+            particleCountRange,
+          ),
+        );
+      }
+      const timeout = rand(300, 800) / effectivePopulation;
       setTimeout(launchFirework, timeout);
     };
 
@@ -279,6 +306,11 @@ function FireworksBackground({
 
     let animationFrameId: number;
     const animate = () => {
+      if (!isActive()) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+
       ctx.clearRect(0, 0, maxX, maxY);
 
       for (let i = fireworks.length - 1; i >= 0; i--) {
@@ -320,6 +352,7 @@ function FireworksBackground({
           particleSpeed,
           particleSize,
           handleExplosion,
+          particleCountRange,
         ),
       );
     };
@@ -328,6 +361,8 @@ function FireworksBackground({
 
     return () => {
       window.removeEventListener("resize", setCanvasSize);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      intersectionObserver.disconnect();
       container.removeEventListener("click", handleClick);
       cancelAnimationFrame(animationFrameId);
     };
@@ -338,6 +373,7 @@ function FireworksBackground({
     fireworkSize,
     particleSpeed,
     particleSize,
+    isLowPower,
   ]);
 
   return (

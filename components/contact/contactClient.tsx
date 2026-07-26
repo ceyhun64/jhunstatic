@@ -10,6 +10,8 @@ import { ShootingStars } from "@/components/ui/shadcn-io/shooting-stars";
 import { GradientText } from "../ui/shadcn-io/gradient-text";
 import { toast } from "sonner";
 import { useTheme } from "next-themes";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 interface ContactClientProps {
   dict: any;
@@ -33,6 +35,8 @@ export default function ContactClient({
   const [loading, setLoading] = useState(false);
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     setMounted(true);
@@ -122,52 +126,33 @@ Mesaj: ${formData.get("message")?.toString() || ""}`,
             minDelay={1200}
             maxDelay={4200}
           />
-          <ShootingStars
-            starColor={starColors.star2}
-            trailColor={starColors.trail2}
-            minSpeed={10}
-            maxSpeed={25}
-            minDelay={2000}
-            maxDelay={4000}
-          />
-          <ShootingStars
-            starColor={starColors.star3}
-            trailColor={starColors.trail3}
-            minSpeed={20}
-            maxSpeed={40}
-            minDelay={1500}
-            maxDelay={3500}
-          />
-          <ShootingStars
-            starColor={starColors.star1}
-            trailColor={starColors.trail1}
-            minSpeed={15}
-            maxSpeed={35}
-            minDelay={1200}
-            maxDelay={4200}
-          />
-          <ShootingStars
-            starColor={starColors.star2}
-            trailColor={starColors.trail2}
-            minSpeed={10}
-            maxSpeed={25}
-            minDelay={2000}
-            maxDelay={4000}
-          />
-          <ShootingStars
-            starColor={starColors.star3}
-            trailColor={starColors.trail3}
-            minSpeed={20}
-            maxSpeed={40}
-            minDelay={1500}
-            maxDelay={3500}
-          />
+          {/* Extra layers add depth on desktop; skip on mobile to keep only one concurrent animation loop */}
+          {!isMobile && (
+            <>
+              <ShootingStars
+                starColor={starColors.star2}
+                trailColor={starColors.trail2}
+                minSpeed={10}
+                maxSpeed={25}
+                minDelay={2000}
+                maxDelay={4000}
+              />
+              <ShootingStars
+                starColor={starColors.star3}
+                trailColor={starColors.trail3}
+                minSpeed={20}
+                maxSpeed={40}
+                minDelay={1500}
+                maxDelay={3500}
+              />
+            </>
+          )}
         </div>
       )}
 
       {/* Floating motion wrapper */}
       <motion.div
-        animate={{ y: [0, -10, 0] }}
+        animate={shouldReduceMotion ? {} : { y: [0, -10, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         className="relative z-10 mx-auto flex flex-col lg:flex-row gap-6 md:gap-12"
         variants={containerVariants}

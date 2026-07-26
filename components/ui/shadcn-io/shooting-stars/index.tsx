@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import React, { useEffect, useId, useRef } from "react";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 interface ShootingStarState {
   x: number;
@@ -50,10 +51,27 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   const gradientId = `ss-grad-${uid}`;
 
   const rectRef = useRef<SVGRectElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
   const gradStartRef = useRef<SVGStopElement>(null);
   const gradEndRef = useRef<SVGStopElement>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (shouldReduceMotion) return;
+
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    // Pause while scrolled off-screen instead of animating forever.
+    let inView = false;
+    const intersectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        inView = !!entry?.isIntersecting;
+      },
+      { threshold: 0 },
+    );
+    intersectionObserver.observe(svg);
+
     let animFrame: number;
     let timeout: ReturnType<typeof setTimeout>;
     let star: ShootingStarState | null = null;
@@ -83,6 +101,11 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
     };
 
     const animate = () => {
+      if (!inView) {
+        animFrame = requestAnimationFrame(animate);
+        return;
+      }
+
       if (!star || !rectRef.current) {
         hideStar();
         scheduleStar();
@@ -127,8 +150,9 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
     return () => {
       cancelAnimationFrame(animFrame);
       clearTimeout(timeout);
+      intersectionObserver.disconnect();
     };
-  }, [minSpeed, maxSpeed, minDelay, maxDelay, starWidth, starHeight]);
+  }, [minSpeed, maxSpeed, minDelay, maxDelay, starWidth, starHeight, shouldReduceMotion]);
 
   useEffect(() => {
     if (gradStartRef.current)
@@ -139,6 +163,7 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
 
   return (
     <svg
+      ref={svgRef}
       className={cn("absolute inset-0 w-full h-full", className)}
       aria-hidden="true"
     >

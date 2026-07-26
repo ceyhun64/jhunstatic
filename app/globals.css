@@ -199,3 +199,32 @@ html {
     opacity: 0;
   }
 }
+
+/* Respect OS-level reduced motion: kill infinite/decorative animations and
+   snap transitions instead of disabling them outright (avoids layout pops). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile: heavy blur/backdrop-filter/box-shadow glow are a major GPU cost on
+   phones. Cap them site-wide instead of relying on every component to opt in. */
+@media (max-width: 767px) {
+  .blur-3xl,
+  .blur-2xl {
+    --tw-blur: blur(24px);
+  }
+
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-md {
+    --tw-backdrop-blur: blur(6px);
+  }
+}
+

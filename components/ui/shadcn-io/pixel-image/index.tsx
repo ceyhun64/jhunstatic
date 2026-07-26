@@ -126,6 +126,7 @@ export const PixelImage = ({
             <img
               src={src}
               alt={`Pixel image piece ${index + 1}`}
+              decoding="async"
               className={cn(
                 "size-full object-cover rounded-xl",
                 grayscaleAnimation && (showColor ? "grayscale-0" : "grayscale"),

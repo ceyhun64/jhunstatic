@@ -7,6 +7,7 @@ import { MagneticButton } from "@/components/ui/shadcn-io/magnetic-button";
 import Link from "next/link";
 import { useMemo } from "react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type ElegantShapeProps = {
   className?: string;
@@ -192,6 +193,7 @@ export default function HeroesClient({
   locale,
 }: HeroesClientProps) {
   const shouldReduceMotion = useReducedMotion();
+  const isMobile = useIsMobile();
 
   return (
     <div
@@ -219,20 +221,25 @@ export default function HeroesClient({
             duration={22}
             className="left-[-10%] top-[15%]"
           />
-          <CloudShape
-            delay={0.4}
-            width={420}
-            height={140}
-            duration={28}
-            className="right-[-5%] top-[45%]"
-          />
-          <CloudShape
-            delay={0.6}
-            width={360}
-            height={120}
-            duration={25}
-            className="left-[10%] bottom-[20%]"
-          />
+          {/* Fewer concurrent floating shapes on mobile — each one is its own infinite animation loop */}
+          {!isMobile && (
+            <>
+              <CloudShape
+                delay={0.4}
+                width={420}
+                height={140}
+                duration={28}
+                className="right-[-5%] top-[45%]"
+              />
+              <CloudShape
+                delay={0.6}
+                width={360}
+                height={120}
+                duration={25}
+                className="left-[10%] bottom-[20%]"
+              />
+            </>
+          )}
         </div>
 
         {/* DARK THEME – GALAXY */}
@@ -246,33 +253,37 @@ export default function HeroesClient({
             gradient="from-cyan-400/30 via-sky-400/25 to-purple-900/20"
             className="left-[-10%] top-[10%]"
           />
-          <ElegantShape
-            delay={0.5}
-            width={400}
-            height={100}
-            rotate={-20}
-            duration={20}
-            gradient="from-purple-700/25 via-blue-800/20 to-cyan-400/20"
-            className="right-[-5%] top-[50%]"
-          />
-          <ElegantShape
-            delay={0.6}
-            width={200}
-            height={60}
-            rotate={20}
-            duration={13}
-            gradient="from-cyan-400/20 via-purple-700/15"
-            className="right-[15%] top-[25%]"
-          />
-          <ElegantShape
-            delay={0.6}
-            width={360}
-            height={120}
-            rotate={-20}
-            duration={18}
-            gradient="from-cyan-400/20 via-purple-700/15"
-            className="left-[10%] bottom-[20%]"
-          />
+          {!isMobile && (
+            <>
+              <ElegantShape
+                delay={0.5}
+                width={400}
+                height={100}
+                rotate={-20}
+                duration={20}
+                gradient="from-purple-700/25 via-blue-800/20 to-cyan-400/20"
+                className="right-[-5%] top-[50%]"
+              />
+              <ElegantShape
+                delay={0.6}
+                width={200}
+                height={60}
+                rotate={20}
+                duration={13}
+                gradient="from-cyan-400/20 via-purple-700/15"
+                className="right-[15%] top-[25%]"
+              />
+              <ElegantShape
+                delay={0.6}
+                width={360}
+                height={120}
+                rotate={-20}
+                duration={18}
+                gradient="from-cyan-400/20 via-purple-700/15"
+                className="left-[10%] bottom-[20%]"
+              />
+            </>
+          )}
         </div>
       </div>
 

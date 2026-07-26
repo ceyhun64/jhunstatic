@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { useLowPowerMode } from "@/hooks/use-low-power-mode";
 
 export type ThreeDMarqueeProps = {
   images: string[];
@@ -10,6 +11,7 @@ export type ThreeDMarqueeProps = {
 };
 
 export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
+  const isLowPower = useLowPowerMode();
   // Split the images array into 4 equal parts
   const chunkSize = Math.ceil(images.length / 4);
   const chunks = Array.from({ length: 4 }, (_, colIndex) => {
@@ -34,7 +36,12 @@ export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
           >
             {chunks.map((subarray, colIndex) => (
               <motion.div
-                animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
+                // The perpetual bounce is purely decorative — skip it on
+                // mobile/reduced-motion so this doesn't run forever as one
+                // more animation loop competing for frame time.
+                animate={
+                  isLowPower ? {} : { y: colIndex % 2 === 0 ? 100 : -100 }
+                }
                 transition={{
                   duration: colIndex % 2 === 0 ? 10 : 15,
                   repeat: Infinity,
@@ -58,6 +65,8 @@ export const ThreeDMarquee = ({ images, className }: ThreeDMarqueeProps) => {
                       key={imageIndex + image}
                       src={image}
                       alt={`Image ${imageIndex + 1}`}
+                      loading="lazy"
+                      decoding="async"
                       className="aspect-[13/9] rounded-lg object-cover ring ring-gray-950/5 hover:shadow-2xl"
                       width={375}
                       height={230}
