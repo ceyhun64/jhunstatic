@@ -306,10 +306,12 @@ export default function HeroesClient({
           </span>
          
         </motion.div>
-        {/* Title - Gelistirilmis gradyan ve animasyon */}
+        {/* Title - LCP candidate: no opacity animation, it must be painted
+            immediately in the server-rendered HTML rather than waiting on
+            hydration + a JS-driven fade (that alone pushed LCP past 5s). */}
         <motion.h1
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: shouldReduceMotion ? 0 : 30 }}
+          animate={{ y: 0 }}
           transition={{
             duration: shouldReduceMotion ? 0.2 : 0.8,
             delay: shouldReduceMotion ? 0 : 0.3,
@@ -333,10 +335,11 @@ export default function HeroesClient({
           </span>
         </motion.h1>
 
-        {/* Description - Iyilestirilmis okunabilirlik */}
+        {/* Description - this is the measured LCP element; same reasoning
+            as the title above, drop the opacity fade so it paints instantly */}
         <motion.p
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: shouldReduceMotion ? 0 : 20 }}
+          animate={{ y: 0 }}
           transition={{
             duration: shouldReduceMotion ? 0.2 : 0.8,
             delay: shouldReduceMotion ? 0 : 0.5,

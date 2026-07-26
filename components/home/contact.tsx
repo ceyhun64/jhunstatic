@@ -1,5 +1,9 @@
+import dynamic from "next/dynamic";
 import { getDictionary } from "@/lib/get-dictionary";
-import ContactClient from "./contactClient";
+
+// Code-split: below the fold, pulls in ShootingStars + react-hook-form/zod
+// validation separately from the main bundle.
+const ContactClient = dynamic(() => import("./contactClient"));
 
 interface ContactProps {
   locale: "tr" | "en";

@@ -200,6 +200,18 @@ html {
   }
 }
 
+/* Typing-text caret blink — a plain CSS animation instead of a GSAP tween.
+   GSAP was pulled in (~28KB gzipped) solely to fade this one span forever. */
+@keyframes typing-cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 /* Respect OS-level reduced motion: kill infinite/decorative animations and
    snap transitions instead of disabling them outright (avoids layout pops). */
 @media (prefers-reduced-motion: reduce) {

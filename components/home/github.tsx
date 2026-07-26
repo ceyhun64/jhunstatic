@@ -1,7 +1,12 @@
 // github.tsx (server)
-import GithubClient from "./githubClient";
+import dynamic from "next/dynamic";
 import { getDictionary } from "@/lib/get-dictionary";
 import { getGithubShowcase } from "@/lib/github";
+
+// Code-split: this pulls in the Starfield canvas (300 particles) + 3d-card
+// tilt handlers, below the fold on every page that renders it. Splitting it
+// out of the shared bundle cuts main-thread parse/exec work on initial load.
+const GithubClient = dynamic(() => import("./githubClient"));
 
 type Props = { locale: "tr" | "en" };
 

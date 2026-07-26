@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -40,6 +41,7 @@ const GalleryClient: React.FC<GalleryClientProps> = ({
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const isMobile = useIsMobile();
+  const router = useRouter();
 
   useEffect(() => {
     if (!carouselApi) return;
@@ -109,6 +111,7 @@ const GalleryClient: React.FC<GalleryClientProps> = ({
               return (
                 <CarouselItem
                   key={item.id}
+                  onClick={() => router.push(`/${locale}/projects/${item.id}`)}
                   className="w-full md:max-w-[400px] cursor-pointer"
                 >
                   {isMobile ? (
@@ -138,7 +141,10 @@ const GalleryClient: React.FC<GalleryClientProps> = ({
                             <Eye className="w-4 h-4" /> {dict.view}
                           </Link>
                           <Button
-                            onClick={() => window.open(item.url, "_blank")}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(item.url, "_blank");
+                            }}
                             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white px-4 py-2 rounded-full font-semibold"
                           >
                             {dict.visitSite} <ArrowRight className="w-4 h-4" />
@@ -193,7 +199,10 @@ const GalleryClient: React.FC<GalleryClientProps> = ({
 
                           <CardItem translateZ={40} as="div">
                             <Button
-                              onClick={() => window.open(item.url, "_blank")}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                window.open(item.url, "_blank");
+                              }}
                               className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white px-4 py-2 rounded-full font-semibold shadow-[0_0_12px_rgba(249,115,22,0.4)] transition-all"
                             >
                               {dict.visitSite}{" "}

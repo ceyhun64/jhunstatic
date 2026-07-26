@@ -1,5 +1,10 @@
+import dynamic from "next/dynamic";
 import { getDictionary } from "@/lib/get-dictionary";
-import AboutClient from "./aboutClient";
+
+// Code-split: this section pulls in FireworksBackground, SparklesCore and
+// PixelImage — all below the fold. Splitting it out of the shared bundle
+// cuts main-thread parse/exec work on initial load.
+const AboutClient = dynamic(() => import("./aboutClient"));
 
 type Props = {
   locale: "tr" | "en";

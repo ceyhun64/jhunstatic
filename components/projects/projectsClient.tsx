@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Eye, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
@@ -25,6 +26,7 @@ type Props = {
 
 export default function ProjectsClient({ dict, locale, projects }: Props) {
   const isMobile = useIsMobile();
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F5F7FA] via-gray-200 to-[#F5F7FA] dark:from-black dark:via-amber-950/80 dark:to-black text-gray-900 dark:text-white py-15 md:py-20 px-4 md:px-10 relative overflow-hidden">
@@ -86,7 +88,8 @@ export default function ProjectsClient({ dict, locale, projects }: Props) {
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="w-full max-w-[400px]"
+                  onClick={() => router.push(`/${locale}/projects/${proj.id}`)}
+                  className="w-full max-w-[400px] cursor-pointer"
                 >
                   {isMobile ? (
                     <div className="bg-white dark:bg-zinc-950/50 border border-gray-300 dark:border-zinc-800 rounded-2xl p-2.5 shadow-lg hover:shadow-xl transition-all duration-300 text-left">
@@ -115,7 +118,10 @@ export default function ProjectsClient({ dict, locale, projects }: Props) {
                             <Eye className="w-4 h-4" /> {dict.view_project}
                           </Link>
                           <Button
-                            onClick={() => window.open(proj.url, "_blank")}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(proj.url, "_blank");
+                            }}
                             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white px-4 py-2 rounded-full font-semibold"
                           >
                             {dict.visit_site} <ArrowRight className="w-4 h-4" />
@@ -170,7 +176,10 @@ export default function ProjectsClient({ dict, locale, projects }: Props) {
 
                           <CardItem translateZ={40} as="div">
                             <Button
-                              onClick={() => window.open(proj.url, "_blank")}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                window.open(proj.url, "_blank");
+                              }}
                               className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white px-4 py-2 rounded-full font-semibold shadow-[0_0_12px_rgba(249,115,22,0.4)] transition-all"
                             >
                               {dict.visit_site}{" "}

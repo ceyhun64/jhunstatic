@@ -1,12 +1,17 @@
 "use client";
 import React, { useId, useMemo } from "react";
 import { useEffect, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Container, SingleOrMultiple } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+import type { default as ParticlesComponent } from "@tsparticles/react";
 import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "framer-motion";
-import { useLowPowerMode } from "@/hooks/use-low-power-mode";
+
+// tsparticles is a ~500KB (uncompressed) particle engine. A static import (or
+// even a next/dynamic() wrapper) gets picked up by Next's client-reference
+// manifest and preloaded for every page that can render SparklesCore, no
+// matter the runtime branch — measured 75KB/57KB-unused still being fetched
+// on mobile with next/dynamic. A bare import() inside the effect below is
+// the only way that stays entirely off the network on mobile/reduced-motion.
 
 type ParticlesProps = {
   id?: string;
@@ -32,18 +37,42 @@ export const SparklesCore = (props: ParticlesProps) => {
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
-  const isLowPower = useLowPowerMode();
+  const [Particles, setParticles] = useState<typeof ParticlesComponent | null>(
+    null,
+  );
 
   useEffect(() => {
     // Skip loading/booting the tsparticles engine altogether on mobile or
     // when reduced motion is requested — it's a decorative-only background.
-    if (isLowPower) return;
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
+    // Querying matchMedia directly (rather than a React-state mobile hook)
+    // avoids a one-render-cycle race where a hook-derived value is still
+    // stale (`false`) the first time this effect runs.
+    const isMobileNow =
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 767px)").matches;
+    const prefersReducedMotionNow =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (isMobileNow || prefersReducedMotionNow) return;
+    let cancelled = false;
+
+    Promise.all([
+      import("@tsparticles/react"),
+      import("@tsparticles/slim").then((m) => m.loadSlim),
+    ]).then(([reactModule, loadSlim]) => {
+      if (cancelled) return;
+      setParticles(() => reactModule.default);
+      reactModule.initParticlesEngine(async (engine) => {
+        await loadSlim(engine);
+      }).then(() => {
+        if (!cancelled) setInit(true);
+      });
     });
-  }, [isLowPower]);
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const controls = useAnimation();
 
   const [containerLoaded, setContainerLoaded] = useState(false);
@@ -66,7 +95,7 @@ export const SparklesCore = (props: ParticlesProps) => {
   const generatedId = useId();
   return (
     <motion.div animate={controls} className={cn("opacity-0", className)}>
-      {init && (
+      {init && Particles && (
         <Particles
           id={id || generatedId}
           className={cn("h-full w-full")}

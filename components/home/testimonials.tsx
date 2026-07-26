@@ -1,5 +1,9 @@
+import dynamic from "next/dynamic";
 import { getDictionary } from "@/lib/get-dictionary";
-import TestimonialsClient from "./testimonialsClient";
+
+// Code-split: below the fold, pulls in react-fast-marquee separately from
+// the main bundle.
+const TestimonialsClient = dynamic(() => import("./testimonialsClient"));
 
 type Props = {
   locale: "tr" | "en";
